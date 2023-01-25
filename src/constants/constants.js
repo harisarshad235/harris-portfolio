@@ -35,6 +35,24 @@ export const projects = [
     visit: 'https://google.com',
     id: 3,
   },
+  {
+    title: 'Gericht-Restaurant',
+    description: "This is a code repository for the corresponding app. In this i created a full Restaurant Application",
+    image: '/images/5.png',
+    tags: ['React', 'JavaScript'],
+    source: 'https://harriskarestaurant.netlify.app/ ',
+    visit: 'https://github.com/harisarshad235/restaurant_app',
+    id: 4,
+  },
+  {
+    title: 'GPT-3',
+    description: "This is a code repository for the corresponding app. In this i created a GPT-3 Application",
+    image: '/images/6.png',
+    tags: ['React', 'CSS','JavaScript'],
+    source: 'https://gpt3-by-harris.netlify.app/ ',
+    visit: 'https://github.com/harisarshad235/Gpt3',
+    id: 4,
+  },
 ];
 
 export const TimeLineData = [
