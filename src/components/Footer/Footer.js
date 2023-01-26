@@ -2,7 +2,7 @@ import React from 'react';
 import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
 
 import { SocialIcons } from '../Header/HeaderStyles';
-import { CompanyContainer, FooterWrapper, LinkColumn, LinkItem, LinkList, LinkTitle, Slogan, SocialContainer, SocialIconsContainer } from './FooterStyles';
+import { CompanyContainer,CopyRight, FooterWrapper, LinkColumn, LinkItem, LinkList, LinkTitle, Slogan, SocialContainer, SocialIconsContainer } from './FooterStyles';
 
 const Footer = () => {
   return (
@@ -33,10 +33,15 @@ const Footer = () => {
       <SocialIcons href='https://instagram.com'>
         <AiFillInstagram size="3rem"/>
       </SocialIcons>
+      
       </SocialContainer>
+      
 
         
       </SocialIconsContainer>
+      <CopyRight>
+        <Slogan> Made with ❤  by Harris </Slogan>
+        </CopyRight>
     </FooterWrapper>
   );
 };

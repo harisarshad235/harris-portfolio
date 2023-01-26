@@ -79,6 +79,38 @@ export const CompanyContainer = styled.div`
 		align-items: center;
 	}
 `
+export const CompanyContainers = styled.div`
+  display: flex;
+	align-items:baseline;
+	flex-wrap: wrap;
+	margin-right: auto;
+	
+
+	@media ${props => props.theme.breakpoints.md}{
+		flex-direction: column;
+		align-items: baseline;
+	}
+
+	@media ${props => props.theme.breakpoints.sm}{
+		display: flex;
+		flex-direction: column;
+		margin: 0 0 32px;
+		align-items: center;
+	}
+`
+
+
+export const CopyRight = styled.div`
+  
+	align-items:center;
+	flex-wrap: wrap;
+	margin-right: auto;
+	align-text:center;
+	
+
+`
+
+
 
 
 export const Slogan = styled.p`
