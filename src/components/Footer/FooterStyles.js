@@ -101,12 +101,12 @@ export const CompanyContainers = styled.div`
 
 
 export const CopyRight = styled.div`
+		display: flex;
+		align-items: center;
+		justify-content: center;
+			
   
-	align-items:center;
-	flex-wrap: wrap;
-	margin-right: auto;
-	align-text:center;
-	
+
 
 `
 
