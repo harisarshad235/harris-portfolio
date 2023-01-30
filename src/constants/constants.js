@@ -21,11 +21,11 @@ export const projects = [
   {
     title: 'Text Analyzer App',
     description: "This app has features to transform your text to upper and lowercase, count words, charcters and also clear out the  text and preview the whole text. Also how many minutes would it take for a normal person to read the text ",
-    image: '/images/7.png',
+    image: '/images/8.png',
     tags: ['Javascript', 'CSS'],
-    source: 'https://https://codex-your-ai-harisarshad235.vercel.app/ ',
-    visit: 'https://github.com/harisarshad235/Codex-your-AI',
-    id: 1,
+    source: 'https://quirky-mice.surge.sh/ ',
+    visit: 'https://github.com/harisarshad235/Text-utils',
+    id: 2,
   },
 
   {
@@ -35,7 +35,7 @@ export const projects = [
     tags: ['Javascript', 'CSS'],
     source: 'https://https://codex-your-ai-harisarshad235.vercel.app/ ',
     visit: 'https://github.com/harisarshad235/Codex-your-AI',
-    id: 1,
+    id: 3,
   },
 
   {
@@ -45,7 +45,7 @@ export const projects = [
       tags: ['Mongo', 'Express', 'React', 'Node'],
     source: 'https://google.com',
     visit: 'https://google.com',
-    id: 2,
+    id: 4,
   },
   {
     title: 'E-Commerce',
@@ -54,7 +54,7 @@ export const projects = [
     tags: ['React', 'JavaScript'],
     source: 'https://google.com',
     visit: 'https://google.com',
-    id: 3,
+    id: 5,
   },
   // {
   //   title: 'WebRTC App',
