@@ -19,6 +19,16 @@ export const projects = [
   },
 
   {
+    title: 'Text Analyzer App',
+    description: "This app has features to transform your text to upper and lowercase, count words, charcters and also clear out the  text and preview the whole text. Also how many minutes would it take for a normal person to read the text ",
+    image: '/images/7.png',
+    tags: ['Javascript', 'CSS'],
+    source: 'https://https://codex-your-ai-harisarshad235.vercel.app/ ',
+    visit: 'https://github.com/harisarshad235/Codex-your-AI',
+    id: 1,
+  },
+
+  {
     title: 'Codex-your AI',
     description: "This is a copy of Chat-GPT using OPENAI API ",
     image: '/images/7.png',
