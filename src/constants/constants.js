@@ -4,8 +4,8 @@ export const projects = [
     description: 'Nationwide program delivery with tighter cost controls and resource allocation, delivering PKR 103M+ in savings and closing 22.5% under budget.',
     image: '/images/5.png',
     tags: ['Budget Control', 'Forecasting', 'PMO'],
-    source: 'mailto:harisarshad235@gmail.com',
-    visit: 'mailto:harisarshad235@gmail.com',
+    details: 'mailto:harisarshad235@gmail.com?subject=Track%20%26%20Trace%20System',
+    website: '',
     id: 0,
   },
   {
@@ -13,8 +13,8 @@ export const projects = [
     description: 'Coordinated requirements, sprint delivery, UAT, and release readiness across a PKR 700M+ portfolio spanning 150+ sites.',
     image: '/images/6.png',
     tags: ['Agile Delivery', 'RAID', 'UAT'],
-    source: 'mailto:harisarshad235@gmail.com',
-    visit: 'mailto:harisarshad235@gmail.com',
+    details: 'mailto:harisarshad235@gmail.com?subject=CDA%20Smart%20Parking%20Digitization',
+    website: '',
     id: 1,
   },
   {
@@ -22,8 +22,8 @@ export const projects = [
     description: 'Owned delivery end-to-end for Telenor, adapting scope and priorities as client requirements evolved to deliver a production-ready analytics platform.',
     image: '/images/8.png',
     tags: ['Stakeholders', 'Requirements', 'Release'],
-    source: 'mailto:harisarshad235@gmail.com',
-    visit: 'mailto:harisarshad235@gmail.com',
+    details: 'mailto:harisarshad235@gmail.com?subject=Thunder%20Energy%20Analytics',
+    website: 'https://www.thunderenergy.ai/',
     id: 2,
   },
 ];

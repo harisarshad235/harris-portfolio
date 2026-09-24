@@ -10,7 +10,7 @@ const Projects = () => (
     <SectionDivider/>
     <SectionTitle main> Projects</SectionTitle>
     <GridContainer>
-      {projects.map(({id,image,title,description,tags,source,visit}) =>(
+      {projects.map(({id,image,title,description,tags,details,website}) =>(
         <BlogCard key={id}>
           <Img src={image}/>
           <TitleContent>
@@ -28,7 +28,8 @@ const Projects = () => (
             </TagList>
           </div>
           <UtilityList>
-            <ExternalLinks href={visit}>Discuss this project</ExternalLinks>
+            {details && <ExternalLinks href={details} target="_blank" rel="noreferrer">Project details</ExternalLinks>}
+            {website && <ExternalLinks href={website} target="_blank" rel="noreferrer">Visit website</ExternalLinks>}
           </UtilityList>
 
         </BlogCard>
