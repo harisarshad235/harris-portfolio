@@ -13,11 +13,11 @@ const Hero = (props) => (
 
       </SectionTitle>
       <SectionText>
-        The pupose of this portfolio is to showcase my development skills to everyone who is interested in my skills and wants to give me an opportunity to work with them or have to learn from my skill set.<br/>
+        Project Manager (PMP®) with experience coordinating technology delivery across cross-functional teams of developers, QA, and infrastructure stakeholders. Skilled in managing Agile and Kanban delivery boards, translating business requirements into actionable work items, and driving projects from planning through release. Proven track record improving delivery efficiency by up to 80% and reporting visibility by up to 90% through structured scheduling and realtime dashboards. Experienced managing multiple concurrent workstreams and large-scale, multi-disciplinary teams in fastmoving, high-stakes environments..<br/>
         i have skills in <br/>
-        -Javavascript<br/>
-        -Reactjs<br/>
-        -Python development
+        -Project Management<br/>
+        -SDLC lifecycle Management<br/>
+        -Risk Management
       </SectionText>
       <Button onclick={() => window.location= "https://google.com"}> Learn More</Button>
     </LeftSection>
