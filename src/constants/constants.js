@@ -11,10 +11,10 @@ export const projects = [
   {
     title: 'CDA Smart Parking Digitization',
     description: 'Coordinated requirements, sprint delivery, UAT, and release readiness across a PKR 700M+ portfolio spanning 150+ sites.',
-    image: '/images/6.png',
+    image: '/images/6.jpg',
     tags: ['Agile Delivery', 'RAID', 'UAT'],
     details: 'mailto:harisarshad235@gmail.com?subject=CDA%20Smart%20Parking%20Digitization',
-    website: '',
+    website: 'https://www.realparkanpr.com/revolutionizing-parking-in-pakistan-new-parking-management-system-coming-soon-to-islamabad2.html',
     id: 1,
   },
   {
