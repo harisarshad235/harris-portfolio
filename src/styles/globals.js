@@ -20,6 +20,7 @@ const GlobalStyles = createGlobalStyle`
     background: ${props => props.theme.colors.background1};
     color: ${props => props.theme.colors.primary1};
     cursor: default;
+    min-width: 320px;
 
   }
   h1,h2,h3,h4,h5,h6,button {
@@ -27,6 +28,10 @@ const GlobalStyles = createGlobalStyle`
   }
   a {
     text-decoration: none;
+  }
+  ::selection {
+    color: #fff;
+    background: ${props => props.theme.colors.accent1};
   }
   li{
     list-style: none;

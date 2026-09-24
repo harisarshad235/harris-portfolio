@@ -8,6 +8,8 @@ export const Container = styled.div`
   grid-column-gap: 2rem;
   padding: 1rem;
   padding-top: 2rem;
+  align-items: center;
+  border-bottom: 1px solid rgba(29, 42, 45, 0.12);
 
   @media ${(props) => props.theme.breakpoints.sm} {
     display: grid;
@@ -20,6 +22,8 @@ export const Container = styled.div`
 
 export const Span= styled.span`
   font-size: 2rem;
+  color: #1D2A2D;
+  font-weight: 700;
 `;
 
 export const Div1 = styled.div`
@@ -54,10 +58,10 @@ export const Div3 = styled.div`
 export const NavLink = styled.a`
   font-size: 2rem;
   line-height: 32px;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(29, 42, 45, 0.7);
   transition: 0.4s ease;
   &:hover {
-    color: #fff;
+    color: #E5674F;
     opacity: 1;
     cursor: pointer;
   }
@@ -117,11 +121,11 @@ export const NavProductsIcon = styled(IoIosArrowDropdown)`
 
 export const SocialIcons = styled.a`
 transition: 0.3s ease;
-color: white;
+color: #1D2A2D;
 border-radius: 50px;
   padding: 8px;
 &:hover {
-    background-color: #212d45;
+    background-color: #E8DED5;
     transform: scale(1.2);
     cursor: pointer;
     

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const ImageContainer = styled.div`
   text-align: center;
-  background-image: radial-gradient(50% 50% at 50% 50%, rgba(79, 108, 176, 0.25) 53.8%, rgba(79, 108, 176, 0) 100%);
+  background: #E8DED5;
   width: 100%;
   padding: 60px;
   margin-top: 48px;
@@ -65,7 +65,7 @@ export const ListTitle = styled.h4`
   font-size: 28px;
   line-height: 32px;
   letter-spacing: 0.02em;
-  color: #FFFFFF;
+  color: #1D2A2D;
   margin-bottom: 8px;
 
 @media ${props => props.theme.breakpoints.md}{
@@ -84,7 +84,7 @@ export const ListTitle = styled.h4`
 export const ListParagraph = styled.p`
   font-size: 18px;
   line-height: 30px;
-  color: rgba(255, 255, 255, 0.75);
+  color: #687372;
 
   @media ${props => props.theme.breakpoints.md}{
     font-size: 16px;
@@ -101,6 +101,11 @@ export const ListItem = styled.li`
   max-width: 320px;
   display: flex;
   flex-direction: column;
+  color: #E5674F;
+
+  svg {
+    margin-bottom: 1.2rem;
+  }
 
 @media ${props => props.theme.breakpoints.md}{
   max-width: 203px;

@@ -17,14 +17,14 @@ export const FooterWrapper = styled.section`
 export const LinkItem = styled.a`
 	font-size: 18px;
 	line-height: 30px;
-	color: rgba(255, 255, 255, 0.75);
+	color: rgba(29, 42, 45, 0.7);
 	margin-bottom: 16px;
 	transition: .3s ease;
 	position: relative;
 	left: 0;
 
 	&:hover {
-		color: #fff;
+		color: #E5674F;
 		left: 6px;
 	}
 
@@ -114,7 +114,7 @@ export const CopyRight = styled.div`
 
 
 export const Slogan = styled.p`
-	color: rgba(255, 255, 255, 0.5);
+	color: rgba(29, 42, 45, 0.55);
 	min-width: 280px;
 	letter-spacing: 0.02em;
 	font-size: 18px;
@@ -146,7 +146,7 @@ export const SocialContainer = styled.div`
 
 
 export const LinkList = styled.ul`
-	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(29, 42, 45, 0.14);
   display: grid;
 	grid-template-columns: repeat(3, minmax(85px, 220px));
 	gap: 40px;
