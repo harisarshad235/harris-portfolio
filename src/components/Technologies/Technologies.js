@@ -1,5 +1,5 @@
 import React from 'react';
-import { DiFirebase, DiReact, DiZend } from 'react-icons/di';
+import { DiDatabase, DiGit, DiGoogleDrive } from 'react-icons/di';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { List, ListContainer, ListItem, ListParagraph, ListTitle } from './TechnologiesStyles';
 
@@ -7,39 +7,38 @@ const Technologies = () =>  (
   <Section id='tech'>
     <SectionDivider/>
     <br/>
-    <SectionTitle>Technologies</SectionTitle>
+    <SectionTitle>Delivery toolkit</SectionTitle>
     <SectionText>
-      i have worked with a range of technologies in the web development world. 
-      from backend to front end design.
+      A practical toolkit for turning strategy into visible, controlled delivery across complex technology programs.
     </SectionText>
     <List>
       <ListItem>
-        <DiReact size="3rem"/>
+        <DiGoogleDrive size="3rem"/>
         <ListContainer>
-          <ListTitle>Front-End</ListTitle>
+          <ListTitle>Planning & control</ListTitle>
           <ListParagraph>
-            Experience with <br/>
-            React.js
+            MS Project, Primavera P6 <br/>
+            Integrated Master Schedules
           </ListParagraph>
         </ListContainer>
       </ListItem>
       <ListItem>
-        <DiFirebase size="3rem"/>
+        <DiGit size="3rem"/>
         <ListContainer>
-          <ListTitle>Back-End</ListTitle>
+          <ListTitle>Agile delivery</ListTitle>
           <ListParagraph>
-            Experience with <br/>
-            Node.js and Databases
+            Jira, Trello, Azure DevOps <br/>
+            Scrum and Kanban
           </ListParagraph>
         </ListContainer>
       </ListItem>
       <ListItem>
-        <DiZend size="3rem"/>
+        <DiDatabase size="3rem"/>
         <ListContainer>
-          <ListTitle>UI/UX</ListTitle>
+          <ListTitle>Visibility & governance</ListTitle>
           <ListParagraph>
-            Experience with <br/>
-            Tools like Figma
+            Power BI dashboards <br/>
+            RAID, budgeting, and forecasting
           </ListParagraph>
         </ListContainer>
       </ListItem>

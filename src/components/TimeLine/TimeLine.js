@@ -46,7 +46,7 @@ const Timeline = () => {
     <Section id="about">
       <SectionTitle>About Me</SectionTitle>
       <SectionText>
-      Well i am an Electrical engineer, with keen interest in software development and for that i have learned a lot through the internet and i also have a degree in MS in Project Management.
+      I am an Electrical Engineer with a Master&apos;s in Project Management and a PMP® certification. My work sits at the intersection of business needs, delivery teams, and operational control: clarifying priorities, surfacing risk early, and giving stakeholders the visibility to make better decisions.
       </SectionText>
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>

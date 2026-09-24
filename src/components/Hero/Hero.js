@@ -8,18 +8,13 @@ const Hero = (props) => (
   <Section row nopadding>
     <LeftSection>
       <SectionTitle main center>
-        Welcome to <br/>
-        My personal Portfolio
-
+        Haris Arshad <br/>
+        Technology Delivery Leader
       </SectionTitle>
       <SectionText>
-        Project Manager (PMP®) with experience coordinating technology delivery across cross-functional teams of developers, QA, and infrastructure stakeholders. Skilled in managing Agile and Kanban delivery boards, translating business requirements into actionable work items, and driving projects from planning through release. Proven track record improving delivery efficiency by up to 80% and reporting visibility by up to 90% through structured scheduling and realtime dashboards. Experienced managing multiple concurrent workstreams and large-scale, multi-disciplinary teams in fastmoving, high-stakes environments..<br/>
-        i have skills in <br/>
-        -Project Management<br/>
-        -SDLC lifecycle Management<br/>
-        -Risk Management
+        PMP® Project Manager coordinating technology delivery across developers, QA, infrastructure, and business stakeholders. I turn complex requirements into clear delivery plans, unblock teams, and drive initiatives from planning through release. Recent results include 80% fewer project delays, 90% faster reporting, and PKR 103M+ in cost savings.
       </SectionText>
-      <Button onclick={() => window.location= "https://google.com"}> Learn More</Button>
+      <Button onClick={() => { window.location.href = 'mailto:harisarshad235@gmail.com'; }}> Start a conversation</Button>
     </LeftSection>
 
   </Section>
