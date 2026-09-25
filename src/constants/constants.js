@@ -53,6 +53,24 @@ export const projects = [
     website: 'https://apc.ae/pages/index',
     id: 5,
   },
+  {
+    title: 'PrettyLittleThing E-Commerce Platform',
+    description: 'Coordinated weekly delivery meetings between business stakeholders and technical teams for the PrettyLittleThing e-commerce platform, keeping releases aligned across development, QA, and infrastructure. Streamlined project documentation to improve accuracy of milestone tracking, which reduced reporting errors and strengthened stakeholder visibility into release progress.',
+    impact: 'Improved transparency and execution tracking',
+    image: '/images/12.png',
+    tags: ['Sprint Coordination', 'Stakeholder Communication', 'Documentation', 'QA'],
+    website: 'https://www.prettylittlething.eu/',
+    id: 6,
+  },
+{
+    title: 'Boohoo E-Commerce Platform',
+    description: 'Supported delivery coordination for the Boohoo e-commerce platform, aligning business stakeholders and technical teams through structured weekly delivery meetings. Improved documentation accuracy across the release cycle, cutting reporting errors and tightening cross-team alignment on milestones.',
+    impact: 'Reduced reporting errors and tightened cross-team alignment',
+    image: '/images/13.png',
+    tags: ['Sprint Coordination', 'Stakeholder Communication', 'Documentation', 'QA'],
+    website: 'https://eu.boohoo.com/',
+    id: 7,
+  },
 
 ];
 
