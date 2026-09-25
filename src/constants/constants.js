@@ -31,7 +31,7 @@ export const projects = [
     description: 'Assisted in end-to-end task coordination for the Frequency Allocation Board website project, tracking progress and maintaining documentation to ensure alignment across stakeholders.',
     image: '/images/9.png',
     tags: ['Stakeholders', 'Requirements', 'Documentaion','Scrumban' ],
-    details: 'mailto:harisarshad235@gmail.com?subject=Thunder%20Energy%20Analytics',
+    details: 'mailto:harisarshad235@gmail.com?subject=Frequency%20Allocation%20Board',
     website: 'https://portal.fab.gov.pk/',
     id: 3,
   },
