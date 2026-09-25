@@ -85,6 +85,83 @@ export const ActionRow = styled.div`
   }
 `;
 
+export const ContactForm = styled.form`
+  max-width: 650px;
+  margin: 3.2rem 0 5rem;
+  padding-top: 2.4rem;
+  border-top: 1px solid rgba(29, 42, 45, 0.18);
+`;
+
+export const SectionFormTitle = styled.h3`
+  color: ${(props) => props.theme.colors.primary1};
+  font-size: 2.4rem;
+  margin-bottom: 1.8rem;
+`;
+
+export const FormGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.4rem;
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    grid-template-columns: 1fr;
+  }
+`;
+
+export const FormField = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  grid-column: ${(props) => props.$full ? '1 / -1' : 'auto'};
+`;
+
+export const FormLabel = styled.label`
+  color: ${(props) => props.theme.colors.primary1};
+  font-size: 1.3rem;
+  font-weight: 700;
+`;
+
+const formControlStyles = `
+  width: 100%;
+  border: 1px solid rgba(29, 42, 45, 0.2);
+  border-radius: 4px;
+  padding: 1rem 1.2rem;
+  background: #ffffff;
+  color: #1D2A2D;
+  font: inherit;
+  font-size: 1.4rem;
+
+  &:focus {
+    outline: 3px solid rgba(26, 135, 129, 0.25);
+    border-color: #1A8781;
+  }
+`;
+
+export const TextInput = styled.input`${formControlStyles}`;
+export const TextArea = styled.textarea`${formControlStyles} resize: vertical; min-height: 120px;`;
+
+export const SubmitButton = styled.button`
+  margin-top: 1.8rem;
+  border: 0;
+  border-radius: 999px;
+  padding: 1.1rem 1.8rem;
+  background: ${(props) => props.theme.colors.accent1};
+  color: #ffffff;
+  font: inherit;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+
+  &:hover {
+    background: ${(props) => props.theme.colors.primary1};
+  }
+
+  &:focus-visible {
+    outline: 3px solid #1A8781;
+    outline-offset: 3px;
+  }
+`;
+
 export const MetaItem = styled.span`
   display: inline-flex;
   align-items: center;
