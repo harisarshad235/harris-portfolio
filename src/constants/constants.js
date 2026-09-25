@@ -31,6 +31,23 @@ export const projects = [
     website: 'https://portal.fab.gov.pk/',
     id: 3,
   },
+{
+    title: 'Taggy Marketplace Platform',
+    description: 'Managed concurrent delivery of the Taggy marketplace platform, coordinating client communication, task assignment, and progress tracking across parallel workstreams. Structured Trello boards to keep cross-functional teams aligned on sprints and deadlines, and produced user manuals to support a smooth handover and adoption for end users.',
+    image: '/images/10.png',
+    tags: ['Client Coordination', 'Trello', 'Sprint Tracking', 'Documentation'],
+    website: 'https://taggy.ae/',
+    id: 4,
+  },
+{
+    title: 'APC Admin Portal',
+    description: 'Served as primary client point of contact for the Aviation Professionals Club (APC) Admin Portal, translating requirements into actionable development tasks and providing regular status updates. Authored a comprehensive technical user manual covering all portal modules, ensuring smooth handover and adoption post-delivery.',
+    image: '/images/11.png',
+    tags: ['Requirements', 'Client Communication', 'Documentation', 'UAT'],
+    website: 'https://apc.ae/pages/index',
+    id: 5,
+  },
+
 ];
 
 export const TimeLineData = [
