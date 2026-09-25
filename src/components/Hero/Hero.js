@@ -27,8 +27,8 @@ const Hero = (props) => (
         <HeroStat><StatValue>150+</StatValue><StatLabel>sites coordinated</StatLabel></HeroStat>
       </HeroStats>
       <ActionRow>
-        <Button onClick={() => window.open('/resume/haris-arshad-cv.pdf', '_blank')}> <FiDownload /> Download CV</Button>
-        <Button onClick={() => { window.location.href = 'mailto:harisarshad235@gmail.com'; }}> Start a conversation</Button>
+          <Button aria-label="Download Haris Arshad's CV" onClick={() => window.open('/resume/haris-arshad-cv.pdf', '_blank', 'noopener,noreferrer')}> <FiDownload aria-hidden="true" /> Download CV</Button>
+          <Button aria-label="Start a conversation by email" onClick={() => { window.location.href = 'mailto:harisarshad235@gmail.com'; }}> Start a conversation</Button>
       </ActionRow>
     </LeftSection>
     <VisualSection>

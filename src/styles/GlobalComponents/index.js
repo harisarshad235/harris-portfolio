@@ -129,6 +129,10 @@ export const SecondaryBtn = styled.button`
   &:focus {
     outline: none;
   }
+  &:focus-visible {
+    outline: 3px solid #1A8781;
+    outline-offset: 3px;
+  }
 
   &:hover {
     color: #fff;

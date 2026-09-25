@@ -10,12 +10,12 @@ const Footer = () => {
       <LinkList>
        <LinkColumn>
        <LinkTitle>Call</LinkTitle>
-       <LinkItem href='tel: 0309-5597954'>0309-5597954</LinkItem>
+      <LinkItem href='tel:0309-5597954'>0309-5597954</LinkItem>
 
        </LinkColumn>
        <LinkColumn>
        <LinkTitle>Email</LinkTitle>
-       <LinkItem href='mailto: harisarshad235@gmail.com'>harisarshad235@gmail.com</LinkItem>
+      <LinkItem href='mailto:harisarshad235@gmail.com'>harisarshad235@gmail.com</LinkItem>
 
        </LinkColumn>
       </LinkList>
@@ -24,11 +24,11 @@ const Footer = () => {
         <Slogan> Innovating one project at a time </Slogan>
         </CompanyContainer>
         <SocialContainer>
-        <SocialIcons href='https://github.com/harisarshad235'>
-        <AiFillGithub size="3rem"/>
+        <SocialIcons href='https://github.com/harisarshad235' target='_blank' rel='noopener noreferrer' aria-label='Visit Harris Arshad on GitHub'>
+        <AiFillGithub size="3rem" aria-hidden="true"/>
       </SocialIcons>
-      <SocialIcons href='https://www.linkedin.com/in/haris-arshad-11b757168/'>
-        <AiFillLinkedin size="3rem"/>
+      <SocialIcons href='https://www.linkedin.com/in/haris-arshad-11b757168/' target='_blank' rel='noopener noreferrer' aria-label='Visit Harris Arshad on LinkedIn'>
+        <AiFillLinkedin size="3rem" aria-hidden="true"/>
       </SocialIcons>
       </SocialContainer>
       

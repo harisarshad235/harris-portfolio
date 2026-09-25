@@ -62,7 +62,7 @@ export const HeaderThree = styled.h3`
   color: #1D2A2D;
   padding: .5rem 0 0;
   margin: 0;
-  font-size: ${(props) => props.title ? '3rem' : '2rem'};
+  font-size: ${(props) => props.$large ? '3rem' : '2rem'};
 `;
 
 export const Hr = styled.hr`
@@ -97,6 +97,24 @@ export const CardInfo = styled.p`
   }
 `;
 
+export const ProjectImpact = styled.p`
+  width: 100%;
+  padding: 0 2.2rem;
+  margin: 0 0 1.2rem;
+  color: #1A8781;
+  font-size: 1.35rem;
+  line-height: 1.5;
+  text-align: left;
+
+  strong {
+    color: #1D2A2D;
+  }
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    padding: 0 1.2rem;
+  }
+`;
+
 
 export const UtilityList = styled.ul`
   list-style-type: none;
@@ -118,6 +136,11 @@ transition: 0.5s;
 &:hover{
   background: #E5674F;
 
+}
+
+&:focus-visible {
+  outline: 3px solid #1A8781;
+  outline-offset: 3px;
 }
 `;
 

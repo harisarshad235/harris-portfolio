@@ -65,6 +65,10 @@ export const NavLink = styled.a`
     opacity: 1;
     cursor: pointer;
   }
+    &:focus-visible {
+      outline: 3px solid #1A8781;
+      outline-offset: 4px;
+    }
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: 0.5rem;
   }
@@ -129,5 +133,9 @@ border-radius: 50px;
     transform: scale(1.2);
     cursor: pointer;
     
+    &:focus-visible {
+      outline: 3px solid #1A8781;
+      outline-offset: 3px;
+    }
   }
 `
