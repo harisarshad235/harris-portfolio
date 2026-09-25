@@ -26,6 +26,15 @@ export const projects = [
     website: 'https://www.thunderenergy.ai/',
     id: 2,
   },
+   {
+    title: 'Frequency Allocation Board',
+    description: 'Assisted in end-to-end task coordination for the Frequency Allocation Board website project, tracking progress and maintaining documentation to ensure alignment across stakeholders.',
+    image: '/images/9.png',
+    tags: ['Stakeholders', 'Requirements', 'Documentaion','Scrumban' ],
+    details: 'mailto:harisarshad235@gmail.com?subject=Thunder%20Energy%20Analytics',
+    website: 'https://portal.fab.gov.pk/',
+    id: 3,
+  },
 ];
 
 export const TimeLineData = [
