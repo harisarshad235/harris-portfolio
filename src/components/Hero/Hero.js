@@ -1,37 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FiAward, FiBarChart2, FiDownload, FiMapPin } from 'react-icons/fi';
 
 import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import Button from '../../styles/GlobalComponents/Button';
-import { ActionRow, ContactForm, Eyebrow, FormField, FormGrid, FormLabel, FormStatus, HeroImage, HeroImageWrap, HeroStat, HeroStats, LeftSection, MetaItem, MetaRow, SectionFormTitle, StatLabel, StatValue, SubmitButton, TextArea, TextInput, VisualSection } from './HeroStyles';
+import { ActionRow, Eyebrow, HeroImage, HeroImageWrap, HeroStat, HeroStats, LeftSection, MetaItem, MetaRow, StatLabel, StatValue, VisualSection } from './HeroStyles';
 
-const Hero = () => {
-  const [formState, setFormState] = useState('idle');
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    setFormState('sending');
-
-    try {
-      const formData = new FormData(event.currentTarget);
-      const body = Array.from(formData.entries())
-        .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
-        .join('&');
-
-      await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body,
-      });
-      event.currentTarget.reset();
-      setFormState('sent');
-    } catch (error) {
-      event.currentTarget.reset();
-      setFormState('sent');
-    }
-  };
-
-  return (
+const Hero = () => (
     <Section row nopadding>
       <LeftSection>
         <Eyebrow>Technology delivery · PMO · Agile coordination</Eyebrow>
@@ -55,38 +29,6 @@ const Hero = () => {
         <ActionRow>
           <Button aria-label="Download Haris Arshad's CV" onClick={() => window.open('/resume/haris-arshad-cv.pdf', '_blank', 'noopener,noreferrer')}> <FiDownload aria-hidden="true" /> Download CV</Button>
         </ActionRow>
-        <ContactForm name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit}>
-          <input type="hidden" name="form-name" value="contact" />
-          <FormField hidden>
-            <FormLabel htmlFor="contact-bot">Do not fill this field</FormLabel>
-            <TextInput id="contact-bot" name="bot-field" tabIndex="-1" autoComplete="off" />
-          </FormField>
-          <SectionFormTitle>Contact me</SectionFormTitle>
-          <FormGrid>
-            <FormField>
-              <FormLabel htmlFor="contact-name">Name</FormLabel>
-              <TextInput id="contact-name" name="name" type="text" autoComplete="name" required />
-            </FormField>
-            <FormField>
-              <FormLabel htmlFor="contact-email">Email</FormLabel>
-              <TextInput id="contact-email" name="email" type="email" autoComplete="email" required />
-            </FormField>
-            <FormField>
-              <FormLabel htmlFor="contact-company">Company</FormLabel>
-              <TextInput id="contact-company" name="company" type="text" autoComplete="organization" />
-            </FormField>
-            <FormField>
-              <FormLabel htmlFor="contact-subject">Subject</FormLabel>
-              <TextInput id="contact-subject" name="subject" type="text" required />
-            </FormField>
-            <FormField $full>
-              <FormLabel htmlFor="contact-message">Message</FormLabel>
-              <TextArea id="contact-message" name="message" rows="5" required />
-            </FormField>
-          </FormGrid>
-          <SubmitButton type="submit" disabled={formState === 'sending'}>{formState === 'sending' ? 'Sending...' : 'Send message'}</SubmitButton>
-          {formState === 'sent' && <FormStatus role="status">Message sent. Thank you, I will get back to you soon.</FormStatus>}
-        </ContactForm>
       </LeftSection>
       <VisualSection>
         <HeroImageWrap>
@@ -95,6 +37,5 @@ const Hero = () => {
       </VisualSection>
     </Section>
   );
-};
 
 export default Hero;
