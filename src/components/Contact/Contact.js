@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Section, SectionDivider } from '../../styles/GlobalComponents';
+import { Section } from '../../styles/GlobalComponents';
 import { ContactForm, FormField, FormGrid, FormLabel, FormStatus, SectionFormTitle, SubmitButton, TextArea, TextInput } from '../Hero/HeroStyles';
 
 const Contact = () => {
@@ -27,7 +27,6 @@ const Contact = () => {
 
   return (
     <Section id="contact">
-      <SectionDivider />
       <ContactForm name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit}>
         <input type="hidden" name="form-name" value="contact" />
         <FormField hidden>
