@@ -1,6 +1,5 @@
 import React from 'react';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
-import { FiFileText } from 'react-icons/fi';
 
 import { SocialIcons } from '../Header/HeaderStyles';
 import { CompanyContainer,CopyRight, FooterWrapper, LinkColumn, LinkItem, LinkList, LinkTitle, Slogan, SocialContainer, SocialIconsContainer } from './FooterStyles';
@@ -31,10 +30,6 @@ const Footer = () => {
       <SocialIcons href='https://www.linkedin.com/in/haris-arshad-11b757168/'>
         <AiFillLinkedin size="3rem"/>
       </SocialIcons>
-      <SocialIcons href='/case-studies'>
-        <FiFileText size="2.6rem"/>
-      </SocialIcons>
-      
       </SocialContainer>
       
 
