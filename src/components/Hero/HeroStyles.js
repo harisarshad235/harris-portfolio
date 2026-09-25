@@ -18,6 +18,36 @@ export const LeftSection = styled.div`
   }
 `;
 
+export const VisualSection = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 3rem 0 0;
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    padding: 2rem 0 0;
+  }
+`;
+
+export const HeroImageWrap = styled.div`
+  width: min(100%, 360px);
+  aspect-ratio: 4 / 5;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(29, 42, 45, 0.12);
+  border: 1px solid rgba(29, 42, 45, 0.08);
+  background: #f5f5f2;
+`;
+
+export const HeroImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+`;
+
 export const Eyebrow = styled.p`
   color: ${(props) => props.theme.colors.teal};
   font-size: 1.25rem;
@@ -37,6 +67,18 @@ export const MetaRow = styled.div`
   flex-wrap: wrap;
   gap: 1.2rem 2.4rem;
   margin-bottom: 3rem;
+`;
+
+export const ActionRow = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    flex-direction: column;
+    align-items: stretch;
+  }
 `;
 
 export const MetaItem = styled.span`

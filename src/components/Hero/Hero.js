@@ -1,9 +1,9 @@
 import React from 'react';
-import { FiAward, FiBarChart2, FiMail, FiMapPin } from 'react-icons/fi';
+import { FiAward, FiBarChart2, FiDownload, FiMapPin } from 'react-icons/fi';
 
 import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import Button from '../../styles/GlobalComponents/Button';
-import { Eyebrow, HeroStat, HeroStats, LeftSection, MetaItem, MetaRow, StatLabel, StatValue } from './HeroStyles';
+import { ActionRow, Eyebrow, HeroImage, HeroImageWrap, HeroStat, HeroStats, LeftSection, MetaItem, MetaRow, StatLabel, StatValue, VisualSection } from './HeroStyles';
 
 const Hero = (props) => (
   <Section row nopadding>
@@ -26,9 +26,16 @@ const Hero = (props) => (
         <HeroStat><StatValue>90%</StatValue><StatLabel>reporting efficiency</StatLabel></HeroStat>
         <HeroStat><StatValue>150+</StatValue><StatLabel>sites coordinated</StatLabel></HeroStat>
       </HeroStats>
-      <Button onClick={() => { window.location.href = 'mailto:harisarshad235@gmail.com'; }}> Start a conversation</Button>
+      <ActionRow>
+        <Button onClick={() => window.open('/resume/haris-arshad-cv.pdf', '_blank')}> <FiDownload /> Download CV</Button>
+        <Button onClick={() => { window.location.href = 'mailto:harisarshad235@gmail.com'; }}> Start a conversation</Button>
+      </ActionRow>
     </LeftSection>
-
+    <VisualSection>
+      <HeroImageWrap>
+        <HeroImage src='/images/profile.jpeg' alt='Haris Arshad' />
+      </HeroImageWrap>
+    </VisualSection>
   </Section>
 );
 
