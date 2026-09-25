@@ -1,11 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FiAward, FiBarChart2, FiDownload, FiMapPin } from 'react-icons/fi';
 
 import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import Button from '../../styles/GlobalComponents/Button';
-import { ActionRow, ContactForm, Eyebrow, FormField, FormGrid, FormLabel, HeroImage, HeroImageWrap, HeroStat, HeroStats, LeftSection, MetaItem, MetaRow, SectionFormTitle, StatLabel, StatValue, SubmitButton, TextArea, TextInput, VisualSection } from './HeroStyles';
+import { ActionRow, ContactForm, Eyebrow, FormField, FormGrid, FormLabel, FormStatus, HeroImage, HeroImageWrap, HeroStat, HeroStats, LeftSection, MetaItem, MetaRow, SectionFormTitle, StatLabel, StatValue, SubmitButton, TextArea, TextInput, VisualSection } from './HeroStyles';
 
 const Hero = () => {
+  const [formState, setFormState] = useState('idle');
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setFormState('sending');
+
+    const formData = new FormData(event.currentTarget);
+    const body = new URLSearchParams(formData).toString();
+
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body,
+      });
+      event.currentTarget.reset();
+      setFormState('sent');
+    } catch (error) {
+      setFormState('error');
+    }
+  };
+
   return (
     <Section row nopadding>
       <LeftSection>
@@ -30,7 +52,7 @@ const Hero = () => {
         <ActionRow>
           <Button aria-label="Download Haris Arshad's CV" onClick={() => window.open('/resume/haris-arshad-cv.pdf', '_blank', 'noopener,noreferrer')}> <FiDownload aria-hidden="true" /> Download CV</Button>
         </ActionRow>
-        <ContactForm name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact-success.html">
+        <ContactForm name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit}>
           <input type="hidden" name="form-name" value="contact" />
           <FormField hidden>
             <FormLabel htmlFor="contact-bot">Do not fill this field</FormLabel>
@@ -59,7 +81,9 @@ const Hero = () => {
               <TextArea id="contact-message" name="message" rows="5" required />
             </FormField>
           </FormGrid>
-          <SubmitButton type="submit">Send message</SubmitButton>
+          <SubmitButton type="submit" disabled={formState === 'sending'}>{formState === 'sending' ? 'Sending...' : 'Send message'}</SubmitButton>
+          {formState === 'sent' && <FormStatus role="status">Message sent. Thank you, I will get back to you soon.</FormStatus>}
+          {formState === 'error' && <FormStatus role="alert">Something went wrong. Please try again.</FormStatus>}
         </ContactForm>
       </LeftSection>
       <VisualSection>
