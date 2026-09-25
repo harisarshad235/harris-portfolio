@@ -5,14 +5,18 @@ export const ImageWrapper = styled.div`
   height: 200px;
   overflow: hidden;
   background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const Img = styled.img`
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
+  background: #ffffff;
 `
 
 export const GridContainer = styled.section`
