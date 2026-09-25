@@ -33,7 +33,7 @@ const Hero = (props) => (
     </LeftSection>
     <VisualSection>
       <HeroImageWrap>
-        <HeroImage src='/images/profile.jpeg' alt='Engr. Haris Arshad PMP®' />
+        <HeroImage src='/images/haris-arshad-profile.jpeg' alt='Engr. Haris Arshad PMP®' />
       </HeroImageWrap>
     </VisualSection>
   </Section>
