@@ -10,7 +10,7 @@ export const projects = [
   },
   {
     title: 'CDA Smart Parking Digitization',
-    description: 'Coordinated requirements, sprint delivery, UAT, and release readiness across a PKR 700M+ portfolio spanning 150+ sites.',
+    description: 'Coordinated requirements, sprint delivery, UAT, and release readiness.',
     image: '/images/6.jpg',
     tags: ['Agile Delivery', 'RAID', 'UAT'],
     details: 'mailto:harisarshad235@gmail.com?subject=CDA%20Smart%20Parking%20Digitization',
