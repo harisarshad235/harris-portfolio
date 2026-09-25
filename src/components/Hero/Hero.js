@@ -30,7 +30,7 @@ const Hero = () => {
         <ActionRow>
           <Button aria-label="Download Haris Arshad's CV" onClick={() => window.open('/resume/haris-arshad-cv.pdf', '_blank', 'noopener,noreferrer')}> <FiDownload aria-hidden="true" /> Download CV</Button>
         </ActionRow>
-        <ContactForm name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?success=true">
+        <ContactForm name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact-success.html">
           <input type="hidden" name="form-name" value="contact" />
           <FormField hidden>
             <FormLabel htmlFor="contact-bot">Do not fill this field</FormLabel>
