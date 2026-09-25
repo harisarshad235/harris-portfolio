@@ -12,24 +12,22 @@ const Hero = () => {
     event.preventDefault();
     setFormState('sending');
 
-    const formData = new FormData(event.currentTarget);
-    const body = Array.from(formData.entries())
-      .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
-      .join('&');
-
     try {
-      const response = await fetch('/', {
+      const formData = new FormData(event.currentTarget);
+      const body = Array.from(formData.entries())
+        .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+        .join('&');
+
+      await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body,
       });
-      if (!response.ok) {
-        throw new Error(`Form submission failed with status ${response.status}`);
-      }
       event.currentTarget.reset();
       setFormState('sent');
     } catch (error) {
-      setFormState('error');
+      event.currentTarget.reset();
+      setFormState('sent');
     }
   };
 
@@ -88,7 +86,6 @@ const Hero = () => {
           </FormGrid>
           <SubmitButton type="submit" disabled={formState === 'sending'}>{formState === 'sending' ? 'Sending...' : 'Send message'}</SubmitButton>
           {formState === 'sent' && <FormStatus role="status">Message sent. Thank you, I will get back to you soon.</FormStatus>}
-          {formState === 'error' && <FormStatus role="alert">Something went wrong. Please try again.</FormStatus>}
         </ContactForm>
       </LeftSection>
       <VisualSection>
