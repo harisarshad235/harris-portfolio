@@ -1,10 +1,18 @@
 import styled from 'styled-components';
 
-export const Img = styled.img`
-  width:100%;
-  height:180px;
-  object-fit: cover;
+export const ImageWrapper = styled.div`
+  width: 100%;
+  height: 200px;
   overflow: hidden;
+  background: #f3f4f6;
+`;
+
+export const Img = styled.img`
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 `
 
 export const GridContainer = styled.section`
@@ -28,8 +36,10 @@ export const BlogCard = styled.div`
   border-radius: 4px;
   box-shadow: 0 14px 35px rgba(29, 42, 45, 0.08);
   text-align: center;
-  width: 100%;
+  width: min(100%, 360px);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 100%;
   }
@@ -44,16 +54,17 @@ export const TitleContent = styled.div`
 
 export const HeaderThree = styled.h3`
   font-weight: 500;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   color: #1D2A2D;
-  padding: .5rem 0;
+  padding: .5rem 0 0;
+  margin: 0;
   font-size: ${(props) => props.title ? '3rem' : '2rem'};
 `;
 
 export const Hr = styled.hr`
-  width: 50px;
+  width: 52px;
   height: 3px;
-  margin: 20px auto;
+  margin: 1.4rem auto 1.8rem;
   border: 0;
   background: #E5674F;
 `;
@@ -71,15 +82,15 @@ export const Intro = styled.div`
 
 export const CardInfo = styled.p`
   width: 100%;
-  padding: 0 50px;
+  padding: 0 2.2rem;
   color: #687372;
-  font-style: 2rem;
-  line-height: 24px;
-  text-align: justify;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  text-align: left;
+  margin: 0 0 1.2rem;
   @media ${(props) => props.theme.breakpoints.sm} {
-    padding:.3rem
-  
-}
+    padding: 0 1.2rem;
+  }
 `;
 
 
@@ -107,11 +118,19 @@ transition: 0.5s;
 `;
 
 export const TagList = styled.ul`
-display: flex;
-justify-content: space-around;
-padding: 2rem;
-`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem 0.9rem;
+  padding: 0 1.5rem 1.2rem;
+  margin: 0;
+  list-style: none;
+`;
+
 export const Tag = styled.li`
-color: #1A8781;
-font-size: 1.5rem;
+  color: #1A8781;
+  font-size: 1.3rem;
+  line-height: 1.4;
+  white-space: normal;
+  text-align: center;
 `
