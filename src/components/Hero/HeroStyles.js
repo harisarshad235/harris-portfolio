@@ -113,6 +113,13 @@ export const FormField = styled.div`
   flex-direction: column;
   gap: 0.6rem;
   grid-column: ${(props) => props.$full ? '1 / -1' : 'auto'};
+  ${(props) => props.hidden && `
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  `}
 `;
 
 export const FormLabel = styled.label`

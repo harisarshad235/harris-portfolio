@@ -6,21 +6,6 @@ import Button from '../../styles/GlobalComponents/Button';
 import { ActionRow, ContactForm, Eyebrow, FormField, FormGrid, FormLabel, HeroImage, HeroImageWrap, HeroStat, HeroStats, LeftSection, MetaItem, MetaRow, SectionFormTitle, StatLabel, StatValue, SubmitButton, TextArea, TextInput, VisualSection } from './HeroStyles';
 
 const Hero = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const subject = formData.get('subject');
-    const body = [
-      `Name: ${formData.get('name')}`,
-      `Email: ${formData.get('email')}`,
-      `Company: ${formData.get('company') || 'Not provided'}`,
-      '',
-      formData.get('message'),
-    ].join('\n');
-
-    window.location.href = `mailto:harisarshad235@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  };
-
   return (
     <Section row nopadding>
       <LeftSection>
@@ -45,7 +30,12 @@ const Hero = () => {
         <ActionRow>
           <Button aria-label="Download Haris Arshad's CV" onClick={() => window.open('/resume/haris-arshad-cv.pdf', '_blank', 'noopener,noreferrer')}> <FiDownload aria-hidden="true" /> Download CV</Button>
         </ActionRow>
-        <ContactForm onSubmit={handleSubmit}>
+        <ContactForm name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?success=true">
+          <input type="hidden" name="form-name" value="contact" />
+          <FormField hidden>
+            <FormLabel htmlFor="contact-bot">Do not fill this field</FormLabel>
+            <TextInput id="contact-bot" name="bot-field" tabIndex="-1" autoComplete="off" />
+          </FormField>
           <SectionFormTitle>Contact me</SectionFormTitle>
           <FormGrid>
             <FormField>
