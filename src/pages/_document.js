@@ -45,8 +45,8 @@ export default class MyDocument extends Document {
           <meta name="twitter:title" content="Haris Arshad | PMP Project Manager" />
           <meta name="twitter:description" content="Technology delivery, PMO control, and Agile coordination for complex initiatives." />
           <meta name="twitter:image" content="/images/haris-arshad-profile.jpeg" />
-          <link rel="icon" type="image/jpeg" href="/images/haris-arshad-profile.jpeg" />
-          <link rel="apple-touch-icon" href="/images/haris-arshad-profile.jpeg" />
+          <link rel="icon" type="image/png" href="/images/manager.png" />
+          <link rel="apple-touch-icon" href="/images/manager.png" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
           <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
