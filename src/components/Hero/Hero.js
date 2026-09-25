@@ -13,14 +13,19 @@ const Hero = () => {
     setFormState('sending');
 
     const formData = new FormData(event.currentTarget);
-    const body = new URLSearchParams(formData).toString();
+    const body = Array.from(formData.entries())
+      .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+      .join('&');
 
     try {
-      await fetch('/', {
+      const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body,
       });
+      if (!response.ok) {
+        throw new Error(`Form submission failed with status ${response.status}`);
+      }
       event.currentTarget.reset();
       setFormState('sent');
     } catch (error) {
