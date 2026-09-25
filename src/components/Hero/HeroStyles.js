@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const LeftSection = styled.div`
   width: 100%;
+  flex: 1 1 0;
+  min-width: 0;
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 80%;
     display: flex;
@@ -23,6 +25,8 @@ export const VisualSection = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+  flex: 1 1 0;
+  min-width: 0;
   padding: 3rem 0 0;
 
   @media ${(props) => props.theme.breakpoints.md} {
