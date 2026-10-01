@@ -264,7 +264,7 @@ export const SubmitButton = styled.button`
 
 export const FormStatus = styled.p`
   margin-top: 1.4rem;
-  color: ${(props) => props.theme.colors.teal};
+  color: ${(props) => props.$error ? props.theme.colors.accent1 : props.theme.colors.teal};
   font-size: 1.4rem;
   font-weight: 600;
 `;

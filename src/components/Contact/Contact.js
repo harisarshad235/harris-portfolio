@@ -6,23 +6,30 @@ import { ContactForm, FormField, FormGrid, FormLabel, FormStatus, SectionFormTit
 const Contact = () => {
   const [formState, setFormState] = useState('idle');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     setFormState('sending');
 
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     const body = Array.from(formData.entries())
       .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
       .join('&');
 
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body,
-    }).catch(() => null);
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body,
+      });
 
-    event.currentTarget.reset();
-    setFormState('sent');
+      if (!response.ok) throw new Error('Contact form submission failed');
+
+      form.reset();
+      setFormState('sent');
+    } catch {
+      setFormState('error');
+    }
   };
 
   return (
@@ -58,6 +65,7 @@ const Contact = () => {
         </FormGrid>
         <SubmitButton type="submit" disabled={formState === 'sending'}>{formState === 'sending' ? 'Sending...' : 'Send message'}</SubmitButton>
         {formState === 'sent' && <FormStatus role="status">Message sent. Thank you, I will get back to you soon.</FormStatus>}
+        {formState === 'error' && <FormStatus $error role="alert">Your message could not be sent. Please try again.</FormStatus>}
       </ContactForm>
     </Section>
   );

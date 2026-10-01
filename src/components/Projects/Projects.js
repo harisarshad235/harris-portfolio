@@ -36,7 +36,7 @@ const Projects = () => {
       </FilterBar>
       <FilterStatus aria-live="polite">Showing {visibleProjects.length} of {projects.length} projects</FilterStatus>
       <GridContainer>
-        {visibleProjects.map(({id,image,title,description,impact,tags,website}) =>(
+        {visibleProjects.map(({id,image,title,description,impact,tags,website,caseStudy}) =>(
           <BlogCard key={id} data-reveal style={{ '--reveal-delay': `${(id % 3) * 70}ms` }}>
             <ImageWrapper>
               <Img src={image} alt={title} />
@@ -54,6 +54,7 @@ const Projects = () => {
               </TagList>
             </div>
             <UtilityList>
+              {caseStudy && <ExternalLinks href={caseStudy} aria-label={`Read the ${title} case study`}>Read case study</ExternalLinks>}
               {website && <ExternalLinks href={website} target="_blank" rel="noopener noreferrer" aria-label={`Visit the ${title} website`}>Visit website</ExternalLinks>}
             </UtilityList>
           </BlogCard>
