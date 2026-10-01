@@ -193,9 +193,131 @@ export const DeliveryFocus = styled.p`
   margin: -1.4rem 0 2.4rem;
 `;
 
+export const ContactGrid = styled.div`
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: start;
+  gap: 4rem;
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+`;
+
+export const ContactIntro = styled.div`
+  padding: 2.4rem 0;
+`;
+
+export const ContactOverline = styled.p`
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: ${(props) => props.theme.colors.teal};
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  svg {
+    color: ${(props) => props.theme.colors.accent1};
+  }
+`;
+
+export const ContactHeading = styled.h3`
+  max-width: 46rem;
+  margin: 1.6rem 0 1.2rem;
+  color: ${(props) => props.theme.colors.primary1};
+  font-size: 3.2rem;
+  line-height: 1.18;
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    font-size: 2.6rem;
+  }
+`;
+
+export const ContactCopy = styled.p`
+  max-width: 52ch;
+  color: ${(props) => props.theme.colors.muted};
+  font-size: 1.6rem;
+  line-height: 1.65;
+`;
+
+export const ContactAgenda = styled.ul`
+  display: grid;
+  gap: 1rem;
+  margin: 2.2rem 0;
+`;
+
+export const ContactAgendaItem = styled.li`
+  position: relative;
+  padding-left: 1.8rem;
+  color: ${(props) => props.theme.colors.primary1};
+  font-size: 1.4rem;
+  line-height: 1.5;
+
+  &::before {
+    position: absolute;
+    top: 0.7rem;
+    left: 0;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: ${(props) => props.theme.colors.accent1};
+    content: '';
+  }
+`;
+
+export const ContactQuickLinks = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+  padding-top: 1.8rem;
+  border-top: 1px solid rgba(29, 42, 45, 0.16);
+`;
+
+export const ContactQuickLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: ${(props) => props.theme.colors.teal};
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+
+  &:focus-visible {
+    outline: 3px solid rgba(26, 135, 129, 0.35);
+    outline-offset: 4px;
+  }
+`;
+
+export const BookingWidget = styled.div`
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(29, 42, 45, 0.14);
+  background: #ffffff;
+`;
+
+export const BookingWidgetHeading = styled.h3`
+  margin: 0;
+  padding: 1.4rem 1.6rem;
+  border-bottom: 1px solid rgba(29, 42, 45, 0.12);
+  color: ${(props) => props.theme.colors.primary1};
+  font-size: 1.6rem;
+`;
+
+export const CalendlyFrame = styled.iframe`
+  display: block;
+  width: 100%;
+  height: 680px;
+  border: 0;
+  background: #ffffff;
+`;
+
 export const ContactForm = styled.form`
-  max-width: 650px;
-  margin: 3.2rem 0 5rem;
+  width: 100%;
+  max-width: ${(props) => props.$wide ? 'none' : '650px'};
+  grid-column: ${(props) => props.$wide ? '1 / -1' : 'auto'};
+  margin: 0 0 5rem;
   padding-top: 2.4rem;
   border-top: 1px solid rgba(29, 42, 45, 0.18);
 `;

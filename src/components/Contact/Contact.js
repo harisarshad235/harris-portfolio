@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
+import { FiClock, FiMail, FiPhone } from 'react-icons/fi';
 
 import Services from '../Services/Services';
-import { Section } from '../../styles/GlobalComponents';
-import { BookingNote, ContactForm, FormField, FormGrid, FormLabel, FormSelect, FormStatus, SectionFormTitle, SubmitButton, TextArea, TextInput } from '../Hero/HeroStyles';
+import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
+import { BookingNote, BookingWidget, BookingWidgetHeading, CalendlyFrame, ContactAgenda, ContactAgendaItem, ContactCopy, ContactForm, ContactGrid, ContactHeading, ContactIntro, ContactOverline, ContactQuickLink, ContactQuickLinks, FormField, FormGrid, FormLabel, FormSelect, FormStatus, SectionFormTitle, SubmitButton, TextArea, TextInput } from '../Hero/HeroStyles';
+
+const configuredCalendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/harisarshad235/30min';
+const calendlyUrl = configuredCalendlyUrl.startsWith('https://calendly.com/')
+  ? `${configuredCalendlyUrl}${configuredCalendlyUrl.includes('?') ? '&' : '?'}hide_gdpr_banner=1&background_color=f4f0ea&text_color=1d2a2d&primary_color=e5674f`
+  : '';
 
 const Contact = () => {
   const [formState, setFormState] = useState('idle');
@@ -43,7 +49,7 @@ const Contact = () => {
       form.reset();
       setSelectedService('');
       setSuccessMessage(requestedService === '30-minute project consultation'
-        ? 'Consultation request received. I’ll confirm availability by email.'
+        ? 'Consultation request sent. I’ll follow up by email.'
         : 'Message sent. Thank you, I will get back to you soon.');
       setFormState('sent');
     } catch {
@@ -55,14 +61,37 @@ const Contact = () => {
     <>
     <Services onSelectService={setSelectedService} />
     <Section id="contact" data-reveal>
-      <ContactForm name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit}>
+      <SectionDivider colorAlt />
+      <SectionTitle>Start with a clear conversation</SectionTitle>
+      <ContactGrid>
+      <ContactIntro>
+        <ContactOverline><FiClock aria-hidden="true" /> 30-minute project consultation</ContactOverline>
+        <ContactHeading>Bring the delivery challenge. Leave with a clearer next step.</ContactHeading>
+        <ContactCopy>Use a first conversation to outline the goal, the current blockers, and what a useful outcome would look like.</ContactCopy>
+        <ContactAgenda>
+          <ContactAgendaItem>Project goals and current constraints</ContactAgendaItem>
+          <ContactAgendaItem>Milestones, dependencies, and delivery risks</ContactAgendaItem>
+          <ContactAgendaItem>Practical next steps and a suitable support model</ContactAgendaItem>
+        </ContactAgenda>
+        <ContactQuickLinks>
+          <ContactQuickLink href="mailto:harisarshad235@gmail.com"><FiMail aria-hidden="true" /> Email</ContactQuickLink>
+          <ContactQuickLink href="tel:+923095597954"><FiPhone aria-hidden="true" /> Call</ContactQuickLink>
+        </ContactQuickLinks>
+      </ContactIntro>
+      {calendlyUrl && (
+        <BookingWidget>
+          <BookingWidgetHeading>Book a 30-minute meeting</BookingWidgetHeading>
+          <CalendlyFrame src={calendlyUrl} title="Choose a project consultation time" loading="lazy" />
+        </BookingWidget>
+      )}
+      <ContactForm id="contact-form" $wide={Boolean(calendlyUrl)} name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit}>
         <input type="hidden" name="form-name" value="contact" />
         <FormField hidden>
           <FormLabel htmlFor="contact-bot">Do not fill this field</FormLabel>
           <TextInput id="contact-bot" name="bot-field" tabIndex="-1" autoComplete="off" />
         </FormField>
         <SectionFormTitle>Contact me</SectionFormTitle>
-        <BookingNote>Choose a service and share a preferred date and time. I’ll confirm availability by email; requests are not booked until confirmed.</BookingNote>
+        <BookingNote>{calendlyUrl ? 'Booked a time above? Use this form to share project context. For inquiries without a booking, I’ll follow up by email.' : 'Choose a service and share a preferred date and time. I’ll confirm availability by email; requests are not booked until confirmed.'}</BookingNote>
         <FormGrid>
           <FormField>
             <FormLabel htmlFor="contact-name">Name</FormLabel>
@@ -108,6 +137,7 @@ const Contact = () => {
         {formState === 'sent' && <FormStatus role="status">{successMessage}</FormStatus>}
         {formState === 'error' && <FormStatus $error role="alert">Your message could not be sent. Please try again.</FormStatus>}
       </ContactForm>
+      </ContactGrid>
     </Section>
     </>
   );
