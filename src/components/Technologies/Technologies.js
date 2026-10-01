@@ -4,7 +4,7 @@ import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles
 import { List, ListContainer, ListItem, ListParagraph, ListTitle } from './TechnologiesStyles';
 
 const Technologies = () =>  (
-  <Section id='tech'>
+  <Section id='tech' data-reveal>
     <SectionDivider/>
     <br/>
     <SectionTitle>Delivery toolkit</SectionTitle>
@@ -12,7 +12,7 @@ const Technologies = () =>  (
       A practical toolkit for turning strategy into visible, controlled delivery across complex technology programs.
     </SectionText>
     <List>
-      <ListItem>
+      <ListItem data-reveal style={{ '--reveal-delay': '80ms' }}>
         <DiGoogleDrive size="3rem"/>
         <ListContainer>
           <ListTitle>Planning & control</ListTitle>
@@ -22,7 +22,7 @@ const Technologies = () =>  (
           </ListParagraph>
         </ListContainer>
       </ListItem>
-      <ListItem>
+      <ListItem data-reveal style={{ '--reveal-delay': '160ms' }}>
         <DiGit size="3rem"/>
         <ListContainer>
           <ListTitle>Agile delivery</ListTitle>
@@ -32,7 +32,7 @@ const Technologies = () =>  (
           </ListParagraph>
         </ListContainer>
       </ListItem>
-      <ListItem>
+      <ListItem data-reveal style={{ '--reveal-delay': '240ms' }}>
         <DiDatabase size="3rem"/>
         <ListContainer>
           <ListTitle>Visibility & governance</ListTitle>

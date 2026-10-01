@@ -44,7 +44,7 @@ const Timeline = () => {
   }, []);
 
   return (
-    <Section id="about">
+    <Section id="about" data-reveal>
       <SectionTitle>About Me</SectionTitle>
       <SectionText>
       I am an Electrical Engineer with a Master&apos;s in Project Management and a PMP® certification. My work sits at the intersection of business needs, delivery teams, and operational control: clarifying priorities, surfacing risk early, and giving stakeholders the visibility to make better decisions.
@@ -52,7 +52,7 @@ const Timeline = () => {
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>
           {TimeLineData.map((item, index) => (
-            <CarouselMobileScrollNode key={index} final={index === TOTAL_CAROUSEL_COUNT - 1}>
+            <CarouselMobileScrollNode key={index} final={index === TOTAL_CAROUSEL_COUNT - 1} data-reveal style={{ '--reveal-delay': `${index * 80}ms` }}>
               <CarouselItem
                 index={index}
                 id={`carousel__item-${index}`}

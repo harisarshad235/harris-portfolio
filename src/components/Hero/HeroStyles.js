@@ -33,6 +33,12 @@ export const HeroStage = styled.div`
     }
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    > div:last-child svg {
+      display: none;
+    }
+  }
+
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: 0 16px;
   }
@@ -112,6 +118,16 @@ export const HeroImageWrap = styled.div`
   box-shadow: 0 24px 60px rgba(29, 42, 45, 0.12);
   border: 1px solid rgba(29, 42, 45, 0.08);
   background: #f5f5f2;
+  animation: hero-float 7s ease-in-out infinite;
+
+  @keyframes hero-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 `;
 
 export const HeroImage = styled.img`

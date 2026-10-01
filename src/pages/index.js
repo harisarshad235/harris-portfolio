@@ -9,7 +9,7 @@ import { HeroStage } from '../components/Hero/HeroStyles';
 const Home = () => {
   return (
     <Layout>
-      <HeroStage>
+      <HeroStage data-reveal>
         <Hero />
         <BgAnimation />
       </HeroStage>

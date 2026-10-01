@@ -26,7 +26,7 @@ const Contact = () => {
   };
 
   return (
-    <Section id="contact">
+    <Section id="contact" data-reveal>
       <ContactForm name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit}>
         <input type="hidden" name="form-name" value="contact" />
         <FormField hidden>

@@ -17,6 +17,7 @@ export const Img = styled.img`
   object-fit: contain;
   object-position: center;
   background: #ffffff;
+  transition: transform 320ms ease;
 `
 
 export const GridContainer = styled.section`
@@ -38,6 +39,50 @@ export const GridContainer = styled.section`
     padding-bottom: 0;
   }
 `
+
+export const FilterBar = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 0 0 1rem;
+`;
+
+export const FilterButton = styled.button`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid rgba(29, 42, 45, 0.2);
+  border-radius: 3px;
+  background: ${(props) => props['aria-pressed'] ? props.theme.colors.primary1 : 'transparent'};
+  color: ${(props) => props['aria-pressed'] ? '#ffffff' : props.theme.colors.primary1};
+  font: inherit;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+
+  &:hover {
+    border-color: ${(props) => props.theme.colors.primary1};
+  }
+
+  &:focus-visible {
+    outline: 3px solid rgba(26, 135, 129, 0.35);
+    outline-offset: 2px;
+  }
+`;
+
+export const FilterCount = styled.span`
+  color: inherit;
+  font-size: 1.2rem;
+  opacity: 0.72;
+`;
+
+export const FilterStatus = styled.p`
+  min-height: 1.8rem;
+  color: ${(props) => props.theme.colors.muted};
+  font-size: 1.3rem;
+`;
+
 export const BlogCard = styled.div`
   background: #FFFFFF;
   border: 1px solid rgba(29, 42, 45, 0.12);
@@ -48,6 +93,16 @@ export const BlogCard = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 42px rgba(29, 42, 45, 0.14);
+
+    img {
+      transform: scale(1.025);
+    }
+  }
 `;
 export const TitleContent = styled.div`
   text-align: center;
