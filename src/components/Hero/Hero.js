@@ -1,9 +1,9 @@
 import React from 'react';
-import { FiAward, FiBarChart2, FiDownload, FiMapPin } from 'react-icons/fi';
+import { FiAward, FiArrowRight, FiBarChart2, FiDownload, FiMapPin } from 'react-icons/fi';
 
 import { Section } from '../../styles/GlobalComponents';
 import Button from '../../styles/GlobalComponents/Button';
-import { ActionRow, DeliveryFocus, Eyebrow, HeroDescription, HeroImage, HeroImageWrap, HeroStat, HeroStats, HeroTitle, LeftSection, MetaItem, MetaRow, StatLabel, StatValue, VisualSection } from './HeroStyles';
+import { ActionLink, ActionRow, DeliveryFocus, Eyebrow, HeroDescription, HeroImage, HeroImageWrap, HeroStat, HeroStats, HeroTitle, LeftSection, MetaItem, MetaRow, StatLabel, StatValue, VisualSection } from './HeroStyles';
 
 const Hero = () => (
     <Section row nopadding>
@@ -29,6 +29,7 @@ const Hero = () => (
         <DeliveryFocus>PMO governance · Agile coordination · Vendor and stakeholder alignment</DeliveryFocus>
         <ActionRow>
           <Button aria-label="Download Haris Arshad's CV" onClick={() => window.open('/resume/haris-arshad-cv.pdf', '_blank', 'noopener,noreferrer')}> <FiDownload aria-hidden="true" /> Download CV</Button>
+          <ActionLink href="#services">Project management services <FiArrowRight aria-hidden="true" /></ActionLink>
         </ActionRow>
       </LeftSection>
       <VisualSection>

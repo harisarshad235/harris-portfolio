@@ -171,6 +171,21 @@ export const ActionRow = styled.div`
   }
 `;
 
+export const ActionLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: ${(props) => props.theme.colors.teal};
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+
+  &:focus-visible {
+    outline: 3px solid rgba(26, 135, 129, 0.35);
+    outline-offset: 4px;
+  }
+`;
+
 export const DeliveryFocus = styled.p`
   color: ${(props) => props.theme.colors.muted};
   font-size: 1.3rem;
@@ -189,6 +204,13 @@ export const SectionFormTitle = styled.h3`
   color: ${(props) => props.theme.colors.primary1};
   font-size: 2.4rem;
   margin-bottom: 1.8rem;
+`;
+
+export const BookingNote = styled.p`
+  margin: -0.6rem 0 1.8rem;
+  color: ${(props) => props.theme.colors.muted};
+  font-size: 1.4rem;
+  line-height: 1.5;
 `;
 
 export const FormGrid = styled.div`
@@ -238,6 +260,7 @@ const formControlStyles = `
 `;
 
 export const TextInput = styled.input`${formControlStyles}`;
+export const FormSelect = styled.select`${formControlStyles} cursor: pointer;`;
 export const TextArea = styled.textarea`${formControlStyles} resize: vertical; min-height: 120px;`;
 
 export const SubmitButton = styled.button`
