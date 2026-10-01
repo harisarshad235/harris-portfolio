@@ -1,4 +1,42 @@
 import styled from 'styled-components';
+import { SectionText, SectionTitle } from '../../styles/GlobalComponents';
+
+export const HeroStage = styled.div`
+  position: relative;
+  width: 100%;
+  max-width: 1136px;
+  margin: 0 auto;
+  padding: 0 48px;
+
+  > section {
+    position: relative;
+    z-index: 1;
+  }
+
+  > div:last-child {
+    position: absolute;
+    top: -3rem;
+    right: 0;
+    z-index: 0;
+    width: min(52vw, 560px);
+    opacity: 0.9;
+    pointer-events: none;
+  }
+
+  > div:last-child svg {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    g[opacity] {
+      opacity: 0.3;
+    }
+  }
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    padding: 0 16px;
+  }
+`;
 
 export const LeftSection = styled.div`
   width: 100%;
@@ -17,6 +55,38 @@ export const LeftSection = styled.div`
     flex-direction: column;
 
     margin: 0 auto;
+  }
+`;
+
+export const HeroTitle = styled(SectionTitle)`
+  width: 100%;
+  font-size: 5.2rem;
+  line-height: 1.1;
+  padding: 2.8rem 0 1.2rem;
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    font-size: 4.8rem;
+    line-height: 1.12;
+    padding: 2.4rem 0 1.2rem;
+  }
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    font-size: 3.2rem;
+    line-height: 1.15;
+    padding: 1.6rem 0 0.8rem;
+  }
+`;
+
+export const HeroDescription = styled(SectionText)`
+  max-width: 56ch;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  padding-bottom: 2.4rem;
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    font-size: 1.6rem;
+    line-height: 1.55;
+    padding-bottom: 1.6rem;
   }
 `;
 
@@ -83,6 +153,13 @@ export const ActionRow = styled.div`
     flex-direction: column;
     align-items: stretch;
   }
+`;
+
+export const DeliveryFocus = styled.p`
+  color: ${(props) => props.theme.colors.muted};
+  font-size: 1.3rem;
+  line-height: 1.5;
+  margin: -1.4rem 0 2.4rem;
 `;
 
 export const ContactForm = styled.form`
