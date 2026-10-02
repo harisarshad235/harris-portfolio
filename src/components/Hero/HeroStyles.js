@@ -116,8 +116,8 @@ export const HeroImageWrap = styled.div`
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 24px 60px rgba(29, 42, 45, 0.12);
-  border: 1px solid rgba(29, 42, 45, 0.08);
-  background: #f5f5f2;
+  border: 1px solid ${(props) => props.theme.colors.border};
+  background: ${(props) => props.theme.colors.softSurface};
   animation: hero-float 7s ease-in-out infinite;
 
   @keyframes hero-float {
@@ -272,7 +272,7 @@ export const ContactQuickLinks = styled.div`
   flex-wrap: wrap;
   gap: 1.8rem;
   padding-top: 1.8rem;
-  border-top: 1px solid rgba(29, 42, 45, 0.16);
+  border-top: 1px solid ${(props) => props.theme.colors.border};
 `;
 
 export const ContactQuickLink = styled.a`
@@ -293,14 +293,14 @@ export const ContactQuickLink = styled.a`
 export const BookingWidget = styled.div`
   min-width: 0;
   overflow: hidden;
-  border: 1px solid rgba(29, 42, 45, 0.14);
-  background: #ffffff;
+  border: 1px solid ${(props) => props.theme.colors.border};
+  background: ${(props) => props.theme.colors.background2};
 `;
 
 export const BookingWidgetHeading = styled.h3`
   margin: 0;
   padding: 1.4rem 1.6rem;
-  border-bottom: 1px solid rgba(29, 42, 45, 0.12);
+  border-bottom: 1px solid ${(props) => props.theme.colors.border};
   color: ${(props) => props.theme.colors.primary1};
   font-size: 1.6rem;
 `;
@@ -310,7 +310,7 @@ export const CalendlyFrame = styled.iframe`
   width: 100%;
   height: 680px;
   border: 0;
-  background: #ffffff;
+  background: ${(props) => props.theme.colors.background2};
 `;
 
 export const ContactForm = styled.form`
@@ -319,7 +319,7 @@ export const ContactForm = styled.form`
   grid-column: ${(props) => props.$wide ? '1 / -1' : 'auto'};
   margin: 0 0 5rem;
   padding-top: 2.4rem;
-  border-top: 1px solid rgba(29, 42, 45, 0.18);
+  border-top: 1px solid ${(props) => props.theme.colors.border};
 `;
 
 export const SectionFormTitle = styled.h3`
@@ -365,25 +365,25 @@ export const FormLabel = styled.label`
   font-weight: 700;
 `;
 
-const formControlStyles = `
+const formControlStyles = (props) => `
   width: 100%;
-  border: 1px solid rgba(29, 42, 45, 0.2);
+  border: 1px solid ${props.theme.colors.border};
   border-radius: 4px;
   padding: 1rem 1.2rem;
-  background: #ffffff;
-  color: #1D2A2D;
+  background: ${props.theme.colors.controlBackground};
+  color: ${props.theme.colors.primary1};
   font: inherit;
   font-size: 1.4rem;
 
   &:focus {
     outline: 3px solid rgba(26, 135, 129, 0.25);
-    border-color: #1A8781;
+    border-color: ${props.theme.colors.teal};
   }
 `;
 
-export const TextInput = styled.input`${formControlStyles}`;
-export const FormSelect = styled.select`${formControlStyles} cursor: pointer;`;
-export const TextArea = styled.textarea`${formControlStyles} resize: vertical; min-height: 120px;`;
+export const TextInput = styled.input`${(props) => formControlStyles(props)}`;
+export const FormSelect = styled.select`${(props) => formControlStyles(props)} cursor: pointer;`;
+export const TextArea = styled.textarea`${(props) => formControlStyles(props)} resize: vertical; min-height: 120px;`;
 
 export const SubmitButton = styled.button`
   margin-top: 1.8rem;
@@ -391,7 +391,7 @@ export const SubmitButton = styled.button`
   border-radius: 999px;
   padding: 1.1rem 1.8rem;
   background: ${(props) => props.theme.colors.accent1};
-  color: #ffffff;
+  color: ${(props) => props.theme.colors.accentForeground};
   font: inherit;
   font-size: 1.5rem;
   font-weight: 700;
@@ -431,8 +431,8 @@ export const HeroStats = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   max-width: 650px;
-  border-top: 1px solid rgba(29, 42, 45, 0.18);
-  border-bottom: 1px solid rgba(29, 42, 45, 0.18);
+  border-top: 1px solid ${(props) => props.theme.colors.border};
+  border-bottom: 1px solid ${(props) => props.theme.colors.border};
   margin-bottom: 3.2rem;
 
   @media ${(props) => props.theme.breakpoints.sm} {
@@ -442,7 +442,7 @@ export const HeroStats = styled.div`
 
 export const HeroStat = styled.div`
   padding: 1.5rem 1.5rem 1.5rem 0;
-  border-right: 1px solid rgba(29, 42, 45, 0.18);
+  border-right: 1px solid ${(props) => props.theme.colors.border};
 
   &:last-child {
     border-right: none;

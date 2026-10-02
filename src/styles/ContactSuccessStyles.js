@@ -14,7 +14,7 @@ export const SuccessLink = styled.a`
   padding: 1.1rem 1.8rem;
   border-radius: 999px;
   background: ${(props) => props.theme.colors.accent1};
-  color: #ffffff;
+  color: ${(props) => props.theme.colors.accentForeground};
   font-size: 1.5rem;
   font-weight: 700;
 

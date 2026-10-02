@@ -114,7 +114,7 @@ export const SectionSubText = styled.p`
 export const SecondaryBtn = styled.button`
   color: ${(props) => props.theme.colors.primary1};
   background: none;
-  border: 1px solid rgba(29, 42, 45, 0.25);
+  border: 1px solid ${(props) => props.theme.colors.border};
   box-sizing: border-box;
   border-radius: 999px;
   padding: 16px 24px;
@@ -135,14 +135,14 @@ export const SecondaryBtn = styled.button`
   }
 
   &:hover {
-    color: #fff;
+    color: ${(props) => props.theme.colors.background1};
     background: ${(props) => props.theme.colors.primary1};
     border: 1px solid ${(props) => props.theme.colors.primary1};
   }
 
   &:active {
-    background: #e0e4eb;
-    border: 1px solid #304169;
+    background: ${(props) => props.theme.colors.softSurface};
+    border: 1px solid ${(props) => props.theme.colors.border};
     box-shadow: inset 0px 2px 1px rgba(46, 49, 55, 0.15), inset 0px 0px 4px rgba(20, 20, 55, 0.3);
   }
 
@@ -175,7 +175,7 @@ export const ButtonBack = styled.div`
   align-items: center;
   justify-content: center;
   margin: ${({ alt, form }) => (alt || form) ? '0' : '0 0 80px'};
-  color: #fff;
+  color: ${(props) => props.theme.colors.background1};
   background: ${(props) => props.theme.colors.primary1};
   cursor: pointer;
   transition: 0.5s ease;
@@ -201,7 +201,7 @@ export const ButtonBack = styled.div`
 export const ButtonFront = styled.button`
   border: none;
   border-radius: 50px;
-  color: #fff;
+  color: ${(props) => props.theme.colors.accentForeground};
   display: flex;
   position: absolute;
   top: 0;

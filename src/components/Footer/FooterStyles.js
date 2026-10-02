@@ -17,14 +17,14 @@ export const FooterWrapper = styled.section`
 export const LinkItem = styled.a`
 	font-size: 18px;
 	line-height: 30px;
-	color: rgba(29, 42, 45, 0.7);
+	color: ${(props) => props.theme.colors.muted};
 	margin-bottom: 16px;
 	transition: .3s ease;
 	position: relative;
 	left: 0;
 
 	&:hover {
-		color: #E5674F;
+		color: ${(props) => props.theme.colors.accent1};
 		left: 6px;
 	}
 
@@ -114,7 +114,7 @@ export const CopyRight = styled.div`
 
 
 export const Slogan = styled.p`
-	color: rgba(29, 42, 45, 0.55);
+	color: ${(props) => props.theme.colors.muted};
 	min-width: 280px;
 	letter-spacing: 0.02em;
 	font-size: 18px;
@@ -146,7 +146,7 @@ export const SocialContainer = styled.div`
 
 
 export const LinkList = styled.ul`
-	border-top: 1px solid rgba(29, 42, 45, 0.14);
+	border-top: 1px solid ${(props) => props.theme.colors.border};
   display: grid;
 	grid-template-columns: repeat(3, minmax(85px, 220px));
 	gap: 40px;

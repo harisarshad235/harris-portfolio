@@ -51,7 +51,7 @@ export const CarouselItem = styled.div`
   @media ${props => props.theme.breakpoints.sm} {
     margin-left: 32px;
     min-width: 120px;
-    background: #E8DED5;
+    background: ${(props) => props.theme.colors.softSurface};
     padding: 4px;
     align-content: start;
     scroll-snap-align: start;
@@ -71,7 +71,7 @@ export const CarouselItemTitle = styled.h4`
   letter-spacing: 0.02em;
   display: flex;
   /* This gradient is different due to the size of the Title container, it must transition sooner to be visible on the text */
-  color: #1D2A2D;
+  color: ${(props) => props.theme.colors.primary1};
   margin-bottom: 8px;
 
   @media ${props => props.theme.breakpoints.md} {
@@ -101,7 +101,7 @@ export const CarouselItemText = styled.p`
   font-size: 14px;
   line-height: 22px;
   letter-spacing: 0.02em;
-  color: #687372;
+  color: ${(props) => props.theme.colors.muted};
   padding-right: 16px;
 
   @media ${props => props.theme.breakpoints.md} {
@@ -144,7 +144,7 @@ export const CarouselButton = styled.button`
 `
 
 export const CarouselButtonDot = styled.div`
-  background-color: #E5674F;
+  background-color: ${(props) => props.theme.colors.accent1};
   border-radius: 10px;
   margin: auto;
   width: 3px;

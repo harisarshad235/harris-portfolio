@@ -2,18 +2,27 @@ import React, { useState } from 'react';
 import { FiClock, FiMail, FiPhone } from 'react-icons/fi';
 
 import Services from '../Services/Services';
+import { useThemeMode } from '../../styles/theme';
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
 import { BookingNote, BookingWidget, BookingWidgetHeading, CalendlyFrame, ContactAgenda, ContactAgendaItem, ContactCopy, ContactForm, ContactGrid, ContactHeading, ContactIntro, ContactOverline, ContactQuickLink, ContactQuickLinks, FormField, FormGrid, FormLabel, FormSelect, FormStatus, SectionFormTitle, SubmitButton, TextArea, TextInput } from '../Hero/HeroStyles';
 
 const configuredCalendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/harisarshad235/30min';
-const calendlyUrl = configuredCalendlyUrl.startsWith('https://calendly.com/')
-  ? `${configuredCalendlyUrl}${configuredCalendlyUrl.includes('?') ? '&' : '?'}hide_gdpr_banner=1&background_color=f4f0ea&text_color=1d2a2d&primary_color=e5674f`
-  : '';
+
+const getCalendlyUrl = (mode) => {
+  if (!configuredCalendlyUrl.startsWith('https://calendly.com/')) return '';
+  const colors = mode === 'dark'
+    ? 'background_color=151d1f&text_color=f1f5f4&primary_color=f18a75'
+    : 'background_color=f4f0ea&text_color=1d2a2d&primary_color=e5674f';
+  const separator = configuredCalendlyUrl.includes('?') ? '&' : '?';
+  return `${configuredCalendlyUrl}${separator}hide_gdpr_banner=1&${colors}`;
+};
 
 const Contact = () => {
+  const { mode } = useThemeMode();
   const [formState, setFormState] = useState('idle');
   const [selectedService, setSelectedService] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+  const calendlyUrl = getCalendlyUrl(mode);
 
   const handleSubmit = async (event) => {
     event.preventDefault();

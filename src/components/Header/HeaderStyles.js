@@ -9,7 +9,7 @@ export const Container = styled.div`
   padding: 1rem;
   padding-top: 2rem;
   align-items: center;
-  border-bottom: 1px solid rgba(29, 42, 45, 0.12);
+  border-bottom: 1px solid ${(props) => props.theme.colors.border};
 
   @media ${(props) => props.theme.breakpoints.sm} {
     display: grid;
@@ -20,9 +20,39 @@ export const Container = styled.div`
   }
 `;
 
+export const ThemeToggleButton = styled.button`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  padding: 0;
+  border: 1px solid ${(props) => props.theme.colors.border};
+  border-radius: 50%;
+  color: ${(props) => props.theme.colors.primary1};
+  background: transparent;
+  cursor: pointer;
+  transition: color 180ms ease, background 180ms ease, border-color 180ms ease;
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &:hover {
+    color: ${(props) => props.theme.colors.accent1};
+    background: ${(props) => props.theme.colors.softSurface};
+  }
+
+  &:focus-visible {
+    outline: 3px solid ${(props) => props.theme.colors.teal};
+    outline-offset: 3px;
+  }
+`;
+
 export const Span= styled.span`
   font-size: 2rem;
-  color: #1D2A2D;
+  color: ${(props) => props.theme.colors.primary1};
   font-weight: 700;
 `;
 
@@ -58,10 +88,10 @@ export const Div3 = styled.div`
 export const NavLink = styled.a`
   font-size: 2rem;
   line-height: 32px;
-  color: rgba(29, 42, 45, 0.7);
+  color: ${(props) => props.theme.colors.muted};
   transition: 0.4s ease;
   &:hover {
-    color: #E5674F;
+    color: ${(props) => props.theme.colors.accent1};
     opacity: 1;
     cursor: pointer;
   }
@@ -125,11 +155,11 @@ export const NavProductsIcon = styled(IoIosArrowDropdown)`
 
 export const SocialIcons = styled.a`
 transition: 0.3s ease;
-color: #1D2A2D;
+color: ${(props) => props.theme.colors.primary1};
 border-radius: 50px;
   padding: 8px;
 &:hover {
-    background-color: #E8DED5;
+    background-color: ${(props) => props.theme.colors.softSurface};
     transform: scale(1.2);
     cursor: pointer;
     

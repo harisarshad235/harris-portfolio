@@ -4,7 +4,7 @@ export const ImageWrapper = styled.div`
   width: 100%;
   height: 200px;
   overflow: hidden;
-  background: #f3f4f6;
+  background: ${(props) => props.theme.colors.softSurface};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,7 +16,7 @@ export const Img = styled.img`
   height: 100%;
   object-fit: contain;
   object-position: center;
-  background: #ffffff;
+  background: ${(props) => props.theme.colors.controlBackground};
   transition: transform 320ms ease;
 `
 
@@ -52,10 +52,10 @@ export const FilterButton = styled.button`
   align-items: center;
   gap: 0.8rem;
   padding: 0.8rem 1.2rem;
-  border: 1px solid rgba(29, 42, 45, 0.2);
+  border: 1px solid ${(props) => props.theme.colors.border};
   border-radius: 3px;
   background: ${(props) => props['aria-pressed'] ? props.theme.colors.primary1 : 'transparent'};
-  color: ${(props) => props['aria-pressed'] ? '#ffffff' : props.theme.colors.primary1};
+  color: ${(props) => props['aria-pressed'] ? props.theme.colors.background1 : props.theme.colors.primary1};
   font: inherit;
   font-size: 1.4rem;
   cursor: pointer;
@@ -84,8 +84,8 @@ export const FilterStatus = styled.p`
 `;
 
 export const BlogCard = styled.div`
-  background: #FFFFFF;
-  border: 1px solid rgba(29, 42, 45, 0.12);
+  background: ${(props) => props.theme.colors.background2};
+  border: 1px solid ${(props) => props.theme.colors.border};
   border-radius: 4px;
   box-shadow: 0 14px 35px rgba(29, 42, 45, 0.08);
   text-align: center;
@@ -115,7 +115,7 @@ export const TitleContent = styled.div`
 export const HeaderThree = styled.h3`
   font-weight: 500;
   letter-spacing: 1px;
-  color: #1D2A2D;
+  color: ${(props) => props.theme.colors.primary1};
   padding: .5rem 0 0;
   margin: 0;
   font-size: ${(props) => props.$large ? '3rem' : '2rem'};
@@ -126,13 +126,13 @@ export const Hr = styled.hr`
   height: 3px;
   margin: 1.4rem auto 1.8rem;
   border: 0;
-  background: #E5674F;
+  background: ${(props) => props.theme.colors.accent1};
 `;
 
 export const Intro = styled.div`
   width: 170px;
   margin: 0 auto;
-  color: #dce3e7;
+  color: ${(props) => props.theme.colors.muted};
   font-family: 'Droid Serif', serif;
   font-size: 13px;
   font-style: italic;
@@ -143,7 +143,7 @@ export const Intro = styled.div`
 export const CardInfo = styled.p`
   width: 100%;
   padding: 0 2.2rem;
-  color: #687372;
+  color: ${(props) => props.theme.colors.muted};
   font-size: 1.5rem;
   line-height: 1.6;
   text-align: left;
@@ -157,13 +157,13 @@ export const ProjectImpact = styled.p`
   width: 100%;
   padding: 0 2.2rem;
   margin: 0 0 1.2rem;
-  color: #1A8781;
+  color: ${(props) => props.theme.colors.teal};
   font-size: 1.35rem;
   line-height: 1.5;
   text-align: left;
 
   strong {
-    color: #1D2A2D;
+    color: ${(props) => props.theme.colors.primary1};
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
@@ -183,14 +183,14 @@ export const UtilityList = styled.ul`
 `;
 
 export const ExternalLinks = styled.a`
-color:#FFFFFF;
+color:${(props) => props.theme.colors.background1};
 font-size: 1.6rem;
 padding:1rem 1.5rem;
-background: #1D2A2D;
+background: ${(props) => props.theme.colors.primary1};
 border-radius: 3px;
 transition: 0.5s;
 &:hover{
-  background: #E5674F;
+  background: ${(props) => props.theme.colors.accent1};
 
 }
 
@@ -211,7 +211,7 @@ export const TagList = styled.ul`
 `;
 
 export const Tag = styled.li`
-  color: #1A8781;
+  color: ${(props) => props.theme.colors.teal};
   font-size: 1.3rem;
   line-height: 1.4;
   white-space: normal;

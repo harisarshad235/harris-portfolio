@@ -18,7 +18,7 @@ export const ServiceItem = styled.article`
   align-items: flex-start;
   min-width: 0;
   padding: 1.8rem 0 0;
-  border-top: 2px solid rgba(29, 42, 45, 0.2);
+  border-top: 2px solid ${(props) => props.theme.colors.border};
 
   &:nth-child(3n + 1) {
     border-color: ${(props) => props.theme.colors.teal};

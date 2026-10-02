@@ -2,14 +2,33 @@ import Link from 'next/link';
 import React from 'react';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { DiCssdeck } from 'react-icons/di';
+import { FiMoon, FiSun } from 'react-icons/fi';
 
-import { Container, Div1, Div2, Div3, NavLink, SocialIcons, Span } from './HeaderStyles';
+import { useThemeMode } from '../../styles/theme';
+import { Container, Div1, Div2, Div3, NavLink, SocialIcons, Span, ThemeToggleButton } from './HeaderStyles';
+
+const ThemeToggle = () => {
+  const { mode, toggleTheme } = useThemeMode();
+  const nextMode = mode === 'dark' ? 'light' : 'dark';
+
+  return (
+    <ThemeToggleButton
+      type="button"
+      onClick={toggleTheme}
+      aria-label={`Switch to ${nextMode} mode`}
+      aria-pressed={mode === 'dark'}
+      title={`Switch to ${nextMode} mode`}
+    >
+      {mode === 'dark' ? <FiSun aria-hidden="true" /> : <FiMoon aria-hidden="true" />}
+    </ThemeToggleButton>
+  );
+};
 
 const Header = () =>  (
   <Container>
     <Div1>
       <Link href='/'>
-        <a style={{display:"flex",alignItems:"center",color:"#1D2A2D",marginBottom:"20"}}>
+        <a style={{display:"flex",alignItems:"center",marginBottom:"20"}}>
           <DiCssdeck size="3rem"/> <Span>Harris Arshad </Span>
         </a>
       </Link>
@@ -37,6 +56,7 @@ const Header = () =>  (
       </li>
     </Div2>
     <Div3>
+      <ThemeToggle />
         <SocialIcons href='https://github.com/harisarshad235' target='_blank' rel='noopener noreferrer' aria-label='Visit Harris Arshad on GitHub'>
         <AiFillGithub size="3rem" aria-hidden="true"/>
       </SocialIcons>
