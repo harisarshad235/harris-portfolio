@@ -19,13 +19,13 @@ Requests to the project’s `*.pages.dev` hostname are permanently redirected to
 
 #### Contact form
 
-The contact form is handled by `functions/api/contact.js` and sends submissions through Resend. Verify `harisarshad.site` with Resend, then add these variables to the Cloudflare Pages project under **Settings → Variables and Secrets** for both production and preview environments as appropriate:
+The contact form is handled by `functions/api/contact.js` and sends submissions through [Resend](https://resend.com/). Verify `harisarshad.site` with Resend, then add these variables to the Cloudflare Pages project under **Settings → Variables and Secrets** for the Production environment:
 
 - `RESEND_API_KEY` — a Resend API key; mark it as a secret.
 - `CONTACT_FROM_EMAIL` — a sender on the verified domain, for example `Haris Arshad <contact@harisarshad.site>`.
 - `CONTACT_TO_EMAIL` — the inbox that should receive messages, for example `harisarshad235@gmail.com`.
 
-The form returns an error until these values are configured, rather than reporting a message as sent when delivery is unavailable.
+The form reports a delivery error until these values are configured. Replies to contact messages go to the visitor's email address.
 
 ### Optional analytics
 

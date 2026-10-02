@@ -43,6 +43,7 @@ const Contact = () => {
       const message = String(formData.get('message') || '').trim();
       formData.set('message', `${message}\n\nRequest details:\n${requestDetails.join('\n')}`);
     }
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -50,15 +51,9 @@ const Contact = () => {
         body: JSON.stringify(Object.fromEntries(formData.entries())),
       });
 
-      let result;
-      try {
-        result = await response.json();
-      } catch {
-        throw new Error('The contact service returned an unexpected response. Please email me directly.');
-      }
-
-      if (!response.ok) {
-        throw new Error(result.error || `Your message could not be sent (HTTP ${response.status}).`);
+      const result = await response.json();
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Contact form submission failed.');
       }
 
       form.reset();
@@ -70,7 +65,7 @@ const Contact = () => {
     } catch (error) {
       console.error('Contact form submission failed.', error);
       setErrorMessage(error instanceof Error
-        ? error.message
+        ? `${error.message} You can also email me directly.`
         : 'Your message could not be sent. Please email me directly.');
       setFormState('error');
     }

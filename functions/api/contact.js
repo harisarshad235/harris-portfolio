@@ -13,15 +13,13 @@ const FIELD_LIMITS = {
 
 const jsonResponse = (body, status) => new Response(JSON.stringify(body), {
   status,
-  headers: { 'Content-Type': 'application/json; charset=utf-8' },
+  headers: {
+    'Cache-Control': 'no-store',
+    'Content-Type': 'application/json; charset=utf-8',
+  },
 });
 
 export async function onRequestPost({ request, env }) {
-  const contentType = request.headers.get('Content-Type') || '';
-  if (!contentType.toLowerCase().startsWith('application/json')) {
-    return jsonResponse({ error: 'Content-Type must be application/json.' }, 415);
-  }
-
   const contentLength = Number(request.headers.get('Content-Length') || 0);
   if (contentLength > MAX_BODY_BYTES) {
     return jsonResponse({ error: 'The submitted message is too large.' }, 413);
@@ -52,7 +50,7 @@ export async function onRequestPost({ request, env }) {
   }
 
   if (fields['bot-field']) {
-    return jsonResponse({ error: 'The submitted message could not be accepted.' }, 400);
+    return jsonResponse({ success: true });
   }
 
   if (!fields.name || !fields.subject || !fields.service || !fields.message) {
@@ -68,7 +66,7 @@ export async function onRequestPost({ request, env }) {
   const { RESEND_API_KEY, CONTACT_FROM_EMAIL, CONTACT_TO_EMAIL } = env;
   if (!RESEND_API_KEY || !CONTACT_FROM_EMAIL || !CONTACT_TO_EMAIL) {
     console.error('Contact form is missing RESEND_API_KEY, CONTACT_FROM_EMAIL, or CONTACT_TO_EMAIL.');
-    return jsonResponse({ error: 'Contact form delivery is not configured.' }, 500);
+    return jsonResponse({ error: 'Contact form delivery is not configured.' }, 503);
   }
 
   const messageLines = [
@@ -95,7 +93,7 @@ export async function onRequestPost({ request, env }) {
         from: CONTACT_FROM_EMAIL,
         to: [CONTACT_TO_EMAIL],
         reply_to: fields.email,
-        subject: `Portfolio contact: ${fields.subject}`,
+        subject: `Portfolio inquiry: ${fields.subject}`,
         text: messageLines.join('\n'),
       }),
     });
@@ -109,5 +107,5 @@ export async function onRequestPost({ request, env }) {
     return jsonResponse({ error: 'The message could not be delivered. Please try again later.' }, 502);
   }
 
-  return jsonResponse({ ok: true }, 200);
+  return jsonResponse({ success: true });
 }
