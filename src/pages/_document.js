@@ -52,18 +52,6 @@ export default class MyDocument extends Document {
         </Head>
         <body>
           <Main />
-          <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
-            <input type="hidden" name="form-name" value="contact" />
-            <input type="text" name="name" />
-            <input type="email" name="email" />
-            <input type="text" name="company" />
-            <input type="text" name="subject" />
-            <input type="text" name="service" />
-            <input type="text" name="preferred-date" />
-            <input type="text" name="preferred-time" />
-            <textarea name="message" />
-            <input type="text" name="bot-field" />
-          </form>
           <NextScript />
         </body>
       </Html>
