@@ -7,7 +7,6 @@ import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalCompon
 import { BookingNote, BookingWidget, BookingWidgetHeading, CalendlyFrame, ContactAgenda, ContactAgendaItem, ContactCopy, ContactForm, ContactGrid, ContactHeading, ContactIntro, ContactOverline, ContactQuickLink, ContactQuickLinks, FormField, FormGrid, FormLabel, FormSelect, FormStatus, SectionFormTitle, SubmitButton, TextArea, TextInput } from '../Hero/HeroStyles';
 
 const configuredCalendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/harisarshad235/30min';
-const contactFormEndpoint = 'https://formsubmit.co/ajax/harisarshad235@gmail.com';
 
 const getCalendlyUrl = (mode) => {
   if (!configuredCalendlyUrl.startsWith('https://calendly.com/')) return '';
@@ -42,26 +41,18 @@ const Contact = () => {
       const message = String(formData.get('message') || '').trim();
       formData.set('message', `${message}\n\nRequest details:\n${requestDetails.join('\n')}`);
     }
-    const submission = Object.fromEntries(formData.entries());
-    submission._honey = submission['bot-field'];
-    delete submission['bot-field'];
-    submission._subject = `Portfolio inquiry: ${submission.subject}`;
-    submission._replyto = submission.email;
+    const body = Array.from(formData.entries())
+      .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+      .join('&');
 
     try {
-      const response = await fetch(contactFormEndpoint, {
+      const response = await fetch('/', {
         method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(submission),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body,
       });
 
-      const result = await response.json();
-      if (!response.ok || result.success !== 'true') {
-        throw new Error(result.message || 'Contact form submission failed');
-      }
+      if (!response.ok) throw new Error('Contact form submission failed');
 
       form.reset();
       setSelectedService('');
@@ -101,7 +92,8 @@ const Contact = () => {
           <CalendlyFrame src={calendlyUrl} title="Choose a project consultation time" loading="lazy" />
         </BookingWidget>
       )}
-      <ContactForm id="contact-form" $wide={Boolean(calendlyUrl)} name="contact" onSubmit={handleSubmit}>
+      <ContactForm id="contact-form" $wide={Boolean(calendlyUrl)} name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit}>
+        <input type="hidden" name="form-name" value="contact" />
         <FormField hidden>
           <FormLabel htmlFor="contact-bot">Do not fill this field</FormLabel>
           <TextInput id="contact-bot" name="bot-field" tabIndex="-1" autoComplete="off" />

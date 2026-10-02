@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://harris-portfolio-aom.pages.dev/sitemap.xml
+Sitemap: https://harrisarshadportfolio.netlify.app/sitemap.xml
