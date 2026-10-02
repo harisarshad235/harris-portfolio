@@ -60,7 +60,7 @@ const Header = () =>  (
         <SocialIcons href='https://github.com/harisarshad235' target='_blank' rel='noopener noreferrer' aria-label='Visit Harris Arshad on GitHub'>
         <AiFillGithub size="3rem" aria-hidden="true"/>
       </SocialIcons>
-      <SocialIcons href='https://www.linkedin.com/in/haris-arshad-11b757168/' target='_blank' rel='noopener noreferrer' aria-label='Visit Harris Arshad on LinkedIn'>
+      <SocialIcons href='https://pk.linkedin.com/in/haris-arshad' target='_blank' rel='noopener noreferrer' aria-label='Visit Harris Arshad on LinkedIn'>
         <AiFillLinkedin size="3rem" aria-hidden="true"/>
       </SocialIcons>
 
