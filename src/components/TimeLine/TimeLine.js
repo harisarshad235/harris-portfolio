@@ -47,7 +47,7 @@ const Timeline = () => {
     <Section id="about" data-reveal>
       <SectionTitle>About Haris Arshad</SectionTitle>
       <SectionText>
-      My experience spans construction PMO, public-sector programs, and software and digital product delivery. With a background in electrical engineering, I connect business goals with practical plans—coordinating teams and vendors, tracking budgets, schedules, risks, and dependencies, and keeping stakeholders informed through delivery. I&apos;ve managed a PKR 700M+ portfolio across 150+ sites and coordinated technology projects from requirements through release.
+      My experience spans construction PMO, public-sector programs, and software and digital product delivery. I bring structure to complex work through integrated schedules, budget and forecast tracking, risk and dependency management, vendor coordination, and clear stakeholder reporting. Across a PKR 700M+ portfolio and 150+ sites, I have strengthened delivery visibility and helped teams move projects from requirements and planning through UAT, release, and handover.
       </SectionText>
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>
