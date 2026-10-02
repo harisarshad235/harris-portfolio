@@ -53,7 +53,7 @@ const Contact = () => {
 
       const result = await response.json();
       if (!response.ok || !result.success) {
-        throw new Error(result.message || 'Contact form submission failed.');
+        throw new Error(result.error || result.message || 'Contact form submission failed.');
       }
 
       form.reset();
