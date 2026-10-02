@@ -42,15 +42,11 @@ const Contact = () => {
       formData.set('message', `${message}\n\nRequest details:\n${requestDetails.join('\n')}`);
     }
 
-    const body = Array.from(formData.entries())
-      .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
-      .join('&');
-
     try {
-      const response = await fetch('/', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(formData.entries())),
       });
 
       if (!response.ok) throw new Error('Contact form submission failed');
@@ -93,8 +89,7 @@ const Contact = () => {
           <CalendlyFrame src={calendlyUrl} title="Choose a project consultation time" loading="lazy" />
         </BookingWidget>
       )}
-      <ContactForm id="contact-form" $wide={Boolean(calendlyUrl)} name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit}>
-        <input type="hidden" name="form-name" value="contact" />
+      <ContactForm id="contact-form" $wide={Boolean(calendlyUrl)} name="contact" onSubmit={handleSubmit}>
         <FormField hidden>
           <FormLabel htmlFor="contact-bot">Do not fill this field</FormLabel>
           <TextInput id="contact-bot" name="bot-field" tabIndex="-1" autoComplete="off" />
