@@ -47,7 +47,7 @@ const Timeline = () => {
     <Section id="about" data-reveal>
       <SectionTitle>About Haris Arshad</SectionTitle>
       <SectionText>
-      I am a PMP®-certified Project Manager with a Master&apos;s in Project Management. I lead IT, software, and digital transformation projects in Islamabad, Pakistan, working where business needs, delivery teams, and operational control meet. My focus is PMO governance, project planning and control, Agile delivery, risk management, and stakeholder reporting. I clarify priorities, surface risk early, and give stakeholders the visibility to make better decisions.
+      My experience spans construction PMO, public-sector programs, and software and digital product delivery. With a background in electrical engineering, I connect business goals with practical plans—coordinating teams and vendors, tracking budgets, schedules, risks, and dependencies, and keeping stakeholders informed through delivery. I&apos;ve managed a PKR 700M+ portfolio across 150+ sites and coordinated technology projects from requirements through release.
       </SectionText>
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>
