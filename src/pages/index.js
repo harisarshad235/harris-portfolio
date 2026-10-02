@@ -9,7 +9,7 @@ import Timeline from '../components/TimeLine/TimeLine';
 import { Layout } from '../layout/Layout';
 import { HeroStage } from '../components/Hero/HeroStyles';
 
-const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || process.env.URL || '').replace(/\/$/, '');
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || process.env.URL || 'https://harris-portfolio-aom.pages.dev').replace(/\/$/, '');
 const pageTitle = 'Haris Arshad | PMP Project Manager in Islamabad, Pakistan';
 const pageDescription = 'PMP Project Manager in Islamabad, Pakistan, leading IT project management, PMO governance, Agile delivery and digital transformation for technology teams.';
 const profileImage = `${siteUrl}/images/haris-arshad-profile.jpeg`;
