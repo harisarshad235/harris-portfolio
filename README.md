@@ -4,7 +4,7 @@
 
 ### Cloudflare Pages deployment
 
-This site is exported as a static Next.js site and its contact endpoint runs as a Cloudflare Pages Function.
+This site is exported as a static Next.js site for Cloudflare Pages.
 
 - Build command: `npm run build`
 - Build output directory: `out`
@@ -15,12 +15,9 @@ Cloudflare Pages uses the npm lockfile (`package-lock.json`) to install dependen
 
 Set `NEXT_PUBLIC_SITE_URL` to the public site origin (for example, `https://your-domain.example`) in the Pages build environment so canonical and social-sharing URLs are generated correctly.
 
-The contact function sends submissions through [Resend](https://resend.com/). In the Cloudflare Pages project settings, configure:
+The contact form uses [FormSubmit](https://formsubmit.co/) to email submissions to `harisarshad235@gmail.com`. You do not need to own a domain or add an API key. After the first test submission, FormSubmit sends an activation email to that inbox; open it and confirm to enable delivery. FormSubmit is an external service and will receive the form details.
 
-- `RESEND_API_KEY` as a secret containing your Resend API key.
-- `RESEND_FROM_EMAIL` as a variable containing a sender address on a domain verified with Resend (for example, `Portfolio <contact@your-verified-domain.example>`).
-
-The function sends messages to `harisarshad235@gmail.com`; replies go to the address entered on the form.
+Replies to submissions go to the address entered on the form.
 
 ### Optional analytics
 

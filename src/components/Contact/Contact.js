@@ -7,6 +7,7 @@ import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalCompon
 import { BookingNote, BookingWidget, BookingWidgetHeading, CalendlyFrame, ContactAgenda, ContactAgendaItem, ContactCopy, ContactForm, ContactGrid, ContactHeading, ContactIntro, ContactOverline, ContactQuickLink, ContactQuickLinks, FormField, FormGrid, FormLabel, FormSelect, FormStatus, SectionFormTitle, SubmitButton, TextArea, TextInput } from '../Hero/HeroStyles';
 
 const configuredCalendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/harisarshad235/30min';
+const contactFormEndpoint = 'https://formsubmit.co/ajax/harisarshad235@gmail.com';
 
 const getCalendlyUrl = (mode) => {
   if (!configuredCalendlyUrl.startsWith('https://calendly.com/')) return '';
@@ -41,15 +42,26 @@ const Contact = () => {
       const message = String(formData.get('message') || '').trim();
       formData.set('message', `${message}\n\nRequest details:\n${requestDetails.join('\n')}`);
     }
+    const submission = Object.fromEntries(formData.entries());
+    submission._honey = submission['bot-field'];
+    delete submission['bot-field'];
+    submission._subject = `Portfolio inquiry: ${submission.subject}`;
+    submission._replyto = submission.email;
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch(contactFormEndpoint, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(Object.fromEntries(formData.entries())),
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(submission),
       });
 
-      if (!response.ok) throw new Error('Contact form submission failed');
+      const result = await response.json();
+      if (!response.ok || result.success !== 'true') {
+        throw new Error(result.message || 'Contact form submission failed');
+      }
 
       form.reset();
       setSelectedService('');
