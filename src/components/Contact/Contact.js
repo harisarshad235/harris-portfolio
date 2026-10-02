@@ -22,11 +22,13 @@ const Contact = () => {
   const [formState, setFormState] = useState('idle');
   const [selectedService, setSelectedService] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const calendlyUrl = getCalendlyUrl(mode);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setFormState('sending');
+    setErrorMessage('');
 
     const form = event.currentTarget;
     const formData = new FormData(form);
@@ -48,7 +50,16 @@ const Contact = () => {
         body: JSON.stringify(Object.fromEntries(formData.entries())),
       });
 
-      if (!response.ok) throw new Error('Contact form submission failed');
+      let result;
+      try {
+        result = await response.json();
+      } catch {
+        throw new Error('The contact service returned an unexpected response. Please email me directly.');
+      }
+
+      if (!response.ok) {
+        throw new Error(result.error || `Your message could not be sent (HTTP ${response.status}).`);
+      }
 
       form.reset();
       setSelectedService('');
@@ -56,7 +67,11 @@ const Contact = () => {
         ? 'Consultation request sent. I’ll follow up by email.'
         : 'Message sent. Thank you, I will get back to you soon.');
       setFormState('sent');
-    } catch {
+    } catch (error) {
+      console.error('Contact form submission failed.', error);
+      setErrorMessage(error instanceof Error
+        ? error.message
+        : 'Your message could not be sent. Please email me directly.');
       setFormState('error');
     }
   };
@@ -138,7 +153,7 @@ const Contact = () => {
         </FormGrid>
         <SubmitButton type="submit" disabled={formState === 'sending'}>{formState === 'sending' ? 'Sending...' : 'Send message'}</SubmitButton>
         {formState === 'sent' && <FormStatus role="status">{successMessage}</FormStatus>}
-        {formState === 'error' && <FormStatus $error role="alert">Your message could not be sent. Please try again.</FormStatus>}
+        {formState === 'error' && <FormStatus $error role="alert">{errorMessage}</FormStatus>}
       </ContactForm>
       </ContactGrid>
     </Section>
