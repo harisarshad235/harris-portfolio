@@ -30,6 +30,11 @@ const Header = () =>  (
           <NavLink>About</NavLink>
         </Link>
       </li>
+      <li>
+        <Link href="#skills">
+          <NavLink>Skills</NavLink>
+        </Link>
+      </li>
     </Div2>
     <Div3>
         <SocialIcons href='https://github.com/harisarshad235' target='_blank' rel='noopener noreferrer' aria-label='Visit Harris Arshad on GitHub'>
