@@ -29,7 +29,7 @@ const Header = () =>  (
     <Div1>
       <Link href='/'>
         <a style={{display:"flex",alignItems:"center",marginBottom:"20"}}>
-          <DiCssdeck size="3rem"/> <Span>Harris Arshad </Span>
+          <DiCssdeck size="3rem"/> <Span>Haris Arshad </Span>
         </a>
       </Link>
     </Div1>
@@ -57,10 +57,10 @@ const Header = () =>  (
     </Div2>
     <Div3>
       <ThemeToggle />
-        <SocialIcons href='https://github.com/harisarshad235' target='_blank' rel='noopener noreferrer' aria-label='Visit Harris Arshad on GitHub'>
+        <SocialIcons href='https://github.com/harisarshad235' target='_blank' rel='noopener noreferrer' aria-label='Visit Haris Arshad on GitHub'>
         <AiFillGithub size="3rem" aria-hidden="true"/>
       </SocialIcons>
-      <SocialIcons href='https://pk.linkedin.com/in/haris-arshad' target='_blank' rel='noopener noreferrer' aria-label='Visit Harris Arshad on LinkedIn'>
+      <SocialIcons href='https://pk.linkedin.com/in/haris-arshad' target='_blank' rel='noopener noreferrer' aria-label='Visit Haris Arshad on LinkedIn'>
         <AiFillLinkedin size="3rem" aria-hidden="true"/>
       </SocialIcons>
 

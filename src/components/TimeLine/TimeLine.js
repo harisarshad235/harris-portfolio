@@ -47,7 +47,7 @@ const Timeline = () => {
     <Section id="about" data-reveal>
       <SectionTitle>About Haris Arshad</SectionTitle>
       <SectionText>
-      I am an Electrical Engineer with a Master&apos;s in Project Management and a PMP® certification. My work sits at the intersection of business needs, delivery teams, and operational control: clarifying priorities, surfacing risk early, and giving stakeholders the visibility to make better decisions.
+      I am a PMP®-certified Project Manager with a Master&apos;s in Project Management. I lead IT, software, and digital transformation projects in Islamabad, Pakistan, working where business needs, delivery teams, and operational control meet. My focus is PMO governance, project planning and control, Agile delivery, risk management, and stakeholder reporting. I clarify priorities, surface risk early, and give stakeholders the visibility to make better decisions.
       </SectionText>
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>

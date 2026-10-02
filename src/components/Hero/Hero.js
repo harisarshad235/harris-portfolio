@@ -10,11 +10,10 @@ const Hero = () => (
       <LeftSection>
         <Eyebrow>Technology delivery · PMO · Agile coordination</Eyebrow>
         <HeroTitle as="h1" main center>
-          Haris Arshad <br/>
-          PMP® Project Manager
+          Haris Arshad, PMP® Project Manager
         </HeroTitle>
         <HeroDescription>
-          PMP®-certified Project Manager in Islamabad, Pakistan, with a Master&apos;s in Project Management and an Electrical Engineering background. I lead technology delivery across software, infrastructure, QA, and business teams, applying project planning and control, PMO governance, Agile delivery, risk management, and stakeholder coordination to move initiatives from planning through release.
+          PMP®-certified Project Manager in Islamabad, Pakistan, with a Master&apos;s in Project Management. I lead technology delivery across software, infrastructure, QA, and business teams, applying project planning and control, PMO governance, Agile delivery, risk management, and stakeholder coordination to move initiatives from planning through release.
         </HeroDescription>
         <MetaRow>
           <MetaItem><FiMapPin /> Islamabad, Pakistan</MetaItem>
