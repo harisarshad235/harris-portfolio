@@ -63,11 +63,15 @@ export async function onRequestPost({ request, env }) {
     return jsonResponse({ error: 'The subject is invalid.' }, 400);
   }
 
-  const { RESEND_API_KEY, CONTACT_FROM_EMAIL, CONTACT_TO_EMAIL } = env;
-  if (!RESEND_API_KEY || !CONTACT_FROM_EMAIL || !CONTACT_TO_EMAIL) {
-    console.error('Contact form is missing RESEND_API_KEY, CONTACT_FROM_EMAIL, or CONTACT_TO_EMAIL.');
-    return jsonResponse({ error: 'Contact form delivery is not configured.' }, 503);
+  const missingSettings = ['RESEND_API_KEY', 'CONTACT_FROM_EMAIL', 'CONTACT_TO_EMAIL']
+    .filter((name) => !env?.[name]);
+  if (missingSettings.length) {
+    console.error('Contact form runtime settings are missing:', missingSettings.join(', '));
+    return jsonResponse({
+      error: `Contact form delivery is missing these runtime settings: ${missingSettings.join(', ')}.`,
+    }, 503);
   }
+  const { RESEND_API_KEY, CONTACT_FROM_EMAIL, CONTACT_TO_EMAIL } = env;
 
   const messageLines = [
     `Name: ${fields.name}`,
