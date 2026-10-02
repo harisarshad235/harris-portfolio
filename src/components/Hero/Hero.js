@@ -9,12 +9,12 @@ const Hero = () => (
     <Section row nopadding>
       <LeftSection>
         <Eyebrow>Technology delivery · PMO · Agile coordination</Eyebrow>
-        <HeroTitle main center>
+        <HeroTitle as="h1" main center>
           Haris Arshad <br/>
-          makes complex delivery clearer.
+          PMP® Project Manager
         </HeroTitle>
         <HeroDescription>
-          PMP® project manager leading technology delivery across developers, QA, infrastructure, and business teams. I turn complex requirements into clear plans, remove blockers, and guide programs from planning through release.
+          PMP®-certified Project Manager in Islamabad, Pakistan, with a Master&apos;s in Project Management and an Electrical Engineering background. I lead technology delivery across software, infrastructure, QA, and business teams, applying project planning and control, PMO governance, Agile delivery, risk management, and stakeholder coordination to move initiatives from planning through release.
         </HeroDescription>
         <MetaRow>
           <MetaItem><FiMapPin /> Islamabad, Pakistan</MetaItem>
@@ -26,7 +26,7 @@ const Hero = () => (
           <HeroStat><StatValue>90%</StatValue><StatLabel>reporting efficiency</StatLabel></HeroStat>
           <HeroStat><StatValue>150+</StatValue><StatLabel>sites coordinated</StatLabel></HeroStat>
         </HeroStats>
-        <DeliveryFocus>PMO governance · Agile coordination · Vendor and stakeholder alignment</DeliveryFocus>
+        <DeliveryFocus>PMO governance · Project planning and control · Agile delivery · Budget and vendor coordination</DeliveryFocus>
         <ActionRow>
           <Button aria-label="Download Haris Arshad's CV" onClick={() => window.open('/resume/haris-arshad-cv.pdf', '_blank', 'noopener,noreferrer')}> <FiDownload aria-hidden="true" /> Download CV</Button>
           <ActionLink href="#services">Project management services <FiArrowRight aria-hidden="true" /></ActionLink>

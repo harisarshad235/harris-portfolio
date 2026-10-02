@@ -45,7 +45,7 @@ const Timeline = () => {
 
   return (
     <Section id="about" data-reveal>
-      <SectionTitle>About Me</SectionTitle>
+      <SectionTitle>About Haris Arshad</SectionTitle>
       <SectionText>
       I am an Electrical Engineer with a Master&apos;s in Project Management and a PMP® certification. My work sits at the intersection of business needs, delivery teams, and operational control: clarifying priorities, surfacing risk early, and giving stakeholders the visibility to make better decisions.
       </SectionText>

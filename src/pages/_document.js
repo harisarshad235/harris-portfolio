@@ -33,18 +33,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang='en-GB'>
         <Head>
-          <title>Haris Arshad | PMP Project Manager</title>
-          <meta name="description" content="Portfolio of Haris Arshad, PMP Project Manager delivering technology programs, PMO control, Agile coordination, and measurable business outcomes." />
-          <meta name="author" content="Haris Arshad" />
           <meta name="theme-color" content="#F4F0EA" />
-          <meta property="og:type" content="website" />
-          <meta property="og:title" content="Haris Arshad | PMP Project Manager" />
-          <meta property="og:description" content="Technology delivery, PMO control, and Agile coordination for complex initiatives." />
-          <meta property="og:image" content="/images/haris-arshad-profile.jpeg" />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Haris Arshad | PMP Project Manager" />
-          <meta name="twitter:description" content="Technology delivery, PMO control, and Agile coordination for complex initiatives." />
-          <meta name="twitter:image" content="/images/haris-arshad-profile.jpeg" />
           <link rel="icon" type="image/png" href="/images/manager.png" />
           <link rel="apple-touch-icon" href="/images/manager.png" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
