@@ -13,6 +13,17 @@ export const Layout = ({children}) => {
     let observer
     let mutationObserver
 
+    const revealVisibleElements = () => {
+      if (!document.documentElement.classList.contains('motion-ready')) return
+
+      document.querySelectorAll('[data-reveal]:not(.is-visible)').forEach((element) => {
+        const bounds = element.getBoundingClientRect()
+        if (bounds.top < window.innerHeight && bounds.bottom > 0) {
+          element.classList.add('is-visible')
+        }
+      })
+    }
+
     const updateProgress = () => {
       cancelAnimationFrame(animationFrame)
       animationFrame = requestAnimationFrame(() => {
@@ -24,6 +35,7 @@ export const Layout = ({children}) => {
         if (progressRef.current) {
           progressRef.current.style.transform = `scaleX(${progress})`
         }
+        revealVisibleElements()
       })
     }
 
@@ -53,6 +65,7 @@ export const Layout = ({children}) => {
       observeReveals(document)
       mutationObserver = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => mutation.addedNodes.forEach(observeReveals))
+        revealVisibleElements()
       })
       mutationObserver.observe(document.querySelector('main'), { childList: true, subtree: true })
     }
