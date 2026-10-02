@@ -9,6 +9,7 @@ This site is exported as a static Next.js site and its contact endpoint runs as 
 - Build command: `npm run build`
 - Build output directory: `out`
 - Build environment: Node.js 18
+- Deploy command: leave unset; Cloudflare Pages publishes the build output automatically.
 
 Cloudflare Pages uses the npm lockfile (`package-lock.json`) to install dependencies.
 
