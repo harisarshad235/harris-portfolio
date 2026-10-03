@@ -90,14 +90,14 @@ export async function onRequestPost({ request, env }) {
   const messageLines = [
     `Name: ${fields.name}`,
     `Email: ${fields.email}`,
-    `Company: ${fields.company || 'Not provided'}`,
-    `Service or inquiry: ${fields.service}`,
-    `Preferred date: ${fields['preferred-date'] || 'Not provided'}`,
-    `Preferred time and timezone: ${fields['preferred-time'] || 'Not provided'}`,
+    fields.company && `Company: ${fields.company}`,
+    `Service: ${fields.service}`,
+    fields['preferred-date'] && `Preferred date: ${fields['preferred-date']}`,
+    fields['preferred-time'] && `Preferred time: ${fields['preferred-time']}`,
     '',
     'Message:',
     fields.message,
-  ];
+  ].filter(Boolean);
   const html = `
     <div style="margin:0;padding:32px 12px;background:#f4f0ea;font-family:Arial,Helvetica,sans-serif;color:#202c2e;">
       <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="max-width:640px;margin:0 auto;background:#ffffff;border:1px solid #e9e2da;border-radius:12px;overflow:hidden;">
@@ -117,13 +117,10 @@ export async function onRequestPost({ request, env }) {
                 <td style="padding:12px 16px;border-bottom:1px solid #eee8e2;color:#697578;font-size:13px;vertical-align:top;width:38%;">Email</td>
                 <td style="padding:12px 16px;border-bottom:1px solid #eee8e2;font-size:14px;font-weight:600;vertical-align:top;"><a href="mailto:${escapeHtml(fields.email)}" style="color:#d95f49;text-decoration:none;">${escapeHtml(fields.email)}</a></td>
               </tr>
-              ${detailRow('Company', fields.company || 'Not provided')}
-              ${detailRow('Service or inquiry', fields.service)}
-              ${detailRow('Preferred date', fields['preferred-date'] || 'Not provided')}
-              <tr>
-                <td style="padding:12px 16px;color:#697578;font-size:13px;vertical-align:top;width:38%;">Preferred time</td>
-                <td style="padding:12px 16px;color:#202c2e;font-size:14px;font-weight:600;vertical-align:top;">${escapeHtml(fields['preferred-time'] || 'Not provided')}</td>
-              </tr>
+              ${fields.company ? detailRow('Company', fields.company) : ''}
+              ${detailRow('Service', fields.service)}
+              ${fields['preferred-date'] ? detailRow('Date', fields['preferred-date']) : ''}
+              ${fields['preferred-time'] ? detailRow('Time', fields['preferred-time']) : ''}
             </table>
           </td>
         </tr>

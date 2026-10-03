@@ -33,16 +33,6 @@ const Contact = () => {
     const form = event.currentTarget;
     const formData = new FormData(form);
     const requestedService = formData.get('service');
-    const requestDetails = [
-      requestedService && `Service requested: ${requestedService}`,
-      formData.get('preferred-date') && `Preferred date: ${formData.get('preferred-date')}`,
-      formData.get('preferred-time') && `Preferred time and timezone: ${formData.get('preferred-time')}`,
-    ].filter(Boolean);
-
-    if (requestDetails.length) {
-      const message = String(formData.get('message') || '').trim();
-      formData.set('message', `${message}\n\nRequest details:\n${requestDetails.join('\n')}`);
-    }
 
     try {
       const response = await fetch('/api/contact', {
