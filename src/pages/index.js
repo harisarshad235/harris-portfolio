@@ -5,7 +5,6 @@ import Hero from '../components/Hero/Hero';
 import Projects from '../components/Projects/Projects';
 import Recommendations from '../components/Recommendations/Recommendations';
 import TechStack from '../components/TechStack/TechStack';
-import Technologies from '../components/Technologies/Technologies';
 import Timeline from '../components/TimeLine/TimeLine';
 import { Layout } from '../layout/Layout';
 import { HeroStage } from '../components/Hero/HeroStyles';
@@ -82,7 +81,6 @@ const Home = () => {
       <TechStack />
       <Projects />
       <Recommendations />
-      <Technologies />
     </Layout>
   );
 };

@@ -43,9 +43,6 @@ const Header = () =>  (
       <Link href="#recommendations">
         <NavLink>Recommendations</NavLink>
       </Link>
-      <Link href="#tech">
-        <NavLink>Delivery toolkit</NavLink>
-      </Link>
       <Link href="#skills">
         <NavLink>Skills</NavLink>
       </Link>
