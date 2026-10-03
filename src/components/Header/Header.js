@@ -28,7 +28,7 @@ const Header = () =>  (
     <Div1>
       <Link href='/'>
         <a style={{display:"flex",alignItems:"center"}}>
-          <BrandImage src="/images/pm.png" alt="" aria-hidden="true" />
+          <BrandImage src="/images/planning.png" alt="" aria-hidden="true" />
           <Span>Haris Arshad</Span>
         </a>
       </Link>
