@@ -64,6 +64,7 @@ const Credentials = () => {
             date,
             verificationUrl,
             certificateImage,
+            certificatePreview,
             verificationLabel,
             certificateFile,
             certificateFileLabel,
@@ -75,14 +76,17 @@ const Credentials = () => {
               data-reveal
               style={{ '--reveal-delay': `${(index % 3) * 70}ms` }}
             >
-              {certificateImage ? (
+              {certificateImage || certificatePreview ? (
                 <CertificatePreview
-                  href={certificateImage}
+                  href={certificateFile || certificateImage || certificatePreview}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Open ${title} certificate in a new tab`}
                 >
-                  <img src={certificateImage} alt={`${title} certificate issued by ${issuer}`} />
+                  <img
+                    src={certificatePreview || certificateImage}
+                    alt={`${title} certificate issued by ${issuer}`}
+                  />
                 </CertificatePreview>
               ) : (
                 <CertificatePreview as="div" aria-hidden="true">
@@ -105,7 +109,7 @@ const Credentials = () => {
                     {verificationLabel}<FiExternalLink aria-hidden="true" />
                   </CredentialLink>
                 )}
-                {certificateImage && (
+                {certificateImage && !certificateFile && (
                   <CredentialLink
                     href={certificateImage}
                     target="_blank"

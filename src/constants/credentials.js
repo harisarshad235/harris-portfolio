@@ -10,6 +10,7 @@ export const credentials = [
     verificationLabel: 'Verify PMP credential',
     certificateFile: '/credentials/pmi-certification.pdf',
     certificateFileLabel: 'View PMI certificate',
+    certificatePreview: '/credentials/pmi-certification-preview.png',
   },
   {
     id: 'power-bi-lums',
@@ -29,5 +30,6 @@ export const credentials = [
     description: 'Member of the global professional association for project managers.',
     certificateFile: '/credentials/pmi-member-card.pdf',
     certificateFileLabel: 'View PMI member badge',
+    certificatePreview: '/credentials/pmi-member-card-preview.png',
   },
 ];

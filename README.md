@@ -40,7 +40,7 @@ Approved entries are loaded from D1 by `functions/api/recommendations.js` whenev
 
 ### Updating credentials
 
-Add or edit entries in `src/constants/credentials.js`. Categories automatically become filter options. For a public verification page, set `verificationUrl`; for a certificate image, add the image under `public/credentials/` and set `certificateImage`; for a PDF, add it to `public/credentials/` and set `certificateFile` plus `certificateFileLabel`. Only add documents you intend to make publicly accessible.
+Add or edit entries in `src/constants/credentials.js`. Categories automatically become filter options. For a public verification page, set `verificationUrl`; for a certificate image, add the image under `public/credentials/` and set `certificateImage`; for a PDF, add it to `public/credentials/` and set `certificateFile`, `certificateFileLabel`, and optionally `certificatePreview` to show a rendered image in its card. Only add documents you intend to make publicly accessible.
 
 ### Optional analytics
 
