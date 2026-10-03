@@ -100,10 +100,14 @@ const Recommendations = () => {
   return (
     <Section id="recommendations" data-reveal>
       <SectionDivider colorAlt />
-      <SectionTitle>Recommendations</SectionTitle>
-      <SectionText>
-        Feedback from colleagues, clients, and managers who have worked with me.
-      </SectionText>
+      {(recommendationsLoading || recommendationsError || approvedRecommendations.length > 0) && (
+        <>
+          <SectionTitle>Recommendations</SectionTitle>
+          <SectionText>
+            Feedback from colleagues, clients, and managers who have worked with me.
+          </SectionText>
+        </>
+      )}
       {recommendationsLoading ? (
         <RecommendationEmptyState role="status">Loading approved recommendations…</RecommendationEmptyState>
       ) : recommendationsError ? (
@@ -125,11 +129,7 @@ const Recommendations = () => {
             </RecommendationCard>
           ))}
         </RecommendationList>
-      ) : (
-        <RecommendationEmptyState>
-          Approved recommendations will appear here after they’ve been reviewed.
-        </RecommendationEmptyState>
-      )}
+      ) : null}
       <RecommendationCard>
         <RecommendationMark aria-hidden="true"><FiMessageSquare /></RecommendationMark>
         <div>
