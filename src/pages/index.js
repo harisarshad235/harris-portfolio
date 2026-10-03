@@ -5,6 +5,7 @@ import Hero from '../components/Hero/Hero';
 import Projects from '../components/Projects/Projects';
 import Recommendations from '../components/Recommendations/Recommendations';
 import TechStack from '../components/TechStack/TechStack';
+import Credentials from '../components/Credentials/Credentials';
 import Timeline from '../components/TimeLine/TimeLine';
 import { Layout } from '../layout/Layout';
 import { HeroStage } from '../components/Hero/HeroStyles';
@@ -79,6 +80,7 @@ const Home = () => {
       </HeroStage>
       <Timeline />
       <TechStack />
+      <Credentials />
       <Projects />
       <Recommendations />
     </Layout>

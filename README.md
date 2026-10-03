@@ -38,6 +38,10 @@ To enable automatic approval and live display:
 
 Approved entries are loaded from D1 by `functions/api/recommendations.js` whenever the portfolio loads. Review links expire after 90 days; expired pending submissions are removed when a new submission arrives or the expired review link is opened. Only approve feedback and attribution the reviewer agreed to make public.
 
+### Updating credentials
+
+Add or edit entries in `src/constants/credentials.js`. Categories automatically become filter options. For a public verification page, set `verificationUrl`; for a certificate image, add the image under `public/credentials/` and set `certificateImage` to its path, such as `/credentials/example.png`. Avoid publishing membership cards or documents containing private member numbers.
+
 ### Optional analytics
 
 Set `NEXT_PUBLIC_GA_ID` in the Cloudflare Pages build environment to enable Google Analytics. Leave it unset to keep analytics disabled.

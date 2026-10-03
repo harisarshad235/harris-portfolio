@@ -34,19 +34,22 @@ const Header = () =>  (
       </Link>
     </Div1>
     <Div2 as="nav" aria-label="Primary navigation">
-      <Link href="#about">
+      <Link href="#about" passHref>
         <NavLink>About</NavLink>
       </Link>
-      <Link href="#projects">
+      <Link href="#projects" passHref>
         <NavLink>Projects</NavLink>
       </Link>
-      <Link href="#recommendations">
+      <Link href="#recommendations" passHref>
         <NavLink>Recommendations</NavLink>
       </Link>
-      <Link href="#skills">
+      <Link href="#skills" passHref>
         <NavLink>Skills</NavLink>
       </Link>
-      <Link href="#contact">
+      <Link href="#credentials" passHref>
+        <NavLink>Credentials</NavLink>
+      </Link>
+      <Link href="#contact" passHref>
         <NavLink>Contact</NavLink>
       </Link>
     </Div2>
