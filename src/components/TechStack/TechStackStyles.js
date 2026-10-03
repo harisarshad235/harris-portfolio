@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const CategoryGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2rem;
   width: 100%;
   margin: 1rem 0 4rem;

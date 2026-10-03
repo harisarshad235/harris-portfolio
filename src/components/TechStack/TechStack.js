@@ -6,8 +6,10 @@ import { CategoryGrid, CategoryCard, CategoryHeading, CategoryLabel, SkillList, 
 const TechStack = () => (
   <Section id="skills" data-reveal>
     <SectionDivider />
-    <SectionTitle>Tech Stack</SectionTitle>
-    <SectionText>Technologies I work with across web and mobile delivery.</SectionText>
+    <SectionTitle>Technology &amp; delivery stack</SectionTitle>
+    <SectionText>
+      Project delivery tools and controls, alongside the frontend, backend, and mobile technologies I coordinate across teams.
+    </SectionText>
     <CategoryGrid>
       {techStack.map((category, categoryIndex) => (
         <CategoryCard key={category.id} aria-labelledby={`tech-category-${category.id}`} data-reveal style={{ '--reveal-delay': `${categoryIndex * 90}ms` }}>
