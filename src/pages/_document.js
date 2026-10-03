@@ -34,6 +34,7 @@ export default class MyDocument extends Document {
       <Html lang='en-GB'>
         <Head>
           <meta name="theme-color" content="#F4F0EA" />
+          <link rel="icon" href="/favicon.ico" />
           <link rel="icon" type="image/png" href="/images/manager.png" />
           <link rel="apple-touch-icon" href="/images/manager.png" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
