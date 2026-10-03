@@ -1,11 +1,10 @@
 import Link from 'next/link';
 import React from 'react';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
-import { DiCssdeck } from 'react-icons/di';
 import { FiMoon, FiSun } from 'react-icons/fi';
 
 import { useThemeMode } from '../../styles/theme';
-import { Container, Div1, Div2, Div3, NavLink, SocialIcons, Span, ThemeToggleButton } from './HeaderStyles';
+import { BrandImage, Container, Div1, Div2, Div3, NavLink, SocialIcons, Span, ThemeToggleButton } from './HeaderStyles';
 
 const ThemeToggle = () => {
   const { mode, toggleTheme } = useThemeMode();
@@ -29,7 +28,8 @@ const Header = () =>  (
     <Div1>
       <Link href='/'>
         <a style={{display:"flex",alignItems:"center"}}>
-          <DiCssdeck size="3rem"/> <Span>Haris Arshad </Span>
+          <BrandImage src="/images/pm.png" alt="" aria-hidden="true" />
+          <Span>Haris Arshad</Span>
         </a>
       </Link>
     </Div1>

@@ -60,6 +60,14 @@ export const Span= styled.span`
   font-weight: 700;
 `;
 
+export const BrandImage = styled.img`
+  display: block;
+  width: 3.6rem;
+  height: 3.6rem;
+  margin-right: 0.8rem;
+  object-fit: contain;
+`;
+
 export const Div1 = styled.div`
   grid-area: brand;
   display: flex;
