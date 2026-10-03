@@ -27,6 +27,17 @@ The contact form is handled by `functions/api/contact.js` and sends submissions 
 
 The form reports a delivery error until these values are configured. Replies to contact messages go to the visitor's email address.
 
+The Recommendations dialog sends feedback privately to the configured contact inbox through `functions/api/recommendation.js`. Reviewers explicitly consent to publication of their feedback and any attribution they submit. Submissions stay private until approved through the secure review link in the notification email; clicking **Approve and publish** publishes the recommendation automatically, without a code change or redeployment. The review link expires after 90 days. You can discard a submission from the same review page.
+
+To enable automatic approval and live display:
+
+1. Create a Cloudflare D1 database for this Pages project.
+2. In that database's SQL console, run the contents of `migrations/0001_recommendations.sql`.
+3. Add a D1 database binding to the Pages project with the variable name `RECOMMENDATIONS_DB`, linked to the database you created.
+4. Redeploy the Pages project so its Functions can use the binding.
+
+Approved entries are loaded from D1 by `functions/api/recommendations.js` whenever the portfolio loads. Review links expire after 90 days; expired pending submissions are removed when a new submission arrives or the expired review link is opened. Only approve feedback and attribution the reviewer agreed to make public.
+
 ### Optional analytics
 
 Set `NEXT_PUBLIC_GA_ID` in the Cloudflare Pages build environment to enable Google Analytics. Leave it unset to keep analytics disabled.

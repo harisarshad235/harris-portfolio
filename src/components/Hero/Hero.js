@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiAward, FiArrowRight, FiBarChart2, FiDownload, FiMapPin } from 'react-icons/fi';
+import { FiAward, FiArrowRight, FiDownload, FiMapPin } from 'react-icons/fi';
 
 import { Section } from '../../styles/GlobalComponents';
 import Button from '../../styles/GlobalComponents/Button';
@@ -18,17 +18,16 @@ const Hero = () => (
         <MetaRow>
           <MetaItem><FiMapPin /> Islamabad, Pakistan</MetaItem>
           <MetaItem><FiAward /> PMP® certified</MetaItem>
-          <MetaItem><FiBarChart2 /> PKR 700M+ portfolio</MetaItem>
         </MetaRow>
         <HeroStats>
-          <HeroStat><StatValue>80%</StatValue><StatLabel>fewer project delays</StatLabel></HeroStat>
-          <HeroStat><StatValue>90%</StatValue><StatLabel>reporting efficiency</StatLabel></HeroStat>
-          <HeroStat><StatValue>150+</StatValue><StatLabel>sites coordinated</StatLabel></HeroStat>
+          <HeroStat><StatValue>PKR 103M+</StatValue><StatLabel>savings on track-and-trace delivery</StatLabel></HeroStat>
+          <HeroStat><StatValue>22.5%</StatValue><StatLabel>under budget on that program</StatLabel></HeroStat>
+          <HeroStat><StatValue>150+</StatValue><StatLabel>sites coordinated across a PKR 700M+ portfolio</StatLabel></HeroStat>
         </HeroStats>
-        <DeliveryFocus>PMO governance · Project planning and control · Agile delivery · Budget and vendor coordination</DeliveryFocus>
+        <DeliveryFocus>Selected outcomes from public-sector and multi-site delivery; see case studies for context.</DeliveryFocus>
         <ActionRow>
           <Button aria-label="Download Haris Arshad's CV" onClick={() => window.open('/resume/haris-arshad-cv.pdf', '_blank', 'noopener,noreferrer')}> <FiDownload aria-hidden="true" /> Download CV</Button>
-          <ActionLink href="#services">Project management services <FiArrowRight aria-hidden="true" /></ActionLink>
+          <ActionLink href="#contact">Discuss a project <FiArrowRight aria-hidden="true" /></ActionLink>
         </ActionRow>
       </LeftSection>
       <VisualSection>

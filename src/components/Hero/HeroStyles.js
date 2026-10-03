@@ -452,8 +452,9 @@ export const HeroStat = styled.div`
 export const StatValue = styled.strong`
   display: block;
   color: ${(props) => props.theme.colors.accent1};
-  font-size: 2.6rem;
+  font-size: clamp(1.7rem, 2.2vw, 2.6rem);
   line-height: 1;
+  white-space: nowrap;
 `;
 
 export const StatLabel = styled.span`

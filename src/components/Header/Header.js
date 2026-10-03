@@ -28,32 +28,30 @@ const Header = () =>  (
   <Container>
     <Div1>
       <Link href='/'>
-        <a style={{display:"flex",alignItems:"center",marginBottom:"20"}}>
+        <a style={{display:"flex",alignItems:"center"}}>
           <DiCssdeck size="3rem"/> <Span>Haris Arshad </Span>
         </a>
       </Link>
     </Div1>
-    <Div2>
-      <li>
-        <Link href="#projects">
-          <NavLink>Projects</NavLink>
-        </Link>
-      </li>
-      <li>
-        <Link href="#tech">
-          <NavLink>Technologies</NavLink>
-        </Link>
-      </li>
-      <li>
-        <Link href="#about">
-          <NavLink>About</NavLink>
-        </Link>
-      </li>
-      <li>
-        <Link href="#skills">
-          <NavLink>Skills</NavLink>
-        </Link>
-      </li>
+    <Div2 as="nav" aria-label="Primary navigation">
+      <Link href="#about">
+        <NavLink>About</NavLink>
+      </Link>
+      <Link href="#projects">
+        <NavLink>Projects</NavLink>
+      </Link>
+      <Link href="#recommendations">
+        <NavLink>Recommendations</NavLink>
+      </Link>
+      <Link href="#tech">
+        <NavLink>Delivery toolkit</NavLink>
+      </Link>
+      <Link href="#skills">
+        <NavLink>Skills</NavLink>
+      </Link>
+      <Link href="#contact">
+        <NavLink>Contact</NavLink>
+      </Link>
     </Div2>
     <Div3>
       <ThemeToggle />

@@ -49,7 +49,7 @@ const Timeline = () => {
       <SectionText>
       My experience spans construction PMO, public-sector programs, and software and digital product delivery. I bring structure to complex work through integrated schedules, budget and forecast tracking, risk and dependency management, vendor coordination, and clear stakeholder reporting. Across a PKR 700M+ portfolio and 150+ sites, I have strengthened delivery visibility and helped teams move projects from requirements and planning through UAT, release, and handover.
       </SectionText>
-      <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
+      <CarouselContainer ref={carouselRef} onScroll={handleScroll} aria-label="Career timeline">
         <>
           {TimeLineData.map((item, index) => (
             <CarouselMobileScrollNode key={index} final={index === TOTAL_CAROUSEL_COUNT - 1} data-reveal style={{ '--reveal-delay': `${index * 80}ms` }}>
@@ -105,6 +105,8 @@ const Timeline = () => {
             index={index}
             active={activeItem}
             onClick={(e) => handleClick(e, index)}
+            aria-label={`Show ${item.year} career entry`}
+            aria-pressed={activeItem === index}
             type="button"
           >
             <CarouselButtonDot active={activeItem} />
