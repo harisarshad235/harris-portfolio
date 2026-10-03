@@ -65,6 +65,8 @@ const Credentials = () => {
             verificationUrl,
             certificateImage,
             verificationLabel,
+            certificateFile,
+            certificateFileLabel,
           } = credential;
 
           return (
@@ -110,6 +112,16 @@ const Credentials = () => {
                     rel="noopener noreferrer"
                   >
                     {verificationLabel}<FiExternalLink aria-hidden="true" />
+                  </CredentialLink>
+                )}
+                {certificateFile && (
+                  <CredentialLink
+                    href={certificateFile}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${certificateFileLabel} PDF in a new tab`}
+                  >
+                    {certificateFileLabel}<FiExternalLink aria-hidden="true" />
                   </CredentialLink>
                 )}
               </CredentialContent>
