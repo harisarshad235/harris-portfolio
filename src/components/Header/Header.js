@@ -1,10 +1,19 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { FiMoon, FiSun } from 'react-icons/fi';
 
 import { useThemeMode } from '../../styles/theme';
 import { BrandImage, Container, Div1, Div2, Div3, NavLink, SocialIcons, Span, ThemeToggleButton } from './HeaderStyles';
+
+const NAV_ITEMS = [
+  { href: '#about', label: 'About' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#recommendations', label: 'Recommendations' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#credentials', label: 'Credentials' },
+  { href: '#contact', label: 'Contact' },
+];
 
 const ThemeToggle = () => {
   const { mode, toggleTheme } = useThemeMode();
@@ -23,7 +32,46 @@ const ThemeToggle = () => {
   );
 };
 
-const Header = () =>  (
+const Header = () => {
+  const [activeHref, setActiveHref] = useState('');
+
+  useEffect(() => {
+    let animationFrame;
+
+    const updateActiveSection = () => {
+      cancelAnimationFrame(animationFrame);
+      animationFrame = requestAnimationFrame(() => {
+        const nav = document.querySelector('[aria-label="Primary navigation"]');
+        const headerHeight = nav?.parentElement?.getBoundingClientRect().height || 88;
+        const offset = headerHeight + 12;
+        const sections = NAV_ITEMS
+          .map(({ href }) => ({ href, element: document.getElementById(href.slice(1)) }))
+          .filter(({ element }) => element);
+        const atPageBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 1;
+        let current = (atPageBottom ? sections[sections.length - 1]?.href : sections[0]?.href) || '';
+
+        if (!atPageBottom) {
+          sections.forEach(({ href, element }) => {
+            if (element.getBoundingClientRect().top - offset <= 0) current = href;
+          });
+        }
+
+        setActiveHref(current);
+      });
+    };
+
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
+    window.addEventListener('resize', updateActiveSection);
+    updateActiveSection();
+
+    return () => {
+      cancelAnimationFrame(animationFrame);
+      window.removeEventListener('scroll', updateActiveSection);
+      window.removeEventListener('resize', updateActiveSection);
+    };
+  }, []);
+
+  return (
   <Container>
     <Div1>
       <Link href='/'>
@@ -34,24 +82,13 @@ const Header = () =>  (
       </Link>
     </Div1>
     <Div2 as="nav" aria-label="Primary navigation">
-      <Link href="#about" passHref>
-        <NavLink>About</NavLink>
-      </Link>
-      <Link href="#projects" passHref>
-        <NavLink>Projects</NavLink>
-      </Link>
-      <Link href="#recommendations" passHref>
-        <NavLink>Recommendations</NavLink>
-      </Link>
-      <Link href="#skills" passHref>
-        <NavLink>Skills</NavLink>
-      </Link>
-      <Link href="#credentials" passHref>
-        <NavLink>Credentials</NavLink>
-      </Link>
-      <Link href="#contact" passHref>
-        <NavLink>Contact</NavLink>
-      </Link>
+      {NAV_ITEMS.map(({ href, label }) => (
+        <Link href={href} passHref key={href}>
+          <NavLink $active={activeHref === href} aria-current={activeHref === href ? 'location' : undefined}>
+            {label}
+          </NavLink>
+        </Link>
+      ))}
     </Div2>
     <Div3>
       <ThemeToggle />
@@ -65,7 +102,7 @@ const Header = () =>  (
     </Div3>
 
   </Container>
- 
-);
+  );
+};
 
 export default Header;

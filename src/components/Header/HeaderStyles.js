@@ -115,21 +115,39 @@ export const Div3 = styled.div`
 export const NavLink = styled.a`
   display: inline-flex;
   align-items: center;
+  position: relative;
   min-height: 4rem;
   font-size: 1.55rem;
+  font-weight: ${(props) => props.$active ? 700 : 500};
   line-height: 1.3;
   white-space: nowrap;
-  color: ${(props) => props.theme.colors.muted};
-  transition: 0.4s ease;
+  color: ${(props) => props.$active ? props.theme.colors.primary1 : props.theme.colors.muted};
+  transition: color 0.25s ease, font-weight 0.25s ease;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.7rem;
+    height: 2px;
+    background: ${(props) => props.theme.colors.accent1};
+    transform: scaleX(${(props) => props.$active ? 1 : 0});
+    transform-origin: center;
+    transition: transform 0.25s ease;
+  }
+
   &:hover {
     color: ${(props) => props.theme.colors.accent1};
     opacity: 1;
     cursor: pointer;
   }
-    &:focus-visible {
-      outline: 3px solid #1A8781;
-      outline-offset: 4px;
-    }
+
+  &:focus-visible {
+    outline: 3px solid #1A8781;
+    outline-offset: 4px;
+  }
+
   @media ${(props) => props.theme.breakpoints.md} {
     font-size: 1.45rem;
   }
