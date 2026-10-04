@@ -2,12 +2,19 @@ import { IoIosArrowDropdown } from 'react-icons/io';
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   grid-template-areas: "brand navigation controls";
   gap: 1.6rem;
   padding: 1.2rem 2.4rem;
   align-items: center;
+  background: ${(props) => props.theme.mode === 'dark'
+    ? 'rgba(21, 29, 31, 0.92)'
+    : 'rgba(244, 240, 234, 0.92)'};
+  backdrop-filter: blur(16px);
   border-bottom: 1px solid ${(props) => props.theme.colors.border};
 
   @media ${(props) => props.theme.breakpoints.md} {

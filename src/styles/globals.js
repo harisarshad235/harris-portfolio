@@ -12,7 +12,13 @@ const GlobalStyles = createGlobalStyle`
   html {
     font-size: 62.5%;
     scroll-behavior: smooth;
+    scroll-padding-top: 8.8rem;
+  }
 
+  @media (max-width: 768px) {
+    html {
+      scroll-padding-top: 14rem;
+    }
   }
   body {
     font-family: ${props => props.theme.fonts.main};
