@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-import { CarouselButton, CarouselButtonDot, CarouselButtons, CarouselContainer, CarouselItem, CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode } from './TimeLineStyles';
+import { AboutActions, AboutLink, CarouselButton, CarouselButtonDot, CarouselButtons, CarouselContainer, CarouselItem, CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode } from './TimeLineStyles';
 import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { TimeLineData } from '../../constants/constants';
 
@@ -47,8 +47,12 @@ const Timeline = () => {
     <Section id="about" data-reveal>
       <SectionTitle>About Haris Arshad</SectionTitle>
       <SectionText>
-      My experience spans construction PMO, public-sector programs, and software and digital product delivery. I bring structure to complex work through integrated schedules, budget and forecast tracking, risk and dependency management, vendor coordination, and clear stakeholder reporting. Across a PKR 700M+ portfolio and 150+ sites, I have strengthened delivery visibility and helped teams move projects from requirements and planning through UAT, release, and handover.
+        I make complex delivery easier to see, steer, and finish. As a PMP-certified project manager, I align teams, plans, budgets, risks, and decisions across public-sector, infrastructure, and digital product work. My experience includes coordinating a 150+ site, PKR 700M+ portfolio and guiding software initiatives from requirements through UAT, release, and handover. On a separate Track &amp; Trace program, reported outcomes included PKR 103M+ in savings and delivery 22.5% under budget.
       </SectionText>
+      <AboutActions>
+        <AboutLink href="#projects" $primary>Explore project case studies</AboutLink>
+        <AboutLink href="#contact">Hiring or need delivery support? Let&apos;s talk <span aria-hidden="true">→</span></AboutLink>
+      </AboutActions>
       <CarouselContainer ref={carouselRef} onScroll={handleScroll} aria-label="Career timeline">
         <>
           {TimeLineData.map((item, index) => (

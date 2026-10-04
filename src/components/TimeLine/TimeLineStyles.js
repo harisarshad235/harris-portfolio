@@ -1,6 +1,42 @@
 
 import styled from 'styled-components'
 
+export const AboutActions = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.2rem 2rem;
+  margin: -1.2rem 0 3.2rem;
+`;
+
+export const AboutLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 4.4rem;
+  padding: ${(props) => props.$primary ? '0 1.8rem' : '0'};
+  border: ${(props) => props.$primary ? `1px solid ${props.theme.colors.accent1}` : '1px solid transparent'};
+  border-radius: ${(props) => props.$primary ? '999px' : '0'};
+  background: ${(props) => props.$primary ? props.theme.colors.accent1 : 'transparent'};
+  color: ${(props) => props.$primary ? props.theme.colors.accentForeground : props.theme.colors.teal};
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 180ms ease, background 180ms ease, border-color 180ms ease;
+
+  &:hover {
+    color: ${(props) => props.$primary ? props.theme.colors.accentForeground : props.theme.colors.accent1};
+    background: ${(props) => props.$primary ? props.theme.colors.accent1 : 'transparent'};
+    border-color: ${(props) => props.$primary ? props.theme.colors.accent1 : 'transparent'};
+    filter: ${(props) => props.$primary ? 'brightness(0.94)' : 'none'};
+  }
+
+  &:focus-visible {
+    outline: 3px solid ${(props) => props.theme.colors.teal};
+    outline-offset: 3px;
+  }
+`;
+
 export const CarouselContainer = styled.ul`
   max-width: 1040px;
   background: transparent;
