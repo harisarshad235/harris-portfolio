@@ -23,16 +23,20 @@ export const CredentialCard = styled.article`
   min-width: 0;
   flex-direction: column;
   overflow: hidden;
-  border: 1px solid ${(props) => props.theme.colors.border};
-  border-top: 3px solid ${(props) => props.theme.colors.teal};
-  border-radius: 4px;
-  background: ${(props) => props.theme.colors.background2};
-  box-shadow: 0 10px 28px rgba(29, 42, 45, 0.06);
-  transition: transform 220ms ease, box-shadow 220ms ease;
+  border: 1px solid #242735;
+  border-radius: 1.6rem;
+  background: #12141d;
+  box-shadow: 0 16px 40px rgba(6, 10, 20, 0.2);
+  transition: transform 260ms ease, border-color 260ms ease, box-shadow 260ms ease;
 
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 34px rgba(29, 42, 45, 0.12);
+    transform: translateY(-5px);
+    border-color: #5079c9;
+    box-shadow: 0 22px 50px rgba(6, 10, 20, 0.32);
+
+    img {
+      transform: scale(1.04);
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -45,22 +49,22 @@ export const CredentialCard = styled.article`
 `;
 
 export const CertificatePreview = styled.a`
-  display: block;
-  height: 18rem;
-  overflow: hidden;
-  background: ${(props) => props.theme.colors.softSurface};
+  position: relative;
   display: flex;
+  flex: 0 0 23rem;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  background: #10182c;
 
   > svg {
     width: 4.8rem;
     height: 4.8rem;
-    color: ${(props) => props.theme.colors.teal};
+    color: #78a4ff;
   }
 
   &:focus-visible {
-    outline: 3px solid ${(props) => props.theme.colors.teal};
+    outline: 3px solid #78a4ff;
     outline-offset: -3px;
   }
 
@@ -70,11 +74,7 @@ export const CertificatePreview = styled.a`
     height: 100%;
     object-fit: contain;
     object-position: center;
-    transition: transform 320ms ease;
-  }
-
-  &:hover img {
-    transform: scale(1.025);
+    transition: transform 260ms ease;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -89,66 +89,76 @@ export const CredentialContent = styled.div`
   flex: 1;
   flex-direction: column;
   align-items: flex-start;
-  padding: 2rem;
+  padding: 2.2rem 2.4rem 2.4rem;
 `;
 
 export const CredentialCategory = styled.span`
-  margin-bottom: 0.8rem;
-  color: ${(props) => props.theme.colors.teal};
+  margin-bottom: 0.6rem;
+  color: #78a4ff;
   font-size: 1.25rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
 `;
 
 export const CredentialTitle = styled.h3`
-  margin: 0 0 0.8rem;
-  color: ${(props) => props.theme.colors.primary1};
-  font-size: 2rem;
-  line-height: 1.3;
+  margin: 0 0 1rem;
+  color: #f6f7fb;
+  font-size: 2.35rem;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
 `;
 
 export const CredentialIssuer = styled.p`
-  margin-bottom: 1rem;
-  color: ${(props) => props.theme.colors.muted};
-  font-size: 1.4rem;
-  line-height: 1.5;
+  margin: 0 0 0.6rem;
+  color: #78a4ff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
 `;
 
 export const CredentialDescription = styled.p`
-  margin-bottom: 1.2rem;
-  color: ${(props) => props.theme.colors.primary1};
+  width: 100%;
+  margin: 0 0 1.2rem;
+  color: #a5aab8;
   font-size: 1.45rem;
   line-height: 1.6;
 `;
 
 export const CredentialDate = styled.p`
   margin-top: auto;
-  padding-bottom: 1.4rem;
-  color: ${(props) => props.theme.colors.muted};
-  font-size: 1.3rem;
+  padding-bottom: 0.8rem;
+  color: #a5aab8;
+  font-size: 1.25rem;
 `;
 
 export const CredentialLink = styled.a`
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
-  min-height: 4rem;
-  margin-top: auto;
-  padding: 0.9rem 1.4rem;
-  border-radius: 3px;
-  background: ${(props) => props.theme.colors.primary1};
-  color: ${(props) => props.theme.colors.background1};
-  font-size: 1.4rem;
-  font-weight: 600;
-  transition: background 180ms ease;
+  min-height: 2.8rem;
+  margin-top: 0.8rem;
+  color: #f3f5fb;
+  font-size: 1.45rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 180ms ease;
 
   &:hover {
-    background: ${(props) => props.theme.colors.accent1};
+    color: #8eb0ff;
   }
 
   &:focus-visible {
-    outline: 3px solid ${(props) => props.theme.colors.teal};
+    outline: 3px solid #78a4ff;
     outline-offset: 3px;
+  }
+
+  svg {
+    transition: transform 180ms ease;
+  }
+
+  &:hover svg {
+    transform: translate(0.2rem, -0.2rem);
   }
 `;
