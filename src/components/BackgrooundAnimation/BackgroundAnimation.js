@@ -1,210 +1,382 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const SvgContainer = styled.div`
+const AnimationContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: ${(props) => props.theme.colors.primary1};
 
   svg {
+    display: block;
     width: 100%;
     height: auto;
-    filter: drop-shadow(0 12px 32px rgba(26, 135, 129, 0.08));
-  }
-
-  .grid-line {
-    stroke: ${(props) => props.theme.colors.border};
-    stroke-dasharray: 4 6;
-  }
-
-  .orbit {
-    stroke: ${(props) => props.theme.colors.border};
-    opacity: 0.7;
-  }
-
-  .path-primary {
-    stroke: ${(props) => props.theme.colors.teal};
-    stroke-width: 2;
-    opacity: 0.85;
-  }
-
-  .path-accent {
-    stroke: ${(props) => props.theme.colors.accent1};
-    stroke-width: 2;
-    opacity: 0.8;
-  }
-
-  .node-outer {
-    fill: ${(props) => props.theme.colors.background1};
-    stroke: ${(props) => props.theme.colors.teal};
-    stroke-width: 2;
-  }
-
-  .node-accent {
-    fill: ${(props) => props.theme.colors.background1};
-    stroke: ${(props) => props.theme.colors.accent1};
-    stroke-width: 2;
-  }
-
-  .node-pulse {
-    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    transform-origin: center;
-  }
-
-  .node-pulse-alt {
-    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) 2s infinite;
-    transform-origin: center;
-  }
-
-  .signal-dot {
-    fill: ${(props) => props.theme.colors.accent1};
-  }
-
-  .label-text {
-    font-family: ${(props) => props.theme.fonts.main};
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    fill: ${(props) => props.theme.colors.muted};
-  }
-
-  @keyframes pulse {
-    0%, 100% {
-      r: 6;
-      opacity: 0.9;
-    }
-    50% {
-      r: 14;
-      opacity: 0.15;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .node-pulse,
-    .node-pulse-alt,
-    animateMotion {
-      animation: none !important;
-    }
   }
 `;
 
 const BackgroundAnimation = () => (
-  <SvgContainer>
+  <AnimationContainer>
     <svg
       className="BgAnimation__svg"
-      viewBox="0 0 600 600"
+      viewBox="0 0 602 602"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
+      <g opacity="0.16">
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M201.337 87.437C193.474 79.5738 180.725 79.5738 172.862 87.437L87.437 172.862C79.5739 180.725 79.5739 193.474 87.437 201.337L400.663 514.563C408.526 522.426 421.275 522.426 429.138 514.563L514.563 429.138C522.426 421.275 522.426 408.526 514.563 400.663L201.337 87.437ZM30.4869 115.912C-8.82897 155.228 -8.82897 218.972 30.4869 258.287L343.713 571.513C383.028 610.829 446.772 610.829 486.088 571.513L571.513 486.088C610.829 446.772 610.829 383.028 571.513 343.713L258.287 30.4869C218.972 -8.82896 155.228 -8.82896 115.912 30.4869L30.4869 115.912Z"
+          stroke="url(#paint0_radial)"
+          id="path_0"
+        />
+        <path
+          d="M514.563 201.337C522.426 193.474 522.426 180.725 514.563 172.862L429.138 87.437C421.275 79.5738 408.526 79.5739 400.663 87.437L358.098 130.002L301.148 73.0516L343.713 30.4869C383.028 -8.82896 446.772 -8.82896 486.088 30.4869L571.513 115.912C610.829 155.228 610.829 218.972 571.513 258.287L357.802 471.999L300.852 415.049L514.563 201.337Z"
+          stroke="url(#paint1_radial)"
+          id="path_1"
+        />
+        <path
+          d="M243.901 471.999L201.337 514.563C193.474 522.426 180.725 522.426 172.862 514.563L87.437 429.138C79.5739 421.275 79.5739 408.526 87.437 400.663L301.148 186.952L244.198 130.002L30.4869 343.713C-8.82897 383.028 -8.82897 446.772 30.4869 486.088L115.912 571.513C155.228 610.829 218.972 610.829 258.287 571.513L300.852 528.949L243.901 471.999Z"
+          stroke="url(#paint2_radial)"
+          id="path_2"
+        />
+      </g>
+      <ellipse
+        cx="295.027"
+        cy="193.118"
+        transform="translate(-295.027 -193.118)"
+        rx="1.07306"
+        ry="1.07433"
+        fill="#945DD6"
+      >
+        <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
+          <mpath xlinkHref="#path_2" />
+        </animateMotion>
+      </ellipse>
+      <path
+        d="M294.685 193.474L268.932 219.258"
+        transform="translate(-294.685 -193.474) rotate(45 294.685 193.474)"
+        stroke="url(#paint3_linear)"
+      >
+        <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
+          <mpath xlinkHref="#path_2" />
+        </animateMotion>
+      </path>
+      <ellipse
+        cx="295.027"
+        cy="193.118"
+        transform="translate(-295.027 -193.118)"
+        rx="1.07306"
+        ry="1.07433"
+        fill="#F46737"
+      >
+        <animateMotion
+          dur="5s"
+          begin="1"
+          repeatCount="indefinite"
+          rotate="auto"
+        >
+          <mpath xlinkHref="#path_2" />
+        </animateMotion>
+      </ellipse>
+      <path
+        d="M294.685 193.474L268.932 219.258"
+        transform="translate(-294.685 -193.474) rotate(45 294.685 193.474)"
+        stroke="url(#paint7_linear)"
+      >
+        <animateMotion
+          dur="5s"
+          begin="1"
+          repeatCount="indefinite"
+          rotate="auto"
+        >
+          <mpath xlinkHref="#path_2" />
+        </animateMotion>
+      </path>
+      <ellipse
+        cx="476.525"
+        cy="363.313"
+        rx="1.07433"
+        ry="1.07306"
+        transform="translate(-476.525 -363.313) rotate(90 476.525 363.313)"
+        fill="#945DD6"
+      >
+        <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
+          <mpath xlinkHref="#path_0" />
+        </animateMotion>
+      </ellipse>
+      <path
+        d="M476.171 362.952L450.417 337.168"
+        transform="translate(-476.525 -363.313) rotate(-45 476.171 362.952)"
+        stroke="url(#paint4_linear)"
+      >
+        <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
+          <mpath xlinkHref="#path_0" />
+        </animateMotion>
+      </path>
+      <ellipse
+        cx="382.164"
+        cy="155.029"
+        rx="1.07433"
+        ry="1.07306"
+        transform="translate(-382.164 -155.029) rotate(90 382.164 155.029)"
+        fill="#F46737"
+      >
+        <animateMotion
+          dur="10s"
+          begin="1"
+          repeatCount="indefinite"
+          rotate="auto"
+        >
+          <mpath xlinkHref="#path_0" />
+        </animateMotion>
+      </ellipse>
+      <path
+        d="M381.81 154.669L356.057 128.885"
+        transform="translate(-381.81 -154.669) rotate(-45 381.81 154.669)"
+        stroke="url(#paint5_linear)"
+      >
+        <animateMotion
+          dur="10s"
+          begin="1"
+          repeatCount="indefinite"
+          rotate="auto"
+        >
+          <mpath xlinkHref="#path_0" />
+        </animateMotion>
+      </path>
+      <ellipse
+        cx="333.324"
+        cy="382.691"
+        rx="1.07306"
+        ry="1.07433"
+        transform="translate(-333.324 -382.691) rotate(-180 333.324 382.691)"
+        fill="#F46737"
+      >
+        <animateMotion
+          dur="5s"
+          begin="0"
+          repeatCount="indefinite"
+          rotate="auto"
+        >
+          <mpath xlinkHref="#path_1" />
+        </animateMotion>
+      </ellipse>
+      <path
+        d="M333.667 382.335L359.42 356.551"
+        transform="scale(-1 1) translate(-333.667 -382.335) rotate(45 333.667 382.335)"
+        stroke="url(#paint6_linear)"
+      >
+        <animateMotion
+          dur="5s"
+          begin="0"
+          repeatCount="indefinite"
+          rotate="auto"
+        >
+          <mpath xlinkHref="#path_1" />
+        </animateMotion>
+      </path>
+      <ellipse
+        cx="165.524"
+        cy="93.9596"
+        rx="1.07306"
+        ry="1.07433"
+        transform="translate(-165.524 -93.9596)"
+        fill="#F46737"
+      >
+        <animateMotion
+          dur="10s"
+          begin="3"
+          repeatCount="indefinite"
+          rotate="auto"
+        >
+          <mpath xlinkHref="#path_0" />
+        </animateMotion>
+      </ellipse>
+      <path
+        d="M165.182 94.3159L139.429 120.1"
+        transform="translate(-165.182 -94.3159) rotate(45 165.182 94.3159)"
+        stroke="url(#paint7_linear)"
+      >
+        <animateMotion
+          dur="10s"
+          begin="3"
+          repeatCount="indefinite"
+          rotate="auto"
+        >
+          <mpath xlinkHref="#path_0" />
+        </animateMotion>
+      </path>
+      <ellipse
+        cx="476.525"
+        cy="363.313"
+        rx="1.07433"
+        ry="1.07306"
+        transform="translate(-476.525 -363.313) rotate(90 476.525 363.313)"
+        fill="#13ADC7"
+      >
+        <animateMotion
+          dur="12s"
+          begin="4"
+          repeatCount="indefinite"
+          rotate="auto"
+        >
+          <mpath xlinkHref="#path_0" />
+        </animateMotion>
+      </ellipse>
+      <path
+        d="M476.171 362.952L450.417 337.168"
+        transform="translate(-476.525 -363.313) rotate(-45 476.171 362.952)"
+        stroke="url(#paint11_linear)"
+      >
+        <animateMotion
+          dur="12s"
+          begin="4"
+          repeatCount="indefinite"
+          rotate="auto"
+        >
+          <mpath xlinkHref="#path_0" />
+        </animateMotion>
+      </path>
       <defs>
-        <radialGradient id="pm-glow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#1A8781" stopOpacity="0.18" />
-          <stop offset="60%" stopColor="#E5674F" stopOpacity="0.06" />
-          <stop offset="100%" stopColor="#1A8781" stopOpacity="0" />
+        <radialGradient
+          id="paint0_radial"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="translate(301 301) rotate(90) scale(300)"
+        >
+          <stop offset="0.333333" stopColor="currentColor" stopOpacity="0.4" />
+          <stop offset="1" stopColor="currentColor" stopOpacity="0" />
         </radialGradient>
-        <linearGradient id="delivery-flow" x1="80" y1="500" x2="520" y2="100" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#1A8781" />
-          <stop offset="50%" stopColor="#E5674F" />
-          <stop offset="100%" stopColor="#1A8781" />
+        <radialGradient
+          id="paint1_radial"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="translate(301 301) rotate(90) scale(300)"
+        >
+          <stop offset="0.333333" stopColor="currentColor" stopOpacity="0.4" />
+          <stop offset="1" stopColor="currentColor" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient
+          id="paint2_radial"
+          cx="0"
+          cy="0"
+          r="1"
+          gradientUnits="userSpaceOnUse"
+          gradientTransform="translate(301 301) rotate(90) scale(300)"
+        >
+          <stop offset="0.333333" stopColor="currentColor" stopOpacity="0.4" />
+          <stop offset="1" stopColor="currentColor" stopOpacity="0" />
+        </radialGradient>
+        <linearGradient
+          id="paint3_linear"
+          x1="295.043"
+          y1="193.116"
+          x2="269.975"
+          y2="218.154"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#945DD6" />
+          <stop offset="1" stopColor="#945DD6" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient
+          id="paint4_linear"
+          x1="476.529"
+          y1="363.31"
+          x2="451.461"
+          y2="338.272"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#945DD6" />
+          <stop offset="1" stopColor="#945DD6" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient
+          id="paint5_linear"
+          x1="382.168"
+          y1="155.027"
+          x2="357.1"
+          y2="129.989"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#F46737" />
+          <stop offset="1" stopColor="#F46737" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient
+          id="paint6_linear"
+          x1="333.309"
+          y1="382.693"
+          x2="358.376"
+          y2="357.655"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#F46737" />
+          <stop offset="1" stopColor="#F46737" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient
+          id="paint7_linear"
+          x1="165.54"
+          y1="93.9578"
+          x2="140.472"
+          y2="118.996"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#F46737" />
+          <stop offset="1" stopColor="#F46737" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient
+          id="paint8_linear"
+          x1="414.367"
+          y1="301.156"
+          x2="439.435"
+          y2="276.118"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#13ADC7" />
+          <stop offset="1" stopColor="#13ADC7" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient
+          id="paint9_linear"
+          x1="515.943"
+          y1="288.238"
+          x2="541.339"
+          y2="291.454"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#13ADC7" />
+          <stop offset="1" stopColor="#13ADC7" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient
+          id="paint10_linear"
+          x1="117.001"
+          y1="230.619"
+          x2="117.36"
+          y2="258.193"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#945DD6" />
+          <stop offset="1" stopColor="#945DD6" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient
+          id="paint11_linear"
+          x1="476.529"
+          y1="363.31"
+          x2="451.461"
+          y2="338.272"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#13ADC7" />
+          <stop offset="1" stopColor="#13ADC7" stopOpacity="0" />
         </linearGradient>
       </defs>
-
-      {/* Ambient background glow */}
-      <circle cx="300" cy="300" r="260" fill="url(#pm-glow)" />
-
-      {/* Concentric PM governance & delivery rings */}
-      <circle className="orbit" cx="300" cy="300" r="230" strokeWidth="1" strokeDasharray="3 7" />
-      <circle className="orbit" cx="300" cy="300" r="170" strokeWidth="1.2" />
-      <circle className="orbit" cx="300" cy="300" r="105" strokeWidth="1" strokeDasharray="6 6" />
-
-      {/* Axis & radar coordination lines */}
-      <line className="grid-line" x1="70" y1="300" x2="530" y2="300" strokeWidth="1" />
-      <line className="grid-line" x1="300" y1="70" x2="300" y2="530" strokeWidth="1" />
-      <line className="grid-line" x1="140" y1="140" x2="460" y2="460" strokeWidth="1" />
-      <line className="grid-line" x1="140" y1="460" x2="460" y2="140" strokeWidth="1" />
-
-      {/* Primary Project Delivery Lifecycle Flow */}
-      <path
-        id="delivery-path"
-        d="M 100 480 C 180 430, 190 340, 260 320 C 330 300, 360 210, 480 140"
-        fill="none"
-        stroke="url(#delivery-flow)"
-        strokeWidth="3"
-        strokeLinecap="round"
-      />
-
-      {/* Agile sprint feedback loop */}
-      <path
-        id="sprint-loop"
-        d="M 260 320 C 230 250, 330 220, 350 280 C 370 330, 310 370, 260 320"
-        fill="none"
-        className="path-accent"
-        strokeDasharray="4 4"
-      />
-
-      {/* Secondary workstream (Governance & PMO) */}
-      <path
-        d="M 140 220 C 220 200, 300 240, 380 200 C 430 170, 470 240, 510 230"
-        fill="none"
-        className="path-primary"
-        strokeDasharray="5 5"
-      />
-
-      {/* Animated signal traveler along primary delivery path */}
-      <circle r="4.5" className="signal-dot">
-        <animateMotion dur="6s" repeatCount="indefinite">
-          <mpath href="#delivery-path" />
-        </animateMotion>
-      </circle>
-
-      {/* Animated signal traveler on sprint loop */}
-      <circle r="3.5" fill="#1A8781">
-        <animateMotion dur="4.5s" repeatCount="indefinite">
-          <mpath href="#sprint-loop" />
-        </animateMotion>
-      </circle>
-
-      {/* Stage Nodes & Radar Markers */}
-      {/* Node 1: Initiation */}
-      <circle cx="100" cy="480" r="16" className="node-pulse" fill="#1A8781" />
-      <circle cx="100" cy="480" r="7" className="node-outer" />
-      <text x="100" y="515" textAnchor="middle" className="label-text">Initiation</text>
-
-      {/* Node 2: PMO Governance */}
-      <circle cx="195" cy="360" r="6" className="node-accent" />
-      <text x="145" y="380" className="label-text">PMO Governance</text>
-
-      {/* Node 3: Agile Execution & Sprints */}
-      <circle cx="300" cy="300" r="22" className="node-pulse-alt" fill="#E5674F" />
-      <circle cx="300" cy="300" r="9" className="node-accent" />
-      <circle cx="300" cy="300" r="3" fill="#E5674F" />
-      <text x="300" y="270" textAnchor="middle" className="label-text">Agile Execution</text>
-
-      {/* Node 4: Quality & UAT */}
-      <circle cx="395" cy="195" r="7" className="node-outer" />
-      <text x="415" y="198" className="label-text">UAT &amp; Readiness</text>
-
-      {/* Node 5: Enterprise Release */}
-      <circle cx="480" cy="140" r="18" className="node-pulse" fill="#1A8781" />
-      <circle cx="480" cy="140" r="8" className="node-outer" />
-      <circle cx="480" cy="140" r="3" fill="#1A8781" />
-      <text x="480" y="115" textAnchor="middle" className="label-text">Deployment</text>
-
-      {/* Telemetry data ticks on the outer perimeter */}
-      <g stroke="currentColor" strokeWidth="1" opacity="0.35">
-        <line x1="300" y1="65" x2="300" y2="75" />
-        <line x1="300" y1="525" x2="300" y2="535" />
-        <line x1="65" y1="300" x2="75" y2="300" />
-        <line x1="525" y1="300" x2="535" y2="300" />
-        <line x1="135" y1="135" x2="142" y2="142" />
-        <line x1="458" y1="458" x2="465" y2="465" />
-      </g>
     </svg>
-  </SvgContainer>
+  </AnimationContainer>
 );
 
 export default BackgroundAnimation;

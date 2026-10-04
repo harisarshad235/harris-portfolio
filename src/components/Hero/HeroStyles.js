@@ -111,6 +111,8 @@ export const VisualSection = styled.div`
 `;
 
 export const HeroImageWrap = styled.div`
+  position: relative;
+  z-index: 2;
   width: min(100%, 360px);
   aspect-ratio: 4 / 5;
   border-radius: 24px;

@@ -10,6 +10,7 @@ export const ImageWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1.4rem;
 `;
 
 export const Img = styled.img`
@@ -17,9 +18,11 @@ export const Img = styled.img`
   position: relative;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  transition: transform 300ms ease;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 8px;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.09));
+  transition: transform 300ms ease, filter 300ms ease;
 `;
 
 export const ProjectArtwork = styled.div`
