@@ -25,10 +25,10 @@ import {
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
 import { projects } from '../../constants/constants';
 
-const filters = ['All', 'Enterprise PM', 'Digital & Software', 'Consulting'];
+const filters = ['All', 'Telecom', 'E-commerce', 'Public sector', 'Digital platforms'];
 const filterProjects = (filter) => filter === 'All'
   ? projects
-  : projects.filter(({ projectTypes }) => projectTypes.includes(filter));
+  : projects.filter(({ sector }) => sector === filter);
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -38,7 +38,7 @@ const Projects = () => {
     <Section nopadding id='projects' data-reveal>
       <SectionDivider/>
       <SectionTitle main>Projects</SectionTitle>
-      <FilterBar role="group" aria-label="Filter projects for">
+      <FilterBar role="group" aria-label="Filter projects by industry">
         {filters.map((filter) => {
           const count = filterProjects(filter).length;
 
