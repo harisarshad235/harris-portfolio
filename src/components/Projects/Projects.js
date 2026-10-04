@@ -4,23 +4,22 @@ import { BlogCard, CardInfo, CardLink, ExternalLinks, FilterBar, FilterButton, F
 import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
 import { projects } from '../../constants/constants';
 
-const filters = ['All', 'Public sector', 'Digital platforms', 'E-commerce'];
+const filters = ['All', 'Enterprise PM', 'Digital & Software', 'Consulting'];
+const filterProjects = (filter) => filter === 'All'
+  ? projects
+  : projects.filter(({ projectTypes }) => projectTypes.includes(filter));
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
-  const visibleProjects = activeFilter === 'All'
-    ? projects
-    : projects.filter((project) => project.category === activeFilter);
+  const visibleProjects = filterProjects(activeFilter);
 
   return (
     <Section nopadding id='projects' data-reveal>
       <SectionDivider/>
       <SectionTitle main>Projects</SectionTitle>
-      <FilterBar role="group" aria-label="Filter projects by type">
+      <FilterBar role="group" aria-label="Filter projects for">
         {filters.map((filter) => {
-          const count = filter === 'All'
-            ? projects.length
-            : projects.filter((project) => project.category === filter).length;
+          const count = filterProjects(filter).length;
 
           return (
             <FilterButton
@@ -34,10 +33,17 @@ const Projects = () => {
           );
         })}
       </FilterBar>
-      <FilterStatus aria-live="polite">Showing {visibleProjects.length} of {projects.length} projects</FilterStatus>
+      <FilterStatus aria-live="polite">
+        Showing {visibleProjects.length} of {projects.length} projects{activeFilter !== 'All' ? ` for ${activeFilter}` : ''}
+      </FilterStatus>
       <GridContainer>
-        {visibleProjects.map(({id,image,title,client,sector,category,description,impact,website,caseStudy}) =>(
-          <BlogCard key={id} data-reveal style={{ '--reveal-delay': `${(id % 3) * 70}ms` }}>
+        {visibleProjects.map(({id,image,title,client,sector,category,description,impact,website,caseStudy,projectTypes}) =>(
+          <BlogCard
+            key={id}
+            data-reveal
+            data-project-types={projectTypes.join(',')}
+            style={{ '--reveal-delay': `${(id % 3) * 70}ms` }}
+          >
             <ImageWrapper>
               {image
                 ? <Img src={image} alt={`${client || title} project`} />

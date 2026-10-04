@@ -102,12 +102,55 @@ export const Div2 = styled.div`
 export const Div3 = styled.div`
   grid-area: controls;
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.8rem;
 
   @media ${(props) => props.theme.breakpoints.md} {
     grid-area: controls;
+  }
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    gap: 0.6rem;
+
+    > a[aria-label^="Visit"] {
+      display: none;
+    }
+  }
+`;
+
+export const NavAction = styled.a`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.6rem;
+  padding: 0.7rem 1.1rem;
+  border: 1px solid ${(props) => props.$secondary ? props.theme.colors.border : props.theme.colors.accent1};
+  border-radius: 999px;
+  background: ${(props) => props.$secondary ? 'transparent' : props.theme.colors.accent1};
+  color: ${(props) => props.$secondary ? props.theme.colors.primary1 : props.theme.colors.accentForeground};
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+
+  &:hover {
+    border-color: ${(props) => props.theme.colors.primary1};
+    background: ${(props) => props.$secondary ? props.theme.colors.softSurface : props.theme.colors.primary1};
+    color: ${(props) => props.$secondary ? props.theme.colors.primary1 : props.theme.colors.background1};
+  }
+
+  &:focus-visible {
+    outline: 3px solid ${(props) => props.theme.colors.teal};
+    outline-offset: 3px;
+  }
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    min-height: 3.4rem;
+    padding: 0.6rem 0.8rem;
+    font-size: 1.15rem;
   }
 `;
 

@@ -117,9 +117,10 @@ const Contact = () => {
             <FormSelect id="contact-service" name="service" value={selectedService} onChange={(event) => setSelectedService(event.target.value)} required>
               <option value="">Select a service</option>
               <option value="30-minute project consultation">30-minute project consultation</option>
-              <option value="Delivery health check">Delivery health check</option>
-              <option value="PMO and portfolio controls">PMO and portfolio controls</option>
-              <option value="Agile delivery coordination">Agile delivery coordination</option>
+              <option value="Project recovery & health checks">Project recovery &amp; health checks</option>
+              <option value="PMO setup & portfolio controls">PMO setup &amp; portfolio controls</option>
+              <option value="Schedule & cost control">Schedule &amp; cost control</option>
+              <option value="Fractional PM for digital teams">Fractional PM for digital teams</option>
               <option value="General inquiry">General inquiry</option>
             </FormSelect>
           </FormField>

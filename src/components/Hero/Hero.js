@@ -3,7 +3,7 @@ import { FiAward, FiArrowRight, FiDownload, FiMapPin } from 'react-icons/fi';
 
 import { Section } from '../../styles/GlobalComponents';
 import Button from '../../styles/GlobalComponents/Button';
-import { ActionLink, ActionRow, DeliveryFocus, Eyebrow, HeroDescription, HeroImage, HeroImageWrap, HeroStat, HeroStats, HeroTitle, LeftSection, MetaItem, MetaRow, StatLabel, StatValue, VisualSection } from './HeroStyles';
+import { ActionLink, ActionRow, AvailabilityBadge, DeliveryFocus, Eyebrow, HeroDescription, HeroImage, HeroImageWrap, HeroStat, HeroStats, HeroTitle, LeftSection, MetaItem, MetaRow, StatLabel, StatValue, VisualSection } from './HeroStyles';
 
 const Hero = () => (
     <Section row nopadding>
@@ -18,6 +18,7 @@ const Hero = () => (
         <MetaRow>
           <MetaItem><FiMapPin /> Islamabad, Pakistan</MetaItem>
           <MetaItem><FiAward /> PMP® certified</MetaItem>
+          <AvailabilityBadge><span aria-hidden="true" /> Open to PM/PMO roles &amp; select consulting</AvailabilityBadge>
         </MetaRow>
         <HeroStats>
           <HeroStat><StatValue>PKR 103M+</StatValue><StatLabel>savings on track-and-trace delivery</StatLabel></HeroStat>

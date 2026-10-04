@@ -4,7 +4,7 @@ import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { FiMoon, FiSun } from 'react-icons/fi';
 
 import { useThemeMode } from '../../styles/theme';
-import { BrandImage, Container, Div1, Div2, Div3, NavLink, SocialIcons, Span, ThemeToggleButton } from './HeaderStyles';
+import { BrandImage, Container, Div1, Div2, Div3, NavAction, NavLink, SocialIcons, Span, ThemeToggleButton } from './HeaderStyles';
 
 const NAV_ITEMS = [
   { href: '#about', label: 'About' },
@@ -99,7 +99,12 @@ const Header = () => {
       <SocialIcons href='https://pk.linkedin.com/in/haris-arshad' target='_blank' rel='noopener noreferrer' aria-label='Visit Haris Arshad on LinkedIn'>
         <AiFillLinkedin size="3rem" aria-hidden="true"/>
       </SocialIcons>
-
+      <NavAction href="/resume/haris-arshad-cv.pdf" download="haris-arshad-cv.pdf" aria-label="Download Haris Arshad's resume" $secondary>
+        Resume
+      </NavAction>
+      <NavAction href="#contact">
+        Work with me
+      </NavAction>
     </Div3>
 
   </Container>

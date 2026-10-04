@@ -2,13 +2,17 @@ import styled from 'styled-components';
 
 export const ServiceGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2.8rem;
   margin-top: 2rem;
 
   @media ${(props) => props.theme.breakpoints.md} {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem;
+  }
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    grid-template-columns: 1fr;
   }
 `;
 
@@ -20,11 +24,11 @@ export const ServiceItem = styled.article`
   padding: 1.8rem 0 0;
   border-top: 2px solid ${(props) => props.theme.colors.border};
 
-  &:nth-child(3n + 1) {
+  &:nth-child(2n + 1) {
     border-color: ${(props) => props.theme.colors.teal};
   }
 
-  &:nth-child(3n + 2) {
+  &:nth-child(2n) {
     border-color: ${(props) => props.theme.colors.accent1};
   }
 `;
@@ -51,6 +55,20 @@ export const ServiceSummary = styled.p`
   color: ${(props) => props.theme.colors.muted};
   font-size: 1.5rem;
   line-height: 1.6;
+`;
+
+export const ServiceDetails = styled.div`
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 1.4rem;
+  color: ${(props) => props.theme.colors.muted};
+  font-size: 1.25rem;
+  line-height: 1.5;
+
+  span:first-child {
+    color: ${(props) => props.theme.colors.primary1};
+    font-weight: 700;
+  }
 `;
 
 export const ServiceLink = styled.a`

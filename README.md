@@ -38,6 +38,8 @@ To enable automatic approval and live display:
 
 Approved entries are loaded from D1 by `functions/api/recommendations.js` whenever the portfolio loads. Review links expire after 90 days; expired pending submissions are removed when a new submission arrives or the expired review link is opened. Only approve feedback and attribution the reviewer agreed to make public.
 
+When using `npm run dev`, the local Next.js API route proxies approved public recommendations from the live site because Next.js does not run Cloudflare Pages Functions locally. Production continues to read directly from the D1-backed Cloudflare Pages Function.
+
 ### Updating credentials
 
 Add or edit entries in `src/constants/credentials.js`. Categories automatically become filter options. For a public verification page, set `verificationUrl`; for a certificate image, add the image under `public/credentials/` and set `certificateImage`; for a PDF, add it to `public/credentials/` and set `certificateFile`, `certificateFileLabel`, and optionally `certificatePreview` to show a rendered image in its card. Only add documents you intend to make publicly accessible.

@@ -155,8 +155,30 @@ export const Eyebrow = styled.p`
 export const MetaRow = styled.div`
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 1.2rem 2.4rem;
   margin-bottom: 3rem;
+`;
+
+export const AvailabilityBadge = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.7rem 1.1rem;
+  border: 1px solid ${(props) => props.theme.colors.border};
+  border-radius: 999px;
+  color: ${(props) => props.theme.colors.primary1};
+  background: ${(props) => props.theme.colors.softSurface};
+  font-size: 1.2rem;
+  font-weight: 600;
+
+  span {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background: #278a67;
+    box-shadow: 0 0 0 3px rgba(39, 138, 103, 0.14);
+  }
 `;
 
 export const ActionRow = styled.div`
