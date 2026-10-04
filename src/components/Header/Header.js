@@ -46,7 +46,8 @@ const Header = () => {
         const offset = headerHeight + 12;
         const sections = NAV_ITEMS
           .map(({ href }) => ({ href, element: document.getElementById(href.slice(1)) }))
-          .filter(({ element }) => element);
+          .filter(({ element }) => element)
+          .sort((first, second) => first.element.getBoundingClientRect().top - second.element.getBoundingClientRect().top);
         const atPageBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 1;
         let current = (atPageBottom ? sections[sections.length - 1]?.href : sections[0]?.href) || '';
 
