@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A Boohoo Group case study on a unified returns platform, commerce integrations, and coordinated delivery." />
+    <title>Boohoo Group Returns Platform | Haris Arshad</title>
+    <link rel="stylesheet" href="/case-studies/case-study.css" />
+      <script>
+      (function() {
+        var savedTheme = localStorage.getItem('portfolio-theme');
+        if (savedTheme) {
+          document.documentElement.setAttribute('data-theme', savedTheme);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+  </head>
+  <body class="case-study-page">
+    <main class="case-study case-study--feature">
+            <div class="case-top-bar">
+        <a class="case-back" href="/#projects"><span aria-hidden="true">←</span> All projects</a>
+        <button type="button" class="case-theme-toggle" id="case-theme-toggle" aria-label="Toggle color theme">
+          <span class="icon-sun" aria-hidden="true">☀️</span>
+          <span class="icon-moon" aria-hidden="true">🌙</span>
+        </button>
+      </div>
+      <header class="case-hero">
+        <div class="case-hero-media" aria-hidden="true"><img src="/images/13.png" alt="" /></div>
+        <div class="case-hero-content">
+          <p class="case-eyebrow">SOFTOO project · E-commerce</p>
+          <p class="case-client">Boohoo Group</p>
+          <h1>Bespoke returns platform</h1>
+          <p class="case-lede">Bringing returns workflows and commerce operations together across a multi-brand fashion group.</p>
+          <div class="case-tags" aria-label="Project focus">
+            <span>Returns workflow</span>
+            <span>Commerce integration</span>
+            <span>Delivery coordination</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="case-overview">
+        <div>
+          <p class="case-label">The engagement</p>
+          <h2>A consistent returns experience across brands</h2>
+          <p>Boohoo Group needed a dedicated returns service that could support its brand portfolio while connecting to the systems used to fulfil and track customer orders. The work brought return activity into a more unified operational flow.</p>
+          <p class="case-personal-note">As a Junior Project Coordinator at SOFTOO, I supported weekly delivery meetings and kept project documentation current so business and technical stakeholders could track milestones and release progress.</p>
+        </div>
+        <aside class="case-focus">
+          <h3>Platform technologies</h3>
+          <ul>
+            <li>AWS Lambda and Amazon RDS</li>
+            <li>Amazon SQS and SNS</li>
+            <li>Order and SKU-level integration</li>
+            <li>Warehouse management connection</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="case-chapter">
+        <header>
+          <p class="case-label">01 / The challenge</p>
+          <h2>Connecting many moving parts</h2>
+        </header>
+        <div class="case-card-grid">
+          <article><h3>Multiple brands</h3><p>A single returns capability had to work across distinct storefronts and operating needs within the group.</p></article>
+          <article><h3>Complex system handoffs</h3><p>Returns depend on accurate order and item details, with information moving between customer-facing services and warehouse operations.</p></article>
+          <article><h3>Flexible delivery capacity</h3><p>The programme needed experienced engineering and clear coordination to bring a bespoke service into operation.</p></article>
+        </div>
+      </section>
+
+      <section class="case-chapter case-chapter--tinted">
+        <header>
+          <p class="case-label">02 / The delivery</p>
+          <h2>Joining the returns journey end to end</h2>
+        </header>
+        <div class="case-card-grid">
+          <article><span class="case-index">01</span><h3>Use a managed cloud foundation</h3><p>Build on AWS serverless components and managed data services to support a flexible service footprint.</p></article>
+          <article><span class="case-index">02</span><h3>Connect operational systems</h3><p>Carry relevant order and SKU information through the returns process and into warehouse workflows.</p></article>
+          <article><span class="case-index">03</span><h3>Coordinate across workstreams</h3><p>Maintain shared delivery checkpoints and clear documentation across stakeholder and engineering teams.</p></article>
+        </div>
+      </section>
+
+      <section class="case-outcome">
+        <p class="case-label">03 / Project impact</p>
+        <h2>A reusable capability for a growing brand group</h2>
+        <p>The project created a returns workflow designed to serve multiple Boohoo Group brands, linking customer operations with order and warehouse information through a tailored platform. Its serverless foundation supported operational efficiency, simpler integrations, and expansion across the group.</p>
+        <a href="https://softoo.co/case-studies/" target="_blank" rel="noopener noreferrer">View SOFTOO case-study reference <span aria-hidden="true">↗</span></a>
+        <a href="https://eu.boohoo.com/" target="_blank" rel="noopener noreferrer">Visit Boohoo <span aria-hidden="true">↗</span></a>
+      </section>
+
+      <footer class="case-footer case-footer--feature">
+        <a href="/case-studies/frequency-allocation-board.html">Previous: Spectrum workflow <span aria-hidden="true">←</span></a>
+        <a href="/case-studies/prettylittlething-ecommerce.html">Next: PrettyLittleThing <span aria-hidden="true">→</span></a>
+      </footer>
+    </main>
+      <script>
+      document.getElementById('case-theme-toggle')?.addEventListener('click', function() {
+        var current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+        var next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('portfolio-theme', next);
+      });
+    </script>
+  </body>
+</html>

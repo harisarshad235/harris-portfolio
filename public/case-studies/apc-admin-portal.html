@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Haris Arshad managed client coordination, development requirements, and module documentation for the Aviation Professionals Club admin portal." />
+  <title>APC Admin Portal | Haris Arshad</title>
+  <link rel="stylesheet" href="/case-studies/case-study.css" />
+  <script>
+    (function () {
+      var savedTheme = localStorage.getItem('portfolio-theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+</head>
+
+<body class="case-study-page">
+  <main class="case-study case-study--feature">
+    <div class="case-top-bar">
+      <a class="case-back" href="/#projects"><span aria-hidden="true">←</span> All projects</a>
+      <button type="button" class="case-theme-toggle" id="case-theme-toggle" aria-label="Toggle color theme">
+        <span class="icon-sun" aria-hidden="true">☀️</span>
+        <span class="icon-moon" aria-hidden="true">🌙</span>
+      </button>
+    </div>
+    <header class="case-hero">
+      <div class="case-hero-media" aria-hidden="true"><img src="/images/11.png" alt="" /></div>
+      <div class="case-hero-content">
+        <p class="case-eyebrow">Client portal · Digital platforms</p>
+        <p class="case-client">Aviation Professionals Club</p>
+        <h1>APC Admin Portal</h1>
+        <p class="case-lede">A client-facing administration portal delivered with clear requirements, regular progress
+          updates, and documentation for ongoing use.</p>
+        <div class="case-tags" aria-label="Project focus">
+          <span>Requirements management</span>
+          <span>Client coordination</span>
+          <span>UAT and handover</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="case-metrics" aria-label="Delivery focus">
+      <div><strong>Translate</strong><span>requirements to tasks</span></div>
+      <div><strong>Validate</strong><span>with user testing</span></div>
+      <div><strong>Document</strong><span>modules for handover</span></div>
+    </section>
+
+    <section class="case-overview">
+      <div>
+        <p class="case-label">The engagement</p>
+        <h2>Making portal delivery understandable and usable</h2>
+        <p>The Aviation Professionals Club describes itself as a lifestyle and benefits club for eligible aviation
+          professionals in the UAE. Its member services include partner offers, digital membership cards, and access to
+          club information through its website and mobile app.</p>
+        <p class="case-personal-note">As Project Manager at Sigma Digital Solutions, I was the primary client contact. I
+          translated requirements into development tasks, shared status updates, supported UAT, and authored a technical
+          user manual covering the portal modules.</p>
+      </div>
+      <aside class="case-focus">
+        <h3>Delivery focus</h3>
+        <ul>
+          <li>Client requirements</li>
+          <li>Actionable development tasks</li>
+          <li>UAT coordination</li>
+          <li>Technical user manual</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="case-chapter">
+      <header>
+        <p class="case-label">01 / The challenge</p>
+        <h2>Connecting client needs to shipped work</h2>
+      </header>
+      <div class="case-card-grid">
+        <article>
+          <h3>Requirements clarity</h3>
+          <p>Requests for a member-facing admin portal need to be translated into sufficiently clear tasks that
+            developers can estimate and deliver.</p>
+        </article>
+        <article>
+          <h3>Progress visibility</h3>
+          <p>Regular, understandable updates keep the client informed about work in progress, decisions, and items
+            needing attention.</p>
+        </article>
+        <article>
+          <h3>Knowledge transfer</h3>
+          <p>Portal modules need practical documentation so administrators can take over routine use after delivery.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="case-chapter case-chapter--tinted">
+      <header>
+        <p class="case-label">02 / My contribution</p>
+        <h2>Building clarity from kickoff to adoption</h2>
+      </header>
+      <div class="case-card-grid">
+        <article><span class="case-index">01</span>
+          <h3>Shape development tasks</h3>
+          <p>Translate client requirements into actionable tasks and keep questions moving between the client and
+            delivery team.</p>
+        </article>
+        <article><span class="case-index">02</span>
+          <h3>Share delivery progress</h3>
+          <p>Provide status updates and coordinate validation so expectations stay aligned throughout implementation.
+          </p>
+        </article>
+        <article><span class="case-index">03</span>
+          <h3>Prepare the handover</h3>
+          <p>Document the portal modules in a technical user manual to support a structured transition and ongoing use.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="case-outcome">
+      <p class="case-label">03 / Project impact</p>
+      <h2>A more supported transition into portal use</h2>
+      <p>Module-level documentation and organized handover materials gave the client a clearer reference for using and
+        maintaining the delivered portal. APC describes its wider member offering, including partner benefits and
+        digital membership, on its public site.</p>
+      <a href="https://apc.ae/pages/index" target="_blank" rel="noopener noreferrer">Visit Aviation Professionals Club
+        <span aria-hidden="true">↗</span></a>
+      <a href="https://apc.ae/pages/about" target="_blank" rel="noopener noreferrer">About APC <span
+          aria-hidden="true">↗</span></a>
+      <a href="https://apc.ae/pages/membership" target="_blank" rel="noopener noreferrer">APC membership information
+        <span aria-hidden="true">↗</span></a>
+    </section>
+
+    <footer class="case-footer case-footer--feature">
+      <a href="/case-studies/taggy-marketplace.html">Previous: Taggy Marketplace <span aria-hidden="true">←</span></a>
+      <a href="/case-studies/thunder-energy.html">Next: Thunder <span aria-hidden="true">→</span></a>
+    </footer>
+  </main>
+  <script>
+    document.getElementById('case-theme-toggle')?.addEventListener('click', function () {
+      var current = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+      var next = current === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('portfolio-theme', next);
+    });
+  </script>
+</body>
+
+</html>
