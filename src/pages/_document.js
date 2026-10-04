@@ -34,10 +34,10 @@ export default class MyDocument extends Document {
       <Html lang='en-GB'>
         <Head>
           <meta name="theme-color" content="#F4F0EA" />
+          <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
           <link rel="icon" href="/favicon.ico" sizes="any" />
-          <link rel="icon" type="image/png" href="/images/planning.png" sizes="512x512" />
-          <link rel="shortcut icon" type="image/png" href="/images/planning.png" />
-          <link rel="apple-touch-icon" href="/images/planning.png" />
+          <link rel="shortcut icon" href="/favicon.svg" />
+          <link rel="apple-touch-icon" href="/favicon.svg" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
           <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>

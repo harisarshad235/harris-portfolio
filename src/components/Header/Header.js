@@ -33,6 +33,7 @@ const ThemeToggle = () => {
 };
 
 const Header = () => {
+  const { mode } = useThemeMode();
   const [activeHref, setActiveHref] = useState('');
 
   useEffect(() => {
@@ -77,7 +78,10 @@ const Header = () => {
     <Div1>
       <Link href='/'>
         <a style={{display:"flex",alignItems:"center"}}>
-          <BrandImage src="/images/planning.png" alt="" aria-hidden="true" />
+          <BrandImage
+            src={mode === 'dark' ? '/logo-dark.svg' : '/logo-light.svg'}
+            alt="Haris Arshad logo"
+          />
           <Span>Haris Arshad</Span>
         </a>
       </Link>
