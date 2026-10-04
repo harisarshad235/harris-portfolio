@@ -9,15 +9,6 @@ export const ImageWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  &::after {
-    position: absolute;
-    z-index: 0;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(8, 12, 23, 0.34), rgba(8, 12, 23, 0.05) 60%, rgba(8, 12, 23, 0.52));
-    content: '';
-    pointer-events: none;
-  }
 `;
 
 export const Img = styled.img`
@@ -25,9 +16,8 @@ export const Img = styled.img`
   position: relative;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
-  transition: transform 450ms ease;
 `
 
 export const ProjectArtwork = styled.div`
