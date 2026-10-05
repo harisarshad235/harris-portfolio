@@ -18,6 +18,11 @@ const Footer = () => {
       <LinkItem href='mailto:harisarshad235@gmail.com'>harisarshad235@gmail.com</LinkItem>
 
        </LinkColumn>
+       <LinkColumn>
+       <LinkTitle>Resume</LinkTitle>
+      <LinkItem href='/resume/haris-arshad-cv.pdf' target='_blank' rel='noopener noreferrer'>View / Download CV</LinkItem>
+
+       </LinkColumn>
       </LinkList>
       <SocialIconsContainer>
         <CompanyContainer>

@@ -103,7 +103,7 @@ const Header = () => {
       <SocialIcons href='https://pk.linkedin.com/in/haris-arshad' target='_blank' rel='noopener noreferrer' aria-label='Visit Haris Arshad on LinkedIn'>
         <AiFillLinkedin size="3rem" aria-hidden="true"/>
       </SocialIcons>
-      <NavAction href="/resume/haris-arshad-cv.pdf" download="haris-arshad-cv.pdf" aria-label="Download Haris Arshad's resume" $secondary>
+      <NavAction href="/resume/haris-arshad-cv.pdf" target="_blank" rel="noopener noreferrer" aria-label="View or download Haris Arshad's resume" $secondary>
         Resume
       </NavAction>
       <NavAction href="#contact">

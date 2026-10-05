@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiAward, FiArrowRight, FiDownload, FiMapPin } from 'react-icons/fi';
+import { FiAward, FiArrowRight, FiDownload, FiEye, FiMapPin } from 'react-icons/fi';
 
 import { Section } from '../../styles/GlobalComponents';
 import Button from '../../styles/GlobalComponents/Button';
@@ -27,7 +27,12 @@ const Hero = () => (
         </HeroStats>
         <DeliveryFocus>Selected outcomes from public-sector and multi-site delivery; see case studies for context.</DeliveryFocus>
         <ActionRow>
-          <Button aria-label="Download Haris Arshad's CV" onClick={() => window.open('/resume/haris-arshad-cv.pdf', '_blank', 'noopener,noreferrer')}> <FiDownload aria-hidden="true" /> Download CV</Button>
+          <Button aria-label="View Haris Arshad's CV" onClick={() => window.open('/resume/haris-arshad-cv.pdf', '_blank', 'noopener,noreferrer')}>
+            <FiEye aria-hidden="true" /> View CV
+          </Button>
+          <ActionLink href="/resume/haris-arshad-cv.pdf" download="haris-arshad-cv.pdf" aria-label="Download Haris Arshad's CV">
+            <FiDownload aria-hidden="true" /> Download CV
+          </ActionLink>
           <ActionLink href="#contact">Discuss a project <FiArrowRight aria-hidden="true" /></ActionLink>
         </ActionRow>
       </LeftSection>
