@@ -1,153 +1,221 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Award, Eye, Download, ArrowRight } from 'lucide-react';
+import { ArrowDown, Mail, Eye, Download, MapPin, Award } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { GithubIcon, LinkedinIcon } from '@/components/ui/hero-block-shadcnui';
 
-import { Section } from '../../styles/GlobalComponents';
-import Button from '../../styles/GlobalComponents/Button';
-import {
-  ActionLink,
-  ActionRow,
-  AvailabilityBadge,
-  DeliveryFocus,
-  Eyebrow,
-  HeroDescription,
-  HeroImage,
-  HeroImageWrap,
-  HeroStat,
-  HeroStats,
-  HeroTitle,
-  LeftSection,
-  MetaItem,
-  MetaRow,
-  StatLabel,
-  StatValue,
-  VisualSection,
-} from './HeroStyles';
+export default function Hero() {
+  return (
+    <section className="relative flex flex-col items-center justify-center overflow-hidden bg-background py-14 md:py-20 px-4 w-full">
+      {/* Animated background grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:28px_28px] pointer-events-none" />
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 16 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.2, 0.65, 0.3, 0.9] },
-  },
-};
-
-const statVariants = {
-  hidden: { opacity: 0, scale: 0.92 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.4, ease: 'easeOut' },
-  },
-};
-
-const Hero = () => (
-  <Section row nopadding className="relative overflow-hidden">
-    {/* Subtle modern background grid */}
-    <div
-      aria-hidden="true"
-      className="absolute inset-0 pointer-events-none opacity-40 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:28px_28px]"
-    />
-
-    <LeftSection as={motion.div} variants={containerVariants} initial="hidden" animate="visible">
-      <motion.div variants={itemVariants}>
-        <Eyebrow>Technology delivery · PMO · Agile coordination</Eyebrow>
-      </motion.div>
-
-      <motion.div variants={itemVariants}>
-        <HeroTitle as="h1" main center>
-          Haris Arshad, PMP® Project Manager
-        </HeroTitle>
-      </motion.div>
-
-      <motion.div variants={itemVariants}>
-        <HeroDescription>
-          PMP®-certified Project Manager in Islamabad, Pakistan, with a Master&apos;s in Project Management. I lead technology delivery across software, infrastructure, QA, and business teams, applying project planning and control, PMO governance, Agile delivery, risk management, and stakeholder coordination to move initiatives from planning through release.
-        </HeroDescription>
-      </motion.div>
-
-      <motion.div variants={itemVariants}>
-        <MetaRow>
-          <MetaItem>
-            <MapPin className="inline-block w-4 h-4 mr-1.5 text-accent" /> Islamabad, Pakistan
-          </MetaItem>
-          <MetaItem>
-            <Award className="inline-block w-4 h-4 mr-1.5 text-accent" /> PMP® certified
-          </MetaItem>
-          <AvailabilityBadge>
-            <span aria-hidden="true" /> Open to PM/PMO roles &amp; select consulting
-          </AvailabilityBadge>
-        </MetaRow>
-      </motion.div>
-
-      <motion.div variants={itemVariants}>
-        <HeroStats>
-          <HeroStat as={motion.div} variants={statVariants} whileHover={{ y: -4 }}>
-            <StatValue>PKR 103M+</StatValue>
-            <StatLabel>savings on track-and-trace delivery</StatLabel>
-          </HeroStat>
-          <HeroStat as={motion.div} variants={statVariants} whileHover={{ y: -4 }}>
-            <StatValue>22.5%</StatValue>
-            <StatLabel>under budget on that program</StatLabel>
-          </HeroStat>
-          <HeroStat as={motion.div} variants={statVariants} whileHover={{ y: -4 }}>
-            <StatValue>150+</StatValue>
-            <StatLabel>sites coordinated across a PKR 700M+ portfolio</StatLabel>
-          </HeroStat>
-        </HeroStats>
-      </motion.div>
-
-      <motion.div variants={itemVariants}>
-        <DeliveryFocus>Selected outcomes from public-sector and multi-site delivery; see case studies for context.</DeliveryFocus>
-      </motion.div>
-
-      <motion.div variants={itemVariants}>
-        <ActionRow>
-          <Button
-            aria-label="View Haris Arshad's CV"
-            onClick={() => window.open('/resume/haris-arshad-cv.pdf', '_blank', 'noopener,noreferrer')}
+      <div className="relative z-10 mx-auto max-w-5xl text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          {/* Spring animated avatar with Haris photo */}
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
+            className="mb-6 inline-block"
           >
-            <Eye className="inline-block w-4 h-4 mr-2" aria-hidden="true" /> View CV
-          </Button>
-          <ActionLink href="/resume/haris-arshad-cv.pdf" download="haris-arshad-cv.pdf" aria-label="Download Haris Arshad's CV">
-            <Download className="inline-block w-4 h-4 mr-2" aria-hidden="true" /> Download CV
-          </ActionLink>
-          <ActionLink href="#contact">
-            Discuss a project <ArrowRight className="inline-block w-4 h-4 ml-1.5" aria-hidden="true" />
-          </ActionLink>
-        </ActionRow>
+            <div className="relative mx-auto h-28 w-28 rounded-full border-4 border-background bg-gradient-to-br from-primary to-secondary shadow-xl overflow-hidden p-0.5">
+              <img
+                src="/images/haris-arshad-profile.jpeg"
+                alt="Engr. Haris Arshad PMP®"
+                className="h-full w-full object-cover rounded-full"
+              />
+            </div>
+          </motion.div>
+
+          {/* Eyebrow badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25, duration: 0.5 }}
+            className="mb-4"
+          >
+            <span className="inline-block px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold tracking-wider uppercase bg-secondary text-foreground/80 border border-border">
+              Technology delivery · PMO · Agile coordination
+            </span>
+          </motion.div>
+
+          {/* Headline */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="mb-2 text-4xl font-extrabold text-foreground md:text-6xl tracking-tight"
+          >
+            Haris Arshad, PMP®
+          </motion.h1>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.35, duration: 0.6 }}
+            className="mb-6 text-2xl font-bold text-primary md:text-3xl"
+          >
+            Project Manager
+          </motion.h2>
+
+          {/* Bio Description from red-boxed section */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="mx-auto mb-6 max-w-3xl text-lg text-muted-foreground md:text-xl leading-relaxed"
+          >
+            PMP®-certified Project Manager in Islamabad, Pakistan, with a Master&apos;s in Project Management. I lead technology delivery across software, infrastructure, QA, and business teams, applying project planning and control, PMO governance, Agile delivery, risk management, and stakeholder coordination to move initiatives from planning through release.
+          </motion.p>
+
+          {/* Location & Certification Pills */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.45, duration: 0.5 }}
+            className="mb-8 flex flex-wrap justify-center items-center gap-3 text-sm font-medium"
+          >
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary text-foreground">
+              <MapPin className="h-4 w-4 text-primary" /> Islamabad, Pakistan
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary text-foreground">
+              <Award className="h-4 w-4 text-primary" /> PMP® certified
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/80 text-foreground border border-primary/30">
+              <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" /> Open to PM/PMO roles &amp; select consulting
+            </span>
+          </motion.div>
+
+          {/* Metrics Stats Grid */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="mb-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto"
+          >
+            <motion.div
+              whileHover={{ y: -4, scale: 1.02 }}
+              className="p-4 rounded-xl bg-card border border-border shadow-sm text-center"
+            >
+              <div className="text-2xl md:text-3xl font-extrabold text-primary">PKR 103M+</div>
+              <div className="text-xs md:text-sm text-muted-foreground mt-1">savings on track-and-trace delivery</div>
+            </motion.div>
+            <motion.div
+              whileHover={{ y: -4, scale: 1.02 }}
+              className="p-4 rounded-xl bg-card border border-border shadow-sm text-center"
+            >
+              <div className="text-2xl md:text-3xl font-extrabold text-primary">22.5%</div>
+              <div className="text-xs md:text-sm text-muted-foreground mt-1">under budget on that program</div>
+            </motion.div>
+            <motion.div
+              whileHover={{ y: -4, scale: 1.02 }}
+              className="p-4 rounded-xl bg-card border border-border shadow-sm text-center"
+            >
+              <div className="text-2xl md:text-3xl font-extrabold text-primary">150+</div>
+              <div className="text-xs md:text-sm text-muted-foreground mt-1">sites coordinated across PKR 700M+ portfolio</div>
+            </motion.div>
+          </motion.div>
+
+          {/* Action Buttons using shadcn Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.55, duration: 0.6 }}
+            className="mb-10 flex flex-wrap justify-center gap-4"
+          >
+            <Button
+              size="lg"
+              className="gap-2 text-base font-semibold px-6 shadow-md"
+              onClick={() => window.open('/resume/haris-arshad-cv.pdf', '_blank', 'noopener,noreferrer')}
+            >
+              <Eye className="h-4 w-4" />
+              View CV
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="gap-2 text-base font-semibold px-6 border-border"
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/resume/haris-arshad-cv.pdf';
+                link.download = 'haris-arshad-cv.pdf';
+                link.click();
+              }}
+            >
+              <Download className="h-4 w-4" />
+              Download CV
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="gap-2 text-base font-semibold px-6 border-border"
+              onClick={() => {
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              Discuss a project
+              <ArrowDown className="h-4 w-4" />
+            </Button>
+          </motion.div>
+
+          {/* Floating circular social icons from shadcn hero component */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+            className="flex justify-center gap-4"
+          >
+            {[
+              { icon: GithubIcon, href: 'https://github.com/harisarshad235', label: 'GitHub' },
+              { icon: LinkedinIcon, href: 'https://pk.linkedin.com/in/haris-arshad', label: 'LinkedIn' },
+              { icon: Mail, href: 'mailto:contact@harisarshad.site', label: 'Email' },
+            ].map((social, index) => {
+              const IconComp = social.icon;
+              return (
+                <motion.a
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  whileHover={{ scale: 1.15, y: -3 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-foreground shadow-sm transition-colors hover:bg-primary hover:text-primary-foreground border border-border"
+                >
+                  <IconComp className="h-5 w-5" />
+                </motion.a>
+              );
+            })}
+          </motion.div>
+        </motion.div>
+      </div>
+
+      {/* Animated scroll down indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, y: [0, 8, 0] }}
+        transition={{
+          opacity: { delay: 1, duration: 0.6 },
+          y: { delay: 1.2, duration: 1.5, repeat: Infinity },
+        }}
+        className="mt-12"
+      >
+        <button
+          onClick={() => {
+            const nextEl = document.getElementById('about') || document.querySelector('section');
+            nextEl?.scrollIntoView({ behavior: 'smooth' });
+          }}
+          aria-label="Scroll down"
+          className="text-muted-foreground hover:text-primary transition-colors focus:outline-none"
+        >
+          <ArrowDown className="h-6 w-6" />
+        </button>
       </motion.div>
-    </LeftSection>
-
-    <VisualSection
-      as={motion.div}
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
-    >
-      <HeroImageWrap>
-        <HeroImage
-          src="/images/haris-arshad-profile.jpeg"
-          alt="Engr. Haris Arshad PMP®"
-          width="360"
-          height="450"
-          loading="eager"
-        />
-      </HeroImageWrap>
-    </VisualSection>
-  </Section>
-);
-
-export default Hero;
+    </section>
+  );
+}

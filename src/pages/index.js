@@ -75,10 +75,9 @@ const Home = () => {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
       </Head>
-      <HeroStage data-reveal>
+      <div data-reveal className="w-full">
         <Hero />
-        <BgAnimation />
-      </HeroStage>
+      </div>
       <Timeline />
       <TechStack />
       <Credentials />
