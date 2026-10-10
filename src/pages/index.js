@@ -2,6 +2,7 @@ import Head from 'next/head';
 
 import BgAnimation from '../components/BackgrooundAnimation/BackgroundAnimation';
 import Hero from '../components/Hero/Hero';
+import FlagshipProjects from '../components/sections/FlagshipProjects';
 import Projects from '../components/Projects/Projects';
 import Recommendations from '../components/Recommendations/Recommendations';
 import TechStack from '../components/TechStack/TechStack';
@@ -81,6 +82,7 @@ const Home = () => {
       <Timeline />
       <TechStack />
       <Credentials />
+      <FlagshipProjects />
       <Projects />
       <Recommendations />
     </Layout>

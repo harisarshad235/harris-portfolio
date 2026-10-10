@@ -35,7 +35,7 @@ const Projects = () => {
   const visibleProjects = filterProjects(activeFilter);
 
   return (
-    <Section nopadding id='projects' data-reveal>
+    <Section nopadding id='client-projects' data-reveal>
       <SectionDivider/>
       <SectionTitle main>Projects</SectionTitle>
       <FilterBar role="group" aria-label="Filter projects by industry">
