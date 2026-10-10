@@ -1,9 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
 import { ArrowUpRight, ExternalLink, CheckCircle2, Layers } from 'lucide-react';
-import { flagshipProjects } from '@/data/projects';
+import { flagshipProjects } from '../../data/projects';
 
-export const FlagshipProjects: React.FC = () => {
+export const FlagshipProjects = () => {
   return (
     <section id="projects" data-reveal className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flagship-showcase-section">
       {/* Section Header */}

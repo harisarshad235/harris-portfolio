@@ -1,20 +1,4 @@
-export interface ProjectItem {
-  id: string;
-  title: string;
-  category: string;
-  badgeStyle: string;
-  tagline: string;
-  description: string;
-  image: string;
-  liveUrl: string;
-  dashboardUrl?: string;
-  keyFeatures: string[];
-  techStack: string[];
-  glowClass: string;
-  borderHoverClass: string;
-}
-
-export const flagshipProjects: ProjectItem[] = [
+export const flagshipProjects = [
   {
     id: "auratask",
     title: "AuraTask",
