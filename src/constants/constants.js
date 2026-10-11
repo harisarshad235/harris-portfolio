@@ -10,6 +10,7 @@ export const projects = [
     category: 'Digital platforms',
     projectTypes: ['Enterprise PM', 'Digital & Software', 'Consulting'],
     caseStudy: '/case-studies/thunder-energy.html',
+    image: '/images/5.PNG',
     tags: ['Tower telemetry', 'Predictive analytics', 'Maintenance'],
     website: 'https://www.thunderenergy.ai/',
     id: 2,

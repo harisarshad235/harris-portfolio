@@ -93,16 +93,18 @@ const Projects = () => {
                   ? <Img src={image} alt={`${client || title} project`} loading="lazy" />
                   : (
                     <ProjectArtwork aria-hidden="true">
-                      <defs>
-                        <linearGradient id={`tower-glow-${id}`} x1="0" x2="1" y1="0" y2="1">
-                          <stop offset="0%" stopColor="#1A8781" stopOpacity="0.5" />
-                          <stop offset="100%" stopColor="#E5674F" stopOpacity="0" />
-                        </linearGradient>
-                      </defs>
-                      <circle cx="340" cy="60" r="150" fill={`url(#tower-glow-${id})`} />
-                      <path d="M238 216 278 42l42 174M252 154h56M260 119h40M268 82h25M248 176l61-41M307 176l-53-41M242 216h84" fill="none" stroke="currentColor" strokeWidth="4" />
-                      <path d="M278 55c-25-21-25-44 0-64M292 55c25-21 25-44 0-64M267 42c-38-31-38-65 0-96M303 42c38-31 38-65 0-96" fill="none" stroke="currentColor" strokeWidth="3" opacity=".7" />
-                      <path d="M50 214h380" stroke="currentColor" strokeWidth="2" opacity=".25" />
+                      <svg viewBox="0 0 480 240" focusable="false">
+                        <defs>
+                          <linearGradient id={`tower-glow-${id}`} x1="0" x2="1" y1="0" y2="1">
+                            <stop offset="0%" stopColor="#1A8781" stopOpacity="0.5" />
+                            <stop offset="100%" stopColor="#E5674F" stopOpacity="0" />
+                          </linearGradient>
+                        </defs>
+                        <circle cx="340" cy="60" r="150" fill={`url(#tower-glow-${id})`} />
+                        <path d="M238 216 278 42l42 174M252 154h56M260 119h40M268 82h25M248 176l61-41M307 176l-53-41M242 216h84" fill="none" stroke="currentColor" strokeWidth="4" />
+                        <path d="M278 55c-25-21-25-44 0-64M292 55c25-21 25-44 0-64M267 42c-38-31-38-65 0-96M303 42c38-31 38-65 0-96" fill="none" stroke="currentColor" strokeWidth="3" opacity=".7" />
+                        <path d="M50 214h380" stroke="currentColor" strokeWidth="2" opacity=".25" />
+                      </svg>
                       <span>CONNECTED INFRASTRUCTURE</span>
                     </ProjectArtwork>
                   )}
