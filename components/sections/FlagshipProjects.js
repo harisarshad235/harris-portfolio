@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { ArrowUpRight, ExternalLink, CheckCircle2, Layers } from 'lucide-react';
 import { flagshipProjects } from '../../data/projects';
 
@@ -23,8 +24,10 @@ export const FlagshipProjects = () => {
       {/* Synchronized 2-Column Responsive Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch flagship-grid">
         {flagshipProjects.map((project) => (
-          <article
+          <motion.article
             key={project.id}
+            whileHover={{ y: -6 }}
+            transition={{ duration: 0.25 }}
             className={`group relative rounded-2xl border border-neutral-800/80 bg-[#0A0F17] overflow-hidden transition-all duration-300 flex flex-col justify-between ${project.borderHoverClass} ${project.glowClass} flagship-card card-${project.id}`}
           >
             {/* Seamless 3D Mockup Container */}
@@ -52,18 +55,18 @@ export const FlagshipProjects = () => {
                 className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#0A0F17]/40 to-transparent pointer-events-none flagship-blend-mask-top"
                 aria-hidden="true"
               />
-
-              {/* Category Pill Badge */}
-              <div className="absolute top-4 left-4 z-10">
-                <span className={`inline-flex items-center px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold border backdrop-blur-md ${project.badgeStyle} flagship-category-badge badge-${project.id}`}>
-                  {project.category}
-                </span>
-              </div>
             </div>
 
             {/* Card Body */}
             <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between flagship-body">
               <div>
+                {/* Category Pill Badge */}
+                <div className="mb-3">
+                  <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs sm:text-sm font-semibold border ${project.badgeStyle} flagship-category-badge badge-${project.id}`}>
+                    {project.category}
+                  </span>
+                </div>
+
                 <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight mb-1.5 group-hover:text-neutral-100 transition-colors flagship-item-title">
                   {project.title}
                 </h3>
@@ -124,7 +127,7 @@ export const FlagshipProjects = () => {
                 </div>
               </div>
             </div>
-          </article>
+          </motion.article>
         ))}
       </div>
     </section>

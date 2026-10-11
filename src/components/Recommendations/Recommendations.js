@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowUpRight, FiMessageSquare, FiX } from 'react-icons/fi';
 
-import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
+import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import {
   RecommendationActions,
   RecommendationButton,
@@ -22,6 +23,8 @@ import {
   RecommendationAttribution,
   RecommendationEmptyState,
 } from './RecommendationsStyles';
+
+const MotionRecommendationCard = motion(RecommendationCard);
 
 const SEED_RECOMMENDATIONS = [
   {
@@ -117,7 +120,6 @@ const Recommendations = () => {
 
   return (
     <Section id="recommendations" data-reveal>
-      <SectionDivider colorAlt />
       {(recommendationsLoading || recommendationsError || approvedRecommendations.length > 0) && (
         <>
           <SectionTitle>Recommendations</SectionTitle>
@@ -132,8 +134,15 @@ const Recommendations = () => {
         <RecommendationStatus $error role="status">{recommendationsError}</RecommendationStatus>
       ) : approvedRecommendations.length ? (
         <RecommendationList aria-label="Approved recommendations">
-          {approvedRecommendations.map(({ id, quote, name, designation, organization }) => (
-            <RecommendationCard as="article" key={id}>
+          {approvedRecommendations.map(({ id, quote, name, designation, organization }, index) => (
+            <MotionRecommendationCard
+              as="article"
+              key={id}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.25, delay: (index % 4) * 0.06 }}
+              whileHover={{ y: -4 }}
+            >
               <RecommendationMark aria-hidden="true"><FiMessageSquare /></RecommendationMark>
               <RecommendationQuote>{quote}</RecommendationQuote>
               {(name || designation || organization) && (
@@ -144,11 +153,14 @@ const Recommendations = () => {
                   )}
                 </RecommendationAttribution>
               )}
-            </RecommendationCard>
+            </MotionRecommendationCard>
           ))}
         </RecommendationList>
       ) : null}
-      <RecommendationCard>
+      <MotionRecommendationCard
+        whileHover={{ y: -3 }}
+        transition={{ duration: 0.2 }}
+      >
         <RecommendationMark aria-hidden="true"><FiMessageSquare /></RecommendationMark>
         <div>
           <RecommendationTitle>Feedback from people I’ve worked with</RecommendationTitle>
@@ -165,7 +177,7 @@ const Recommendations = () => {
             Add feedback
           </RecommendationButton>
         </RecommendationActions>
-      </RecommendationCard>
+      </MotionRecommendationCard>
 
       <RecommendationDialog
         ref={dialogRef}

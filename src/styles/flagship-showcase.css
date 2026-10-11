@@ -166,26 +166,23 @@
 
 /* Category Pill */
 .flagship-category-badge {
-  position: absolute;
-  top: 1.25rem;
-  left: 1.25rem;
-  z-index: 10;
+  position: relative;
   display: inline-flex;
   align-items: center;
   padding: 0.35rem 0.9rem;
   border-radius: 9999px;
   font-size: 1.2rem;
   font-weight: 600;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border-width: 1px;
   border-style: solid;
+  margin-bottom: 0.6rem;
+  width: fit-content;
 }
 
-.badge-auratask {
-  background: rgba(244, 63, 94, 0.12);
-  color: #fb7185;
-  border-color: rgba(244, 63, 94, 0.28);
+.badge-takt {
+  background: rgba(16, 185, 129, 0.12);
+  color: #34d399;
+  border-color: rgba(16, 185, 129, 0.28);
 }
 
 .badge-apextrack {

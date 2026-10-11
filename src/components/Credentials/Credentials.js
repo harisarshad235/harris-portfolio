@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FiAward, FiExternalLink } from 'react-icons/fi';
 
 import { credentials } from '../../constants/credentials';
-import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
+import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { FilterBar, FilterButton, FilterCount, FilterStatus } from '../Projects/ProjectsStyles';
 import {
   CertificatePreview,
@@ -17,6 +18,8 @@ import {
   CredentialsGrid,
 } from './CredentialsStyles';
 
+const MotionCredentialCard = motion(CredentialCard);
+
 const filters = ['All', ...new Set(credentials.map(({ category }) => category))];
 
 const Credentials = () => {
@@ -27,7 +30,6 @@ const Credentials = () => {
 
   return (
     <Section id="credentials" data-reveal>
-      <SectionDivider />
       <SectionTitle>Credentials &amp; certifications</SectionTitle>
       <SectionText>
         Verified professional credentials and continuing education supporting my project delivery work.
@@ -42,6 +44,8 @@ const Credentials = () => {
             <FilterButton
               key={filter}
               type="button"
+              as={motion.button}
+              whileTap={{ scale: 0.96 }}
               aria-pressed={activeFilter === filter}
               onClick={() => setActiveFilter(filter)}
             >
@@ -54,84 +58,92 @@ const Credentials = () => {
         Showing {visibleCredentials.length} of {credentials.length} credentials
       </FilterStatus>
       <CredentialsGrid>
-        {visibleCredentials.map((credential, index) => {
-          const {
-            id,
-            title,
-            category,
-            issuer,
-            description,
-            date,
-            verificationUrl,
-            certificateImage,
-            certificatePreview,
-            verificationLabel,
-            certificateFile,
-            certificateFileLabel,
-          } = credential;
+        <AnimatePresence mode="popLayout">
+          {visibleCredentials.map((credential, index) => {
+            const {
+              id,
+              title,
+              category,
+              issuer,
+              description,
+              date,
+              verificationUrl,
+              certificateImage,
+              certificatePreview,
+              verificationLabel,
+              certificateFile,
+              certificateFileLabel,
+            } = credential;
 
-          return (
-            <CredentialCard
-              key={id}
-              data-reveal
-              style={{ '--reveal-delay': `${(index % 3) * 70}ms` }}
-            >
-              {certificateImage || certificatePreview ? (
-                <CertificatePreview
-                  href={certificateFile || certificateImage || certificatePreview}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Open ${title} certificate in a new tab`}
-                >
-                  <img
-                    src={certificatePreview || certificateImage}
-                    alt={`${title} certificate issued by ${issuer}`}
-                  />
-                </CertificatePreview>
-              ) : (
-                <CertificatePreview as="div" aria-hidden="true">
-                  <FiAward />
-                </CertificatePreview>
-              )}
-              <CredentialContent>
-                <CredentialCategory>{category}</CredentialCategory>
-                <CredentialTitle>{title}</CredentialTitle>
-                <CredentialIssuer>{issuer}</CredentialIssuer>
-                <CredentialDescription>{description}</CredentialDescription>
-                {date && <CredentialDate>{date}</CredentialDate>}
-                {verificationUrl && (
-                  <CredentialLink
-                    href={verificationUrl}
+            return (
+              <MotionCredentialCard
+                key={id}
+                layout
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.25 }}
+                whileHover={{ y: -6 }}
+                data-reveal
+                style={{ '--reveal-delay': `${(index % 3) * 70}ms` }}
+              >
+                {certificateImage || certificatePreview ? (
+                  <CertificatePreview
+                    href={certificateFile || certificateImage || certificatePreview}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`${verificationLabel} on Credly`}
+                    aria-label={`Open ${title} certificate in a new tab`}
                   >
-                    {verificationLabel}<FiExternalLink aria-hidden="true" />
-                  </CredentialLink>
+                    <img
+                      src={certificatePreview || certificateImage}
+                      alt={`${title} certificate issued by ${issuer}`}
+                    />
+                  </CertificatePreview>
+                ) : (
+                  <CertificatePreview as="div" aria-hidden="true">
+                    <FiAward />
+                  </CertificatePreview>
                 )}
-                {certificateImage && !certificateFile && (
-                  <CredentialLink
-                    href={certificateImage}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {verificationLabel}<FiExternalLink aria-hidden="true" />
-                  </CredentialLink>
-                )}
-                {certificateFile && (
-                  <CredentialLink
-                    href={certificateFile}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${certificateFileLabel} PDF in a new tab`}
-                  >
-                    {certificateFileLabel}<FiExternalLink aria-hidden="true" />
-                  </CredentialLink>
-                )}
-              </CredentialContent>
-            </CredentialCard>
-          );
-        })}
+                <CredentialContent>
+                  <CredentialCategory>{category}</CredentialCategory>
+                  <CredentialTitle>{title}</CredentialTitle>
+                  <CredentialIssuer>{issuer}</CredentialIssuer>
+                  <CredentialDescription>{description}</CredentialDescription>
+                  {date && <CredentialDate>{date}</CredentialDate>}
+                  {verificationUrl && (
+                    <CredentialLink
+                      href={verificationUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${verificationLabel} on Credly`}
+                    >
+                      {verificationLabel}<FiExternalLink aria-hidden="true" />
+                    </CredentialLink>
+                  )}
+                  {certificateImage && !certificateFile && (
+                    <CredentialLink
+                      href={certificateImage}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {verificationLabel}<FiExternalLink aria-hidden="true" />
+                    </CredentialLink>
+                  )}
+                  {certificateFile && (
+                    <CredentialLink
+                      href={certificateFile}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${certificateFileLabel} PDF in a new tab`}
+                    >
+                      {certificateFileLabel}<FiExternalLink aria-hidden="true" />
+                    </CredentialLink>
+                  )}
+                </CredentialContent>
+              </MotionCredentialCard>
+            );
+          })}
+        </AnimatePresence>
       </CredentialsGrid>
     </Section>
   );

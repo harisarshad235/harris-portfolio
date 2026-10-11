@@ -8,8 +8,8 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   grid-template-areas: "brand navigation controls";
-  gap: 1.6rem;
-  padding: 1.2rem 2.4rem;
+  gap: clamp(0.8rem, 1.4vw, 1.8rem);
+  padding: 1rem clamp(1.2rem, 2vw, 2.4rem);
   align-items: center;
   background: ${(props) => props.theme.mode === 'dark'
     ? 'rgba(21, 29, 31, 0.92)'
@@ -90,13 +90,25 @@ export const Div2 = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.6rem clamp(1.2rem, 2vw, 2.8rem);
+  flex-wrap: nowrap;
+  gap: clamp(0.5rem, 1.1vw, 1.8rem);
   min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    justify-content: flex-start;
+    padding: 0.3rem 0;
+    gap: 1.2rem;
+  }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    justify-content: space-between;
-    column-gap: 0.8rem;
+    justify-content: flex-start;
+    gap: 0.8rem;
   }
 `;
 export const Div3 = styled.div`
@@ -159,20 +171,22 @@ export const NavLink = styled.a`
   display: inline-flex;
   align-items: center;
   position: relative;
-  min-height: 4rem;
-  font-size: 1.55rem;
+  min-height: 3.6rem;
+  font-size: clamp(1.3rem, 1.05vw, 1.5rem);
   font-weight: ${(props) => props.$active ? 700 : 500};
   line-height: 1.3;
   white-space: nowrap;
+  flex-shrink: 0;
+  padding: 0 0.3rem;
   color: ${(props) => props.$active ? props.theme.colors.primary1 : props.theme.colors.muted};
   transition: color 0.25s ease, font-weight 0.25s ease;
 
   &::after {
     content: '';
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0.7rem;
+    left: 0.3rem;
+    right: 0.3rem;
+    bottom: 0.4rem;
     height: 2px;
     background: ${(props) => props.theme.colors.accent1};
     transform: scaleX(${(props) => props.$active ? 1 : 0});
@@ -192,7 +206,8 @@ export const NavLink = styled.a`
   }
 
   @media ${(props) => props.theme.breakpoints.md} {
-    font-size: 1.45rem;
+    font-size: 1.35rem;
+    min-height: 3.2rem;
   }
 `;
 

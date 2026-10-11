@@ -5,8 +5,6 @@ import { List, ListContainer, ListItem, ListParagraph, ListTitle } from './Techn
 
 const Technologies = () =>  (
   <Section id='tech' data-reveal>
-    <SectionDivider/>
-    <br/>
     <SectionTitle>Delivery toolkit</SectionTitle>
     <SectionText>
       A practical toolkit for turning strategy into visible, controlled delivery across complex technology programs.

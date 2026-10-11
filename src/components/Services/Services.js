@@ -37,7 +37,6 @@ const services = [
 
 const Services = ({ onSelectService }) => (
   <Section id="services" data-reveal>
-    <SectionDivider />
     <SectionTitle>Project management services</SectionTitle>
     <SectionSubText>Outcome-focused support for organizations seeking project delivery or PMO consulting, and teams needing part-time project leadership.</SectionSubText>
     <ServiceGrid>

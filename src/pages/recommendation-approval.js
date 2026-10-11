@@ -93,7 +93,6 @@ const RecommendationApprovalPage = () => {
       </Head>
       <main>
         <Section>
-          <SectionDivider colorAlt />
           <SectionTitle>Review recommendation</SectionTitle>
           <SectionText>This private page lets you decide whether this feedback should appear on the portfolio.</SectionText>
           <RecommendationApprovalPanel aria-live="polite">

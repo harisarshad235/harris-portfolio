@@ -43,7 +43,6 @@ const TechStack = () => {
 
   return (
     <Section id="skills" data-reveal>
-      <SectionDivider />
       <SectionTitle>Technology &amp; delivery stack</SectionTitle>
       <SectionText>
         Project delivery governance and control frameworks, alongside the cloud, backend, and frontend technologies I coordinate across cross-functional teams.

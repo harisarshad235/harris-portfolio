@@ -73,24 +73,13 @@ export const SectionText = styled.p`
 `
 
 export const SectionDivider = styled.div`
-
-  width: 64px;
-  height: 6px;
-  border-radius: 10px;
-  background: ${(props) => props.colorAlt ? props.theme.colors.accent1 : props.theme.colors.teal};
-
-    margin: ${(props) => props.divider ? "4rem 0" : "" };
-
-  @media ${(props) => props.theme.breakpoints.md} {
-    width: 48px;
-    height: 4px;
-  }
-
-  @media ${(props) => props.theme.breakpoints.sm} {
-    width: 32px;
-    height: 2px;
-  }
-`
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  visibility: hidden !important;
+`;
 export const SectionSubText = styled.p`
   max-width: 800px;
   font-weight: 300;

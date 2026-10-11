@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import {
   BlogCard,
@@ -22,8 +23,10 @@ import {
   Img,
   ImageWrapper,
 } from './ProjectsStyles';
-import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
+import { Section, SectionTitle } from '../../styles/GlobalComponents';
 import { projects } from '../../constants/constants';
+
+const MotionBlogCard = motion(BlogCard);
 
 const filters = ['All', 'Telecom', 'E-commerce', 'Public sector', 'Digital platforms'];
 const filterProjects = (filter) => filter === 'All'
@@ -36,7 +39,6 @@ const Projects = () => {
 
   return (
     <Section nopadding id='client-projects' data-reveal>
-      <SectionDivider/>
       <SectionTitle main>Projects</SectionTitle>
       <FilterBar role="group" aria-label="Filter projects by industry">
         {filters.map((filter) => {
@@ -46,6 +48,8 @@ const Projects = () => {
             <FilterButton
               key={filter}
               type="button"
+              as={motion.button}
+              whileTap={{ scale: 0.96 }}
               aria-pressed={activeFilter === filter}
               onClick={() => setActiveFilter(filter)}
             >
@@ -58,33 +62,37 @@ const Projects = () => {
         Showing {visibleProjects.length} of {projects.length} projects{activeFilter !== 'All' ? ` for ${activeFilter}` : ''}
       </FilterStatus>
       <GridContainer>
-        {visibleProjects.map(({
-          id,
-          image,
-          title,
-          client,
-          sector,
-          category,
-          description,
-          impact,
-          metricsHighlight,
-          methodology,
-          website,
-          caseStudy,
-          projectTypes,
-        }) => (
-          <BlogCard
-            key={id}
-            data-reveal
-            data-project-types={projectTypes.join(',')}
-            style={{ '--reveal-delay': `${(id % 3) * 70}ms` }}
-          >
-            <ImageWrapper>
-              {image
-                ? <Img src={image} alt={`${client || title} project`} loading="lazy" />
-                : (
-                  <ProjectArtwork aria-hidden="true">
-                    <svg viewBox="0 0 480 240" focusable="false">
+        <AnimatePresence mode="popLayout">
+          {visibleProjects.map(({
+            id,
+            image,
+            title,
+            client,
+            sector,
+            category,
+            description,
+            impact,
+            metricsHighlight,
+            methodology,
+            website,
+            caseStudy,
+            projectTypes,
+          }) => (
+            <MotionBlogCard
+              key={id}
+              layout
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.96 }}
+              transition={{ duration: 0.25 }}
+              whileHover={{ y: -6 }}
+              data-project-types={projectTypes.join(',')}
+            >
+              <ImageWrapper>
+                {image
+                  ? <Img src={image} alt={`${client || title} project`} loading="lazy" />
+                  : (
+                    <ProjectArtwork aria-hidden="true">
                       <defs>
                         <linearGradient id={`tower-glow-${id}`} x1="0" x2="1" y1="0" y2="1">
                           <stop offset="0%" stopColor="#1A8781" stopOpacity="0.5" />
@@ -95,32 +103,32 @@ const Projects = () => {
                       <path d="M238 216 278 42l42 174M252 154h56M260 119h40M268 82h25M248 176l61-41M307 176l-53-41M242 216h84" fill="none" stroke="currentColor" strokeWidth="4" />
                       <path d="M278 55c-25-21-25-44 0-64M292 55c25-21 25-44 0-64M267 42c-38-31-38-65 0-96M303 42c38-31 38-65 0-96" fill="none" stroke="currentColor" strokeWidth="3" opacity=".7" />
                       <path d="M50 214h380" stroke="currentColor" strokeWidth="2" opacity=".25" />
-                    </svg>
-                    <span>CONNECTED INFRASTRUCTURE</span>
-                  </ProjectArtwork>
+                      <span>CONNECTED INFRASTRUCTURE</span>
+                    </ProjectArtwork>
+                  )}
+                <ProjectCategory>{sector || category}</ProjectCategory>
+              </ImageWrapper>
+              <div className="project-card-content">
+                <ProjectClient>{client || category}</ProjectClient>
+                <HeaderThree $large>{title}</HeaderThree>
+                
+                {(methodology || metricsHighlight) && (
+                  <ProjectMetaBadges>
+                    {methodology && <ProjectMethodologyBadge>{methodology}</ProjectMethodologyBadge>}
+                    {metricsHighlight && <ProjectKpiBadge>{metricsHighlight}</ProjectKpiBadge>}
+                  </ProjectMetaBadges>
                 )}
-              <ProjectCategory>{sector || category}</ProjectCategory>
-            </ImageWrapper>
-            <div className="project-card-content">
-              <ProjectClient>{client || category}</ProjectClient>
-              <HeaderThree $large>{title}</HeaderThree>
-              
-              {(methodology || metricsHighlight) && (
-                <ProjectMetaBadges>
-                  {methodology && <ProjectMethodologyBadge>{methodology}</ProjectMethodologyBadge>}
-                  {metricsHighlight && <ProjectKpiBadge>{metricsHighlight}</ProjectKpiBadge>}
-                </ProjectMetaBadges>
-              )}
 
-              <CardInfo>{description}</CardInfo>
-              <ProjectImpact><strong>Outcome:</strong> {impact}</ProjectImpact>
-              <UtilityList>
-                {caseStudy && <CardLink href={caseStudy} aria-label={`Read the ${title} case study`}>View case study <span aria-hidden="true">→</span></CardLink>}
-                {website && <ExternalLinks href={website} target="_blank" rel="noopener noreferrer" aria-label={`Visit the ${client || title} website`}>Project site <span aria-hidden="true">↗</span></ExternalLinks>}
-              </UtilityList>
-            </div>
-          </BlogCard>
-        ))}
+                <CardInfo>{description}</CardInfo>
+                <ProjectImpact><strong>Outcome:</strong> {impact}</ProjectImpact>
+                <UtilityList>
+                  {caseStudy && <CardLink href={caseStudy} aria-label={`Read the ${title} case study`}>View case study <span aria-hidden="true">→</span></CardLink>}
+                  {website && <ExternalLinks href={website} target="_blank" rel="noopener noreferrer" aria-label={`Visit the ${client || title} website`}>Project site <span aria-hidden="true">↗</span></ExternalLinks>}
+                </UtilityList>
+              </div>
+            </MotionBlogCard>
+          ))}
+        </AnimatePresence>
       </GridContainer>
     </Section>
   );
