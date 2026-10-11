@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react'
 
 import Footer from '../components/Footer/Footer'
 import Header from '../components/Header/Header'
-import Contact from '../components/Contact/Contact'
 import { Container, ScrollProgress } from './LayoutStyles'
 
 export const Layout = ({children}) => {
@@ -86,7 +85,6 @@ export const Layout = ({children}) => {
     <Container>
      <Header/>
      <main>{children}</main> 
-    <Contact />
      <Footer/>
     </Container>
     </>

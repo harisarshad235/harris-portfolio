@@ -185,7 +185,7 @@ export const Contact = () => {
                     </div>
                     <a
                       href="mailto:harisarshad235@gmail.com"
-                      className="text-xs sm:text-sm font-semibold text-foreground truncate hover:text-primary transition-colors block"
+                      className="text-xs sm:text-sm font-semibold text-foreground break-all hover:text-primary transition-colors block"
                     >
                       harisarshad235@gmail.com
                     </a>
