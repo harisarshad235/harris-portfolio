@@ -8,9 +8,10 @@ import { BrandImage, Container, Div1, Div2, Div3, NavAction, NavLink, SocialIcon
 
 const NAV_ITEMS = [
   { href: '#about', label: 'About' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#recommendations', label: 'Recommendations' },
+  { href: '#products', label: 'Products' },
+  { href: '#client-projects', label: 'Client Work' },
   { href: '#skills', label: 'Skills' },
+  { href: '#recommendations', label: 'Recommendations' },
   { href: '#credentials', label: 'Credentials' },
   { href: '#contact', label: 'Contact' },
 ];

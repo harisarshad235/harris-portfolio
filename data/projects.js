@@ -1,21 +1,21 @@
 export const flagshipProjects = [
   {
-    id: "auratask",
-    title: "AuraTask",
-    category: "Productivity & Focus Workspace",
-    badgeStyle: "bg-rose-500/10 text-rose-400 border-rose-500/25",
-    tagline: "Tactile Kanban Planner, Focus Engine & Flow Workspace",
-    description: "Designed for high-velocity personal and team execution without cognitive overload. Combines collapsible Kanban swimlanes, Day-Wise 1-click postponement, meeting scratchpads, built-in Pomodoro flow sessions, and automated daily backup sync.",
-    image: "/images/showcase/auratask-mockup.jpg",
-    liveUrl: "https://auratask.harisarshad.site/",
+    id: "takt",
+    title: "Takt",
+    category: "Precision Task Command Center & Flow Engine",
+    badgeStyle: "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
+    tagline: "Precision Task Command Center, Pomodoro Cadence & Flow Workspace",
+    description: "Conceived, architected, and built by Haris as a zero-friction personal execution engine. Combines tactile Kanban swimlanes, Pomodoro cadence time-blocking, day-wise calendar scheduling, and local-first edge sync.",
+    image: "/images/showcase/takt-mockup.jpg",
+    liveUrl: "https://takt.harisarshad.site/",
     keyFeatures: [
       "Tactile Kanban swimlanes with dynamic List, Board, and Calendar views",
-      "Daily Shutdown Ritual with persistent streak & karma mechanics",
-      "Obsidian dark mode theme with zero-latency local-first state"
+      "Precision Pomodoro cadence, time-blocking & deep flow sessions",
+      "Zero-latency local-first state with Cloudflare edge sync & karma analytics"
     ],
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Cloudflare", "Lucide Icons"],
-    glowClass: "group-hover:shadow-[0_0_45px_-12px_rgba(244,63,94,0.28)]",
-    borderHoverClass: "group-hover:border-rose-500/40"
+    glowClass: "group-hover:shadow-[0_0_45px_-12px_rgba(16,185,129,0.28)]",
+    borderHoverClass: "group-hover:border-emerald-500/40"
   },
   {
     id: "apextrack",

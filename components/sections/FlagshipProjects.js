@@ -5,18 +5,18 @@ import { flagshipProjects } from '../../data/projects';
 
 export const FlagshipProjects = () => {
   return (
-    <section id="projects" data-reveal className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flagship-showcase-section">
+    <section id="products" data-reveal className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flagship-showcase-section">
       {/* Section Header */}
       <div className="mb-16 text-center max-w-3xl mx-auto flagship-header">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-border bg-card text-foreground mb-4 shadow-sm backdrop-blur-md flagship-badge">
           <Layers className="w-4 h-4 text-primary flagship-badge-icon" />
-          <span>Flagship SaaS &amp; Developer Tools</span>
+          <span>Proprietary SaaS &amp; Custom Technology Solutions</span>
         </div>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground mb-4 flagship-title">
-          Production Platforms &amp; Engineering Systems
+          Original Products &amp; Engineering Systems
         </h2>
         <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-2xl mx-auto flagship-subtitle">
-          Full-stack cloud applications built with high-velocity UI architecture, resilient edge databases, and modern developer workflows.
+          Conceived from real-world delivery bottlenecks, architected from scratch, and engineered into production-grade cloud software. These are my original ideas, custom blueprints, and high-velocity systems built to eliminate workflow friction.
         </p>
       </div>
 
