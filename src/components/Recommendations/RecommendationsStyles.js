@@ -71,7 +71,7 @@ export const RecommendationList = styled.div`
 export const RecommendationQuote = styled.blockquote`
   width: 100%;
   color: ${(props) => props.theme.colors.primary1};
-  font-size: 1.55rem;
+  font-size: 1.65rem;
   line-height: 1.7;
   overflow-wrap: anywhere;
 
@@ -92,12 +92,12 @@ export const RecommendationAttribution = styled.div`
   gap: 0.3rem;
   margin-top: auto;
   color: ${(props) => props.theme.colors.muted};
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   line-height: 1.5;
 
   strong {
     color: ${(props) => props.theme.colors.primary1};
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 `;
 

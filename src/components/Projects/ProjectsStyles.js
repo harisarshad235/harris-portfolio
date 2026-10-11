@@ -62,12 +62,12 @@ export const ProjectCategory = styled.span`
   z-index: 1;
   top: 1.4rem;
   left: 1.4rem;
-  padding: 0.5rem 1.1rem;
+  padding: 0.5rem 1.2rem;
   border: 1px solid ${(props) => props.theme.colors.border};
   border-radius: 999px;
   background: ${(props) => props.theme.colors.background2};
   color: ${(props) => props.theme.colors.primary1};
-  font-size: 1.15rem;
+  font-size: 1.3rem;
   font-weight: 600;
   backdrop-filter: blur(12px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -76,7 +76,7 @@ export const ProjectCategory = styled.span`
 export const ProjectClient = styled.p`
   margin: 0 0 0.6rem;
   color: ${(props) => props.theme.colors.teal};
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 700;
   letter-spacing: 0.11em;
   text-transform: uppercase;
@@ -112,13 +112,13 @@ export const FilterButton = styled.button`
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
-  padding: 0.8rem 1.4rem;
+  padding: 0.8rem 1.5rem;
   border: 1px solid ${(props) => props['aria-pressed'] ? props.theme.colors.teal : props.theme.colors.border};
   border-radius: 999px;
   background: ${(props) => props['aria-pressed'] ? props.theme.colors.teal : props.theme.colors.background2};
   color: ${(props) => props['aria-pressed'] ? '#ffffff' : props.theme.colors.primary1};
   font: inherit;
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 180ms ease;
@@ -135,14 +135,14 @@ export const FilterButton = styled.button`
 
 export const FilterCount = styled.span`
   color: inherit;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   opacity: 0.85;
 `;
 
 export const FilterStatus = styled.p`
   min-height: 1.8rem;
   color: ${(props) => props.theme.colors.muted};
-  font-size: 1.35rem;
+  font-size: 1.45rem;
 `;
 
 export const BlogCard = styled.article`
@@ -190,7 +190,7 @@ export const CardInfo = styled.p`
   width: 100%;
   padding: 0;
   color: ${(props) => props.theme.colors.muted};
-  font-size: 1.45rem;
+  font-size: 1.55rem;
   line-height: 1.6;
   text-align: left;
   margin: 0 0 1.4rem;
@@ -205,35 +205,35 @@ export const ProjectMetaBadges = styled.div`
 `;
 
 export const ProjectMethodologyBadge = styled.span`
-  padding: 0.4rem 0.9rem;
+  padding: 0.4rem 1rem;
   border-radius: 6px;
   background: ${(props) => props.theme.colors.softSurface};
   border: 1px solid ${(props) => props.theme.colors.border};
   color: ${(props) => props.theme.colors.primary1};
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 600;
 `;
 
 export const ProjectKpiBadge = styled.span`
-  padding: 0.4rem 0.9rem;
+  padding: 0.4rem 1rem;
   border-radius: 6px;
   background: rgba(229, 103, 79, 0.1);
   border: 1px solid rgba(229, 103, 79, 0.25);
   color: ${(props) => props.theme.colors.accent1};
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 700;
 `;
 
 export const ProjectImpact = styled.p`
   width: 100%;
-  padding: 1rem 1.2rem;
+  padding: 1.1rem 1.3rem;
   margin: 0 0 1.8rem;
   background: ${(props) => props.theme.colors.softSurface};
   border-radius: 8px;
   border-left: 3px solid ${(props) => props.theme.colors.teal};
   color: ${(props) => props.theme.colors.primary1};
-  font-size: 1.25rem;
-  line-height: 1.5;
+  font-size: 1.4rem;
+  line-height: 1.55;
   text-align: left;
 
   strong {
@@ -258,7 +258,7 @@ export const UtilityList = styled.ul`
 
 export const ExternalLinks = styled.a`
   color: ${(props) => props.theme.colors.muted};
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   font-weight: 600;
   text-decoration: none;
   transition: color 180ms ease;
@@ -275,7 +275,7 @@ export const ExternalLinks = styled.a`
 
 export const CardLink = styled.a`
   color: ${(props) => props.theme.colors.accent1};
-  font-size: 1.45rem;
+  font-size: 1.55rem;
   font-weight: 700;
   text-decoration: none;
   transition: color 180ms ease;

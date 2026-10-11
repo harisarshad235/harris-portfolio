@@ -96,7 +96,7 @@ export const CredentialContent = styled.div`
 export const CredentialCategory = styled.span`
   margin-bottom: 0.6rem;
   color: ${(props) => props.theme.colors.teal};
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 700;
   letter-spacing: 0.11em;
   text-transform: uppercase;
@@ -113,7 +113,7 @@ export const CredentialTitle = styled.h3`
 export const CredentialIssuer = styled.p`
   margin: 0 0 0.8rem;
   color: ${(props) => props.theme.colors.accent1};
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -123,7 +123,7 @@ export const CredentialDescription = styled.p`
   width: 100%;
   margin: 0 0 1.4rem;
   color: ${(props) => props.theme.colors.muted};
-  font-size: 1.45rem;
+  font-size: 1.55rem;
   line-height: 1.6;
 `;
 
@@ -131,7 +131,7 @@ export const CredentialDate = styled.p`
   margin-top: auto;
   padding-bottom: 0.8rem;
   color: ${(props) => props.theme.colors.muted};
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 500;
 `;
 
@@ -142,7 +142,7 @@ export const CredentialLink = styled.a`
   min-height: 2.8rem;
   margin-top: 0.8rem;
   color: ${(props) => props.theme.colors.primary1};
-  font-size: 1.4rem;
+  font-size: 1.55rem;
   font-weight: 700;
   text-decoration: none;
   transition: color 180ms ease;

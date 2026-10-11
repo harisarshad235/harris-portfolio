@@ -60,7 +60,7 @@ export const CategoryHeading = styled.h3`
 
 export const CategoryLabel = styled.span`
   color: ${(props) => props.theme.colors.teal};
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -69,7 +69,7 @@ export const CategoryLabel = styled.span`
 export const SkillList = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  gap: 0.9rem;
+  gap: 1rem;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -79,21 +79,21 @@ export const SkillBadge = styled.span`
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
-  min-height: 3.8rem;
-  padding: 0.8rem 1.2rem;
+  min-height: 4.2rem;
+  padding: 0.9rem 1.4rem;
   color: ${(props) => props.theme.colors.primary1};
   background: ${(props) => props.theme.colors.softSurface};
   border: 1px solid ${(props) => props.theme.colors.border};
   border-radius: 0.8rem;
-  font-size: 1.3rem;
+  font-size: 1.45rem;
   font-weight: 600;
   line-height: 1.2;
   transition: border-color 180ms ease, transform 180ms ease;
 
   svg {
     flex: 0 0 auto;
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 2rem;
+    height: 2rem;
   }
 
   &:hover {
