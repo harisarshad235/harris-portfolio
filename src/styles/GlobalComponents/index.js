@@ -25,51 +25,50 @@ export const Section = styled.section`
 
 export const SectionTitle = styled.h2`
   font-weight: 800;
-  font-size: ${(props) => props.main ? '65px' : '56px'};
-  line-height: ${(props) => props.main ? '72px' : '56px'};
+  font-size: ${(props) => props.main ? '4.4rem' : '3.6rem'};
+  line-height: ${(props) => props.main ? '5.2rem' : '4.4rem'};
+  letter-spacing: -0.025em;
   width: max-content;
   max-width: 100%;
   color: ${(props) => props.theme.colors.primary1};
-  margin-bottom: 16px;
-  padding: ${(props) => props.main ? '58px 0 16px' : '0'};
+  margin-bottom: 1.6rem;
+  padding: ${(props) => props.main ? '3.2rem 0 1.6rem' : '0'};
 
   @media ${props => props.theme.breakpoints.md}{
-    font-size: ${(props) => props.main ? '56px' : '48px'};
-    line-height: ${(props) => props.main ? '56px' : '48px'};
-    margin-bottom: 12px;
-    padding: ${(props) => props.main ? '40px 0 12px' : '0'};
+    font-size: ${(props) => props.main ? '3.6rem' : '3.0rem'};
+    line-height: ${(props) => props.main ? '4.4rem' : '3.8rem'};
+    margin-bottom: 1.2rem;
+    padding: ${(props) => props.main ? '2.4rem 0 1.2rem' : '0'};
   }
 
   @media ${props => props.theme.breakpoints.sm}{
-    font-size: 32px;
-    line-height: 40px;
-    font-size: ${(props) => props.main ? '28px' : '32px'};
-    line-height: ${(props) => props.main ? '32px' : '40px'};
-    margin-bottom: 8px;
-    padding: ${(props) => props.main ? '16px 0 8px' : '0'};
+    font-size: ${(props) => props.main ? '3.0rem' : '2.6rem'};
+    line-height: ${(props) => props.main ? '3.8rem' : '3.4rem'};
+    margin-bottom: 0.8rem;
+    padding: ${(props) => props.main ? '1.6rem 0 0.8rem' : '0'};
     max-width: 100%;
   }
 `
 
 export const SectionText = styled.p`
   max-width: 800px;
-  font-size: 24px;
-  line-height: 40px;
-  font-weight: 300;
-  padding-bottom: 3.6rem;
+  font-size: 1.7rem;
+  line-height: 2.8rem;
+  font-weight: 400;
+  padding-bottom: 2.8rem;
   color: ${(props) => props.theme.colors.muted};
 
   @media ${(props) => props.theme.breakpoints.md} {
     max-width: 670px;
-    font-size: 20px;
-    line-height: 32px;
-    padding-bottom: 24px;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    padding-bottom: 2.2rem;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    font-size: 16px;
-    line-height: 24px;
-    padding-bottom: 16px;
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+    padding-bottom: 1.6rem;
   }
 `
 

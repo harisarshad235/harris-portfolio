@@ -15,10 +15,10 @@ export const FooterWrapper = styled.section`
 `
 
 export const LinkItem = styled.a`
-	font-size: 18px;
-	line-height: 30px;
+	font-size: 1.6rem;
+	line-height: 2.8rem;
 	color: ${(props) => props.theme.colors.muted};
-	margin-bottom: 16px;
+	margin-bottom: 1.6rem;
 	transition: .3s ease;
 	position: relative;
 	left: 0;
@@ -29,19 +29,19 @@ export const LinkItem = styled.a`
 	}
 
 	@media ${props => props.theme.breakpoints.md} {
-		font-size: 16px;
-		line-height: 28px;
+		font-size: 1.5rem;
+		line-height: 2.6rem;
 		display: flex;
 	}
 
 	@media ${props => props.theme.breakpoints.sm} {
-		font-size: 8px;
-		line-height: 14px;
-		margin-bottom: 8px;
+		font-size: 1.35rem;
+		line-height: 2.2rem;
+		margin-bottom: 0.8rem;
 		display: flex;
 		align-items: center;
 	}
-`
+`;
 
 export const SocialIconsContainer = styled.div`
 max-width: 1040px;
@@ -117,21 +117,21 @@ export const Slogan = styled.p`
 	color: ${(props) => props.theme.colors.muted};
 	min-width: 280px;
 	letter-spacing: 0.02em;
-	font-size: 18px;
-	line-height: 30px;
+	font-size: 1.5rem;
+	line-height: 2.4rem;
 	padding: 1rem;
 
 	@media ${props => props.theme.breakpoints.md}{
-		font-size: 16px;
-		line-height: 28px;
+		font-size: 1.4rem;
+		line-height: 2.2rem;
 	}
 
 	@media ${props => props.theme.breakpoints.sm}{
-		line-height: 22px;
-		font-size: 14px;
+		line-height: 2.0rem;
+		font-size: 1.3rem;
 		min-width: 100px;
 	}
-`
+`;
 
 export const SocialContainer = styled.div`
 	display: flex;
@@ -176,16 +176,17 @@ export const LinkColumn = styled.div`
 `
 export const LinkTitle = styled.h4`
 	font-style: normal;
-	font-weight: 600;
-	font-size: 12px;
-	line-height: 24px;
+	font-weight: 700;
+	font-size: 1.3rem;
+	line-height: 2.4rem;
 	text-transform: uppercase;
-	color: rgba(255, 255, 255, 0.4);
-	margin-bottom: 16px;
+	letter-spacing: 0.1em;
+	color: ${(props) => props.theme.colors.teal};
+	margin-bottom: 1.4rem;
 
 	@media ${props => props.theme.breakpoints.sm} {
-		font-size: 10px;
-		line-height: 12px;
-		margin-bottom: 8px;
+		font-size: 1.2rem;
+		line-height: 2.0rem;
+		margin-bottom: 0.8rem;
 	}
-`
+`;

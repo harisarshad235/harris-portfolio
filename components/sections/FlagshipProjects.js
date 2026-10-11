@@ -15,7 +15,7 @@ export const FlagshipProjects = () => {
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground mb-4 flagship-title">
           Production Platforms &amp; Engineering Systems
         </h2>
-        <p className="text-muted-foreground text-base sm:text-lg lg:text-xl leading-relaxed flagship-subtitle">
+        <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-2xl mx-auto flagship-subtitle">
           Full-stack cloud applications built with high-velocity UI architecture, resilient edge databases, and modern developer workflows.
         </p>
       </div>
@@ -64,21 +64,21 @@ export const FlagshipProjects = () => {
             {/* Card Body */}
             <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between flagship-body">
               <div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-1.5 group-hover:text-neutral-100 transition-colors flagship-item-title">
+                <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight mb-1.5 group-hover:text-neutral-100 transition-colors flagship-item-title">
                   {project.title}
                 </h3>
-                <p className="text-base sm:text-lg font-semibold text-neutral-200 mb-3 flagship-tagline">
+                <p className="text-sm sm:text-base font-semibold text-neutral-200 mb-2.5 flagship-tagline">
                   {project.tagline}
                 </p>
-                <p className="text-base sm:text-lg text-neutral-300 leading-relaxed mb-6 flagship-description font-normal">
+                <p className="text-sm sm:text-base text-neutral-300 leading-relaxed mb-6 flagship-description font-normal">
                   {project.description}
                 </p>
 
                 {/* Key Achievements & Capabilities */}
                 <ul className="space-y-2.5 mb-6 flagship-features" aria-label="Key Features">
                   {project.keyFeatures.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-sm sm:text-base text-neutral-200 flagship-feature-item">
-                      <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5 flagship-check-icon" />
+                    <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-neutral-200 flagship-feature-item">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5 flagship-check-icon" />
                       <span className="leading-snug">{feature}</span>
                     </li>
                   ))}

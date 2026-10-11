@@ -64,7 +64,7 @@ export default function Hero() {
             {/* Description */}
             <motion.p
               variants={itemVariants}
-              className="text-lg sm:text-xl text-foreground/80 leading-relaxed max-w-2xl mb-6 font-normal"
+              className="text-base sm:text-lg text-foreground/80 leading-relaxed max-w-2xl mb-6 font-normal"
             >
               PMP®-certified Project Manager in Islamabad, Pakistan, with a Master&apos;s in Project Management. I lead technology delivery across software, infrastructure, QA, and business teams, applying project planning and control, PMO governance, Agile delivery, risk management, and stakeholder coordination to move initiatives from planning through release.
             </motion.p>
@@ -72,7 +72,7 @@ export default function Hero() {
             {/* Location & Certification Pills */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-wrap items-center gap-2.5 sm:gap-3 text-sm sm:text-base font-medium mb-8"
+              className="flex flex-wrap items-center gap-2.5 sm:gap-3 text-xs sm:text-sm font-medium mb-8"
             >
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary text-foreground">
                 <MapPin className="h-4 w-4 text-primary" /> Islamabad, Pakistan
@@ -94,8 +94,8 @@ export default function Hero() {
                 whileHover={{ y: -3, scale: 1.02 }}
                 className="p-4 rounded-xl bg-card border border-border shadow-sm flex flex-col justify-between"
               >
-                <div className="text-3xl lg:text-4xl font-extrabold text-primary">PKR 103M+</div>
-                <div className="text-sm sm:text-base text-foreground/80 mt-1.5 font-medium leading-snug">
+                <div className="text-2xl lg:text-3xl font-extrabold text-primary">PKR 103M+</div>
+                <div className="text-xs sm:text-sm text-muted-foreground mt-1.5 font-medium leading-snug">
                   savings on track-and-trace delivery
                 </div>
               </motion.div>
@@ -103,8 +103,8 @@ export default function Hero() {
                 whileHover={{ y: -3, scale: 1.02 }}
                 className="p-4 rounded-xl bg-card border border-border shadow-sm flex flex-col justify-between"
               >
-                <div className="text-3xl lg:text-4xl font-extrabold text-primary">22.5%</div>
-                <div className="text-sm sm:text-base text-foreground/80 mt-1.5 font-medium leading-snug">
+                <div className="text-2xl lg:text-3xl font-extrabold text-primary">22.5%</div>
+                <div className="text-xs sm:text-sm text-muted-foreground mt-1.5 font-medium leading-snug">
                   under budget on that program
                 </div>
               </motion.div>
@@ -112,8 +112,8 @@ export default function Hero() {
                 whileHover={{ y: -3, scale: 1.02 }}
                 className="p-4 rounded-xl bg-card border border-border shadow-sm flex flex-col justify-between"
               >
-                <div className="text-3xl lg:text-4xl font-extrabold text-primary">150+</div>
-                <div className="text-sm sm:text-base text-foreground/80 mt-1.5 font-medium leading-snug">
+                <div className="text-2xl lg:text-3xl font-extrabold text-primary">150+</div>
+                <div className="text-xs sm:text-sm text-muted-foreground mt-1.5 font-medium leading-snug">
                   sites coordinated across PKR 700M+ portfolio
                 </div>
               </motion.div>
