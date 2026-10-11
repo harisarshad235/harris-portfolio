@@ -7,7 +7,9 @@
   },
   "scripts": {
     "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider next dev",
-    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider next build && cross-env NODE_OPTIONS=--openssl-legacy-provider next export",
+    "build": "node scripts/generate-sitemap.js && cross-env NODE_OPTIONS=--openssl-legacy-provider next build && cross-env NODE_OPTIONS=--openssl-legacy-provider next export",
+    "optimize-images": "node scripts/optimize-images.js",
+    "generate-sitemap": "node scripts/generate-sitemap.js",
     "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider next start",
     "export": "cross-env NODE_OPTIONS=--openssl-legacy-provider next export"
   },
@@ -30,6 +32,7 @@
     "autoprefixer": "^10.6.1",
     "cross-env": "^7.0.3",
     "postcss": "^8.5.29",
+    "sharp": "^0.35.5",
     "tailwindcss": "^3.4.19",
     "typescript": "^4.9.5"
   }

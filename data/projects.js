@@ -6,7 +6,7 @@ export const flagshipProjects = [
     badgeStyle: "bg-emerald-500/10 text-emerald-400 border-emerald-500/25",
     tagline: "Precision Task Command Center, Pomodoro Cadence & Flow Workspace",
     description: "Conceived, architected, and built by Haris as a zero-friction personal execution engine. Combines tactile Kanban swimlanes, Pomodoro cadence time-blocking, day-wise calendar scheduling, and local-first edge sync.",
-    image: "/images/showcase/takt-mockup.jpg",
+    image: "/images/showcase/takt-mockup.webp",
     liveUrl: "https://takt.harisarshad.site/",
     keyFeatures: [
       "Tactile Kanban swimlanes with dynamic List, Board, and Calendar views",
@@ -24,7 +24,7 @@ export const flagshipProjects = [
     badgeStyle: "bg-blue-500/10 text-blue-400 border-blue-500/25",
     tagline: "Jira-Style Agile Sprints, Knowledge Base & Multi-Project RBAC",
     description: "An edge-native engineering workflow platform bridging code commits, GitHub PR lifecycles, real-time CI/CD pipeline statuses, automated sprint burndowns, and enterprise role-based governance on Cloudflare edge infrastructure.",
-    image: "/images/showcase/apextrack-mockup.jpg",
+    image: "/images/showcase/apextrack-mockup.webp",
     liveUrl: "https://apex.harisarshad.site/",
     dashboardUrl: "https://apex.harisarshad.site/dashboard",
     keyFeatures: [

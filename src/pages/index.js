@@ -8,14 +8,15 @@ import Recommendations from '../components/Recommendations/Recommendations';
 import TechStack from '../components/TechStack/TechStack';
 import Credentials from '../components/Credentials/Credentials';
 import Timeline from '../components/TimeLine/TimeLine';
+import FAQ, { FAQ_DATA } from '../components/FAQ/FAQ';
 import Contact from '../components/Contact/Contact';
 import { Layout } from '../layout/Layout';
 import { HeroStage } from '../components/Hero/HeroStyles';
 
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://harisarshad.site').replace(/\/$/, '');
-const pageTitle = 'Haris Arshad – Front-End Web Developer & Software Engineer';
-const pageDescription = 'Showcasing front-end web development projects, software engineering expertise, and a technical portfolio of Haris Arshad.';
-const profileImage = `${siteUrl}/images/haris-arshad-profile.jpeg`;
+const pageTitle = 'Haris Arshad, PMP® – Technical Project Manager & Delivery Lead';
+const pageDescription = 'Portfolio of Haris Arshad, PMP®-certified Project Manager in Islamabad. Proven track record across PKR 700M+ portfolios, PMO governance, and high-velocity cloud delivery.';
+const profileImage = `${siteUrl}/images/haris-arshad-profile.webp`;
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
@@ -30,6 +31,17 @@ const personSchema = {
   sameAs: [
     'https://pk.linkedin.com/in/haris-arshad',
     'https://github.com/harisarshad235',
+  ],
+  hasCredential: [
+    {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'certification',
+      name: 'Project Management Professional (PMP)®',
+      recognizedBy: {
+        '@type': 'Organization',
+        name: 'Project Management Institute (PMI)',
+      },
+    },
   ],
   knowsAbout: [
     'Project management',
@@ -60,6 +72,32 @@ const websiteSchema = {
     target: `${siteUrl}/search?q={search_term_string}`,
     'query-input': 'required name=search_term_string'
   }
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: `${siteUrl}/`,
+    },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQ_DATA.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
 };
 
 const softwareAppSchema = {
@@ -102,14 +140,22 @@ const Home = () => {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema) }}
-          />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema) }}
+        />
       </Head>
       <div className="w-full">
         <Hero />
@@ -120,6 +166,7 @@ const Home = () => {
       <FlagshipProjects />
       <Projects />
       <Recommendations />
+      <FAQ />
       <Contact />
     </Layout>
   );

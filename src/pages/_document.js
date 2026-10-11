@@ -43,6 +43,7 @@ export default class MyDocument extends Document {
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
           <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+          <link rel="preload" as="image" href="/images/haris-arshad-profile.webp" type="image/webp" />
           {analyticsId && (
             <>
               <script async src={`https://www.googletagmanager.com/gtag/js?id=${analyticsId}`} />

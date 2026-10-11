@@ -201,12 +201,17 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
                 className="relative z-10 w-full aspect-[4/5] rounded-[28px] overflow-hidden border border-border bg-card shadow-2xl"
               >
-                <img
-                  src="/images/haris-arshad-profile.jpeg"
-                  alt="Engr. Haris Arshad PMP®"
-                  className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-                  loading="eager"
-                />
+                <picture>
+                  <source srcSet="/images/haris-arshad-profile.webp" type="image/webp" />
+                  <img
+                    src="/images/haris-arshad-profile.jpeg"
+                    alt="Engr. Haris Arshad, PMP® Certified Project Manager"
+                    width={380}
+                    height={475}
+                    className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                    loading="eager"
+                  />
+                </picture>
                 {/* Bottom subtle gradient overlay with title */}
                 <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/75 via-black/30 to-transparent pointer-events-none" />
                 <div className="absolute bottom-5 left-5 right-5 text-white pointer-events-none">

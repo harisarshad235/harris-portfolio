@@ -95,7 +95,7 @@ const Projects = () => {
             >
               <ImageWrapper>
                 {image
-                  ? <Img src={image} alt={`${client || title} project`} loading="lazy" />
+                  ? <Img src={image} alt={`${client || title} project delivery`} loading="lazy" width={400} height={220} />
                   : (
                     <ProjectArtwork aria-hidden="true">
                       <svg viewBox="0 0 480 240" focusable="false">

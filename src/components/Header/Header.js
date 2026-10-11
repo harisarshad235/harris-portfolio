@@ -13,6 +13,7 @@ const NAV_ITEMS = [
   { href: '#skills', label: 'Skills' },
   { href: '#recommendations', label: 'Recommendations' },
   { href: '#credentials', label: 'Credentials' },
+  { href: '#faq', label: 'FAQ' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -82,6 +83,8 @@ const Header = () => {
           <BrandImage
             src={mode === 'dark' ? '/logo-dark.svg' : '/logo-light.svg'}
             alt="Haris Arshad logo"
+            width="36"
+            height="36"
           />
           <Span>Haris Arshad</Span>
         </a>
