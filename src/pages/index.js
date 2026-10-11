@@ -8,6 +8,7 @@ import Recommendations from '../components/Recommendations/Recommendations';
 import TechStack from '../components/TechStack/TechStack';
 import Credentials from '../components/Credentials/Credentials';
 import Timeline from '../components/TimeLine/TimeLine';
+import Contact from '../components/Contact/Contact';
 import { Layout } from '../layout/Layout';
 import { HeroStage } from '../components/Hero/HeroStyles';
 
@@ -119,6 +120,7 @@ const Home = () => {
       <FlagshipProjects />
       <Projects />
       <Recommendations />
+      <Contact />
     </Layout>
   );
 };
