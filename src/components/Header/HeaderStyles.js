@@ -8,26 +8,26 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   grid-template-areas: "brand navigation controls";
-  gap: clamp(0.8rem, 1.4vw, 1.8rem);
-  padding: 1rem clamp(1.2rem, 2vw, 2.4rem);
+  gap: clamp(0.6rem, 1vw, 1.5rem);
+  padding: 0.9rem clamp(1rem, 1.8vw, 2.2rem);
   align-items: center;
   background: ${(props) => props.theme.mode === 'dark'
-    ? 'rgba(21, 29, 31, 0.92)'
-    : 'rgba(244, 240, 234, 0.92)'};
+    ? 'rgba(21, 29, 31, 0.94)'
+    : 'rgba(244, 240, 234, 0.94)'};
   backdrop-filter: blur(16px);
   border-bottom: 1px solid ${(props) => props.theme.colors.border};
 
-  @media ${(props) => props.theme.breakpoints.md} {
+  @media screen and (max-width: 1060px) {
     grid-template-columns: minmax(0, 1fr) auto;
     grid-template-areas:
       "brand controls"
       "navigation navigation";
     row-gap: 0.8rem;
-    padding: 1.2rem 1.6rem;
+    padding: 1.1rem 1.6rem;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    padding: 0.8rem 1.2rem 1.2rem;
+    padding: 0.8rem 1.2rem;
   }
 `;
 
@@ -89,10 +89,11 @@ export const Div2 = styled.div`
   grid-area: navigation;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: safe center;
   flex-wrap: nowrap;
-  gap: clamp(0.5rem, 1.1vw, 1.8rem);
+  gap: clamp(0.4rem, 0.85vw, 1.4rem);
   min-width: 0;
+  padding: 0 0.4rem;
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -100,7 +101,7 @@ export const Div2 = styled.div`
     display: none;
   }
 
-  @media ${(props) => props.theme.breakpoints.md} {
+  @media screen and (max-width: 1060px) {
     justify-content: flex-start;
     padding: 0.3rem 0;
     gap: 1.2rem;
@@ -114,21 +115,20 @@ export const Div2 = styled.div`
 export const Div3 = styled.div`
   grid-area: controls;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: center;
   gap: 0.8rem;
+  flex-shrink: 0;
 
-  @media ${(props) => props.theme.breakpoints.md} {
-    grid-area: controls;
+  @media screen and (max-width: 1220px) {
+    > a[aria-label^="Visit"] {
+      display: none;
+    }
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
     gap: 0.6rem;
-
-    > a[aria-label^="Visit"] {
-      display: none;
-    }
   }
 `;
 
@@ -172,12 +172,12 @@ export const NavLink = styled.a`
   align-items: center;
   position: relative;
   min-height: 3.6rem;
-  font-size: clamp(1.3rem, 1.05vw, 1.5rem);
+  font-size: clamp(1.22rem, 0.9vw, 1.45rem);
   font-weight: ${(props) => props.$active ? 700 : 500};
   line-height: 1.3;
   white-space: nowrap;
   flex-shrink: 0;
-  padding: 0 0.3rem;
+  padding: 0 0.2rem;
   color: ${(props) => props.$active ? props.theme.colors.primary1 : props.theme.colors.muted};
   transition: color 0.25s ease, font-weight 0.25s ease;
 
