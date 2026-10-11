@@ -34,6 +34,7 @@ export default class MyDocument extends Document {
       <Html lang='en-GB'>
         <Head>
           <meta name="theme-color" content="#F4F0EA" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon.ico" sizes="any" />
           <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
           <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />

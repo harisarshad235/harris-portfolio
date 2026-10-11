@@ -12,8 +12,8 @@ import { Layout } from '../layout/Layout';
 import { HeroStage } from '../components/Hero/HeroStyles';
 
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://harisarshad.site').replace(/\/$/, '');
-const pageTitle = 'Haris Arshad | PMP Project Manager in Islamabad, Pakistan';
-const pageDescription = 'PMP Project Manager in Islamabad, Pakistan, leading IT project management, PMO governance, Agile delivery and digital transformation for technology teams.';
+const pageTitle = 'Haris Arshad – Front-End Web Developer & Software Engineer';
+const pageDescription = 'Showcasing front-end web development projects, software engineering expertise, and a technical portfolio of Haris Arshad.';
 const profileImage = `${siteUrl}/images/haris-arshad-profile.jpeg`;
 const personSchema = {
   '@context': 'https://schema.org',
@@ -48,6 +48,33 @@ const personSchema = {
   ],
 };
 
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  url: siteUrl,
+  name: pageTitle,
+  description: pageDescription,
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${siteUrl}/search?q={search_term_string}`,
+    'query-input': 'required name=search_term_string'
+  }
+};
+
+const softwareAppSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Harris Portfolio',
+  operatingSystem: 'All',
+  applicationCategory: 'WebApplication',
+  url: siteUrl,
+  description: pageDescription,
+  author: {
+    '@type': 'Person',
+    name: 'Haris Arshad'
+  }
+};
+
 const Home = () => {
   return (
     <Layout>
@@ -74,6 +101,14 @@ const Home = () => {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
         />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema) }}
+          />
       </Head>
       <div data-reveal className="w-full">
         <Hero />
