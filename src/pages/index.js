@@ -111,7 +111,7 @@ const Home = () => {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema) }}
           />
       </Head>
-      <div data-reveal className="w-full">
+      <div className="w-full">
         <Hero />
       </div>
       <Timeline />

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiCheckSquare, FiLayers, FiCode, FiGrid, FiSliders } from 'react-icons/fi';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { techStack } from '../../constants/techStack';
+import { ScrollReveal } from '../ui/MotionReveal';
 
 const categoryMeta = {
   delivery: {
@@ -42,14 +43,16 @@ const TechStack = () => {
   );
 
   return (
-    <Section id="skills" data-reveal>
-      <SectionTitle>Technology &amp; delivery stack</SectionTitle>
-      <SectionText>
-        Project delivery governance and control frameworks, alongside the cloud, backend, and frontend technologies I coordinate across cross-functional teams.
-      </SectionText>
+    <Section id="skills">
+      <ScrollReveal>
+        <SectionTitle>Technology &amp; delivery stack</SectionTitle>
+        <SectionText>
+          Project delivery governance and control frameworks, alongside the cloud, backend, and frontend technologies I coordinate across cross-functional teams.
+        </SectionText>
+      </ScrollReveal>
 
       {/* Interactive Category Filter Bar */}
-      <div className="flex flex-wrap items-center gap-2 mb-8" role="tablist" aria-label="Filter technologies by category">
+      <ScrollReveal delay={0.1} className="flex flex-wrap items-center gap-2 mb-8" role="tablist" aria-label="Filter technologies by category">
         <button
           type="button"
           role="tab"
@@ -94,12 +97,12 @@ const TechStack = () => {
             </button>
           );
         })}
-      </div>
+      </ScrollReveal>
 
       {/* Responsive Grid of Category Cards */}
       <div className={`grid gap-6 sm:gap-8 ${activeTab === 'all' ? 'grid-cols-1 lg:grid-cols-3' : 'grid-cols-1 max-w-3xl mx-auto'}`}>
         <AnimatePresence mode="popLayout">
-          {visibleCategories.map((category) => {
+          {visibleCategories.map((category, index) => {
             const meta = categoryMeta[category.id] || {};
             const CategoryIcon = meta.icon || FiSliders;
 
@@ -107,10 +110,11 @@ const TechStack = () => {
               <motion.article
                 key={category.id}
                 layout
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 24, scale: 0.96 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.96 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.35, delay: index * 0.08 }}
+                whileHover={{ y: -6 }}
                 className="group relative rounded-2xl border border-border bg-card/90 backdrop-blur-md p-6 sm:p-7 shadow-sm hover:shadow-xl hover:border-primary/40 transition-all duration-300 flex flex-col justify-between"
               >
                 {/* Header */}

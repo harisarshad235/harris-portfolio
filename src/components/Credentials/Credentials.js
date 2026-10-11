@@ -5,6 +5,7 @@ import { FiAward, FiExternalLink } from 'react-icons/fi';
 import { credentials } from '../../constants/credentials';
 import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { FilterBar, FilterButton, FilterCount, FilterStatus } from '../Projects/ProjectsStyles';
+import { ScrollReveal } from '../ui/MotionReveal';
 import {
   CertificatePreview,
   CredentialCard,
@@ -29,31 +30,35 @@ const Credentials = () => {
     : credentials.filter(({ category }) => category === activeFilter);
 
   return (
-    <Section id="credentials" data-reveal>
-      <SectionTitle>Credentials &amp; certifications</SectionTitle>
-      <SectionText>
-        Verified professional credentials and continuing education supporting my project delivery work.
-      </SectionText>
-      <FilterBar role="group" aria-label="Filter credentials by category">
-        {filters.map((filter) => {
-          const count = filter === 'All'
-            ? credentials.length
-            : credentials.filter(({ category }) => category === filter).length;
+    <Section id="credentials">
+      <ScrollReveal>
+        <SectionTitle>Credentials &amp; certifications</SectionTitle>
+        <SectionText>
+          Verified professional credentials and continuing education supporting my project delivery work.
+        </SectionText>
+      </ScrollReveal>
+      <ScrollReveal delay={0.1}>
+        <FilterBar role="group" aria-label="Filter credentials by category">
+          {filters.map((filter) => {
+            const count = filter === 'All'
+              ? credentials.length
+              : credentials.filter(({ category }) => category === filter).length;
 
-          return (
-            <FilterButton
-              key={filter}
-              type="button"
-              as={motion.button}
-              whileTap={{ scale: 0.96 }}
-              aria-pressed={activeFilter === filter}
-              onClick={() => setActiveFilter(filter)}
-            >
-              {filter}<FilterCount>{count}</FilterCount>
-            </FilterButton>
-          );
-        })}
-      </FilterBar>
+            return (
+              <FilterButton
+                key={filter}
+                type="button"
+                as={motion.button}
+                whileTap={{ scale: 0.96 }}
+                aria-pressed={activeFilter === filter}
+                onClick={() => setActiveFilter(filter)}
+              >
+                {filter}<FilterCount>{count}</FilterCount>
+              </FilterButton>
+            );
+          })}
+        </FilterBar>
+      </ScrollReveal>
       <FilterStatus aria-live="polite">
         Showing {visibleCredentials.length} of {credentials.length} credentials
       </FilterStatus>
@@ -79,13 +84,11 @@ const Credentials = () => {
               <MotionCredentialCard
                 key={id}
                 layout
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 20, scale: 0.97 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.96 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.35, delay: (index % 3) * 0.08 }}
                 whileHover={{ y: -6 }}
-                data-reveal
-                style={{ '--reveal-delay': `${(index % 3) * 70}ms` }}
               >
                 {certificateImage || certificatePreview ? (
                   <CertificatePreview

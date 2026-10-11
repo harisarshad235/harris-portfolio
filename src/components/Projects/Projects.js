@@ -25,6 +25,7 @@ import {
 } from './ProjectsStyles';
 import { Section, SectionTitle } from '../../styles/GlobalComponents';
 import { projects } from '../../constants/constants';
+import { ScrollReveal } from '../ui/MotionReveal';
 
 const MotionBlogCard = motion(BlogCard);
 
@@ -38,26 +39,30 @@ const Projects = () => {
   const visibleProjects = filterProjects(activeFilter);
 
   return (
-    <Section nopadding id='client-projects' data-reveal>
-      <SectionTitle main>Projects</SectionTitle>
-      <FilterBar role="group" aria-label="Filter projects by industry">
-        {filters.map((filter) => {
-          const count = filterProjects(filter).length;
+    <Section nopadding id='client-projects'>
+      <ScrollReveal>
+        <SectionTitle main>Projects</SectionTitle>
+      </ScrollReveal>
+      <ScrollReveal delay={0.1}>
+        <FilterBar role="group" aria-label="Filter projects by industry">
+          {filters.map((filter) => {
+            const count = filterProjects(filter).length;
 
-          return (
-            <FilterButton
-              key={filter}
-              type="button"
-              as={motion.button}
-              whileTap={{ scale: 0.96 }}
-              aria-pressed={activeFilter === filter}
-              onClick={() => setActiveFilter(filter)}
-            >
-              {filter}<FilterCount>{count}</FilterCount>
-            </FilterButton>
-          );
-        })}
-      </FilterBar>
+            return (
+              <FilterButton
+                key={filter}
+                type="button"
+                as={motion.button}
+                whileTap={{ scale: 0.96 }}
+                aria-pressed={activeFilter === filter}
+                onClick={() => setActiveFilter(filter)}
+              >
+                {filter}<FilterCount>{count}</FilterCount>
+              </FilterButton>
+            );
+          })}
+        </FilterBar>
+      </ScrollReveal>
       <FilterStatus aria-live="polite">
         Showing {visibleProjects.length} of {projects.length} projects{activeFilter !== 'All' ? ` for ${activeFilter}` : ''}
       </FilterStatus>
@@ -77,14 +82,14 @@ const Projects = () => {
             website,
             caseStudy,
             projectTypes,
-          }) => (
+          }, index) => (
             <MotionBlogCard
               key={id}
               layout
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 24, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, scale: 0.96 }}
-              transition={{ duration: 0.25 }}
+              transition={{ duration: 0.35, delay: (index % 6) * 0.06 }}
               whileHover={{ y: -6 }}
               data-project-types={projectTypes.join(',')}
             >

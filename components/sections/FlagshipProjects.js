@@ -3,12 +3,13 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, ExternalLink, CheckCircle2, Layers } from 'lucide-react';
 import { flagshipProjects } from '../../data/projects';
+import { ScrollReveal, StaggerContainer } from '../../src/components/ui/MotionReveal';
 
 export const FlagshipProjects = () => {
   return (
-    <section id="products" data-reveal className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flagship-showcase-section">
+    <section id="products" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flagship-showcase-section">
       {/* Section Header */}
-      <div className="mb-16 text-center max-w-3xl mx-auto flagship-header">
+      <ScrollReveal className="mb-16 text-center max-w-3xl mx-auto flagship-header">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-border bg-card text-foreground mb-4 shadow-sm backdrop-blur-md flagship-badge">
           <Layers className="w-4 h-4 text-primary flagship-badge-icon" />
           <span>Proprietary SaaS &amp; Custom Technology Solutions</span>
@@ -19,13 +20,25 @@ export const FlagshipProjects = () => {
         <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-2xl mx-auto flagship-subtitle">
           Conceived from real-world delivery bottlenecks, architected from scratch, and engineered into production-grade cloud software. These are my original ideas, custom blueprints, and high-velocity systems built to eliminate workflow friction.
         </p>
-      </div>
+      </ScrollReveal>
 
       {/* Synchronized 2-Column Responsive Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch flagship-grid">
+      <StaggerContainer
+        staggerDelay={0.15}
+        className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch flagship-grid"
+      >
         {flagshipProjects.map((project) => (
           <motion.article
             key={project.id}
+            variants={{
+              hidden: { opacity: 0, y: 30, scale: 0.98 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+              },
+            }}
             whileHover={{ y: -6 }}
             transition={{ duration: 0.25 }}
             className={`group relative rounded-2xl border border-neutral-800/80 bg-[#0A0F17] overflow-hidden transition-all duration-300 flex flex-col justify-between ${project.borderHoverClass} ${project.glowClass} flagship-card card-${project.id}`}
@@ -129,7 +142,7 @@ export const FlagshipProjects = () => {
             </div>
           </motion.article>
         ))}
-      </div>
+      </StaggerContainer>
     </section>
   );
 };

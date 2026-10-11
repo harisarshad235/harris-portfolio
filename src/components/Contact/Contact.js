@@ -19,6 +19,7 @@ import {
   Loader2,
 } from 'lucide-react';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
+import { ScrollReveal } from '../ui/MotionReveal';
 
 const SERVICES = [
   '30-min Consultation',
@@ -101,7 +102,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" data-reveal className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="contact" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {/* Background ambient lighting */}
       <div
         aria-hidden="true"
@@ -109,7 +110,7 @@ export const Contact = () => {
       />
 
       {/* Section Header */}
-      <div className="mb-16 text-center max-w-3xl mx-auto">
+      <ScrollReveal className="mb-16 text-center max-w-3xl mx-auto">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-border bg-card text-foreground mb-4 shadow-sm backdrop-blur-md">
           <Sparkles className="w-4 h-4 text-primary" />
           <span>Let&apos;s Build Together · Available for Engagements</span>
@@ -120,7 +121,7 @@ export const Contact = () => {
         <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
           Have a technology delivery challenge, PMO governance need, or full-stack software initiative? Reach out directly or send a message below.
         </p>
-      </div>
+      </ScrollReveal>
 
       {/* 2-Column Responsive Grid: Contact Card + Interactive Form */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">

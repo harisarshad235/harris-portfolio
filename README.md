@@ -15,7 +15,7 @@ Connect this repository to a Cloudflare Pages project and use the build settings
 
 After the first successful deployment, add `harisarshad.site` under the Pages project’s **Custom domains** settings. The domain must be an active zone in the same Cloudflare account. Cloudflare will configure the required DNS record for the Pages project.
 
-Requests to the project’s `*.pages.dev` hostname are permanently redirected to `harisarshad.site`, preserving the path and query string. The `netlify.toml` redirect similarly redirects the old Netlify hostname when this repository is next deployed there. If the Netlify site is no longer needed, pause or delete it in the Netlify dashboard after confirming the redirect deployment.
+Requests to the project’s `*.pages.dev` hostname are permanently redirected to `harisarshad.site`, preserving the path and query string.
 
 #### Contact form
 

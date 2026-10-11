@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowUpRight, FiMessageSquare, FiX } from 'react-icons/fi';
 
 import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
+import { ScrollReveal } from '../ui/MotionReveal';
 import {
   RecommendationActions,
   RecommendationButton,
@@ -119,14 +120,14 @@ const Recommendations = () => {
   };
 
   return (
-    <Section id="recommendations" data-reveal>
+    <Section id="recommendations">
       {(recommendationsLoading || recommendationsError || approvedRecommendations.length > 0) && (
-        <>
+        <ScrollReveal>
           <SectionTitle>Recommendations</SectionTitle>
           <SectionText>
             Feedback from colleagues, clients, and managers who have worked with me.
           </SectionText>
-        </>
+        </ScrollReveal>
       )}
       {recommendationsLoading ? (
         <RecommendationEmptyState role="status">Loading approved recommendations…</RecommendationEmptyState>
@@ -138,9 +139,10 @@ const Recommendations = () => {
             <MotionRecommendationCard
               as="article"
               key={id}
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.25, delay: (index % 4) * 0.06 }}
+              initial={{ opacity: 0, y: 24, scale: 0.98 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: (index % 4) * 0.08 }}
               whileHover={{ y: -4 }}
             >
               <RecommendationMark aria-hidden="true"><FiMessageSquare /></RecommendationMark>
@@ -158,8 +160,11 @@ const Recommendations = () => {
         </RecommendationList>
       ) : null}
       <MotionRecommendationCard
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         whileHover={{ y: -3 }}
-        transition={{ duration: 0.2 }}
+        transition={{ duration: 0.35 }}
       >
         <RecommendationMark aria-hidden="true"><FiMessageSquare /></RecommendationMark>
         <div>
