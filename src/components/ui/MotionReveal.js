@@ -41,7 +41,7 @@ export function ScrollReveal({
 
   return (
     <Component
-      initial={{
+      initial={shouldReduceMotion ? { opacity: 1, x: 0, y: 0 } : {
         opacity: 0,
         ...initialPos,
       }}
@@ -50,11 +50,11 @@ export function ScrollReveal({
         x: 0,
         y: 0,
       }}
-      viewport={{ once, amount }}
+      viewport={{ once, margin: "2000px 0px", amount: 0 }}
       transition={{
         duration: shouldReduceMotion ? 0.01 : duration,
         delay,
-        ease: [0.22, 1, 0.36, 1], // Smooth premium ease-out cubic
+        ease: [0.23, 1, 0.32, 1], // Emil Kowalski strong ease-out
       }}
       className={className}
       {...props}
@@ -94,9 +94,9 @@ export function StaggerContainer({
   return (
     <Component
       variants={containerVariants}
-      initial="hidden"
+      initial={shouldReduceMotion ? "visible" : "hidden"}
       whileInView="visible"
-      viewport={{ once, amount }}
+      viewport={{ once, margin: "2000px 0px", amount: 0 }}
       className={className}
       {...props}
     >

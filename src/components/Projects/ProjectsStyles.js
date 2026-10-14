@@ -112,19 +112,24 @@ export const FilterButton = styled.button`
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
-  padding: 0.8rem 1.5rem;
-  border: 1px solid ${(props) => props['aria-pressed'] ? props.theme.colors.teal : props.theme.colors.border};
-  border-radius: 999px;
-  background: ${(props) => props['aria-pressed'] ? props.theme.colors.teal : props.theme.colors.background2};
-  color: ${(props) => props['aria-pressed'] ? '#ffffff' : props.theme.colors.primary1};
+  padding: 0.7rem 1.4rem;
+  border: 1px solid ${(props) => props['aria-pressed'] ? props.theme.colors.primary1 : props.theme.colors.border};
+  border-radius: 1.2rem;
+  background: ${(props) => props['aria-pressed'] ? props.theme.colors.primary1 : props.theme.colors.background2};
+  color: ${(props) => props['aria-pressed'] ? props.theme.colors.background1 : props.theme.colors.primary1};
   font: inherit;
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 180ms ease;
+  box-shadow: 0 1px 2px rgba(17, 24, 28, 0.04);
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 160ms ease, border-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
 
   &:hover {
-    border-color: ${(props) => props.theme.colors.teal};
+    border-color: ${(props) => props.theme.colors.primary1};
+  }
+
+  &:active {
+    transform: scale(0.97);
   }
 
   &:focus-visible {
@@ -135,36 +140,43 @@ export const FilterButton = styled.button`
 
 export const FilterCount = styled.span`
   color: inherit;
-  font-size: 1.25rem;
-  opacity: 0.85;
+  font-size: 1.2rem;
+  opacity: 0.8;
+  font-family: monospace;
 `;
 
 export const FilterStatus = styled.p`
   min-height: 1.8rem;
   color: ${(props) => props.theme.colors.muted};
-  font-size: 1.45rem;
+  font-size: 1.35rem;
 `;
 
 export const BlogCard = styled.article`
   background: ${(props) => props.theme.colors.background2};
   border: 1px solid ${(props) => props.theme.colors.border};
   border-radius: 2rem;
-  box-shadow: 0 12px 32px rgba(29, 42, 45, 0.06);
+  box-shadow: 0 1px 3px rgba(17, 24, 28, 0.04), 0 8px 24px rgba(17, 24, 28, 0.04);
   text-align: left;
   width: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 260ms ease, border-color 260ms ease, box-shadow 260ms ease;
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), border-color 160ms ease, box-shadow 160ms ease;
 
-  &:hover {
-    transform: translateY(-5px);
-    border-color: ${(props) => props.theme.colors.teal};
-    box-shadow: 0 20px 48px rgba(29, 42, 45, 0.12);
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transform: translateY(-4px);
+      border-color: ${(props) => props.theme.colors.teal};
+      box-shadow: 0 4px 12px rgba(17, 24, 28, 0.05), 0 16px 36px rgba(17, 24, 28, 0.08);
 
-    img {
-      transform: scale(1.03);
+      img {
+        transform: scale(1.02);
+      }
     }
+  }
+
+  &:active {
+    transform: scale(0.98);
   }
 
   .project-card-content {

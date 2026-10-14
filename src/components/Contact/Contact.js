@@ -129,9 +129,9 @@ export const Contact = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="lg:col-span-5 flex flex-col justify-between rounded-3xl border border-border/80 bg-card/80 backdrop-blur-xl p-6 sm:p-8 shadow-xl relative overflow-hidden"
+          viewport={{ once: true, margin: "250px" }}
+          transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+          className="lg:col-span-5 flex flex-col justify-between rounded-3xl border border-border/80 bg-card p-6 sm:p-8 shadow-sm relative overflow-hidden"
         >
           {/* Card Accent Top Glow */}
           <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-teal-500 via-primary to-emerald-400" />
@@ -195,7 +195,7 @@ export const Contact = () => {
                 <button
                   type="button"
                   onClick={() => handleCopy('harisarshad235@gmail.com', 'email')}
-                  className="px-2.5 py-1.5 rounded-lg bg-card border border-border text-xs font-medium text-foreground hover:bg-secondary transition-all flex items-center gap-1.5 shrink-0"
+                  className="px-2.5 py-1.5 rounded-lg bg-card border border-border text-xs font-semibold text-foreground hover:bg-secondary active:scale-[0.96] transition-[transform,background-color,border-color] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] flex items-center gap-1.5 shrink-0 shadow-2xs cursor-pointer"
                   title="Copy email"
                 >
                   {copiedItem === 'email' ? (
@@ -233,7 +233,7 @@ export const Contact = () => {
                 <button
                   type="button"
                   onClick={() => handleCopy('+923095597954', 'phone')}
-                  className="px-2.5 py-1.5 rounded-lg bg-card border border-border text-xs font-medium text-foreground hover:bg-secondary transition-all flex items-center gap-1.5 shrink-0"
+                  className="px-2.5 py-1.5 rounded-lg bg-card border border-border text-xs font-semibold text-foreground hover:bg-secondary active:scale-[0.96] transition-[transform,background-color,border-color] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] flex items-center gap-1.5 shrink-0 shadow-2xs cursor-pointer"
                   title="Copy phone"
                 >
                   {copiedItem === 'phone' ? (
@@ -322,9 +322,9 @@ export const Contact = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.15 }}
-          className="lg:col-span-7 rounded-3xl border border-border/80 bg-card/80 backdrop-blur-xl p-6 sm:p-10 shadow-xl relative"
+          viewport={{ once: true, margin: "250px" }}
+          transition={{ duration: 0.5, delay: 0.1, ease: [0.23, 1, 0.32, 1] }}
+          className="lg:col-span-7 rounded-3xl border border-border/80 bg-card p-6 sm:p-10 shadow-sm relative"
         >
           <div className="mb-6">
             <h3 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight mb-2">
@@ -348,10 +348,10 @@ export const Contact = () => {
                     key={service}
                     type="button"
                     onClick={() => setSelectedService(service)}
-                    className={`px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition-all ${
+                    className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-[transform,background-color,border-color,color] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-[0.97] cursor-pointer ${
                       isSelected
-                        ? 'bg-primary text-primary-foreground shadow-sm scale-[1.02]'
-                        : 'bg-secondary text-foreground/80 hover:bg-secondary/80 border border-border'
+                        ? 'bg-primary text-primary-foreground shadow-sm'
+                        : 'bg-secondary text-foreground/85 hover:bg-secondary/80 border border-border'
                     }`}
                   >
                     {service}
@@ -525,7 +525,7 @@ export const Contact = () => {
                 <button
                   type="submit"
                   disabled={formState === 'loading'}
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-primary text-primary-foreground font-bold text-sm sm:text-base hover:bg-primary/90 active:scale-[0.99] transition-all shadow-lg hover:shadow-xl cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-primary text-primary-foreground font-bold text-sm sm:text-base hover:bg-primary/90 active:scale-[0.97] transition-[transform,background-color,box-shadow] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] shadow-md hover:shadow-lg cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {formState === 'loading' ? (
                     <>

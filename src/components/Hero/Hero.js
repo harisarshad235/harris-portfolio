@@ -35,98 +35,91 @@ export default function Hero() {
 
       <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          {/* Left Column: Executive Bio, Credentials, Metrics, and Actions */}
+          {/* Left Column: Executive Bio, Credentials, Asymmetric Metrics, and Actions */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
             className="lg:col-span-7 flex flex-col items-start text-left"
           >
-            {/* Eyebrow badge */}
-            <motion.div variants={itemVariants} className="mb-4">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold tracking-wider uppercase bg-teal-500/10 text-teal-700 dark:text-teal-300 border border-teal-500/25">
-                <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
-                Technology delivery · PMO · Agile coordination
+            {/* Architectural Discipline Label */}
+            <motion.div variants={itemVariants} className="mb-3">
+              <span className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wide text-primary uppercase">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                Technology Delivery &amp; PMO Governance
               </span>
             </motion.div>
 
-            {/* Main Headline */}
+            {/* Main Headline - Strict 2-line maximum with editorial tension */}
             <motion.h1
               variants={itemVariants}
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.12] mb-3"
+              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-[1.08] mb-4"
             >
               Haris Arshad, PMP®
-              <span className="block text-primary mt-1 text-3xl sm:text-4xl lg:text-5xl font-bold">
-                Project Manager
+              <span className="block text-primary mt-1 text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight">
+                Technical Delivery &amp; PMO Lead
               </span>
             </motion.h1>
 
-            {/* Description */}
+            {/* Statement Bio */}
             <motion.p
               variants={itemVariants}
-              className="text-base sm:text-lg text-foreground/80 leading-relaxed max-w-2xl mb-6 font-normal"
+              className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mb-6 font-normal"
             >
-              PMP®-certified Project Manager in Islamabad, Pakistan, with a Master&apos;s in Project Management. I lead technology delivery across software, infrastructure, QA, and business teams, applying project planning and control, PMO governance, Agile delivery, risk management, and stakeholder coordination to move initiatives from planning through release.
+              PMP®-certified Project Manager in Islamabad with a Master&apos;s in Project Management. I steer complex technology portfolios across cloud, infrastructure, software, and QA squads — combining EVM baselines, Agile sprint cadence, RAID discipline, and stakeholder alignment to ship on schedule.
             </motion.p>
 
-            {/* Location & Certification Pills */}
+            {/* Location & Status Tag Line */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-wrap items-center gap-2.5 sm:gap-3 text-xs sm:text-sm font-medium mb-8"
+              className="flex flex-wrap items-center gap-2.5 sm:gap-3 text-xs sm:text-sm font-medium mb-7"
             >
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary text-foreground">
-                <MapPin className="h-4 w-4 text-primary" /> Islamabad, Pakistan
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-secondary text-foreground border border-border/80">
+                <MapPin className="h-3.5 w-3.5 text-primary" /> Islamabad, Pakistan
               </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary text-foreground">
-                <Award className="h-4 w-4 text-primary" /> PMP® certified
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-secondary text-foreground border border-border/80">
+                <Award className="h-3.5 w-3.5 text-primary" /> PMP® certified (PMI)
               </span>
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary text-foreground border border-primary/20">
-                <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" /> Open to PM/PMO roles &amp; select consulting
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-card text-foreground border border-primary/25 shadow-2xs">
+                <span className="h-2 w-2 rounded-full bg-emerald-500" /> Open to PM/PMO leadership &amp; advisory
               </span>
             </motion.div>
 
-            {/* Delivery Impact Metric Cards */}
+            {/* Asymmetric Metric Grid Tension */}
             <motion.div
               variants={itemVariants}
-              className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 w-full max-w-2xl mb-8"
+              className="grid grid-cols-1 sm:grid-cols-12 gap-3.5 w-full max-w-2xl mb-8"
             >
-              <motion.div
-                whileHover={{ y: -3, scale: 1.02 }}
-                className="p-4 rounded-xl bg-card border border-border shadow-sm flex flex-col justify-between"
-              >
-                <div className="text-2xl lg:text-3xl font-extrabold text-primary">PKR 103M+</div>
-                <div className="text-xs sm:text-sm text-muted-foreground mt-1.5 font-medium leading-snug">
-                  savings on track-and-trace delivery
+              {/* Primary Anchor Metric (7 cols) */}
+              <div className="sm:col-span-7 p-4 sm:p-5 rounded-2xl bg-card border border-border shadow-xs flex flex-col justify-between">
+                <div className="flex items-baseline justify-between gap-2">
+                  <div className="text-2xl sm:text-3xl font-extrabold text-primary tracking-tight">PKR 103M+</div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-md">
+                    22.5% Under Budget
+                  </span>
                 </div>
-              </motion.div>
-              <motion.div
-                whileHover={{ y: -3, scale: 1.02 }}
-                className="p-4 rounded-xl bg-card border border-border shadow-sm flex flex-col justify-between"
-              >
-                <div className="text-2xl lg:text-3xl font-extrabold text-primary">22.5%</div>
-                <div className="text-xs sm:text-sm text-muted-foreground mt-1.5 font-medium leading-snug">
-                  under budget on that program
+                <div className="text-xs sm:text-sm text-muted-foreground mt-2 font-medium leading-relaxed">
+                  Verified cost optimization on nationwide Track &amp; Trace delivery program.
                 </div>
-              </motion.div>
-              <motion.div
-                whileHover={{ y: -3, scale: 1.02 }}
-                className="p-4 rounded-xl bg-card border border-border shadow-sm flex flex-col justify-between"
-              >
-                <div className="text-2xl lg:text-3xl font-extrabold text-primary">150+</div>
-                <div className="text-xs sm:text-sm text-muted-foreground mt-1.5 font-medium leading-snug">
-                  sites coordinated across PKR 700M+ portfolio
+              </div>
+
+              {/* Secondary Anchor Metric (5 cols) */}
+              <div className="sm:col-span-5 p-4 sm:p-5 rounded-2xl bg-secondary/80 border border-border shadow-xs flex flex-col justify-between">
+                <div className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">150+ Sites</div>
+                <div className="text-xs sm:text-sm text-muted-foreground mt-2 font-medium leading-relaxed">
+                  Coordinated across PKR 700M+ enterprise infrastructure portfolio.
                 </div>
-              </motion.div>
+              </div>
             </motion.div>
 
             {/* Action Buttons & Social Links Row */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-wrap items-center gap-3.5 w-full"
+              className="flex flex-wrap items-center gap-3 w-full"
             >
               <Button
                 size="lg"
-                className="gap-2 px-6 font-semibold shadow-md cursor-pointer"
+                className="gap-2 px-6 font-semibold shadow-sm"
                 onClick={() => window.open('/resume/haris-arshad-cv.pdf', '_blank', 'noopener,noreferrer')}
               >
                 <Eye className="h-4 w-4" />
@@ -135,7 +128,7 @@ export default function Hero() {
               <Button
                 size="lg"
                 variant="outline"
-                className="gap-2 px-6 font-semibold border-border cursor-pointer hover:bg-secondary"
+                className="gap-2 px-6 font-semibold"
                 onClick={() => {
                   const link = document.createElement('a');
                   link.href = '/resume/haris-arshad-cv.pdf';
@@ -149,7 +142,7 @@ export default function Hero() {
               <Button
                 size="lg"
                 variant="ghost"
-                className="gap-1.5 px-4 font-semibold text-foreground/80 hover:text-primary cursor-pointer"
+                className="gap-1.5 px-4 font-semibold text-foreground/80 hover:text-primary"
                 onClick={() => {
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                 }}
@@ -173,9 +166,9 @@ export default function Hero() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={social.label}
-                      whileHover={{ scale: 1.15, y: -2 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-foreground hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
+                      whileHover={{ y: -2 }}
+                      whileTap={{ scale: 0.97 }}
+                      className="flex h-10 w-10 items-center justify-center rounded-xl bg-card text-foreground hover:bg-secondary hover:text-primary transition-[transform,background-color,color] duration-150 border border-border shadow-2xs"
                     >
                       <Icon className="h-4 w-4" />
                     </motion.a>
@@ -188,18 +181,18 @@ export default function Hero() {
           {/* Right Column: Executive Portrait with subtle halo */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end items-center">
             <div className="relative group w-full max-w-[340px] sm:max-w-[380px]">
-              {/* Subtle ambient decorative blur ring */}
+              {/* Refined ambient occlusion shadow */}
               <div
                 aria-hidden="true"
-                className="absolute -inset-3 rounded-[34px] bg-gradient-to-tr from-primary/25 via-teal-500/15 to-transparent blur-2xl opacity-60 group-hover:opacity-90 transition-opacity duration-700 pointer-events-none"
+                className="absolute -inset-2 rounded-[30px] bg-gradient-to-tr from-primary/15 via-teal-500/10 to-transparent blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-500 pointer-events-none"
               />
 
               {/* High-fidelity Portrait Card */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                initial={{ opacity: 0, scale: 0.97, y: 16 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                className="relative z-10 w-full aspect-[4/5] rounded-[28px] overflow-hidden border border-border bg-card shadow-2xl"
+                transition={{ duration: 0.6, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
+                className="relative z-10 w-full aspect-[4/5] rounded-[24px] overflow-hidden border border-border bg-card shadow-xl ring-1 ring-border/40"
               >
                 <picture>
                   <source srcSet="/images/haris-arshad-profile.webp" type="image/webp" />
@@ -208,12 +201,12 @@ export default function Hero() {
                     alt="Engr. Haris Arshad, PMP® Certified Project Manager"
                     width={380}
                     height={475}
-                    className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                     loading="eager"
                   />
                 </picture>
                 {/* Bottom subtle gradient overlay with title */}
-                <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/75 via-black/30 to-transparent pointer-events-none" />
+                <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/80 via-black/35 to-transparent pointer-events-none" />
                 <div className="absolute bottom-5 left-5 right-5 text-white pointer-events-none">
                   <div className="text-base font-bold tracking-wide">Engr. Haris Arshad</div>
                   <div className="text-xs text-white/80 font-medium">PMP® · Islamabad, PK</div>

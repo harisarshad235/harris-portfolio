@@ -3,45 +3,86 @@
 @tailwind utilities;
 
 :root {
-  --background: #F4F0EA;
-  --foreground: #1D2A2D;
+  --background: #F8F6F1;
+  --foreground: #11181C;
   --card: #FFFFFF;
-  --card-foreground: #1D2A2D;
+  --card-foreground: #11181C;
   --popover: #FFFFFF;
-  --popover-foreground: #1D2A2D;
-  --primary: #E5674F;
+  --popover-foreground: #11181C;
+  --primary: #C84B31;
   --primary-foreground: #FFFFFF;
-  --secondary: #E8DED5;
-  --secondary-foreground: #1D2A2D;
-  --muted: #EDE6DC;
-  --muted-foreground: #687372;
-  --accent: #E5674F;
+  --secondary: #EFECE5;
+  --secondary-foreground: #11181C;
+  --muted: #E6E2D8;
+  --muted-foreground: #526063;
+  --accent: #C84B31;
   --accent-foreground: #FFFFFF;
-  --destructive: #EF4444;
+  --destructive: #DC2626;
   --destructive-foreground: #FFFFFF;
-  --border: rgba(29, 42, 45, 0.14);
-  --input: rgba(29, 42, 45, 0.14);
-  --ring: #E5674F;
+  --border: rgba(17, 24, 28, 0.09);
+  --input: rgba(17, 24, 28, 0.09);
+  --ring: #C84B31;
+
+  /* Emil Kowalski motion tokens */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+
+  /* Layered Ambient Shadows */
+  --shadow-sm: 0 1px 2px rgba(17, 24, 28, 0.04);
+  --shadow-md: 0 1px 3px rgba(17, 24, 28, 0.04), 0 6px 16px rgba(17, 24, 28, 0.04);
+  --shadow-lg: 0 2px 4px rgba(17, 24, 28, 0.03), 0 10px 24px rgba(17, 24, 28, 0.05), 0 24px 48px rgba(17, 24, 28, 0.04);
+  --shadow-xl: 0 4px 8px rgba(17, 24, 28, 0.04), 0 16px 36px rgba(17, 24, 28, 0.06), 0 32px 64px rgba(17, 24, 28, 0.05);
 }
 
 [data-theme="dark"] {
-  --background: #151D1F;
-  --foreground: #F1F5F4;
-  --card: #202B2D;
-  --card-foreground: #F1F5F4;
-  --popover: #202B2D;
-  --popover-foreground: #F1F5F4;
-  --primary: #F18A75;
-  --primary-foreground: #151D1F;
-  --secondary: #293638;
-  --secondary-foreground: #F1F5F4;
-  --muted: #202B2D;
-  --muted-foreground: #B2C0BE;
-  --accent: #F18A75;
-  --accent-foreground: #151D1F;
-  --destructive: #7F1D1D;
-  --destructive-foreground: #F1F5F4;
-  --border: rgba(226, 238, 235, 0.16);
-  --input: rgba(226, 238, 235, 0.16);
-  --ring: #F18A75;
+  --background: #0B0F12;
+  --foreground: #F4F6F6;
+  --card: #131A1E;
+  --card-foreground: #F4F6F6;
+  --popover: #131A1E;
+  --popover-foreground: #F4F6F6;
+  --primary: #E26D57;
+  --primary-foreground: #0B0F12;
+  --secondary: #192329;
+  --secondary-foreground: #F4F6F6;
+  --muted: #162025;
+  --muted-foreground: #9AA7A9;
+  --accent: #E26D57;
+  --accent-foreground: #0B0F12;
+  --destructive: #991B1B;
+  --destructive-foreground: #F4F6F6;
+  --border: rgba(244, 246, 246, 0.09);
+  --input: rgba(244, 246, 246, 0.09);
+  --ring: #E26D57;
+
+  /* Layered Ambient Shadows (Dark) */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.35), 0 8px 20px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.35), 0 14px 30px rgba(0, 0, 0, 0.4), 0 28px 56px rgba(0, 0, 0, 0.35);
+  --shadow-xl: 0 6px 12px rgba(0, 0, 0, 0.4), 0 20px 44px rgba(0, 0, 0, 0.45), 0 40px 80px rgba(0, 0, 0, 0.4);
+}
+
+/* Micro-interaction Spring Press & Transitions (emil-design-eng) */
+button,
+a.button-like,
+[role="button"],
+.interactive-ctrl {
+  transition: transform 160ms var(--ease-out), background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, color 160ms ease;
+}
+
+button:active:not(:disabled),
+a.button-like:active:not(:disabled),
+[role="button"]:active:not(:disabled),
+.interactive-ctrl:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card-hover-lift {
+    transition: transform 200ms var(--ease-out), border-color 200ms ease, box-shadow 200ms ease;
+  }
+  .card-hover-lift:hover {
+    transform: translateY(-4px);
+  }
 }

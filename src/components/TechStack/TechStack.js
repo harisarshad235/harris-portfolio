@@ -53,23 +53,24 @@ const TechStack = () => {
 
       {/* Interactive Category Filter Bar */}
       <ScrollReveal delay={0.1} className="flex flex-wrap items-center gap-2 mb-8" role="tablist" aria-label="Filter technologies by category">
-        <button
+        <motion.button
           type="button"
           role="tab"
+          whileTap={{ scale: 0.97 }}
           aria-selected={activeTab === 'all'}
           onClick={() => setActiveTab('all')}
-          className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all ${
+          className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-[transform,background-color,border-color,color] duration-150 cursor-pointer ${
             activeTab === 'all'
-              ? 'bg-primary text-primary-foreground shadow-sm scale-[1.02]'
+              ? 'bg-primary text-primary-foreground shadow-sm'
               : 'bg-card border border-border text-foreground hover:bg-secondary'
           }`}
         >
           <FiGrid className="w-4 h-4" />
           <span>All Capabilities</span>
-          <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-primary-foreground/20 text-inherit font-mono">
+          <span className="text-[11px] px-1.5 py-0.5 rounded-md bg-primary-foreground/20 text-inherit font-mono font-medium">
             {totalSkillsCount}
           </span>
-        </button>
+        </motion.button>
 
         {techStack.map((category) => {
           const isSelected = activeTab === category.id;
@@ -77,51 +78,64 @@ const TechStack = () => {
           const Icon = meta.icon || FiSliders;
 
           return (
-            <button
+            <motion.button
               key={category.id}
               type="button"
               role="tab"
+              whileTap={{ scale: 0.97 }}
               aria-selected={isSelected}
               onClick={() => setActiveTab(category.id)}
-              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all ${
+              className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-[transform,background-color,border-color,color] duration-150 cursor-pointer ${
                 isSelected
-                  ? 'bg-primary text-primary-foreground shadow-sm scale-[1.02]'
+                  ? 'bg-primary text-primary-foreground shadow-sm'
                   : 'bg-card border border-border text-foreground hover:bg-secondary'
               }`}
             >
               <Icon className="w-3.5 h-3.5" />
               <span>{category.name.split('&')[0].trim()}</span>
-              <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-muted text-muted-foreground font-mono">
+              <span className="text-[11px] px-1.5 py-0.5 rounded-md bg-secondary text-foreground font-mono font-medium">
                 {category.technologies.length}
               </span>
-            </button>
+            </motion.button>
           );
         })}
       </ScrollReveal>
 
-      {/* Responsive Grid of Category Cards */}
-      <div className={`grid gap-6 sm:gap-8 ${activeTab === 'all' ? 'grid-cols-1 lg:grid-cols-3' : 'grid-cols-1 max-w-3xl mx-auto'}`}>
+      {/* Asymmetric Bento Grid of Category Cards */}
+      <div className={`grid gap-6 ${activeTab === 'all' ? 'grid-cols-1 lg:grid-cols-12' : 'grid-cols-1 max-w-4xl mx-auto'}`}>
         <AnimatePresence mode="popLayout">
           {visibleCategories.map((category, index) => {
             const meta = categoryMeta[category.id] || {};
             const CategoryIcon = meta.icon || FiSliders;
+            const isDelivery = category.id === 'delivery';
+            const isPlatforms = category.id === 'platforms';
+            const isSoftware = category.id === 'software';
+
+            // Asymmetric Bento sizing: Delivery takes 7 cols, Platforms takes 5 cols, Software spans 12 cols
+            const colSpanClass = activeTab === 'all'
+              ? isDelivery
+                ? 'lg:col-span-7'
+                : isPlatforms
+                ? 'lg:col-span-5'
+                : 'lg:col-span-12'
+              : 'w-full';
 
             return (
               <motion.article
                 key={category.id}
                 layout
-                initial={{ opacity: 0, y: 24, scale: 0.96 }}
+                initial={{ opacity: 0, y: 20, scale: 0.98 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.96 }}
-                transition={{ duration: 0.35, delay: index * 0.08 }}
-                whileHover={{ y: -6 }}
-                className="group relative rounded-2xl border border-border bg-card/90 backdrop-blur-md p-6 sm:p-7 shadow-sm hover:shadow-xl hover:border-primary/40 transition-all duration-300 flex flex-col justify-between"
+                exit={{ opacity: 0, scale: 0.97 }}
+                transition={{ duration: 0.35, delay: index * 0.06, ease: [0.23, 1, 0.32, 1] }}
+                whileHover={{ y: -4 }}
+                className={`group relative rounded-2xl border border-border bg-card p-6 sm:p-7 shadow-xs hover:shadow-md hover:border-primary/40 transition-[transform,border-color,box-shadow] duration-200 flex flex-col justify-between ${colSpanClass}`}
               >
                 {/* Header */}
                 <div className="mb-6">
                   <div className="flex items-center justify-between gap-3 mb-3">
                     <span
-                      className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border ${
+                      className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider border ${
                         meta.badgeColor || 'bg-secondary text-foreground'
                       }`}
                     >
@@ -129,7 +143,7 @@ const TechStack = () => {
                       {category.label}
                     </span>
                     <span className="text-xs font-medium text-muted-foreground font-mono">
-                      {category.technologies.length} skills
+                      {category.technologies.length} competencies
                     </span>
                   </div>
 
@@ -137,7 +151,7 @@ const TechStack = () => {
                     {category.name}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-2xl">
                     {meta.description}
                   </p>
                 </div>
@@ -148,11 +162,11 @@ const TechStack = () => {
                     {category.technologies.map(({ name, icon: Icon, color }) => (
                       <span
                         key={name}
-                        className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-secondary/70 hover:bg-secondary border border-border hover:border-primary/30 text-xs sm:text-sm font-semibold text-foreground transition-all hover:-translate-y-0.5 shadow-2xs"
+                        className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-secondary/80 hover:bg-secondary border border-border/80 hover:border-primary/30 text-xs sm:text-sm font-semibold text-foreground transition-[transform,background-color,border-color] duration-150 hover:-translate-y-0.5 shadow-2xs"
                       >
                         <Icon
                           aria-hidden="true"
-                          className="w-4 h-4 shrink-0 transition-transform group-hover:scale-110"
+                          className="w-4 h-4 shrink-0 transition-transform duration-150 group-hover:scale-105"
                           style={{ color }}
                         />
                         <span>{name}</span>

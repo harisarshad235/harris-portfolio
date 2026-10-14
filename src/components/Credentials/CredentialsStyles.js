@@ -24,25 +24,31 @@ export const CredentialCard = styled.article`
   flex-direction: column;
   overflow: hidden;
   border: 1px solid ${(props) => props.theme.colors.border};
-  border-radius: 1.8rem;
+  border-radius: 2rem;
   background: ${(props) => props.theme.colors.background2};
-  box-shadow: 0 12px 32px rgba(29, 42, 45, 0.06);
-  transition: transform 260ms ease, border-color 260ms ease, box-shadow 260ms ease;
+  box-shadow: 0 1px 3px rgba(17, 24, 28, 0.03), 0 8px 24px rgba(17, 24, 28, 0.04);
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), border-color 160ms ease, box-shadow 160ms ease;
 
-  &:hover {
-    transform: translateY(-4px);
-    border-color: ${(props) => props.theme.colors.teal};
-    box-shadow: 0 18px 44px rgba(29, 42, 45, 0.12);
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transform: translateY(-4px);
+      border-color: ${(props) => props.theme.colors.teal};
+      box-shadow: 0 2px 6px rgba(17, 24, 28, 0.04), 0 16px 36px rgba(17, 24, 28, 0.08);
 
-    img {
-      transform: scale(1.03);
+      img {
+        transform: scale(1.02);
+      }
     }
+  }
+
+  &:active {
+    transform: scale(0.98);
   }
 
   @media (prefers-reduced-motion: reduce) {
     transition: none;
 
-    &:hover {
+    &:hover, &:active {
       transform: none;
     }
   }

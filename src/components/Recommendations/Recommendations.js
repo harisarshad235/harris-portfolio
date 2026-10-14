@@ -49,7 +49,7 @@ const Recommendations = () => {
   const [formState, setFormState] = useState('idle');
   const [errorMessage, setErrorMessage] = useState('');
   const [approvedRecommendations, setApprovedRecommendations] = useState(SEED_RECOMMENDATIONS);
-  const [recommendationsLoading, setRecommendationsLoading] = useState(true);
+  const [recommendationsLoading, setRecommendationsLoading] = useState(false);
   const [recommendationsError, setRecommendationsError] = useState('');
 
   useEffect(() => {
@@ -139,10 +139,10 @@ const Recommendations = () => {
             <MotionRecommendationCard
               as="article"
               key={id}
-              initial={{ opacity: 0, y: 24, scale: 0.98 }}
+              initial={{ opacity: 0, y: 20, scale: 0.98 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: (index % 4) * 0.08 }}
+              viewport={{ once: true, margin: "2000px 0px" }}
+              transition={{ duration: 0.35, delay: (index % 4) * 0.08, ease: [0.23, 1, 0.32, 1] }}
               whileHover={{ y: -4 }}
             >
               <RecommendationMark aria-hidden="true"><FiMessageSquare /></RecommendationMark>
@@ -162,9 +162,9 @@ const Recommendations = () => {
       <MotionRecommendationCard
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "250px" }}
         whileHover={{ y: -3 }}
-        transition={{ duration: 0.35 }}
+        transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
       >
         <RecommendationMark aria-hidden="true"><FiMessageSquare /></RecommendationMark>
         <div>

@@ -54,13 +54,13 @@ export default function FAQ() {
         </SectionText>
       </ScrollReveal>
 
-      <ScrollReveal delay={0.1} className="w-full max-w-4xl mx-auto space-y-4">
+      <ScrollReveal delay={0.1} className="w-full max-w-4xl mx-auto space-y-3.5">
         {FAQ_DATA.map((item, index) => {
           const isOpen = openIndex === index;
           return (
             <div
               key={index}
-              className="rounded-2xl border border-border bg-card/80 backdrop-blur-md overflow-hidden transition-all duration-200 shadow-xs"
+              className="rounded-2xl border border-border bg-card overflow-hidden transition-[border-color,box-shadow] duration-200 shadow-xs hover:border-primary/30"
             >
               <button
                 type="button"
@@ -68,13 +68,13 @@ export default function FAQ() {
                 aria-expanded={isOpen}
                 aria-controls={`faq-answer-${index}`}
                 id={`faq-question-${index}`}
-                className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 text-left cursor-pointer hover:bg-secondary/40 transition-colors"
+                className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 text-left cursor-pointer hover:bg-secondary/50 active:scale-[0.99] transition-[transform,background-color] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)]"
               >
                 <span className="text-base sm:text-lg font-bold text-foreground">
                   {item.question}
                 </span>
                 <span
-                  className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-secondary text-foreground transition-transform duration-300 ${
+                  className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-secondary text-foreground transition-transform duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] ${
                     isOpen ? 'rotate-180 bg-primary text-primary-foreground' : ''
                   }`}
                 >

@@ -35,24 +35,30 @@ export const ThemeToggleButton = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 4rem;
-  height: 4rem;
+  width: 3.8rem;
+  height: 3.8rem;
   padding: 0;
   border: 1px solid ${(props) => props.theme.colors.border};
-  border-radius: 50%;
+  border-radius: 1.2rem;
   color: ${(props) => props.theme.colors.primary1};
-  background: transparent;
+  background: ${(props) => props.theme.colors.background2};
   cursor: pointer;
-  transition: color 180ms ease, background 180ms ease, border-color 180ms ease;
+  box-shadow: 0 1px 2px rgba(17, 24, 28, 0.04);
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), color 160ms ease, background 160ms ease, border-color 160ms ease;
 
   svg {
-    width: 2rem;
-    height: 2rem;
+    width: 1.9rem;
+    height: 1.9rem;
   }
 
   &:hover {
     color: ${(props) => props.theme.colors.accent1};
     background: ${(props) => props.theme.colors.softSurface};
+    border-color: ${(props) => props.theme.colors.accent1};
+  }
+
+  &:active {
+    transform: scale(0.95);
   }
 
   &:focus-visible {
@@ -137,21 +143,26 @@ export const NavAction = styled.a`
   align-items: center;
   justify-content: center;
   min-height: 3.6rem;
-  padding: 0.7rem 1.1rem;
+  padding: 0.7rem 1.3rem;
   border: 1px solid ${(props) => props.$secondary ? props.theme.colors.border : props.theme.colors.accent1};
-  border-radius: 999px;
+  border-radius: 1.2rem;
   background: ${(props) => props.$secondary ? 'transparent' : props.theme.colors.accent1};
   color: ${(props) => props.$secondary ? props.theme.colors.primary1 : props.theme.colors.accentForeground};
   font-size: 1.3rem;
   font-weight: 700;
   line-height: 1.2;
   white-space: nowrap;
-  transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+  box-shadow: 0 1px 2px rgba(17, 24, 28, 0.04);
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 160ms ease, color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
 
   &:hover {
     border-color: ${(props) => props.theme.colors.primary1};
     background: ${(props) => props.$secondary ? props.theme.colors.softSurface : props.theme.colors.primary1};
     color: ${(props) => props.$secondary ? props.theme.colors.primary1 : props.theme.colors.background1};
+  }
+
+  &:active {
+    transform: scale(0.96);
   }
 
   &:focus-visible {
@@ -161,7 +172,7 @@ export const NavAction = styled.a`
 
   @media ${(props) => props.theme.breakpoints.sm} {
     min-height: 3.4rem;
-    padding: 0.6rem 0.8rem;
+    padding: 0.6rem 0.9rem;
     font-size: 1.15rem;
   }
 `;
