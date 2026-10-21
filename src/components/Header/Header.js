@@ -11,8 +11,8 @@ const NAV_ITEMS = [
   { href: '#products', label: 'Products' },
   { href: '#client-projects', label: 'Client Work' },
   { href: '#skills', label: 'Skills' },
-  { href: '#recommendations', label: 'Recommendations' },
   { href: '#credentials', label: 'Credentials' },
+  { href: '#recommendations', label: 'Recommendations' },
   { href: '#contact', label: 'Contact' },
 ];
 

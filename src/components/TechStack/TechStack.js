@@ -93,7 +93,13 @@ const TechStack = () => {
             >
               <Icon className="w-3.5 h-3.5" />
               <span>{category.name.split('&')[0].trim()}</span>
-              <span className="text-[11px] px-1.5 py-0.5 rounded-md bg-secondary text-foreground font-mono font-medium">
+              <span
+                className={`text-[11px] px-1.5 py-0.5 rounded-md font-mono font-medium ${
+                  isSelected
+                    ? 'bg-primary-foreground/20 text-inherit'
+                    : 'bg-secondary text-foreground'
+                }`}
+              >
                 {category.technologies.length}
               </span>
             </motion.button>

@@ -156,7 +156,7 @@ export default function Hero() {
                 {[
                   { icon: GithubIcon, href: 'https://github.com/harisarshad235', label: 'GitHub' },
                   { icon: LinkedinIcon, href: 'https://pk.linkedin.com/in/haris-arshad', label: 'LinkedIn' },
-                  { icon: Mail, href: 'mailto:contact@harisarshad.site', label: 'Email' },
+                  { icon: Mail, href: 'mailto:harisarshad235@gmail.com', label: 'Email' },
                 ].map((social, index) => {
                   const Icon = social.icon;
                   return (

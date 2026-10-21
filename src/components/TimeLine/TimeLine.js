@@ -54,7 +54,7 @@ const Timeline = () => {
       </ScrollReveal>
       <ScrollReveal delay={0.1}>
         <AboutActions>
-          <AboutLink href="#projects" $primary>Explore project case studies</AboutLink>
+          <AboutLink href="#client-projects" $primary>Explore project case studies</AboutLink>
           <AboutLink href="#contact">Hiring or need delivery support? Let&apos;s talk <span aria-hidden="true">→</span></AboutLink>
         </AboutActions>
       </ScrollReveal>

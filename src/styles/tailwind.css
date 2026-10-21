@@ -4,24 +4,43 @@
 
 :root {
   --background: #F8F6F1;
+  --background-rgb: 248 246 241;
   --foreground: #11181C;
+  --foreground-rgb: 17 24 28;
   --card: #FFFFFF;
+  --card-rgb: 255 255 255;
   --card-foreground: #11181C;
+  --card-foreground-rgb: 17 24 28;
   --popover: #FFFFFF;
+  --popover-rgb: 255 255 255;
   --popover-foreground: #11181C;
+  --popover-foreground-rgb: 17 24 28;
   --primary: #C84B31;
+  --primary-rgb: 200 75 49;
   --primary-foreground: #FFFFFF;
+  --primary-foreground-rgb: 255 255 255;
   --secondary: #EFECE5;
+  --secondary-rgb: 239 236 229;
   --secondary-foreground: #11181C;
+  --secondary-foreground-rgb: 17 24 28;
   --muted: #E6E2D8;
+  --muted-rgb: 230 226 216;
   --muted-foreground: #526063;
+  --muted-foreground-rgb: 82 96 99;
   --accent: #C84B31;
+  --accent-rgb: 200 75 49;
   --accent-foreground: #FFFFFF;
+  --accent-foreground-rgb: 255 255 255;
   --destructive: #DC2626;
+  --destructive-rgb: 220 38 38;
   --destructive-foreground: #FFFFFF;
-  --border: rgba(17, 24, 28, 0.09);
-  --input: rgba(17, 24, 28, 0.09);
+  --destructive-foreground-rgb: 255 255 255;
+  --border: rgba(17, 24, 28, 0.11);
+  --border-rgb: 17 24 28;
+  --input: rgba(17, 24, 28, 0.11);
+  --input-rgb: 17 24 28;
   --ring: #C84B31;
+  --ring-rgb: 200 75 49;
 
   /* Emil Kowalski motion tokens */
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
@@ -37,24 +56,43 @@
 
 [data-theme="dark"] {
   --background: #0B0F12;
+  --background-rgb: 11 15 18;
   --foreground: #F4F6F6;
+  --foreground-rgb: 244 246 246;
   --card: #131A1E;
+  --card-rgb: 19 26 30;
   --card-foreground: #F4F6F6;
+  --card-foreground-rgb: 244 246 246;
   --popover: #131A1E;
+  --popover-rgb: 19 26 30;
   --popover-foreground: #F4F6F6;
+  --popover-foreground-rgb: 244 246 246;
   --primary: #E26D57;
+  --primary-rgb: 226 109 87;
   --primary-foreground: #0B0F12;
+  --primary-foreground-rgb: 11 15 18;
   --secondary: #192329;
+  --secondary-rgb: 25 35 41;
   --secondary-foreground: #F4F6F6;
+  --secondary-foreground-rgb: 244 246 246;
   --muted: #162025;
+  --muted-rgb: 22 32 37;
   --muted-foreground: #9AA7A9;
+  --muted-foreground-rgb: 154 167 169;
   --accent: #E26D57;
+  --accent-rgb: 226 109 87;
   --accent-foreground: #0B0F12;
+  --accent-foreground-rgb: 11 15 18;
   --destructive: #991B1B;
+  --destructive-rgb: 153 27 27;
   --destructive-foreground: #F4F6F6;
-  --border: rgba(244, 246, 246, 0.09);
-  --input: rgba(244, 246, 246, 0.09);
+  --destructive-foreground-rgb: 244 246 246;
+  --border: rgba(244, 246, 246, 0.11);
+  --border-rgb: 244 246 246;
+  --input: rgba(244, 246, 246, 0.11);
+  --input-rgb: 244 246 246;
   --ring: #E26D57;
+  --ring-rgb: 226 109 87;
 
   /* Layered Ambient Shadows (Dark) */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);

@@ -39,7 +39,7 @@ const Projects = () => {
   const visibleProjects = filterProjects(activeFilter);
 
   return (
-    <Section nopadding id='client-projects'>
+    <Section id='client-projects'>
       <ScrollReveal>
         <SectionTitle main>Projects</SectionTitle>
       </ScrollReveal>

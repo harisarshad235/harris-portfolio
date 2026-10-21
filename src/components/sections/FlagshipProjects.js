@@ -41,10 +41,10 @@ export const FlagshipProjects = () => {
             }}
             whileHover={{ y: -5 }}
             transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
-            className="group relative rounded-3xl border border-border bg-card dark:bg-[#131A1E] overflow-hidden transition-[transform,border-color,box-shadow] duration-200 flex flex-col justify-between shadow-xs hover:shadow-xl hover:border-primary/40 flagship-card"
+            className={`group relative rounded-3xl border border-border bg-card dark:bg-[#131A1E] overflow-hidden transition-[transform,border-color,box-shadow] duration-200 flex flex-col justify-between shadow-xs hover:shadow-xl ${project.borderHoverClass || 'hover:border-primary/40'} ${project.glowClass || ''} flagship-card card-${project.id}`}
           >
             {/* Seamless Mockup Container */}
-            <div className="relative w-full aspect-[16/9] bg-secondary/50 dark:bg-[#0A0F17] overflow-hidden select-none flagship-media-container border-b border-border">
+            <div className="relative w-full aspect-[16/9] bg-[#0A0F17] overflow-hidden select-none flagship-media-container border-b border-border">
               <Image
                 alt={`${project.title} Interface Preview`}
                 className="object-cover object-center transform transition-transform duration-500 ease-out group-hover:scale-[1.02] flagship-image"
@@ -57,9 +57,9 @@ export const FlagshipProjects = () => {
                 src={project.image}
               />
 
-              {/* Bottom Surface Blend Mask */}
+              {/* Subtle bottom vignette that preserves dark mockup contrast in both light & dark themes */}
               <div
-                className="absolute inset-0 bg-gradient-to-t from-card dark:from-[#131A1E] via-transparent to-transparent pointer-events-none opacity-80"
+                className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/45 to-transparent pointer-events-none"
                 aria-hidden="true"
               />
             </div>
@@ -87,8 +87,8 @@ export const FlagshipProjects = () => {
                 {/* Key Achievements & Capabilities */}
                 <ul className="space-y-2.5 mb-6 flagship-features" aria-label="Key Features">
                   {project.keyFeatures.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/90 flagship-feature-item">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5 flagship-check-icon" />
+                    <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground font-medium flagship-feature-item">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5 flagship-check-icon" />
                       <span className="leading-snug">{feature}</span>
                     </li>
                   ))}
@@ -101,23 +101,27 @@ export const FlagshipProjects = () => {
                   {project.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2.5 py-1 text-xs font-mono rounded-lg bg-secondary text-foreground border border-border/80 flagship-tech-pill"
+                      className="px-2.5 py-1 text-xs font-mono font-semibold rounded-lg bg-secondary text-foreground border border-border flagship-tech-pill"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                {/* Action Buttons with Spring Micro-Interactions */}
-                <div className="flex flex-wrap items-center gap-3 flagship-actions">
+                {/* Action Buttons with Balanced Grid & Spring Micro-Interactions */}
+                <div
+                  className={`grid gap-3 flagship-actions ${
+                    project.dashboardUrl ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'
+                  }`}
+                >
                   <a
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary text-primary-foreground font-bold text-sm sm:text-base hover:bg-primary/90 active:scale-[0.97] transition-[transform,background-color] duration-150 shadow-sm flagship-btn-primary"
+                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary text-primary-foreground font-bold text-sm sm:text-base hover:bg-primary/90 active:scale-[0.97] transition-[transform,background-color] duration-150 shadow-sm whitespace-nowrap flagship-btn-primary"
                   >
                     <span>Visit Live Solution</span>
-                    <ArrowUpRight className="w-4 h-4" />
+                    <ArrowUpRight className="w-4 h-4 shrink-0" />
                   </a>
 
                   {project.dashboardUrl && (
@@ -125,10 +129,10 @@ export const FlagshipProjects = () => {
                       href={project.dashboardUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-secondary text-foreground border border-border hover:bg-secondary/80 active:scale-[0.97] font-bold text-sm sm:text-base transition-[transform,background-color,border-color] duration-150 flagship-btn-secondary"
+                      className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-secondary text-foreground border border-border hover:bg-secondary/80 hover:border-primary/40 active:scale-[0.97] font-bold text-sm sm:text-base transition-[transform,background-color,border-color,color] duration-150 whitespace-nowrap flagship-btn-secondary"
                     >
                       <span>Open Workspace</span>
-                      <ExternalLink className="w-4 h-4" />
+                      <ExternalLink className="w-4 h-4 shrink-0" />
                     </a>
                   )}
                 </div>

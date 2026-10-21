@@ -102,16 +102,38 @@ const faqSchema = {
 
 const softwareAppSchema = {
   '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
-  name: 'Harris Portfolio',
-  operatingSystem: 'All',
-  applicationCategory: 'WebApplication',
-  url: siteUrl,
-  description: pageDescription,
-  author: {
-    '@type': 'Person',
-    name: 'Haris Arshad'
-  }
+  '@type': 'ItemList',
+  name: 'Original SaaS Products & Engineering Systems by Haris Arshad',
+  itemListElement: [
+    {
+      '@type': 'SoftwareApplication',
+      position: 1,
+      name: 'Takt',
+      operatingSystem: 'All',
+      applicationCategory: 'ProductivityApplication',
+      url: 'https://takt.harisarshad.site/',
+      description:
+        'Precision Task Command Center, Pomodoro Cadence & Flow Workspace with local-first Cloudflare edge sync.',
+      author: {
+        '@type': 'Person',
+        name: 'Haris Arshad',
+      },
+    },
+    {
+      '@type': 'SoftwareApplication',
+      position: 2,
+      name: 'Kynov',
+      operatingSystem: 'All',
+      applicationCategory: 'BusinessApplication',
+      url: 'https://kynov.harisarshad.site/',
+      description:
+        'Next-Gen Agile Engine & Modern Sprint Tracker with sub-50ms Kanban boards, sprint velocity sparklines, and multi-tenant corporate RBAC.',
+      author: {
+        '@type': 'Person',
+        name: 'Haris Arshad',
+      },
+    },
+  ],
 };
 
 const Home = () => {
@@ -161,10 +183,10 @@ const Home = () => {
         <Hero />
       </div>
       <Timeline />
-      <TechStack />
-      <Credentials />
       <FlagshipProjects />
       <Projects />
+      <TechStack />
+      <Credentials />
       <Recommendations />
       <FAQ />
       <Contact />
