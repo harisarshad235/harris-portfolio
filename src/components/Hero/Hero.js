@@ -1,8 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, ArrowRight, Download, Eye, Mail, MapPin } from 'lucide-react';
+import { Award, ArrowRight, Download, Eye, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { GithubIcon, LinkedinIcon } from '@/components/ui/hero-block-shadcnui';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -150,31 +149,6 @@ export default function Hero() {
                 Discuss a Project
                 <ArrowRight className="h-4 w-4" />
               </Button>
-
-              {/* Social icons */}
-              <div className="flex items-center gap-2 sm:ml-auto pt-2 sm:pt-0">
-                {[
-                  { icon: GithubIcon, href: 'https://github.com/harisarshad235', label: 'GitHub' },
-                  { icon: LinkedinIcon, href: 'https://pk.linkedin.com/in/haris-arshad', label: 'LinkedIn' },
-                  { icon: Mail, href: 'mailto:harisarshad235@gmail.com', label: 'Email' },
-                ].map((social, index) => {
-                  const Icon = social.icon;
-                  return (
-                    <motion.a
-                      key={index}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={social.label}
-                      whileHover={{ y: -2 }}
-                      whileTap={{ scale: 0.97 }}
-                      className="flex h-10 w-10 items-center justify-center rounded-xl bg-card text-foreground hover:bg-secondary hover:text-primary transition-[transform,background-color,color] duration-150 border border-border shadow-2xs"
-                    >
-                      <Icon className="h-4 w-4" />
-                    </motion.a>
-                  );
-                })}
-              </div>
             </motion.div>
           </motion.div>
 
