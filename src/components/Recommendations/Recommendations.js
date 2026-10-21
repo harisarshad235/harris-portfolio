@@ -169,6 +169,9 @@ const Recommendations = () => {
         <RecommendationMark aria-hidden="true"><FiMessageSquare /></RecommendationMark>
         <div>
           <RecommendationTitle>Feedback from people I’ve worked with</RecommendationTitle>
+          <RecommendationCopy>
+            Worked with me on an enterprise program, PMO rollout, or software product? Share your experience or view verified references on LinkedIn.
+          </RecommendationCopy>
         </div>
         <RecommendationActions>
           <RecommendationLink

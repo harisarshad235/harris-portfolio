@@ -26,6 +26,11 @@ export const FAQ_DATA = [
       'I coordinate full-stack engineering initiatives spanning modern web applications (Next.js, React, TypeScript), cloud & edge infrastructure (Cloudflare Workers, AWS serverless, Docker), distributed databases, telemetry networks, and automated CI/CD release pipelines.',
   },
   {
+    question: 'What proprietary SaaS products have you architected and built?',
+    answer:
+      'Alongside managing enterprise client portfolios, I conceived, architected, and built two live cloud SaaS platforms: Takt (takt.harisarshad.site), a local-first task command center with Kanban swimlanes and Pomodoro flow cadence, and Kynov (kynov.harisarshad.site), an edge-native Agile sprint tracker with sub-50ms Kanban boards, velocity sparklines, Markdown ADR/PRD specs, and multi-tenant corporate RBAC on Cloudflare Workers and D1.',
+  },
+  {
     question: 'What roles or engagements are you currently open to?',
     answer:
       'I am based in Islamabad, Pakistan, and open to full-time Technical Project Manager, PMO, and Technology Delivery Lead roles, as well as select delivery consulting engagements locally and remotely worldwide.',

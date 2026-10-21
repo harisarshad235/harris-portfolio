@@ -1,0 +1,48 @@
+# Haris Arshad, PMP® — Technical Project Manager, PMO Lead & SaaS Product Builder
+
+> Official portfolio of Engr. Haris Arshad, PMP®-certified Technical Project Manager and Delivery Lead based in Islamabad, Pakistan. Proven track record across PKR 700M+ enterprise infrastructure portfolios, nationwide regulatory programs, cloud/serverless migrations, and original edge-native SaaS products.
+
+## Executive Summary
+- **Name:** Engr. Haris Arshad, PMP®
+- **Role:** Technical Project Manager, PMO Lead & Product Architect
+- **Location:** Islamabad, Pakistan (Open to global remote & hybrid PM/PMO leadership and delivery consulting)
+- **Education:** Master of Science (M.S.) in Project Management (COMSATS University Islamabad); Bachelor of Science (B.S.) in Electrical Engineering
+- **Primary Certification:** Project Management Professional (PMP)® — Project Management Institute (PMI)
+- **Website:** https://harisarshad.site/
+- **Email:** harisarshad235@gmail.com
+- **LinkedIn:** https://pk.linkedin.com/in/haris-arshad
+- **GitHub:** https://github.com/harisarshad235
+- **Resume / CV:** https://harisarshad.site/resume/haris-arshad-cv.pdf
+
+## Quantified Delivery Highlights
+- **PKR 103M+ Cost Savings (22.5% Under Budget):** Delivered portfolio cost controls and Earned Value Management (EVM) forecasting on Pakistan's nationwide FBR Track & Trace program.
+- **PKR 700M+ Multi-Site Portfolio (150+ Sites):** Directed project planning, PMO governance, and executive Power BI reporting at AJCL.
+- **60% Lower Operating Costs (6M Liters Fuel Saved):** Product engineering and IoT telemetry delivery for Telenor Pakistan's Thunder platform across national telecom tower infrastructure.
+- **600,000+ Daily Users & 60% Lower Cloud Infrastructure Cost:** Coordinated AWS serverless commerce re-platforming for PrettyLittleThing and unified multi-brand returns operations for Boohoo Group.
+- **100% Paperless Regulatory Workflow:** Delivered the digital spectrum application portal and review workflow for Pakistan's Frequency Allocation Board (FAB).
+
+## Proprietary SaaS Products Built by Haris Arshad
+1. **Takt — Precision Task Command Center & Flow Engine**
+   - **Live URL:** https://takt.harisarshad.site/
+   - **Summary:** Zero-friction personal execution engine combining tactile Kanban swimlanes, List/Board/Calendar views, Pomodoro cadence time-blocking, and local-first Cloudflare edge sync.
+   - **Stack:** Next.js, TypeScript, Tailwind CSS, Cloudflare, Lucide Icons.
+2. **Kynov — Next-Gen Agile Engine & Modern Sprint Tracker**
+   - **Live URL:** https://kynov.harisarshad.site/
+   - **Workspace URL:** https://kynov.harisarshad.site/dashboard
+   - **Summary:** High-velocity alternative to Jira and Linear featuring sub-50ms Kanban boards, sprint backlogs, velocity sparklines, integrated Markdown ADR/PRD tech specs, Git PR tracking, and multi-tenant corporate RBAC on Cloudflare Workers & D1 SQLite.
+   - **Stack:** Next.js, TypeScript, Cloudflare Workers, Cloudflare D1 (SQLite), Tailwind CSS, Git Integration.
+
+## Detailed Project Case Studies
+- [Telenor Thunder Energy & IoT Telemetry Case Study](https://harisarshad.site/case-studies/thunder-energy.html): Predictive maintenance & tower telemetry achieving 60% lower OPEX.
+- [Frequency Allocation Board (FAB) Digital Workflow Case Study](https://harisarshad.site/case-studies/frequency-allocation-board.html): 100% paperless telecom spectrum allocation portal.
+- [Boohoo Group Multi-Brand Returns Platform Case Study](https://harisarshad.site/case-studies/boohoo-ecommerce.html): AWS serverless e-commerce returns integration across global fashion brands.
+- [PrettyLittleThing Serverless Migration Case Study](https://harisarshad.site/case-studies/prettylittlething-ecommerce.html): High-scale AWS serverless migration supporting 600k daily customers with 60% lower infrastructure cost.
+- [FBR Track & Trace System Case Study](https://harisarshad.site/case-studies/track-trace.html): Nationwide production monitoring program delivered PKR 103M+ (22.5%) under budget using EVM controls.
+- [CDA Smart Parking Digitization Case Study](https://harisarshad.site/case-studies/cda-smart-parking.html): ANPR-based smart parking digitization, RAID governance, and UAT rollout in Islamabad.
+- [Taggy Marketplace Platform Case Study](https://harisarshad.site/case-studies/taggy-marketplace.html): AI-assisted fashion resale marketplace with image search and auto-tagging in the UAE.
+- [Aviation Professionals Club (APC) Admin Portal Case Study](https://harisarshad.site/case-studies/apc-admin-portal.html): Member benefits platform and administrative workflow handover in the UAE.
+
+## Core Competencies
+- **Delivery & PMO Governance:** Project Planning & Control, Earned Value Management (EVM), Schedule Baselines (Primavera P6, MS Project), RAID Management, Executive Power BI Dashboards, Stakeholder & Vendor Management, UAT & Release Governance.
+- **Agile & Product Leadership:** Scrum, Kanban, Sprint Velocity & Burndown Forecasting, Technical User Stories, PRD & ADR Documentation, Cross-Functional Squad Leadership.
+- **Cloud & Software Stack:** Next.js, React, TypeScript, Node.js, Python, Cloudflare Workers & D1, AWS Serverless, Docker, CI/CD Pipelines.

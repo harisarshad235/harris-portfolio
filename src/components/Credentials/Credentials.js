@@ -100,6 +100,10 @@ const Credentials = () => {
                     <img
                       src={certificatePreview || certificateImage}
                       alt={`${title} certificate issued by ${issuer}`}
+                      width={400}
+                      height={280}
+                      loading="lazy"
+                      decoding="async"
                     />
                   </CertificatePreview>
                 ) : (

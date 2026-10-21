@@ -141,8 +141,12 @@ export const Contact = () => {
             <div className="flex items-center gap-4 mb-6">
               <div className="relative">
                 <img
-                  src="/images/haris-arshad-profile.jpeg"
-                  alt="Haris Arshad"
+                  src="/images/haris-arshad-profile.webp"
+                  alt="Engr. Haris Arshad"
+                  width={64}
+                  height={64}
+                  loading="lazy"
+                  decoding="async"
                   className="w-16 h-16 rounded-2xl object-cover object-top border-2 border-border shadow-md"
                 />
                 <span
@@ -419,7 +423,7 @@ export const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="e.g. Alex Johnson"
-                        className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-secondary/60 border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                        className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-secondary/60 border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-[border-color,box-shadow,background-color] duration-150"
                       />
                     </div>
                   </div>
@@ -444,7 +448,7 @@ export const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="alex@company.com"
-                        className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-secondary/60 border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                        className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-secondary/60 border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-[border-color,box-shadow,background-color] duration-150"
                       />
                     </div>
                   </div>
@@ -470,7 +474,7 @@ export const Contact = () => {
                         value={formData.company}
                         onChange={handleChange}
                         placeholder="Company or Team name"
-                        className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-secondary/60 border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                        className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-secondary/60 border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-[border-color,box-shadow,background-color] duration-150"
                       />
                     </div>
                   </div>
@@ -495,7 +499,7 @@ export const Contact = () => {
                         value={formData.subject}
                         onChange={handleChange}
                         placeholder="e.g. ERP Migration delivery"
-                        className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-secondary/60 border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                        className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-secondary/60 border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-[border-color,box-shadow,background-color] duration-150"
                       />
                     </div>
                   </div>
@@ -517,7 +521,7 @@ export const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Briefly describe your project goals, milestones, or current delivery hurdles..."
-                    className="w-full p-4 rounded-xl bg-secondary/60 border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-y min-h-[110px]"
+                    className="w-full p-4 rounded-xl bg-secondary/60 border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-[border-color,box-shadow,background-color] duration-150 resize-y min-h-[110px]"
                   />
                 </div>
 

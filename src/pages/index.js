@@ -67,11 +67,10 @@ const websiteSchema = {
   url: siteUrl,
   name: pageTitle,
   description: pageDescription,
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: `${siteUrl}/search?q={search_term_string}`,
-    'query-input': 'required name=search_term_string'
-  }
+  author: {
+    '@type': 'Person',
+    name: 'Haris Arshad',
+  },
 };
 
 const breadcrumbSchema = {

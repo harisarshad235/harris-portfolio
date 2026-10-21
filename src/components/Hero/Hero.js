@@ -141,13 +141,13 @@ export default function Hero() {
               </Button>
               <Button
                 size="lg"
-                variant="ghost"
-                className="gap-1.5 px-4 font-semibold text-foreground/80 hover:text-primary"
+                variant="secondary"
+                className="gap-1.5 px-5 font-semibold text-foreground hover:text-primary hover:border-primary/40"
                 onClick={() => {
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                Discuss a project
+                Discuss a Project
                 <ArrowRight className="h-4 w-4" />
               </Button>
 
@@ -203,6 +203,8 @@ export default function Hero() {
                     height={475}
                     className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                     loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
                   />
                 </picture>
                 {/* Bottom subtle gradient overlay with title */}
