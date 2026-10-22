@@ -91,7 +91,7 @@ for (const [filename, meta] of Object.entries(caseStudies)) {
           "@type": "ListItem",
           "position": 3,
           "name": "${meta.title}",
-          "item": "https://harisarshad.site/case-studies/${filename}"
+          "item": "https://harisarshad.site/case-studies/${filename.replace(/\\.html$/, '')}"
         }
       ]
     }

@@ -1,0 +1,8 @@
+# Cloudflare Pages Redirects
+/case-studies        /#client-projects           301
+/case-studies/       /#client-projects           301
+/projects            /#client-projects           301
+/about               /#about                     301
+/contact             /#contact                   301
+/resume              /resume/haris-arshad-cv.pdf 301
+/cv                  /resume/haris-arshad-cv.pdf 301

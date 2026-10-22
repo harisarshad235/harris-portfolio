@@ -25,8 +25,9 @@ function generateSitemap() {
         const stats = fs.statSync(filePath);
         const modDate = stats.mtime.toISOString().split('T')[0];
 
+        const slug = file.replace(/\.html$/, '');
         pages.push({
-          loc: `${SITE_URL}/case-studies/${file}`,
+          loc: `${SITE_URL}/case-studies/${slug}`,
           priority: '0.8',
           changefreq: 'monthly',
           lastmod: modDate,

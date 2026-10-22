@@ -33,14 +33,14 @@
    - **Stack:** Next.js, TypeScript, Cloudflare Workers, Cloudflare D1 (SQLite), Tailwind CSS, Git Integration.
 
 ## Detailed Project Case Studies
-- [Telenor Thunder Energy & IoT Telemetry Case Study](https://harisarshad.site/case-studies/thunder-energy.html): Predictive maintenance & tower telemetry achieving 60% lower OPEX.
-- [Frequency Allocation Board (FAB) Digital Workflow Case Study](https://harisarshad.site/case-studies/frequency-allocation-board.html): 100% paperless telecom spectrum allocation portal.
-- [Boohoo Group Multi-Brand Returns Platform Case Study](https://harisarshad.site/case-studies/boohoo-ecommerce.html): AWS serverless e-commerce returns integration across global fashion brands.
-- [PrettyLittleThing Serverless Migration Case Study](https://harisarshad.site/case-studies/prettylittlething-ecommerce.html): High-scale AWS serverless migration supporting 600k daily customers with 60% lower infrastructure cost.
-- [FBR Track & Trace System Case Study](https://harisarshad.site/case-studies/track-trace.html): Nationwide production monitoring program delivered PKR 103M+ (22.5%) under budget using EVM controls.
-- [CDA Smart Parking Digitization Case Study](https://harisarshad.site/case-studies/cda-smart-parking.html): ANPR-based smart parking digitization, RAID governance, and UAT rollout in Islamabad.
-- [Taggy Marketplace Platform Case Study](https://harisarshad.site/case-studies/taggy-marketplace.html): AI-assisted fashion resale marketplace with image search and auto-tagging in the UAE.
-- [Aviation Professionals Club (APC) Admin Portal Case Study](https://harisarshad.site/case-studies/apc-admin-portal.html): Member benefits platform and administrative workflow handover in the UAE.
+- [Telenor Thunder Energy & IoT Telemetry Case Study](https://harisarshad.site/case-studies/thunder-energy): Predictive maintenance & tower telemetry achieving 60% lower OPEX.
+- [Frequency Allocation Board (FAB) Digital Workflow Case Study](https://harisarshad.site/case-studies/frequency-allocation-board): 100% paperless telecom spectrum allocation portal.
+- [Boohoo Group Multi-Brand Returns Platform Case Study](https://harisarshad.site/case-studies/boohoo-ecommerce): AWS serverless e-commerce returns integration across global fashion brands.
+- [PrettyLittleThing Serverless Migration Case Study](https://harisarshad.site/case-studies/prettylittlething-ecommerce): High-scale AWS serverless migration supporting 600k daily customers with 60% lower infrastructure cost.
+- [FBR Track & Trace System Case Study](https://harisarshad.site/case-studies/track-trace): Nationwide production monitoring program delivered PKR 103M+ (22.5%) under budget using EVM controls.
+- [CDA Smart Parking Digitization Case Study](https://harisarshad.site/case-studies/cda-smart-parking): ANPR-based smart parking digitization, RAID governance, and UAT rollout in Islamabad.
+- [Taggy Marketplace Platform Case Study](https://harisarshad.site/case-studies/taggy-marketplace): AI-assisted fashion resale marketplace with image search and auto-tagging in the UAE.
+- [Aviation Professionals Club (APC) Admin Portal Case Study](https://harisarshad.site/case-studies/apc-admin-portal): Member benefits platform and administrative workflow handover in the UAE.
 
 ## Core Competencies
 - **Delivery & PMO Governance:** Project Planning & Control, Earned Value Management (EVM), Schedule Baselines (Primavera P6, MS Project), RAID Management, Executive Power BI Dashboards, Stakeholder & Vendor Management, UAT & Release Governance.

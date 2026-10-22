@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /contact-success
+Disallow: /recommendation-approval
 
 User-agent: OAI-SearchBot
 Allow: /
