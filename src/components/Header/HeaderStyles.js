@@ -12,9 +12,10 @@ export const Container = styled.div`
   padding: 0.9rem clamp(1rem, 1.8vw, 2.2rem);
   align-items: center;
   background: ${(props) => props.theme.mode === 'dark'
-    ? 'rgba(21, 29, 31, 0.94)'
-    : 'rgba(244, 240, 234, 0.94)'};
-  backdrop-filter: blur(16px);
+    ? 'rgba(7, 10, 15, 0.85)'
+    : 'rgba(248, 250, 252, 0.85)'};
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid ${(props) => props.theme.colors.border};
 
   @media screen and (max-width: 1060px) {

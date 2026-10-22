@@ -117,7 +117,7 @@ export const SecondaryBtn = styled.button`
     outline: none;
   }
   &:focus-visible {
-    outline: 3px solid #1A8781;
+    outline: 3px solid ${(props) => props.theme.colors.accent1};
     outline-offset: 3px;
   }
 
@@ -239,8 +239,8 @@ export const LinkContainer = styled.div`
   padding: 8px;
 
   &:hover {
-    background-color: #212d45;
-    transform: scale(1.2);
+    background-color: ${(props) => props.theme.colors.softSurface};
+    transform: scale(1.08);
     cursor: pointer;
   }
 

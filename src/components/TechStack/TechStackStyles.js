@@ -24,13 +24,17 @@ export const CategoryCard = styled.article`
   background: ${(props) => props.theme.colors.background2};
   border: 1px solid ${(props) => props.theme.colors.border};
   border-radius: 1.8rem;
-  box-shadow: 0 12px 32px rgba(29, 42, 45, 0.06);
-  transition: transform 260ms ease, border-color 260ms ease, box-shadow 260ms ease;
+  box-shadow: ${(props) => props.theme.mode === 'dark'
+    ? '0 1px 3px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.3)'
+    : '0 8px 24px rgba(15, 23, 42, 0.05)'};
+  transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1), border-color 200ms ease, box-shadow 200ms ease;
 
   &:hover {
-    transform: translateY(-4px);
-    border-color: ${(props) => props.theme.colors.teal};
-    box-shadow: 0 18px 44px rgba(29, 42, 45, 0.12);
+    transform: translateY(-5px);
+    border-color: ${(props) => props.theme.colors.accent1};
+    box-shadow: ${(props) => props.theme.mode === 'dark'
+      ? '0 12px 32px rgba(0, 0, 0, 0.5), 0 0 30px -10px rgba(59, 130, 246, 0.25)'
+      : '0 16px 36px rgba(15, 23, 42, 0.08)'};
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {

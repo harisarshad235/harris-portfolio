@@ -26,17 +26,21 @@ export const CredentialCard = styled.article`
   border: 1px solid ${(props) => props.theme.colors.border};
   border-radius: 2rem;
   background: ${(props) => props.theme.colors.background2};
-  box-shadow: 0 1px 3px rgba(17, 24, 28, 0.03), 0 8px 24px rgba(17, 24, 28, 0.04);
-  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), border-color 160ms ease, box-shadow 160ms ease;
+  box-shadow: ${(props) => props.theme.mode === 'dark'
+    ? '0 1px 3px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.3)'
+    : '0 1px 3px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.04)'};
+  transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1), border-color 200ms ease, box-shadow 200ms ease;
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
-      transform: translateY(-4px);
-      border-color: ${(props) => props.theme.colors.teal};
-      box-shadow: 0 2px 6px rgba(17, 24, 28, 0.04), 0 16px 36px rgba(17, 24, 28, 0.08);
+      transform: translateY(-5px);
+      border-color: ${(props) => props.theme.colors.accent1};
+      box-shadow: ${(props) => props.theme.mode === 'dark'
+        ? '0 4px 16px rgba(0, 0, 0, 0.5), 0 0 32px -8px rgba(59, 130, 246, 0.28)'
+        : '0 2px 6px rgba(15, 23, 42, 0.04), 0 16px 36px rgba(15, 23, 42, 0.08)'};
 
       img {
-        transform: scale(1.02);
+        transform: scale(1.03);
       }
     }
   }

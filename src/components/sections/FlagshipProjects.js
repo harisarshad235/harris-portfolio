@@ -31,17 +31,16 @@ export const FlagshipProjects = () => {
           <motion.article
             key={project.id}
             variants={{
-              hidden: { opacity: 0, y: 30, scale: 0.98 },
+              hidden: { opacity: 0, y: 32, scale: 0.97 },
               visible: {
                 opacity: 1,
                 y: 0,
                 scale: 1,
-                transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+                transition: { type: "spring", stiffness: 260, damping: 25 },
               },
             }}
-            whileHover={{ y: -5 }}
-            transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
-            className={`group relative rounded-3xl border border-border bg-card dark:bg-[#131A1E] overflow-hidden transition-[transform,border-color,box-shadow] duration-200 flex flex-col justify-between shadow-xs hover:shadow-xl ${project.borderHoverClass || 'hover:border-primary/40'} ${project.glowClass || ''} flagship-card card-${project.id}`}
+            whileHover={{ y: -6, transition: { type: "spring", stiffness: 350, damping: 22 } }}
+            className={`group relative rounded-3xl border border-border bg-card dark:bg-[#0D121D] overflow-hidden flex flex-col justify-between shadow-xs hover:shadow-xl ${project.borderHoverClass || 'hover:border-primary/40'} ${project.glowClass || ''} flagship-card card-${project.id}`}
           >
             {/* Seamless Mockup Container */}
             <div className="relative w-full aspect-[16/9] bg-[#0A0F17] overflow-hidden select-none flagship-media-container border-b border-border">

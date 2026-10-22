@@ -15,11 +15,11 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 16 },
+  hidden: { opacity: 0, y: 18 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+    transition: { type: "spring", stiffness: 340, damping: 26 },
   },
 };
 
@@ -90,7 +90,10 @@ export default function Hero() {
               className="grid grid-cols-1 sm:grid-cols-12 gap-3.5 w-full max-w-2xl mb-8"
             >
               {/* Primary Anchor Metric (7 cols) */}
-              <div className="sm:col-span-7 p-4 sm:p-5 rounded-2xl bg-card border border-border shadow-xs flex flex-col justify-between">
+              <motion.div
+                whileHover={{ y: -3, transition: { type: "spring", stiffness: 400, damping: 25 } }}
+                className="sm:col-span-7 p-4 sm:p-5 rounded-2xl bg-card border border-border shadow-xs flex flex-col justify-between transition-colors hover:border-primary/40 cursor-default"
+              >
                 <div className="flex items-baseline justify-between gap-2">
                   <div className="text-2xl sm:text-3xl font-extrabold text-primary tracking-tight">PKR 103M+</div>
                   <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-md">
@@ -100,15 +103,18 @@ export default function Hero() {
                 <div className="text-xs sm:text-sm text-muted-foreground mt-2 font-medium leading-relaxed">
                   Verified cost optimization on nationwide Track &amp; Trace delivery program.
                 </div>
-              </div>
+              </motion.div>
 
               {/* Secondary Anchor Metric (5 cols) */}
-              <div className="sm:col-span-5 p-4 sm:p-5 rounded-2xl bg-secondary/80 border border-border shadow-xs flex flex-col justify-between">
+              <motion.div
+                whileHover={{ y: -3, transition: { type: "spring", stiffness: 400, damping: 25 } }}
+                className="sm:col-span-5 p-4 sm:p-5 rounded-2xl bg-secondary/80 border border-border shadow-xs flex flex-col justify-between transition-colors hover:border-primary/40 cursor-default"
+              >
                 <div className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">150+ Sites</div>
                 <div className="text-xs sm:text-sm text-muted-foreground mt-2 font-medium leading-relaxed">
                   Coordinated across PKR 700M+ enterprise infrastructure portfolio.
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
 
             {/* Action Buttons & Social Links Row */}
@@ -163,9 +169,10 @@ export default function Hero() {
 
               {/* High-fidelity Portrait Card */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.97, y: 16 }}
+                initial={{ opacity: 0, scale: 0.96, y: 18 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
+                transition={{ type: "spring", stiffness: 280, damping: 26, delay: 0.15 }}
+                whileHover={{ y: -4, transition: { type: "spring", stiffness: 350, damping: 24 } }}
                 className="relative z-10 w-full aspect-[4/5] rounded-[24px] overflow-hidden border border-border bg-card shadow-xl ring-1 ring-border/40"
               >
                 <picture>

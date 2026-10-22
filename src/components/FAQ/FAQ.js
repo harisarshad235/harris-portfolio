@@ -48,7 +48,7 @@ export default function FAQ() {
     <Section id="faq">
       <ScrollReveal>
         <div className="flex items-center gap-2 mb-3">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-teal-500/10 text-teal-700 dark:text-teal-300 border border-teal-500/25">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-primary/10 text-primary border border-primary/20">
             <HelpCircle className="w-3.5 h-3.5" />
             Common Questions
           </span>

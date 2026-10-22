@@ -155,22 +155,26 @@ export const BlogCard = styled.article`
   background: ${(props) => props.theme.colors.background2};
   border: 1px solid ${(props) => props.theme.colors.border};
   border-radius: 2rem;
-  box-shadow: 0 1px 3px rgba(17, 24, 28, 0.04), 0 8px 24px rgba(17, 24, 28, 0.04);
+  box-shadow: ${(props) => props.theme.mode === 'dark'
+    ? '0 1px 3px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.3)'
+    : '0 1px 3px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.04)'};
   text-align: left;
   width: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), border-color 160ms ease, box-shadow 160ms ease;
+  transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1), border-color 200ms ease, box-shadow 200ms ease;
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
-      transform: translateY(-4px);
-      border-color: ${(props) => props.theme.colors.teal};
-      box-shadow: 0 4px 12px rgba(17, 24, 28, 0.05), 0 16px 36px rgba(17, 24, 28, 0.08);
+      transform: translateY(-5px);
+      border-color: ${(props) => props.theme.colors.accent1};
+      box-shadow: ${(props) => props.theme.mode === 'dark'
+        ? '0 4px 16px rgba(0, 0, 0, 0.5), 0 0 32px -8px rgba(59, 130, 246, 0.28)'
+        : '0 4px 16px rgba(15, 23, 42, 0.06), 0 16px 36px rgba(15, 23, 42, 0.08)'};
 
       img {
-        transform: scale(1.02);
+        transform: scale(1.03);
       }
     }
   }
@@ -229,8 +233,8 @@ export const ProjectMethodologyBadge = styled.span`
 export const ProjectKpiBadge = styled.span`
   padding: 0.4rem 1rem;
   border-radius: 6px;
-  background: rgba(229, 103, 79, 0.1);
-  border: 1px solid rgba(229, 103, 79, 0.25);
+  background: ${(props) => props.theme.mode === 'dark' ? 'rgba(59, 130, 246, 0.15)' : 'rgba(37, 99, 235, 0.08)'};
+  border: 1px solid ${(props) => props.theme.mode === 'dark' ? 'rgba(59, 130, 246, 0.3)' : 'rgba(37, 99, 235, 0.2)'};
   color: ${(props) => props.theme.colors.accent1};
   font-size: 1.25rem;
   font-weight: 700;

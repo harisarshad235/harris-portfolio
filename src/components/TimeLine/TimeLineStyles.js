@@ -90,14 +90,18 @@ export const CarouselItem = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   cursor: pointer;
-  box-shadow: 0 1px 3px rgba(17, 24, 28, 0.03), 0 6px 16px rgba(17, 24, 28, 0.03);
-  transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1), border-color 180ms ease, box-shadow 180ms ease;
+  box-shadow: ${(props) => props.theme.mode === 'dark'
+    ? '0 1px 3px rgba(0, 0, 0, 0.4), 0 6px 16px rgba(0, 0, 0, 0.3)'
+    : '0 1px 3px rgba(15, 23, 42, 0.03), 0 6px 16px rgba(15, 23, 42, 0.03)'};
+  transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1), border-color 200ms ease, box-shadow 200ms ease;
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
-      transform: translateY(-3px);
-      border-color: ${(props) => props.theme.colors.teal};
-      box-shadow: 0 4px 12px rgba(17, 24, 28, 0.05), 0 14px 28px rgba(17, 24, 28, 0.06);
+      transform: translateY(-4px);
+      border-color: ${(props) => props.theme.colors.accent1};
+      box-shadow: ${(props) => props.theme.mode === 'dark'
+        ? '0 4px 16px rgba(0, 0, 0, 0.5), 0 0 28px -8px rgba(59, 130, 246, 0.25)'
+        : '0 4px 12px rgba(15, 23, 42, 0.05), 0 14px 28px rgba(15, 23, 42, 0.06)'};
     }
   }
 

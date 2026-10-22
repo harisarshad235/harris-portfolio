@@ -50,11 +50,12 @@ export function ScrollReveal({
         x: 0,
         y: 0,
       }}
-      viewport={{ once, margin: "2000px 0px", amount: 0 }}
-      transition={{
-        duration: shouldReduceMotion ? 0.01 : duration,
+      viewport={{ once, margin: "-30px 0px", amount: 0.1 }}
+      transition={shouldReduceMotion ? { duration: 0.01 } : {
+        type: "spring",
+        stiffness: 280,
+        damping: 26,
         delay,
-        ease: [0.23, 1, 0.32, 1], // Emil Kowalski strong ease-out
       }}
       className={className}
       {...props}
@@ -96,7 +97,7 @@ export function StaggerContainer({
       variants={containerVariants}
       initial={shouldReduceMotion ? "visible" : "hidden"}
       whileInView="visible"
-      viewport={{ once, margin: "2000px 0px", amount: 0 }}
+      viewport={{ once, margin: "-30px 0px", amount: 0.1 }}
       className={className}
       {...props}
     >
@@ -129,9 +130,10 @@ export function StaggerItem({
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: {
-        duration: shouldReduceMotion ? 0.01 : duration,
-        ease: [0.22, 1, 0.36, 1],
+      transition: shouldReduceMotion ? { duration: 0.01 } : {
+        type: "spring",
+        stiffness: 300,
+        damping: 24,
       },
     },
   };

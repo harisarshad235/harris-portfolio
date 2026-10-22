@@ -106,7 +106,7 @@ export const Contact = () => {
       {/* Background ambient lighting */}
       <div
         aria-hidden="true"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-tr from-teal-500/10 via-primary/10 to-transparent blur-3xl pointer-events-none rounded-full"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-tr from-primary/15 via-blue-500/10 to-teal-500/5 blur-3xl pointer-events-none rounded-full"
       />
 
       {/* Section Header */}
@@ -127,14 +127,14 @@ export const Contact = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
         {/* Left Column: 21st.dev-Inspired Executive Contact Card */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "250px" }}
-          transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+          viewport={{ once: true, margin: "-30px 0px" }}
+          transition={{ type: "spring", stiffness: 280, damping: 26 }}
           className="lg:col-span-5 flex flex-col justify-between rounded-3xl border border-border/80 bg-card p-6 sm:p-8 shadow-sm relative overflow-hidden"
         >
           {/* Card Accent Top Glow */}
-          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-teal-500 via-primary to-emerald-400" />
+          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-600 via-primary to-teal-400" />
 
           <div>
             {/* Profile Avatar & Status Header */}
@@ -277,7 +277,7 @@ export const Contact = () => {
               href="https://calendly.com/harisarshad235/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-teal-500/15 via-primary/10 to-teal-500/5 border border-primary/25 hover:border-primary transition-all group mb-6"
+              className="w-full flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-primary/15 via-blue-500/10 to-teal-500/5 border border-primary/25 hover:border-primary transition-all group mb-6"
             >
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-primary text-primary-foreground flex items-center justify-center font-bold">
@@ -324,10 +324,10 @@ export const Contact = () => {
 
         {/* Right Column: Modern Interactive Form Card */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "250px" }}
-          transition={{ duration: 0.5, delay: 0.1, ease: [0.23, 1, 0.32, 1] }}
+          viewport={{ once: true, margin: "-30px 0px" }}
+          transition={{ type: "spring", stiffness: 280, damping: 26, delay: 0.1 }}
           className="lg:col-span-7 rounded-3xl border border-border/80 bg-card p-6 sm:p-10 shadow-sm relative"
         >
           <div className="mb-6">
