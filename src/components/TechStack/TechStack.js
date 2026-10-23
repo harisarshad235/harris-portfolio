@@ -8,22 +8,22 @@ import { ScrollReveal } from '../ui/MotionReveal';
 const categoryMeta = {
   delivery: {
     icon: FiCheckSquare,
-    badgeColor: 'text-teal-700 dark:text-teal-300 bg-teal-500/10 border-teal-500/25',
-    accentColor: '#1A8781',
+    badgeColor: 'text-emerald-700 dark:text-emerald-300 bg-emerald-500/10 border-emerald-500/25',
+    accentColor: '#059669',
     description:
       'Schedule baselines, Earned Value Management (EVM), PMO controls, and Agile sprint governance to steer initiatives from planning through release.',
   },
   platforms: {
     icon: FiLayers,
-    badgeColor: 'text-blue-700 dark:text-blue-300 bg-blue-500/10 border-blue-500/25',
-    accentColor: '#2684FF',
+    badgeColor: 'text-teal-700 dark:text-teal-300 bg-teal-500/10 border-teal-500/25',
+    accentColor: '#0D9488',
     description:
       'Edge infrastructure, distributed cloud databases, telemetry networks, and automated CI/CD release management.',
   },
   software: {
     icon: FiCode,
-    badgeColor: 'text-rose-700 dark:text-rose-300 bg-rose-500/10 border-rose-500/25',
-    accentColor: '#E5674F',
+    badgeColor: 'text-amber-700 dark:text-amber-300 bg-amber-500/10 border-amber-500/25',
+    accentColor: '#D97706',
     description:
       'Modern reactive frontend applications, enterprise backend services, and cross-platform mobile ecosystems coordinated with engineering squads.',
   },

@@ -100,8 +100,8 @@ export const CarouselItem = styled.div`
       transform: translateY(-4px);
       border-color: ${(props) => props.theme.colors.accent1};
       box-shadow: ${(props) => props.theme.mode === 'dark'
-        ? '0 4px 16px rgba(0, 0, 0, 0.5), 0 0 28px -8px rgba(59, 130, 246, 0.25)'
-        : '0 4px 12px rgba(15, 23, 42, 0.05), 0 14px 28px rgba(15, 23, 42, 0.06)'};
+        ? '0 4px 16px rgba(0, 0, 0, 0.5), 0 0 28px -8px rgba(16, 185, 129, 0.25)'
+        : '0 4px 12px rgba(10, 24, 18, 0.05), 0 14px 28px rgba(10, 24, 18, 0.06)'};
     }
   }
 

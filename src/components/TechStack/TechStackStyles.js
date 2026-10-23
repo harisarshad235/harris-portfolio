@@ -33,8 +33,8 @@ export const CategoryCard = styled.article`
     transform: translateY(-5px);
     border-color: ${(props) => props.theme.colors.accent1};
     box-shadow: ${(props) => props.theme.mode === 'dark'
-      ? '0 12px 32px rgba(0, 0, 0, 0.5), 0 0 30px -10px rgba(59, 130, 246, 0.25)'
-      : '0 16px 36px rgba(15, 23, 42, 0.08)'};
+      ? '0 12px 32px rgba(0, 0, 0, 0.5), 0 0 30px -10px rgba(16, 185, 129, 0.25)'
+      : '0 16px 36px rgba(10, 24, 18, 0.08)'};
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {

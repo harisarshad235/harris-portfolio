@@ -3,44 +3,44 @@
 @tailwind utilities;
 
 :root {
-  --background: #F8FAFC;
-  --background-rgb: 248 250 252;
-  --foreground: #0F172A;
-  --foreground-rgb: 15 23 42;
+  --background: #F7FAF8;
+  --background-rgb: 247 250 248;
+  --foreground: #0A1812;
+  --foreground-rgb: 10 24 18;
   --card: #FFFFFF;
   --card-rgb: 255 255 255;
-  --card-foreground: #0F172A;
-  --card-foreground-rgb: 15 23 42;
+  --card-foreground: #0A1812;
+  --card-foreground-rgb: 10 24 18;
   --popover: #FFFFFF;
   --popover-rgb: 255 255 255;
-  --popover-foreground: #0F172A;
-  --popover-foreground-rgb: 15 23 42;
-  --primary: #2563EB;
-  --primary-rgb: 37 99 235;
+  --popover-foreground: #0A1812;
+  --popover-foreground-rgb: 10 24 18;
+  --primary: #059669;
+  --primary-rgb: 5 150 105;
   --primary-foreground: #FFFFFF;
   --primary-foreground-rgb: 255 255 255;
-  --secondary: #F1F5F9;
-  --secondary-rgb: 241 245 249;
-  --secondary-foreground: #0F172A;
-  --secondary-foreground-rgb: 15 23 42;
-  --muted: #E2E8F0;
-  --muted-rgb: 226 232 240;
-  --muted-foreground: #475569;
-  --muted-foreground-rgb: 71 85 105;
-  --accent: #2563EB;
-  --accent-rgb: 37 99 235;
+  --secondary: #ECFDF5;
+  --secondary-rgb: 236 253 245;
+  --secondary-foreground: #064E3B;
+  --secondary-foreground-rgb: 6 78 59;
+  --muted: #E3EDE7;
+  --muted-rgb: 227 237 231;
+  --muted-foreground: #475B51;
+  --muted-foreground-rgb: 71 91 81;
+  --accent: #059669;
+  --accent-rgb: 5 150 105;
   --accent-foreground: #FFFFFF;
   --accent-foreground-rgb: 255 255 255;
   --destructive: #DC2626;
   --destructive-rgb: 220 38 38;
   --destructive-foreground: #FFFFFF;
   --destructive-foreground-rgb: 255 255 255;
-  --border: rgba(15, 23, 42, 0.08);
-  --border-rgb: 15 23 42;
-  --input: rgba(15, 23, 42, 0.08);
-  --input-rgb: 15 23 42;
-  --ring: #2563EB;
-  --ring-rgb: 37 99 235;
+  --border: rgba(10, 24, 18, 0.08);
+  --border-rgb: 10 24 18;
+  --input: rgba(10, 24, 18, 0.08);
+  --input-rgb: 10 24 18;
+  --ring: #059669;
+  --ring-rgb: 5 150 105;
 
   /* Emil Kowalski motion tokens */
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
@@ -48,57 +48,57 @@
   --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
 
   /* Layered Ambient Shadows */
-  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
-  --shadow-md: 0 1px 3px rgba(15, 23, 42, 0.04), 0 6px 16px rgba(15, 23, 42, 0.04);
-  --shadow-lg: 0 2px 4px rgba(15, 23, 42, 0.03), 0 10px 24px rgba(15, 23, 42, 0.05), 0 24px 48px rgba(15, 23, 42, 0.04);
-  --shadow-xl: 0 4px 8px rgba(15, 23, 42, 0.04), 0 16px 36px rgba(15, 23, 42, 0.06), 0 32px 64px rgba(15, 23, 42, 0.05);
+  --shadow-sm: 0 1px 2px rgba(10, 24, 18, 0.04);
+  --shadow-md: 0 1px 3px rgba(10, 24, 18, 0.04), 0 6px 16px rgba(10, 24, 18, 0.04);
+  --shadow-lg: 0 2px 4px rgba(10, 24, 18, 0.03), 0 10px 24px rgba(10, 24, 18, 0.05), 0 24px 48px rgba(10, 24, 18, 0.04);
+  --shadow-xl: 0 4px 8px rgba(10, 24, 18, 0.04), 0 16px 36px rgba(10, 24, 18, 0.06), 0 32px 64px rgba(10, 24, 18, 0.05);
 }
 
 [data-theme="dark"] {
-  --background: #070A0F;
-  --background-rgb: 7 10 15;
-  --foreground: #F8FAFC;
-  --foreground-rgb: 248 250 252;
-  --card: #0D121D;
-  --card-rgb: 13 18 29;
-  --card-foreground: #F8FAFC;
-  --card-foreground-rgb: 248 250 252;
-  --popover: #0D121D;
-  --popover-rgb: 13 18 29;
-  --popover-foreground: #F8FAFC;
-  --popover-foreground-rgb: 248 250 252;
-  --primary: #3B82F6;
-  --primary-rgb: 59 130 246;
-  --primary-foreground: #FFFFFF;
-  --primary-foreground-rgb: 255 255 255;
-  --secondary: #131B2A;
-  --secondary-rgb: 19 27 42;
-  --secondary-foreground: #F8FAFC;
-  --secondary-foreground-rgb: 248 250 252;
-  --muted: #111726;
-  --muted-rgb: 17 23 38;
-  --muted-foreground: #94A3B8;
-  --muted-foreground-rgb: 148 163 184;
-  --accent: #3B82F6;
-  --accent-rgb: 59 130 246;
-  --accent-foreground: #FFFFFF;
-  --accent-foreground-rgb: 255 255 255;
+  --background: #070B09;
+  --background-rgb: 7 11 9;
+  --foreground: #F1F7F4;
+  --foreground-rgb: 241 247 244;
+  --card: #0D1410;
+  --card-rgb: 13 20 16;
+  --card-foreground: #F1F7F4;
+  --card-foreground-rgb: 241 247 244;
+  --popover: #0D1410;
+  --popover-rgb: 13 20 16;
+  --popover-foreground: #F1F7F4;
+  --popover-foreground-rgb: 241 247 244;
+  --primary: #10B981;
+  --primary-rgb: 16 185 129;
+  --primary-foreground: #02140D;
+  --primary-foreground-rgb: 2 20 13;
+  --secondary: #121C16;
+  --secondary-rgb: 18 28 22;
+  --secondary-foreground: #F1F7F4;
+  --secondary-foreground-rgb: 241 247 244;
+  --muted: #15221B;
+  --muted-rgb: 21 34 27;
+  --muted-foreground: #95A99E;
+  --muted-foreground-rgb: 149 169 158;
+  --accent: #10B981;
+  --accent-rgb: 16 185 129;
+  --accent-foreground: #02140D;
+  --accent-foreground-rgb: 2 20 13;
   --destructive: #EF4444;
   --destructive-rgb: 239 68 68;
-  --destructive-foreground: #F8FAFC;
-  --destructive-foreground-rgb: 248 250 252;
+  --destructive-foreground: #F1F7F4;
+  --destructive-foreground-rgb: 241 247 244;
   --border: rgba(255, 255, 255, 0.08);
   --border-rgb: 255 255 255;
   --input: rgba(255, 255, 255, 0.08);
   --input-rgb: 255 255 255;
-  --ring: #3B82F6;
-  --ring-rgb: 59 130 246;
+  --ring: #10B981;
+  --ring-rgb: 16 185 129;
 
   /* Layered Ambient Shadows (Dark) */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.35), 0 8px 20px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.35), 0 14px 30px rgba(0, 0, 0, 0.4), 0 28px 56px rgba(0, 0, 0, 0.35);
-  --shadow-xl: 0 6px 12px rgba(0, 0, 0, 0.4), 0 20px 44px rgba(0, 0, 0, 0.45), 0 40px 80px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.4), 0 8px 20px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.4), 0 14px 30px rgba(0, 0, 0, 0.45), 0 28px 56px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 6px 12px rgba(0, 0, 0, 0.45), 0 20px 44px rgba(0, 0, 0, 0.5), 0 40px 80px rgba(0, 0, 0, 0.45);
 }
 
 /* Micro-interaction Spring Press & Transitions (emil-design-eng) */

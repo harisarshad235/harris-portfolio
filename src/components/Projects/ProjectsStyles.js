@@ -170,8 +170,8 @@ export const BlogCard = styled.article`
       transform: translateY(-5px);
       border-color: ${(props) => props.theme.colors.accent1};
       box-shadow: ${(props) => props.theme.mode === 'dark'
-        ? '0 4px 16px rgba(0, 0, 0, 0.5), 0 0 32px -8px rgba(59, 130, 246, 0.28)'
-        : '0 4px 16px rgba(15, 23, 42, 0.06), 0 16px 36px rgba(15, 23, 42, 0.08)'};
+        ? '0 4px 16px rgba(0, 0, 0, 0.5), 0 0 32px -8px rgba(16, 185, 129, 0.25)'
+        : '0 4px 16px rgba(10, 24, 18, 0.06), 0 16px 36px rgba(10, 24, 18, 0.08)'};
 
       img {
         transform: scale(1.03);
@@ -233,8 +233,8 @@ export const ProjectMethodologyBadge = styled.span`
 export const ProjectKpiBadge = styled.span`
   padding: 0.4rem 1rem;
   border-radius: 6px;
-  background: ${(props) => props.theme.mode === 'dark' ? 'rgba(59, 130, 246, 0.15)' : 'rgba(37, 99, 235, 0.08)'};
-  border: 1px solid ${(props) => props.theme.mode === 'dark' ? 'rgba(59, 130, 246, 0.3)' : 'rgba(37, 99, 235, 0.2)'};
+  background: ${(props) => props.theme.mode === 'dark' ? 'rgba(16, 185, 129, 0.15)' : 'rgba(5, 150, 105, 0.08)'};
+  border: 1px solid ${(props) => props.theme.mode === 'dark' ? 'rgba(16, 185, 129, 0.3)' : 'rgba(5, 150, 105, 0.2)'};
   color: ${(props) => props.theme.colors.accent1};
   font-size: 1.25rem;
   font-weight: 700;

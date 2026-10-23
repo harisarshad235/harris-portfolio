@@ -40,10 +40,10 @@ export const FlagshipProjects = () => {
               },
             }}
             whileHover={{ y: -6, transition: { type: "spring", stiffness: 350, damping: 22 } }}
-            className={`group relative rounded-3xl border border-border bg-card dark:bg-[#0D121D] overflow-hidden flex flex-col justify-between shadow-xs hover:shadow-xl ${project.borderHoverClass || 'hover:border-primary/40'} ${project.glowClass || ''} flagship-card card-${project.id}`}
+            className={`group relative rounded-3xl border border-border bg-card dark:bg-[#0D1410] overflow-hidden flex flex-col justify-between shadow-xs hover:shadow-xl ${project.borderHoverClass || 'hover:border-primary/40'} ${project.glowClass || ''} flagship-card card-${project.id}`}
           >
             {/* Seamless Mockup Container */}
-            <div className="relative w-full aspect-[16/9] bg-[#0A0F17] overflow-hidden select-none flagship-media-container border-b border-border">
+            <div className="relative w-full aspect-[16/9] bg-[#070B09] overflow-hidden select-none flagship-media-container border-b border-border">
               <Image
                 alt={`${project.title} Interface Preview`}
                 className="object-cover object-center transform transition-transform duration-500 ease-out group-hover:scale-[1.02] flagship-image"

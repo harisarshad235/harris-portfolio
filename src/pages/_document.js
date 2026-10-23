@@ -33,7 +33,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang='en-GB'>
         <Head>
-          <meta name="theme-color" content="#F8FAFC" />
+          <meta name="theme-color" content="#F7FAF8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon.ico" sizes="any" />
           <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -46,7 +46,7 @@ export default class MyDocument extends Document {
           <link rel="preload" as="image" href="/images/haris-arshad-profile.webp" type="image/webp" />
           <script
             dangerouslySetInnerHTML={{
-              __html: `(function(){try{var m=localStorage.getItem('portfolio-theme');if(m==='dark'||m==='light'){document.documentElement.dataset.theme=m;var tc=document.querySelector('meta[name="theme-color"]');if(tc)tc.setAttribute('content',m==='dark'?'#070A0F':'#F8FAFC');}}catch(e){}})();`,
+              __html: `(function(){try{var m=localStorage.getItem('portfolio-theme');if(m==='dark'||m==='light'){document.documentElement.dataset.theme=m;var tc=document.querySelector('meta[name="theme-color"]');if(tc)tc.setAttribute('content',m==='dark'?'#070B09':'#F7FAF8');}}catch(e){}})();`,
             }}
           />
           {analyticsId && (

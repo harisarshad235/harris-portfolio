@@ -36,8 +36,8 @@ export const CredentialCard = styled.article`
       transform: translateY(-5px);
       border-color: ${(props) => props.theme.colors.accent1};
       box-shadow: ${(props) => props.theme.mode === 'dark'
-        ? '0 4px 16px rgba(0, 0, 0, 0.5), 0 0 32px -8px rgba(59, 130, 246, 0.28)'
-        : '0 2px 6px rgba(15, 23, 42, 0.04), 0 16px 36px rgba(15, 23, 42, 0.08)'};
+        ? '0 4px 16px rgba(0, 0, 0, 0.5), 0 0 32px -8px rgba(16, 185, 129, 0.25)'
+        : '0 2px 6px rgba(10, 24, 18, 0.04), 0 16px 36px rgba(10, 24, 18, 0.08)'};
 
       img {
         transform: scale(1.03);
