@@ -1,6 +1,20 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-import { AboutActions, AboutLink, CarouselButton, CarouselButtonDot, CarouselButtons, CarouselContainer, CarouselItem, CarouselItemImg, CarouselItemText, CarouselItemTitle, CarouselMobileScrollNode } from './TimeLineStyles';
+import {
+  AboutActions,
+  AboutLink,
+  CarouselButton,
+  CarouselButtonDot,
+  CarouselButtons,
+  CarouselContainer,
+  CarouselItem,
+  CarouselItemCompany,
+  CarouselItemImg,
+  CarouselItemRole,
+  CarouselItemText,
+  CarouselItemTitle,
+  CarouselMobileScrollNode,
+} from './TimeLineStyles';
 import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { TimeLineData } from '../../constants/constants';
 import { ScrollReveal } from '../ui/MotionReveal';
@@ -49,7 +63,10 @@ const Timeline = () => {
       <ScrollReveal>
         <SectionTitle>About Haris Arshad</SectionTitle>
         <SectionText>
-          I make complex delivery easier to see, steer, and finish. As a PMP-certified project manager, I align teams, plans, budgets, risks, and decisions across public-sector, infrastructure, and digital product work. My experience includes coordinating a 150+ site, PKR 700M+ portfolio and guiding software initiatives from requirements through UAT, release, and handover. On a separate Track &amp; Trace program, reported outcomes included PKR 103M+ in savings and delivery 22.5% under budget.
+          PMP®-certified Technical Project Manager and Registered Professional Engineer (PE) with 6+ years of technical delivery experience, including 3+ years directing cross-functional software engineering, cloud platform, and SaaS initiatives across Fixed Price (FP) and Time &amp; Materials (T&amp;M) models. Holding a Master of Science in Project Management (Bahria University) and a B.S. in Electrical Engineering (COMSATS), I specialize in bridging technical PMO governance with modern SDLC execution.
+        </SectionText>
+        <SectionText style={{ marginTop: '-1.4rem' }}>
+          My track record combines large-scale infrastructure governance and agile product leadership: managing a PKR 700M+ multi-site portfolio (150+ operational sites) at AJCL, delivering PKR 103M+ in EVM cost savings (22.5% below baseline budget) on a nationwide Track &amp; Trace program, steering Agile delivery for Tier-1 clients including Telenor and FAB at SOFTOO, and currently directing concurrent SaaS engineering sprints at Sigma Digital Solutions with 0% scope creep and 100% on-time client acceptance.
         </SectionText>
       </ScrollReveal>
       <ScrollReveal delay={0.1}>
@@ -102,6 +119,12 @@ const Timeline = () => {
                       </defs>
                     </CarouselItemImg>
                 </CarouselItemTitle>
+                {item.role && (
+                  <CarouselItemRole>
+                    {item.role}
+                    {item.company && <CarouselItemCompany>{item.company}</CarouselItemCompany>}
+                  </CarouselItemRole>
+                )}
                 <CarouselItemText>{item.text}</CarouselItemText>
                 </CarouselItem>
               </CarouselMobileScrollNode>

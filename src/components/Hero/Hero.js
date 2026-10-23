@@ -45,7 +45,7 @@ export default function Hero() {
             <motion.div variants={itemVariants} className="mb-3">
               <span className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wide text-primary uppercase">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                Technology Delivery &amp; PMO Governance
+                Technical Delivery &amp; PMO Governance
               </span>
             </motion.div>
 
@@ -56,7 +56,7 @@ export default function Hero() {
             >
               Haris Arshad, PMP®
               <span className="block text-primary mt-1 text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight">
-                Technical Delivery &amp; PMO Lead
+                Technical Project Manager &amp; Delivery Lead
               </span>
             </motion.h1>
 
@@ -65,7 +65,7 @@ export default function Hero() {
               variants={itemVariants}
               className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mb-6 font-normal"
             >
-              PMP®-certified Project Manager in Islamabad with a Master&apos;s in Project Management. I steer complex technology portfolios across cloud, infrastructure, software, and QA squads — combining EVM baselines, Agile sprint cadence, RAID discipline, and stakeholder alignment to ship on schedule.
+              PMP®-certified Technical Project Manager with 6+ years of technical delivery experience, including 3+ years directing cross-functional software engineering, cloud platform, and SaaS initiatives across Fixed Price and T&amp;M models. Proven track record leading distributed squads across enterprise portfolios valued up to PKR 700M+ — bridging technical PMO governance with modern SDLC execution.
             </motion.p>
 
             {/* Location & Status Tag Line */}
@@ -77,7 +77,7 @@ export default function Hero() {
                 <MapPin className="h-3.5 w-3.5 text-primary" /> Islamabad, Pakistan
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-secondary text-foreground border border-border/80">
-                <Award className="h-3.5 w-3.5 text-primary" /> PMP® certified (PMI)
+                <Award className="h-3.5 w-3.5 text-primary" /> PMP® Certified · PE (PEC)
               </span>
               <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-card text-foreground border border-primary/25 shadow-2xs">
                 <span className="h-2 w-2 rounded-full bg-emerald-500" /> Open to PM/PMO leadership &amp; advisory
@@ -101,7 +101,7 @@ export default function Hero() {
                   </span>
                 </div>
                 <div className="text-xs sm:text-sm text-muted-foreground mt-2 font-medium leading-relaxed">
-                  Verified cost optimization on nationwide Track &amp; Trace delivery program.
+                  Captured cost savings on nationwide Track &amp; Trace deployment using EVM variance controls.
                 </div>
               </motion.div>
 
@@ -110,9 +110,14 @@ export default function Hero() {
                 whileHover={{ y: -3, transition: { type: "spring", stiffness: 400, damping: 25 } }}
                 className="sm:col-span-5 p-4 sm:p-5 rounded-2xl bg-secondary/80 border border-border shadow-xs flex flex-col justify-between transition-colors hover:border-primary/40 cursor-default"
               >
-                <div className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">150+ Sites</div>
+                <div className="flex items-baseline justify-between gap-2">
+                  <div className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">150+ Sites</div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-primary/90 bg-primary/10 px-2 py-0.5 rounded-md">
+                    PKR 700M+ Portfolio
+                  </span>
+                </div>
                 <div className="text-xs sm:text-sm text-muted-foreground mt-2 font-medium leading-relaxed">
-                  Coordinated across PKR 700M+ enterprise infrastructure portfolio.
+                  CPM scheduling &amp; PMO controls cutting schedule slippage by 80% at AJCL.
                 </div>
               </motion.div>
             </motion.div>

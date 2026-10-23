@@ -141,6 +141,31 @@ export const CarouselItemImg = styled.svg`
   }
 `;
 
+export const CarouselItemRole = styled.div`
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: ${(props) => props.theme.colors.primary1};
+  margin-bottom: 0.3rem;
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    font-size: 1.4rem;
+  }
+`;
+
+export const CarouselItemCompany = styled.span`
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: ${(props) => props.theme.colors.teal};
+  margin-top: 0.2rem;
+  margin-bottom: 0.8rem;
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    font-size: 1.2rem;
+  }
+`;
+
 export const CarouselItemText = styled.p`
   font-size: 1.38rem;
   line-height: 1.6;

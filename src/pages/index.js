@@ -15,13 +15,13 @@ import { HeroStage } from '../components/Hero/HeroStyles';
 
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://harisarshad.site').replace(/\/$/, '');
 const pageTitle = 'Haris Arshad, PMP® – Technical Project Manager & Delivery Lead';
-const pageDescription = 'Portfolio of Haris Arshad, PMP®-certified Project Manager in Islamabad. Proven track record across PKR 700M+ portfolios, PMO governance, and high-velocity cloud delivery.';
+const pageDescription = 'Portfolio of Haris Arshad, PMP®-certified Technical Project Manager with 6+ years of technical delivery experience across PKR 700M+ enterprise portfolios, Agile software engineering, and PMO governance.';
 const profileImage = `${siteUrl}/images/haris-arshad-profile.webp`;
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Haris Arshad',
-  jobTitle: 'PMP-certified Project Manager',
+  jobTitle: 'Technical Project Manager | Agile & Software Delivery Lead',
   description: pageDescription,
   address: {
     '@type': 'PostalAddress',
@@ -42,22 +42,38 @@ const personSchema = {
         name: 'Project Management Institute (PMI)',
       },
     },
+    {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'license',
+      name: 'Registered Professional Engineer (PE)',
+      recognizedBy: {
+        '@type': 'Organization',
+        name: 'Pakistan Engineering Council (PEC)',
+      },
+    },
+    {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'certification',
+      name: 'Microsoft Power BI Certification',
+      recognizedBy: {
+        '@type': 'Organization',
+        name: 'Lahore University of Management Sciences (LUMS)',
+      },
+    },
   ],
   knowsAbout: [
-    'Project management',
-    'Project Management Professional (PMP)',
-    'Technology project management',
-    'Project planning and control',
-    'PMO governance',
-    'Portfolio management',
-    'Agile project management',
-    'Scrum and Kanban',
-    'Stakeholder management',
-    'Risk, assumption, issue and dependency (RAID) management',
-    'Budgeting and forecasting',
-    'Vendor management',
-    'Software delivery',
-    'Power BI reporting',
+    'Technical Project Management',
+    'Agile & Scrum Delivery Governance',
+    'Full-Lifecycle SDLC Management',
+    'Sprint Planning & Capacity Tracking',
+    'Fixed Price & Time-and-Materials Delivery',
+    'Earned Value Management (EVM)',
+    'Critical Path Method (CPM)',
+    'PMO Governance & IMS',
+    'Risk, Assumption, Issue & Dependency (RAID) Management',
+    'Jira Software & Confluence',
+    'CI/CD Workflows & Release Engineering',
+    'Power BI Portfolio Dashboards',
   ],
 };
 

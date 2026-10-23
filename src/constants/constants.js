@@ -130,9 +130,34 @@ export const projects = [
 ];
 
 export const TimeLineData = [
-  { year: '2019–2021', text: 'Site Engineer (PMO) at Al Rehman Enterprises, coordinating construction delivery, schedules, budgets, and stakeholder resolution.', },
-  { year: '2022', text: 'Business Development Officer at Mobiserve Pakistan, building client proposals and targeted growth campaigns.', },
-  { year: '2023–2024', text: 'Progressed from Junior Project Coordinator to Associate Project Manager at SOFTOO, leading Agile delivery for enterprise platforms.', },
-  { year: '2024–2026', text: 'Project Planning and Control Engineer at AJCL, managing a PKR 700M+ portfolio across 150+ sites with PMO discipline and Power BI visibility.', },
-  { year: '2026–Present', text: 'Project Manager at Sigma Digital Solutions, leading concurrent software delivery for Taggy, APC, and Premier Online.', },
+  {
+    year: '2019–2021',
+    role: 'Site Engineer',
+    company: 'Al Rehman Enterprises & Co',
+    text: 'Monitored project baseline schedules, contractor milestones, and critical-path resource allocations using Primavera P6 and MS Project, securing zero unapproved schedule variances.',
+  },
+  {
+    year: '2023',
+    role: 'Junior Project Coordinator – Software Systems',
+    company: 'SOFTOO Pvt Ltd',
+    text: 'Consolidated multi-project documentation, RAID logs, and backlog matrices across web engineering initiatives, reducing milestone reporting discrepancies by 40%.',
+  },
+  {
+    year: '2023–2024',
+    role: 'Associate Project Manager – Software Delivery',
+    company: 'SOFTOO Pvt Ltd',
+    text: 'Led Agile sprint execution for cross-functional teams of 30+ software engineers and QA analysts for Tier-1 clients (Telenor Thunder, FAB), stabilizing velocity and reducing sprint rollover by 30%.',
+  },
+  {
+    year: '2024–2026',
+    role: 'Project Planning and Control Engineer (PMO)',
+    company: 'AJCL Pvt Ltd',
+    text: 'Governed a PKR 700M+ portfolio across 150+ sites with CPM scheduling (-80% slippage), designed unified Power BI dashboards, and delivered the CDA Smart Parking IoT platform.',
+  },
+  {
+    year: '2026–Present',
+    role: 'Technical Project Manager',
+    company: 'Sigma Digital Solutions',
+    text: 'Directing concurrent SaaS & web engineering sprints (Taggy, APC, Premier Online) with 0% scope creep, explicit WIP limits, and 100% on-time client acceptance.',
+  },
 ];
