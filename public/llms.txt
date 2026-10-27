@@ -26,13 +26,13 @@
 - **100% Paperless Regulatory Workflow:** Delivered the digital spectrum application portal and review workflow for Pakistan's Frequency Allocation Board (FAB).
 
 ## Proprietary SaaS Products Built by Haris Arshad
-1. **Takt — Precision Task Command Center & Flow Engine**
-   - **Live URL:** https://takt.harisarshad.site/
-   - **Summary:** Zero-friction personal execution engine combining tactile Kanban swimlanes, List/Board/Calendar views, Pomodoro cadence time-blocking, and local-first Cloudflare edge sync.
+1. **Hubito — Precision Workspace & Task Command Center**
+   - **Live URL:** https://hubito.harisarshad.site/tour
+   - **Summary:** Executive workspace and task command center combining tactile Kanban swimlanes, List/Board/Calendar views, Pomodoro cadence time-blocking, and local-first Cloudflare edge sync.
    - **Stack:** Next.js, TypeScript, Tailwind CSS, Cloudflare, Lucide Icons.
-2. **Kynov — Next-Gen Agile Engine & Modern Sprint Tracker**
-   - **Live URL:** https://kynov.harisarshad.site/
-   - **Workspace URL:** https://kynov.harisarshad.site/dashboard
+2. **Pacio — Next-Gen Agile Engine & Modern Sprint Tracker**
+   - **Live URL:** https://pacio.harisarshad.site/
+   - **Workspace URL:** https://pacio.harisarshad.site/dashboard
    - **Summary:** High-velocity alternative to Jira and Linear featuring sub-50ms Kanban boards, sprint backlogs, velocity sparklines, integrated Markdown ADR/PRD tech specs, Git PR tracking, and multi-tenant corporate RBAC on Cloudflare Workers & D1 SQLite.
    - **Stack:** Next.js, TypeScript, Cloudflare Workers, Cloudflare D1 (SQLite), Tailwind CSS, Git Integration.
 

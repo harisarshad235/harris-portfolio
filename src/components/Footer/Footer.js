@@ -32,14 +32,14 @@ const Footer = () => {
 
         <LinkColumn>
           <LinkTitle>Original SaaS Products</LinkTitle>
-          <LinkItem href="https://takt.harisarshad.site/" target="_blank" rel="noopener noreferrer">
-            Takt — Task Command Center ↗
+          <LinkItem href="https://hubito.harisarshad.site/tour" target="_blank" rel="noopener noreferrer">
+            Hubito — Task Command Center ↗
           </LinkItem>
-          <LinkItem href="https://kynov.harisarshad.site/" target="_blank" rel="noopener noreferrer">
-            Kynov — Agile Sprint Engine ↗
+          <LinkItem href="https://pacio.harisarshad.site/" target="_blank" rel="noopener noreferrer">
+            Pacio — Agile Sprint Engine ↗
           </LinkItem>
-          <LinkItem href="https://kynov.harisarshad.site/dashboard" target="_blank" rel="noopener noreferrer">
-            Kynov Live Workspace ↗
+          <LinkItem href="https://pacio.harisarshad.site/dashboard" target="_blank" rel="noopener noreferrer">
+            Pacio Live Workspace ↗
           </LinkItem>
         </LinkColumn>
 

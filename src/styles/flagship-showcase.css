@@ -108,11 +108,13 @@
   box-shadow: var(--shadow-xl);
 }
 
-.flagship-card.card-takt:hover {
+.flagship-card.card-takt:hover,
+.flagship-card.card-hubito:hover {
   border-color: rgba(16, 185, 129, 0.45);
 }
 
-.flagship-card.card-kynov:hover {
+.flagship-card.card-kynov:hover,
+.flagship-card.card-pacio:hover {
   border-color: rgba(79, 70, 229, 0.45);
 }
 

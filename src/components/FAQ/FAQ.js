@@ -28,7 +28,7 @@ export const FAQ_DATA = [
   {
     question: 'What proprietary SaaS products have you architected and built?',
     answer:
-      'Alongside managing enterprise client portfolios, I conceived, architected, and built two live cloud SaaS platforms: Takt (takt.harisarshad.site), a local-first task command center with Kanban swimlanes and Pomodoro flow cadence, and Kynov (kynov.harisarshad.site), an edge-native Agile sprint tracker with sub-50ms Kanban boards, velocity sparklines, Markdown ADR/PRD specs, and multi-tenant corporate RBAC on Cloudflare Workers and D1.',
+      'Alongside managing enterprise client portfolios, I conceived, architected, and built two live cloud SaaS platforms: Hubito (hubito.harisarshad.site/tour), a local-first task command center with Kanban swimlanes and Pomodoro flow cadence, and Pacio (pacio.harisarshad.site), an edge-native Agile sprint tracker with sub-50ms Kanban boards, velocity sparklines, Markdown ADR/PRD specs, and multi-tenant corporate RBAC on Cloudflare Workers and D1.',
   },
   {
     question: 'What roles or engagements are you currently open to?',

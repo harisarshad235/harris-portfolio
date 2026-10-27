@@ -123,12 +123,12 @@ const softwareAppSchema = {
     {
       '@type': 'SoftwareApplication',
       position: 1,
-      name: 'Takt',
+      name: 'Hubito',
       operatingSystem: 'All',
       applicationCategory: 'ProductivityApplication',
-      url: 'https://takt.harisarshad.site/',
+      url: 'https://hubito.harisarshad.site/tour',
       description:
-        'Precision Task Command Center, Pomodoro Cadence & Flow Workspace with local-first Cloudflare edge sync.',
+        'Workspace & Task Command Center, Pomodoro Cadence & Flow Engine with local-first Cloudflare edge sync.',
       author: {
         '@type': 'Person',
         name: 'Haris Arshad',
@@ -137,10 +137,10 @@ const softwareAppSchema = {
     {
       '@type': 'SoftwareApplication',
       position: 2,
-      name: 'Kynov',
+      name: 'Pacio',
       operatingSystem: 'All',
       applicationCategory: 'BusinessApplication',
-      url: 'https://kynov.harisarshad.site/',
+      url: 'https://pacio.harisarshad.site/',
       description:
         'Next-Gen Agile Engine & Modern Sprint Tracker with sub-50ms Kanban boards, sprint velocity sparklines, and multi-tenant corporate RBAC.',
       author: {

@@ -1,13 +1,13 @@
 export const flagshipProjects = [
   {
-    id: "takt",
-    title: "Takt",
+    id: "hubito",
+    title: "Hubito",
     category: "Precision Task Command Center & Flow Engine",
     badgeStyle: "bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border-emerald-500/25",
-    tagline: "Precision Task Command Center, Pomodoro Cadence & Flow Workspace",
-    description: "Conceived, architected, and built by Haris as a zero-friction personal execution engine. Combines tactile Kanban swimlanes, Pomodoro cadence time-blocking, day-wise calendar scheduling, and local-first edge sync.",
-    image: "/images/showcase/takt-mockup.webp",
-    liveUrl: "https://takt.harisarshad.site/",
+    tagline: "Workspace & Task Command Center, Pomodoro Cadence & Flow Engine",
+    description: "Conceived, architected, and built by Haris as an executive workspace and task command center for structured project execution and daily workflow momentum. Combines tactile Kanban swimlanes, Pomodoro cadence time-blocking, 7-day calendar scheduling, and local-first edge sync.",
+    image: "/images/showcase/hubito-mockup.webp",
+    liveUrl: "https://hubito.harisarshad.site/tour",
     keyFeatures: [
       "Tactile Kanban swimlanes with dynamic List, Board, and Calendar views",
       "Precision Pomodoro cadence, time-blocking & deep flow sessions",
@@ -18,15 +18,15 @@ export const flagshipProjects = [
     borderHoverClass: "group-hover:border-emerald-500/40"
   },
   {
-    id: "kynov",
-    title: "Kynov",
+    id: "pacio",
+    title: "Pacio",
     category: "Next-Gen Agile Engine & Sprint Tracker",
     badgeStyle: "bg-indigo-500/10 text-indigo-700 dark:text-indigo-300 border-indigo-500/25",
     tagline: "Sub-50ms Kanban Boards, Sprint Velocity Sparklines & Multi-Tenant Governance",
     description: "An edge-native Agile velocity and sprint tracking platform built for high-output engineering teams. Combines sub-50ms Kanban swimlanes, live sprint backlogs, velocity sparklines, integrated Markdown ADR/PRD specs, Git PR tracking, and multi-tenant corporate RBAC.",
-    image: "/images/showcase/kynov-mockup.webp",
-    liveUrl: "https://kynov.harisarshad.site/",
-    dashboardUrl: "https://kynov.harisarshad.site/dashboard",
+    image: "/images/showcase/pacio-mockup.webp",
+    liveUrl: "https://pacio.harisarshad.site/",
+    dashboardUrl: "https://pacio.harisarshad.site/dashboard",
     keyFeatures: [
       "Sub-50ms Kanban swimlanes with optimistic state, sprint backlogs & velocity sparklines",
       "Multi-tenant corporate governance with isolated workspaces & granular RBAC",
