@@ -246,7 +246,7 @@ export const ProjectImpact = styled.p`
   margin: 0 0 1.8rem;
   background: ${(props) => props.theme.colors.softSurface};
   border-radius: 8px;
-  border-left: 3px solid ${(props) => props.theme.colors.teal};
+  border: 1px solid ${(props) => props.theme.colors.teal};
   color: ${(props) => props.theme.colors.primary1};
   font-size: 1.4rem;
   line-height: 1.55;

@@ -62,11 +62,14 @@ export const Layout = ({children}) => {
 
       document.documentElement.classList.add('motion-ready')
       observeReveals(document)
-      mutationObserver = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => mutation.addedNodes.forEach(observeReveals))
-        revealVisibleElements()
-      })
-      mutationObserver.observe(document.querySelector('main'), { childList: true, subtree: true })
+      const mainEl = document.querySelector('main')
+      if (mainEl) {
+        mutationObserver = new MutationObserver((mutations) => {
+          mutations.forEach((mutation) => mutation.addedNodes.forEach(observeReveals))
+          revealVisibleElements()
+        })
+        mutationObserver.observe(mainEl, { childList: true, subtree: true })
+      }
     }
 
     return () => {
@@ -81,12 +84,12 @@ export const Layout = ({children}) => {
 
   return (
     <>
-    <ScrollProgress ref={progressRef} aria-hidden="true" />
-    <Container>
-     <Header/>
-     <main>{children}</main> 
-     <Footer/>
-    </Container>
+      <ScrollProgress ref={progressRef} aria-hidden="true" />
+      <Container>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </Container>
     </>
   )
 }

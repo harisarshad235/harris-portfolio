@@ -9,7 +9,6 @@ import {
   Check,
   Send,
   Calendar,
-  Sparkles,
   ArrowUpRight,
   MessageSquare,
   Building2,
@@ -19,7 +18,7 @@ import {
   Loader2,
 } from 'lucide-react';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
-import { ScrollReveal } from '../ui/MotionReveal';
+import { RouteSection } from '../ui/RouteSection';
 
 const SERVICES = [
   '30-min Consultation',
@@ -33,7 +32,7 @@ const SERVICES = [
 export const Contact = () => {
   const [copiedItem, setCopiedItem] = useState(null);
   const [selectedService, setSelectedService] = useState('30-min Consultation');
-  const [formState, setFormState] = useState('idle'); // 'idle' | 'loading' | 'success' | 'error'
+  const [formState, setFormState] = useState('idle');
   const [errorMessage, setErrorMessage] = useState('');
   const [formData, setFormData] = useState({
     name: '',
@@ -102,44 +101,52 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      {/* Background ambient lighting */}
-      <div
-        aria-hidden="true"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-tr from-primary/15 via-emerald-500/10 to-teal-500/5 blur-3xl pointer-events-none rounded-full"
-      />
-
-      {/* Section Header */}
-      <ScrollReveal className="mb-16 text-center max-w-3xl mx-auto">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-border bg-card text-foreground mb-4 shadow-sm backdrop-blur-md">
-          <Sparkles className="w-4 h-4 text-primary" />
-          <span>Let&apos;s Build Together · Available for Engagements</span>
+    <RouteSection
+      id="contact"
+      line="sunflower"
+      code="END"
+      surface="terminus"
+      isLast
+      className="border-b border-white/15"
+    >
+      {/* 6-Line Convergence Header */}
+      <div data-reveal className="mb-12">
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+          <h2 className="font-display text-3xl sm:text-5xl text-white">
+            Start with a Clear Conversation
+          </h2>
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-line-sunflower text-on-sunflower text-xs font-extrabold font-wide tabular">
+            <span className="w-2 h-2 rounded-full bg-[#0E1116]" />
+            CENTRAL TERMINUS · ALL LINES CONVERGE
+          </span>
         </div>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground mb-4">
-          Start with a Clear Conversation
-        </h2>
-        <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+
+        <p className="text-white/80 text-base sm:text-lg leading-relaxed max-w-[66ch] mb-6">
           Have a technology delivery challenge, PMO governance need, or full-stack software initiative? Reach out directly or send a message below.
         </p>
-      </ScrollReveal>
 
-      {/* 2-Column Responsive Grid: Contact Card + Interactive Form */}
+        {/* 6 Coloured Metro Lines Merging Bar */}
+        <div aria-hidden="true" className="grid grid-cols-6 gap-1.5 h-2.5 w-full max-w-xl rounded-full overflow-hidden">
+          <span className="bg-line-cobalt rounded-full" />
+          <span className="bg-line-vermilion rounded-full" />
+          <span className="bg-line-sunflower rounded-full" />
+          <span className="bg-line-green rounded-full" />
+          <span className="bg-line-violet rounded-full" />
+          <span className="bg-line-magenta rounded-full" />
+        </div>
+      </div>
+
+      {/* 2-Column Terminus Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-        {/* Left Column: 21st.dev-Inspired Executive Contact Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-30px 0px" }}
-          transition={{ type: "spring", stiffness: 280, damping: 26 }}
-          className="lg:col-span-5 flex flex-col justify-between rounded-3xl border border-border/80 bg-card p-6 sm:p-8 shadow-sm relative overflow-hidden"
+        {/* Left 5/12: Executive Dispatch Card */}
+        <div
+          data-reveal
+          className="lg:col-span-5 rounded-2xl bg-[#151922] text-white border-[1.5px] border-white/15 p-6 sm:p-8 flex flex-col justify-between"
         >
-          {/* Card Accent Top Glow */}
-          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-emerald-600 via-primary to-teal-400" />
-
           <div>
-            {/* Profile Avatar & Status Header */}
-            <div className="flex items-center gap-4 mb-6">
-              <div className="relative">
+            {/* Profile Header */}
+            <div className="flex items-center gap-4 pb-6 mb-6 border-b border-white/12">
+              <div className="relative shrink-0">
                 <img
                   src="/images/haris-arshad-profile.webp"
                   alt="Engr. Haris Arshad"
@@ -147,50 +154,50 @@ export const Contact = () => {
                   height={64}
                   loading="lazy"
                   decoding="async"
-                  className="w-16 h-16 rounded-2xl object-cover object-top border-2 border-border shadow-md"
+                  className="w-16 h-16 rounded-2xl object-cover object-top border-2 border-white/25"
                 />
                 <span
-                  className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-card"
+                  className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-line-green border-2 border-[#151922]"
                   title="Available for projects"
                 />
               </div>
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
+                <h3 className="font-display text-xl sm:text-2xl text-white">
                   Engr. Haris Arshad
                 </h3>
-                <p className="text-xs sm:text-sm text-primary font-semibold">
+                <p className="text-xs sm:text-sm text-line-sunflower font-extrabold font-wide mt-0.5">
                   PMP® · Project Manager &amp; Tech Delivery
                 </p>
               </div>
             </div>
 
-            {/* Availability & Response SLA Pill */}
-            <div className="space-y-2.5 mb-8">
-              <div className="flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-secondary/80 border border-border text-xs sm:text-sm font-medium text-foreground">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            {/* Availability & SLA Pills */}
+            <div className="space-y-2.5 mb-7">
+              <div className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/12 text-xs sm:text-sm font-bold text-white">
+                <span className="relative inline-flex w-2.5 h-2.5 rounded-full bg-line-green beacon shrink-0" />
                 <span>Open for PM/PMO roles &amp; engineering delivery</span>
               </div>
-              <div className="flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-secondary/50 border border-border/60 text-xs sm:text-sm text-muted-foreground">
-                <Clock className="w-4 h-4 text-primary shrink-0" />
+              <div className="flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl bg-white/5 border border-white/12 text-xs sm:text-sm text-white/80 font-medium">
+                <Clock className="w-4 h-4 text-line-sunflower shrink-0" aria-hidden="true" />
                 <span>Typical response time: under 24 hours</span>
               </div>
             </div>
 
-            {/* Direct Contact Channels with 1-Click Copy */}
-            <div className="space-y-3 mb-8">
-              {/* Email channel */}
-              <div className="flex items-center justify-between p-3.5 rounded-2xl bg-secondary/60 border border-border hover:border-primary/40 transition-colors">
+            {/* Direct Channels with 1-Click Copy */}
+            <div className="space-y-3 mb-7">
+              {/* Email */}
+              <div className="flex items-center justify-between p-3.5 rounded-xl bg-white/5 border border-white/12">
                 <div className="flex items-center gap-3 min-w-0 pr-2">
-                  <div className="w-9 h-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
-                    <Mail className="w-4 h-4" />
+                  <div className="w-9 h-9 rounded-lg bg-line-cobalt text-on-cobalt flex items-center justify-center shrink-0">
+                    <Mail className="w-4 h-4" aria-hidden="true" />
                   </div>
                   <div className="min-w-0">
-                    <div className="text-[11px] uppercase tracking-wider text-muted-foreground font-semibold">
+                    <div className="text-[11px] font-bold text-white/65 font-wide">
                       Email
                     </div>
                     <a
                       href="mailto:harisarshad235@gmail.com"
-                      className="text-xs sm:text-sm font-semibold text-foreground break-all hover:text-primary transition-colors block"
+                      className="text-xs sm:text-sm font-bold text-white break-all hover:text-line-sunflower transition-colors block"
                     >
                       harisarshad235@gmail.com
                     </a>
@@ -199,36 +206,36 @@ export const Contact = () => {
                 <button
                   type="button"
                   onClick={() => handleCopy('harisarshad235@gmail.com', 'email')}
-                  className="px-2.5 py-1.5 rounded-lg bg-card border border-border text-xs font-semibold text-foreground hover:bg-secondary active:scale-[0.96] transition-[transform,background-color,border-color] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] flex items-center gap-1.5 shrink-0 shadow-2xs cursor-pointer"
+                  className="px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-xs font-bold text-white active:scale-[0.96] transition-[transform,background-color] duration-150 flex items-center gap-1.5 shrink-0 cursor-pointer"
                   title="Copy email"
                 >
                   {copiedItem === 'email' ? (
                     <>
-                      <Check className="w-3.5 h-3.5 text-emerald-500" />
-                      <span className="text-emerald-500 font-semibold">Copied!</span>
+                      <Check className="w-3.5 h-3.5 text-line-green" aria-hidden="true" />
+                      <span className="text-line-green">Copied!</span>
                     </>
                   ) : (
                     <>
-                      <Copy className="w-3.5 h-3.5" />
+                      <Copy className="w-3.5 h-3.5" aria-hidden="true" />
                       <span>Copy</span>
                     </>
                   )}
                 </button>
               </div>
 
-              {/* Phone channel */}
-              <div className="flex items-center justify-between p-3.5 rounded-2xl bg-secondary/60 border border-border hover:border-primary/40 transition-colors">
+              {/* Phone */}
+              <div className="flex items-center justify-between p-3.5 rounded-xl bg-white/5 border border-white/12">
                 <div className="flex items-center gap-3 min-w-0 pr-2">
-                  <div className="w-9 h-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
-                    <Phone className="w-4 h-4" />
+                  <div className="w-9 h-9 rounded-lg bg-line-green text-on-green flex items-center justify-center shrink-0">
+                    <Phone className="w-4 h-4" aria-hidden="true" />
                   </div>
                   <div className="min-w-0">
-                    <div className="text-[11px] uppercase tracking-wider text-muted-foreground font-semibold">
+                    <div className="text-[11px] font-bold text-white/65 font-wide">
                       Phone &amp; WhatsApp
                     </div>
                     <a
                       href="tel:+923095597954"
-                      className="text-xs sm:text-sm font-semibold text-foreground truncate hover:text-primary transition-colors block"
+                      className="text-xs sm:text-sm font-bold text-white truncate hover:text-line-sunflower transition-colors block tabular"
                     >
                       +92 309 5597954
                     </a>
@@ -237,33 +244,33 @@ export const Contact = () => {
                 <button
                   type="button"
                   onClick={() => handleCopy('+923095597954', 'phone')}
-                  className="px-2.5 py-1.5 rounded-lg bg-card border border-border text-xs font-semibold text-foreground hover:bg-secondary active:scale-[0.96] transition-[transform,background-color,border-color] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] flex items-center gap-1.5 shrink-0 shadow-2xs cursor-pointer"
+                  className="px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-xs font-bold text-white active:scale-[0.96] transition-[transform,background-color] duration-150 flex items-center gap-1.5 shrink-0 cursor-pointer"
                   title="Copy phone"
                 >
                   {copiedItem === 'phone' ? (
                     <>
-                      <Check className="w-3.5 h-3.5 text-emerald-500" />
-                      <span className="text-emerald-500 font-semibold">Copied!</span>
+                      <Check className="w-3.5 h-3.5 text-line-green" aria-hidden="true" />
+                      <span className="text-line-green">Copied!</span>
                     </>
                   ) : (
                     <>
-                      <Copy className="w-3.5 h-3.5" />
+                      <Copy className="w-3.5 h-3.5" aria-hidden="true" />
                       <span>Copy</span>
                     </>
                   )}
                 </button>
               </div>
 
-              {/* Location channel */}
-              <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-secondary/60 border border-border">
-                <div className="w-9 h-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
-                  <MapPin className="w-4 h-4" />
+              {/* Location */}
+              <div className="flex items-center gap-3 p-3.5 rounded-xl bg-white/5 border border-white/12">
+                <div className="w-9 h-9 rounded-lg bg-line-vermilion text-on-vermilion flex items-center justify-center shrink-0">
+                  <MapPin className="w-4 h-4" aria-hidden="true" />
                 </div>
                 <div>
-                  <div className="text-[11px] uppercase tracking-wider text-muted-foreground font-semibold">
+                  <div className="text-[11px] font-bold text-white/65 font-wide">
                     Location &amp; Timezone
                   </div>
-                  <div className="text-xs sm:text-sm font-semibold text-foreground">
+                  <div className="text-xs sm:text-sm font-bold text-white">
                     Islamabad, Pakistan · PKT (UTC+5)
                   </div>
                 </div>
@@ -272,76 +279,74 @@ export const Contact = () => {
           </div>
 
           <div>
-            {/* Quick Consultation Booking Banner */}
+            {/* Calendly Direct Booking Banner */}
             <a
               href="https://calendly.com/harisarshad235/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-primary/15 via-emerald-500/10 to-teal-500/5 border border-primary/25 hover:border-primary transition-all group mb-6"
+              className="w-full flex items-center justify-between p-4 rounded-xl bg-line-sunflower text-[#0E1116] hover:bg-white transition-colors group mb-6"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-primary text-primary-foreground flex items-center justify-center font-bold">
-                  <Calendar className="w-5 h-5" />
+                <div className="w-10 h-10 rounded-lg bg-[#0E1116] text-[#FFCB3D] flex items-center justify-center font-bold shrink-0">
+                  <Calendar className="w-5 h-5" aria-hidden="true" />
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-foreground flex items-center gap-1.5">
-                    Schedule 30-min Call
-                    <ArrowUpRight className="w-3.5 h-3.5 text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  <div className="text-sm font-extrabold font-wide flex items-center gap-1.5">
+                    <span>Schedule 30-min Call</span>
+                    <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
                   </div>
-                  <div className="text-xs text-muted-foreground">
+                  <div className="text-xs font-bold opacity-80">
                     Pick a direct slot via Calendly
                   </div>
                 </div>
               </div>
             </a>
 
-            {/* Social Footnote */}
-            <div className="flex items-center justify-between pt-4 border-t border-border">
-              <span className="text-xs text-muted-foreground font-medium">Connect on:</span>
+            {/* Social Links */}
+            <div className="flex items-center justify-between pt-4 border-t border-white/12">
+              <span className="text-xs text-white/70 font-bold">Connect on:</span>
               <div className="flex items-center gap-2">
                 <a
                   href="https://pk.linkedin.com/in/haris-arshad"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-9 w-9 items-center justify-center rounded-xl bg-secondary text-foreground hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white hover:bg-line-cobalt hover:text-on-cobalt transition-colors"
                   aria-label="LinkedIn Profile"
                 >
-                  <AiFillLinkedin className="w-4 h-4" />
+                  <AiFillLinkedin className="w-4 h-4" aria-hidden="true" />
                 </a>
                 <a
                   href="https://github.com/harisarshad235"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-9 w-9 items-center justify-center rounded-xl bg-secondary text-foreground hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white hover:text-[#0E1116] transition-colors"
                   aria-label="GitHub Profile"
                 >
-                  <AiFillGithub className="w-4 h-4" />
+                  <AiFillGithub className="w-4 h-4" aria-hidden="true" />
                 </a>
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
 
-        {/* Right Column: Modern Interactive Form Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-30px 0px" }}
-          transition={{ type: "spring", stiffness: 280, damping: 26, delay: 0.1 }}
-          className="lg:col-span-7 rounded-3xl border border-border/80 bg-card p-6 sm:p-10 shadow-sm relative"
+        {/* Right 7/12: Interactive Dispatch Form */}
+        <div
+          data-reveal
+          style={{ '--d': '80ms' }}
+          className="lg:col-span-7 rounded-2xl bg-[#151922] text-white border-[1.5px] border-white/15 p-6 sm:p-10"
         >
           <div className="mb-6">
-            <h3 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight mb-2">
+            <h3 className="font-display text-2xl sm:text-3xl text-white mb-2">
               Send a Direct Message
             </h3>
-            <p className="text-xs sm:text-sm text-muted-foreground">
+            <p className="text-xs sm:text-sm text-white/75">
               Select what you need, provide your details, and I will get back to you promptly.
             </p>
           </div>
 
           {/* Interactive Service Selector Pills */}
           <div className="mb-6">
-            <label className="block text-xs uppercase tracking-wider font-semibold text-muted-foreground mb-2.5">
+            <label className="block text-xs font-extrabold font-wide text-white/80 mb-2.5">
               Select Interest or Scope
             </label>
             <div className="flex flex-wrap gap-2">
@@ -352,10 +357,10 @@ export const Contact = () => {
                     key={service}
                     type="button"
                     onClick={() => setSelectedService(service)}
-                    className={`px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-[transform,background-color,border-color,color] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-[0.97] cursor-pointer ${
+                    className={`px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold font-wide transition-[transform,background-color,color] duration-150 active:scale-[0.97] cursor-pointer ${
                       isSelected
-                        ? 'bg-primary text-primary-foreground shadow-sm'
-                        : 'bg-secondary text-foreground/85 hover:bg-secondary/80 border border-border'
+                        ? 'bg-line-sunflower text-[#0E1116]'
+                        : 'bg-white/10 text-white hover:bg-white/20'
                     }`}
                   >
                     {service}
@@ -369,26 +374,26 @@ export const Contact = () => {
             {formState === 'success' ? (
               <motion.div
                 key="success"
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                className="py-12 px-6 text-center flex flex-col items-center justify-center rounded-2xl bg-emerald-500/10 border border-emerald-500/20"
+                exit={{ opacity: 0, scale: 0.96 }}
+                className="py-12 px-6 text-center flex flex-col items-center justify-center rounded-2xl bg-white/5 border border-line-green"
               >
-                <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-500 flex items-center justify-center mb-4">
-                  <CheckCircle2 className="w-8 h-8" />
+                <div className="w-16 h-16 rounded-full bg-line-green text-on-green flex items-center justify-center mb-4">
+                  <CheckCircle2 className="w-8 h-8" aria-hidden="true" />
                 </div>
-                <h4 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
+                <h4 className="font-display text-2xl text-white mb-2">
                   Message Sent Successfully!
                 </h4>
-                <p className="text-xs sm:text-sm text-muted-foreground max-w-md mb-6 leading-relaxed">
+                <p className="text-xs sm:text-sm text-white/80 max-w-md mb-6 leading-relaxed">
                   Thank you for reaching out. Your inquiry regarding{' '}
-                  <span className="font-semibold text-foreground">{selectedService}</span> has been
+                  <span className="font-bold text-line-sunflower">{selectedService}</span> has been
                   received. I will follow up with you within 24 hours.
                 </p>
                 <button
                   type="button"
                   onClick={() => setFormState('idle')}
-                  className="px-6 py-2.5 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-all shadow-md"
+                  className="btn btn-sun"
                 >
                   Send another inquiry
                 </button>
@@ -396,24 +401,21 @@ export const Contact = () => {
             ) : (
               <form key="form" onSubmit={handleSubmit} className="space-y-4">
                 {formState === 'error' && (
-                  <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/25 flex items-start gap-3 text-red-600 dark:text-red-400 text-xs sm:text-sm">
-                    <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
+                  <div className="p-4 rounded-xl bg-line-vermilion text-on-vermilion flex items-start gap-3 text-xs sm:text-sm font-bold">
+                    <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" aria-hidden="true" />
                     <div>{errorMessage}</div>
                   </div>
                 )}
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Name field */}
+                  {/* Name */}
                   <div>
-                    <label
-                      htmlFor="form-name"
-                      className="block text-xs uppercase tracking-wider font-semibold text-muted-foreground mb-1.5"
-                    >
-                      Your Name <span className="text-primary">*</span>
+                    <label htmlFor="form-name" className="block text-xs font-extrabold font-wide text-white/80 mb-1.5">
+                      Your Name <span className="text-line-sunflower">*</span>
                     </label>
                     <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-muted-foreground">
-                        <User className="w-4 h-4" />
+                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-white/50">
+                        <User className="w-4 h-4" aria-hidden="true" />
                       </div>
                       <input
                         id="form-name"
@@ -423,22 +425,19 @@ export const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="e.g. Alex Johnson"
-                        className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-secondary/60 border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-[border-color,box-shadow,background-color] duration-150"
+                        className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#0B0D12] border border-white/20 text-white text-sm placeholder:text-white/45 focus:outline-none focus:border-line-sunflower"
                       />
                     </div>
                   </div>
 
-                  {/* Email field */}
+                  {/* Email */}
                   <div>
-                    <label
-                      htmlFor="form-email"
-                      className="block text-xs uppercase tracking-wider font-semibold text-muted-foreground mb-1.5"
-                    >
-                      Email Address <span className="text-primary">*</span>
+                    <label htmlFor="form-email" className="block text-xs font-extrabold font-wide text-white/80 mb-1.5">
+                      Email Address <span className="text-line-sunflower">*</span>
                     </label>
                     <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-muted-foreground">
-                        <Mail className="w-4 h-4" />
+                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-white/50">
+                        <Mail className="w-4 h-4" aria-hidden="true" />
                       </div>
                       <input
                         id="form-email"
@@ -448,24 +447,21 @@ export const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="alex@company.com"
-                        className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-secondary/60 border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-[border-color,box-shadow,background-color] duration-150"
+                        className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#0B0D12] border border-white/20 text-white text-sm placeholder:text-white/45 focus:outline-none focus:border-line-sunflower"
                       />
                     </div>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Company field */}
+                  {/* Company */}
                   <div>
-                    <label
-                      htmlFor="form-company"
-                      className="block text-xs uppercase tracking-wider font-semibold text-muted-foreground mb-1.5"
-                    >
+                    <label htmlFor="form-company" className="block text-xs font-extrabold font-wide text-white/80 mb-1.5">
                       Organization / Company
                     </label>
                     <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-muted-foreground">
-                        <Building2 className="w-4 h-4" />
+                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-white/50">
+                        <Building2 className="w-4 h-4" aria-hidden="true" />
                       </div>
                       <input
                         id="form-company"
@@ -474,22 +470,19 @@ export const Contact = () => {
                         value={formData.company}
                         onChange={handleChange}
                         placeholder="Company or Team name"
-                        className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-secondary/60 border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-[border-color,box-shadow,background-color] duration-150"
+                        className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#0B0D12] border border-white/20 text-white text-sm placeholder:text-white/45 focus:outline-none focus:border-line-sunflower"
                       />
                     </div>
                   </div>
 
-                  {/* Subject field */}
+                  {/* Subject */}
                   <div>
-                    <label
-                      htmlFor="form-subject"
-                      className="block text-xs uppercase tracking-wider font-semibold text-muted-foreground mb-1.5"
-                    >
-                      Subject / Project Scope <span className="text-primary">*</span>
+                    <label htmlFor="form-subject" className="block text-xs font-extrabold font-wide text-white/80 mb-1.5">
+                      Subject / Project Scope <span className="text-line-sunflower">*</span>
                     </label>
                     <div className="relative">
-                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-muted-foreground">
-                        <MessageSquare className="w-4 h-4" />
+                      <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-white/50">
+                        <MessageSquare className="w-4 h-4" aria-hidden="true" />
                       </div>
                       <input
                         id="form-subject"
@@ -499,19 +492,16 @@ export const Contact = () => {
                         value={formData.subject}
                         onChange={handleChange}
                         placeholder="e.g. ERP Migration delivery"
-                        className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-secondary/60 border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-[border-color,box-shadow,background-color] duration-150"
+                        className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#0B0D12] border border-white/20 text-white text-sm placeholder:text-white/45 focus:outline-none focus:border-line-sunflower"
                       />
                     </div>
                   </div>
                 </div>
 
-                {/* Message field */}
+                {/* Message */}
                 <div>
-                  <label
-                    htmlFor="form-message"
-                    className="block text-xs uppercase tracking-wider font-semibold text-muted-foreground mb-1.5"
-                  >
-                    Project Details &amp; Message <span className="text-primary">*</span>
+                  <label htmlFor="form-message" className="block text-xs font-extrabold font-wide text-white/80 mb-1.5">
+                    Project Details &amp; Message <span className="text-line-sunflower">*</span>
                   </label>
                   <textarea
                     id="form-message"
@@ -521,7 +511,7 @@ export const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Briefly describe your project goals, milestones, or current delivery hurdles..."
-                    className="w-full p-4 rounded-xl bg-secondary/60 border border-border text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-[border-color,box-shadow,background-color] duration-150 resize-y min-h-[110px]"
+                    className="w-full p-4 rounded-xl bg-[#0B0D12] border border-white/20 text-white text-sm placeholder:text-white/45 focus:outline-none focus:border-line-sunflower resize-y min-h-[115px]"
                   />
                 </div>
 
@@ -529,16 +519,16 @@ export const Contact = () => {
                 <button
                   type="submit"
                   disabled={formState === 'loading'}
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-primary text-primary-foreground font-bold text-sm sm:text-base hover:bg-primary/90 active:scale-[0.97] transition-[transform,background-color,box-shadow] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] shadow-md hover:shadow-lg cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="btn btn-sun w-full"
                 >
                   {formState === 'loading' ? (
                     <>
-                      <Loader2 className="w-5 h-5 animate-spin" />
+                      <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" />
                       <span>Sending message...</span>
                     </>
                   ) : (
                     <>
-                      <Send className="w-4 h-4" />
+                      <Send className="w-4 h-4" aria-hidden="true" />
                       <span>Send Project Inquiry</span>
                     </>
                   )}
@@ -546,9 +536,9 @@ export const Contact = () => {
               </form>
             )}
           </AnimatePresence>
-        </motion.div>
+        </div>
       </div>
-    </section>
+    </RouteSection>
   );
 };
 

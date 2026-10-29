@@ -23,7 +23,7 @@ const Theme = ({ children }) => {
     document.documentElement.dataset.theme = mode;
     window.localStorage.setItem('portfolio-theme', mode);
     const themeColor = document.querySelector('meta[name="theme-color"]');
-    if (themeColor) themeColor.setAttribute('content', mode === 'dark' ? '#070B09' : '#F7FAF8');
+    if (themeColor) themeColor.setAttribute('content', mode === 'dark' ? '#0B0D12' : '#F7F7F4');
   }, [mode, isReady]);
 
   const toggleTheme = () => setMode((currentMode) => currentMode === 'dark' ? 'light' : 'dark');

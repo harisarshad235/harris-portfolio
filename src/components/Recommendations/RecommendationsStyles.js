@@ -37,8 +37,7 @@ export const RecommendationCard = styled.div`
   gap: 2rem;
   padding: 2.4rem;
   border: 1px solid ${(props) => props.theme.colors.border};
-  border-left: 4px solid ${(props) => props.theme.colors.accent1};
-  border-radius: 8px;
+  border-radius: 16px;
   background: ${(props) => props.theme.colors.background2};
   box-shadow: 0 12px 32px rgba(29, 42, 45, 0.06);
 
@@ -382,8 +381,7 @@ export const RecommendationApprovalPanel = styled.section`
   margin: 0 auto;
   padding: 2.8rem;
   border: 1px solid ${(props) => props.theme.colors.border};
-  border-left: 4px solid ${(props) => props.theme.colors.accent1};
-  border-radius: 8px;
+  border-radius: 16px;
   background: ${(props) => props.theme.colors.background2};
   box-shadow: 0 12px 32px rgba(29, 42, 45, 0.06);
 

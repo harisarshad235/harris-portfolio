@@ -1,31 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowUpRight, FiMessageSquare, FiX } from 'react-icons/fi';
-
-import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import { ScrollReveal } from '../ui/MotionReveal';
-import {
-  RecommendationActions,
-  RecommendationButton,
-  RecommendationCard,
-  RecommendationCopy,
-  RecommendationDialog,
-  RecommendationField,
-  RecommendationForm,
-  RecommendationInput,
-  RecommendationLabel,
-  RecommendationLink,
-  RecommendationList,
-  RecommendationMark,
-  RecommendationQuote,
-  RecommendationStatus,
-  RecommendationTextArea,
-  RecommendationTitle,
-  RecommendationAttribution,
-  RecommendationEmptyState,
-} from './RecommendationsStyles';
-
-const MotionRecommendationCard = motion(RecommendationCard);
+import { RouteSection } from '../ui/RouteSection';
 
 const SEED_RECOMMENDATIONS = [
   {
@@ -112,82 +87,136 @@ const Recommendations = () => {
       setFormState('sent');
     } catch (error) {
       console.error('Recommendation submission failed.', error);
-      setErrorMessage(error instanceof Error
-        ? error.message
-        : 'Your feedback could not be sent. Please try again.');
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : 'Your feedback could not be sent. Please try again.'
+      );
       setFormState('error');
     }
   };
 
   return (
-    <Section id="recommendations">
+    <RouteSection
+      id="recommendations"
+      line="magenta"
+      code="L6"
+      surface="tinted"
+      className="border-b-[1.5px] border-rule/15"
+    >
       {(recommendationsLoading || recommendationsError || approvedRecommendations.length > 0) && (
-        <ScrollReveal>
-          <SectionTitle>Recommendations</SectionTitle>
-          <SectionText>
+        <div data-reveal className="mb-10">
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+            <h2 className="font-display text-3xl sm:text-5xl text-ink">
+              Recommendations
+            </h2>
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-line-magenta text-on-magenta text-xs font-extrabold font-wide">
+              <span className="w-2 h-2 rounded-full bg-current" />
+              MAGENTA LINE · STAKEHOLDER ENDORSEMENTS
+            </span>
+          </div>
+          <p className="text-ink-2 text-base sm:text-lg leading-relaxed max-w-[66ch]">
             Feedback from colleagues, clients, and managers who have worked with me.
-          </SectionText>
-        </ScrollReveal>
-      )}
-      {recommendationsLoading ? (
-        <RecommendationEmptyState role="status">Loading approved recommendations…</RecommendationEmptyState>
-      ) : recommendationsError ? (
-        <RecommendationStatus $error role="status">{recommendationsError}</RecommendationStatus>
-      ) : approvedRecommendations.length ? (
-        <RecommendationList aria-label="Approved recommendations">
-          {approvedRecommendations.map(({ id, quote, name, designation, organization }, index) => (
-            <MotionRecommendationCard
-              as="article"
-              key={id}
-              initial={{ opacity: 0, y: 20, scale: 0.98 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, margin: "2000px 0px" }}
-              transition={{ duration: 0.35, delay: (index % 4) * 0.08, ease: [0.23, 1, 0.32, 1] }}
-              whileHover={{ y: -4 }}
-            >
-              <RecommendationMark aria-hidden="true"><FiMessageSquare /></RecommendationMark>
-              <RecommendationQuote>{quote}</RecommendationQuote>
-              {(name || designation || organization) && (
-                <RecommendationAttribution>
-                  {name && <strong>{name}</strong>}
-                  {(designation || organization) && (
-                    <span>{[designation, organization].filter(Boolean).join(' · ')}</span>
-                  )}
-                </RecommendationAttribution>
-              )}
-            </MotionRecommendationCard>
-          ))}
-        </RecommendationList>
-      ) : null}
-      <MotionRecommendationCard
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "250px" }}
-        whileHover={{ y: -3 }}
-        transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
-      >
-        <RecommendationMark aria-hidden="true"><FiMessageSquare /></RecommendationMark>
-        <div>
-          <RecommendationTitle>Feedback from people I’ve worked with</RecommendationTitle>
-          <RecommendationCopy>
-            Worked with me on an enterprise program, PMO rollout, or software product? Share your experience or view verified references on LinkedIn.
-          </RecommendationCopy>
+          </p>
         </div>
-        <RecommendationActions>
-          <RecommendationLink
+      )}
+
+      {recommendationsLoading ? (
+        <div role="status" className="card p-6 text-sm font-bold text-ink-2 mb-6">
+          Loading approved recommendations…
+        </div>
+      ) : recommendationsError ? (
+        <div role="status" className="card p-6 text-sm font-bold text-line-vermilion mb-6">
+          {recommendationsError}
+        </div>
+      ) : approvedRecommendations.length ? (
+        <div
+          aria-label="Approved recommendations"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6"
+        >
+          {approvedRecommendations.map(({ id, quote, name, designation, organization }, index) => (
+            <article
+              key={id}
+              data-reveal
+              style={{ '--d': `${index * 80}ms` }}
+              className="card card-lift overflow-hidden flex flex-col justify-between"
+            >
+              <div>
+                <div className="h-2 w-full bg-line-magenta" aria-hidden="true" />
+                <div className="p-6 sm:p-7">
+                  <div className="flex items-center justify-between gap-2 mb-4">
+                    <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-line-magenta text-on-magenta">
+                      <FiMessageSquare className="w-4 h-4" aria-hidden="true" />
+                    </span>
+                    <span className="px-2.5 py-0.5 rounded-full bg-surface-2 text-ink text-xs font-extrabold font-wide tabular">
+                      REF-0{index + 1}
+                    </span>
+                  </div>
+
+                  <blockquote className="text-sm sm:text-base text-ink leading-relaxed font-medium mb-6">
+                    &ldquo;{quote}&rdquo;
+                  </blockquote>
+                </div>
+              </div>
+
+              {(name || designation || organization) && (
+                <div className="px-6 py-4 bg-surface-2/60 border-t border-rule/12 flex items-center gap-3">
+                  <span className="station !w-3 !h-3 shrink-0" aria-hidden="true" />
+                  <div className="text-xs sm:text-sm">
+                    {name && <strong className="block font-extrabold text-ink">{name}</strong>}
+                    {(designation || organization) && (
+                      <span className="text-ink-2 font-semibold">
+                        {[designation, organization].filter(Boolean).join(' · ')}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              )}
+            </article>
+          ))}
+        </div>
+      ) : null}
+
+      {/* Callout Card to View LinkedIn or Add Feedback */}
+      <div
+        data-reveal
+        className="card p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
+      >
+        <div className="flex items-start gap-4">
+          <span
+            aria-hidden="true"
+            className="w-11 h-11 rounded-full bg-ink text-paper flex items-center justify-center shrink-0 mt-0.5"
+          >
+            <FiMessageSquare className="w-5 h-5" />
+          </span>
+          <div>
+            <h3 className="font-display text-xl sm:text-2xl text-ink mb-1.5">
+              Feedback from people I&rsquo;ve worked with
+            </h3>
+            <p className="text-sm sm:text-base text-ink-2 max-w-[60ch]">
+              Worked with me on an enterprise program, PMO rollout, or software product? Share your experience or view verified references on LinkedIn.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-3 shrink-0">
+          <a
             href="https://pk.linkedin.com/in/haris-arshad"
             target="_blank"
             rel="noopener noreferrer"
+            className="btn btn-outline"
           >
-            View LinkedIn <FiArrowUpRight aria-hidden="true" />
-          </RecommendationLink>
-          <RecommendationButton type="button" onClick={openDialog}>
-            Add feedback
-          </RecommendationButton>
-        </RecommendationActions>
-      </MotionRecommendationCard>
+            <span>View LinkedIn</span>
+            <FiArrowUpRight aria-hidden="true" />
+          </a>
+          <button type="button" onClick={openDialog} className="btn btn-ink">
+            <span>Add feedback</span>
+          </button>
+        </div>
+      </div>
 
-      <RecommendationDialog
+      {/* Modal Dialog for Submitting Feedback */}
+      <dialog
         ref={dialogRef}
         aria-labelledby="recommendation-dialog-title"
         onClick={(event) => {
@@ -196,79 +225,125 @@ const Recommendations = () => {
         onClose={() => {
           if (formState !== 'sent') setFormState('idle');
         }}
+        className="w-full max-w-xl rounded-2xl bg-surface text-ink border-2 border-ink p-0 shadow-2xl backdrop:bg-black/60 m-auto"
       >
-        <RecommendationForm onSubmit={handleSubmit}>
-          <div className="dialog-heading">
-            <div>
-              <p className="eyebrow">Your perspective matters</p>
-              <h3 id="recommendation-dialog-title">Share feedback</h3>
-            </div>
-            <button className="close-button" type="button" onClick={closeDialog} aria-label="Close feedback dialog">
+        <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-4">
+          <div className="flex items-center justify-between gap-4 pb-4 border-b border-rule/15">
+            <h3 id="recommendation-dialog-title" className="font-display text-2xl text-ink">
+              Share feedback
+            </h3>
+            <button
+              type="button"
+              onClick={closeDialog}
+              aria-label="Close feedback dialog"
+              className="w-9 h-9 rounded-full bg-surface-2 text-ink inline-flex items-center justify-center hover:bg-ink hover:text-paper transition-colors cursor-pointer"
+            >
               <FiX aria-hidden="true" />
             </button>
           </div>
 
           {formState === 'sent' ? (
-            <div className="success-panel">
-              <RecommendationStatus role="status">
+            <div className="space-y-4 py-4">
+              <p role="status" className="p-4 rounded-xl bg-surface-2 text-ink text-sm font-semibold">
                 Thank you for sharing your feedback. It has been sent to Haris for review and will not appear publicly unless approved.
-              </RecommendationStatus>
-              <RecommendationButton type="button" onClick={closeDialog}>Done</RecommendationButton>
+              </p>
+              <button type="button" onClick={closeDialog} className="btn btn-ink">
+                Done
+              </button>
             </div>
           ) : (
             <>
-              <p className="intro">Your feedback will be sent privately to Haris for review.</p>
-              <RecommendationField>
-                <RecommendationLabel htmlFor="recommendation-feedback">Your feedback</RecommendationLabel>
-                <RecommendationTextArea
+              <p className="text-sm text-ink-2">
+                Your feedback will be sent privately to Haris for review.
+              </p>
+
+              <div>
+                <label htmlFor="recommendation-feedback" className="field-label">
+                  Your feedback
+                </label>
+                <textarea
                   id="recommendation-feedback"
                   name="feedback"
                   rows="5"
                   maxLength="3000"
                   placeholder="Share what it was like to work together..."
                   required
+                  className="field"
                 />
-              </RecommendationField>
-              <div className="details-grid">
-                <RecommendationField>
-                  <RecommendationLabel htmlFor="recommendation-name">Your name (optional)</RecommendationLabel>
-                  <RecommendationInput id="recommendation-name" name="name" maxLength="120" autoComplete="name" />
-                </RecommendationField>
-                <RecommendationField>
-                  <RecommendationLabel htmlFor="recommendation-designation">Job title (optional)</RecommendationLabel>
-                  <RecommendationInput id="recommendation-designation" name="designation" maxLength="120" autoComplete="organization-title" />
-                </RecommendationField>
               </div>
-              <RecommendationField>
-                <RecommendationLabel htmlFor="recommendation-organization">Where did you work with Haris? (optional)</RecommendationLabel>
-                <RecommendationInput
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="recommendation-name" className="field-label">
+                    Your name (optional)
+                  </label>
+                  <input
+                    id="recommendation-name"
+                    name="name"
+                    maxLength="120"
+                    autoComplete="name"
+                    className="field"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="recommendation-designation" className="field-label">
+                    Job title (optional)
+                  </label>
+                  <input
+                    id="recommendation-designation"
+                    name="designation"
+                    maxLength="120"
+                    autoComplete="organization-title"
+                    className="field"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="recommendation-organization" className="field-label">
+                  Where did you work with Haris? (optional)
+                </label>
+                <input
                   id="recommendation-organization"
                   name="organization"
                   maxLength="160"
                   placeholder="Company, client, or project"
                   autoComplete="organization"
+                  className="field"
                 />
-              </RecommendationField>
-              <div className="honeypot" aria-hidden="true">
+              </div>
+
+              <div className="hidden" aria-hidden="true">
                 <label htmlFor="recommendation-website">Leave this field empty</label>
                 <input id="recommendation-website" name="website" tabIndex="-1" autoComplete="off" />
               </div>
-              <label className="consent">
-                <input type="checkbox" name="permission" required />
-                <span>I give permission for Haris to publish my feedback and any name, job title, or organization I provide if he approves it. It will stay private until he approves it.</span>
+
+              <label className="flex items-start gap-2.5 text-xs text-ink-2 cursor-pointer">
+                <input type="checkbox" name="permission" required className="mt-1" />
+                <span>
+                  I give permission for Haris to publish my feedback and any name, job title, or organization I provide if he approves it. It will stay private until he approves it.
+                </span>
               </label>
-              {formState === 'error' && <RecommendationStatus $error role="alert">{errorMessage}</RecommendationStatus>}
-              <div className="dialog-actions">
-                <button className="cancel-button" type="button" onClick={closeDialog}>Cancel</button>
-                <RecommendationButton type="submit" disabled={formState === 'sending'}>
+
+              {formState === 'error' && (
+                <p role="alert" className="p-3 rounded-xl bg-line-vermilion text-on-vermilion text-xs font-bold">
+                  {errorMessage}
+                </p>
+              )}
+
+              <div className="flex items-center justify-end gap-3 pt-2">
+                <button type="button" onClick={closeDialog} className="btn btn-outline btn-sm">
+                  Cancel
+                </button>
+                <button type="submit" disabled={formState === 'sending'} className="btn btn-ink btn-sm">
                   {formState === 'sending' ? 'Sending…' : 'Send feedback'}
-                </RecommendationButton>
+                </button>
               </div>
             </>
           )}
-        </RecommendationForm>
-      </RecommendationDialog>
-    </Section>
+        </form>
+      </dialog>
+    </RouteSection>
   );
 };
 

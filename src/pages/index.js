@@ -1,6 +1,5 @@
 import Head from 'next/head';
 
-import BgAnimation from '../components/BackgrooundAnimation/BackgroundAnimation';
 import Hero from '../components/Hero/Hero';
 import FlagshipProjects from '../components/sections/FlagshipProjects';
 import Projects from '../components/Projects/Projects';
@@ -11,7 +10,6 @@ import Timeline from '../components/TimeLine/TimeLine';
 import FAQ, { FAQ_DATA } from '../components/FAQ/FAQ';
 import Contact from '../components/Contact/Contact';
 import { Layout } from '../layout/Layout';
-import { HeroStage } from '../components/Hero/HeroStyles';
 
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://harisarshad.site').replace(/\/$/, '');
 const pageTitle = 'Haris Arshad, PMP® – Technical Project Manager & Delivery Lead';
@@ -194,9 +192,7 @@ const Home = () => {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema) }}
         />
       </Head>
-      <div className="w-full">
-        <Hero />
-      </div>
+      <Hero />
       <Timeline />
       <FlagshipProjects />
       <Projects />

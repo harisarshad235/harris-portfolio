@@ -1,29 +1,34 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiCheckSquare, FiLayers, FiCode, FiGrid, FiSliders } from 'react-icons/fi';
-import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { techStack } from '../../constants/techStack';
-import { ScrollReveal } from '../ui/MotionReveal';
+import { RouteSection } from '../ui/RouteSection';
 
 const categoryMeta = {
   delivery: {
     icon: FiCheckSquare,
-    badgeColor: 'text-emerald-700 dark:text-emerald-300 bg-emerald-500/10 border-emerald-500/25',
-    accentColor: '#059669',
+    zone: 'ZONE A · PMO',
+    pill: 'bg-line-green text-on-green',
+    bar: 'bg-line-green',
+    dot: 'bg-line-green',
     description:
       'Schedule baselines, Earned Value Management (EVM), PMO controls, and Agile sprint governance to steer initiatives from planning through release.',
   },
   platforms: {
     icon: FiLayers,
-    badgeColor: 'text-teal-700 dark:text-teal-300 bg-teal-500/10 border-teal-500/25',
-    accentColor: '#0D9488',
+    zone: 'ZONE B · CLOUD',
+    pill: 'bg-line-cobalt text-on-cobalt',
+    bar: 'bg-line-cobalt',
+    dot: 'bg-line-cobalt',
     description:
       'Edge infrastructure, distributed cloud databases, telemetry networks, and automated CI/CD release management.',
   },
   software: {
     icon: FiCode,
-    badgeColor: 'text-amber-700 dark:text-amber-300 bg-amber-500/10 border-amber-500/25',
-    accentColor: '#D97706',
+    zone: 'ZONE C · SDLC',
+    pill: 'bg-line-vermilion text-on-vermilion',
+    bar: 'bg-line-vermilion',
+    dot: 'bg-line-vermilion',
     description:
       'Modern reactive frontend applications, enterprise backend services, and cross-platform mobile ecosystems coordinated with engineering squads.',
   },
@@ -43,88 +48,94 @@ const TechStack = () => {
   );
 
   return (
-    <Section id="skills">
-      <ScrollReveal>
-        <SectionTitle>Technology &amp; delivery stack</SectionTitle>
-        <SectionText>
-          Project delivery governance and control frameworks, alongside the cloud, backend, and frontend technologies I coordinate across cross-functional teams.
-        </SectionText>
-      </ScrollReveal>
-
-      {/* Interactive Category Filter Bar */}
-      <ScrollReveal delay={0.1} className="flex flex-wrap items-center gap-2 mb-8" role="tablist" aria-label="Filter technologies by category">
-        <motion.button
-          type="button"
-          role="tab"
-          whileTap={{ scale: 0.97 }}
-          aria-selected={activeTab === 'all'}
-          onClick={() => setActiveTab('all')}
-          className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-[transform,background-color,border-color,color] duration-150 cursor-pointer ${
-            activeTab === 'all'
-              ? 'bg-primary text-primary-foreground shadow-sm'
-              : 'bg-card border border-border text-foreground hover:bg-secondary'
-          }`}
-        >
-          <FiGrid className="w-4 h-4" />
-          <span>All Capabilities</span>
-          <span className="text-[11px] px-1.5 py-0.5 rounded-md bg-primary-foreground/20 text-inherit font-mono font-medium">
-            {totalSkillsCount}
+    <RouteSection
+      id="skills"
+      line="green"
+      code="L4"
+      surface="tinted"
+      className="border-b-[1.5px] border-rule/15"
+    >
+      <div data-reveal className="mb-8">
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+          <h2 className="font-display text-3xl sm:text-5xl text-ink">
+            Technology &amp; Delivery Stack
+          </h2>
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-line-green text-on-green text-xs font-extrabold font-wide">
+            <span className="w-2 h-2 rounded-full bg-ink" />
+            GREEN LINE · {totalSkillsCount} COMPETENCIES
           </span>
-        </motion.button>
+        </div>
 
-        {techStack.map((category) => {
-          const isSelected = activeTab === category.id;
-          const meta = categoryMeta[category.id] || {};
-          const Icon = meta.icon || FiSliders;
+        <p className="text-ink-2 text-base sm:text-lg leading-relaxed max-w-[66ch] mb-7">
+          Project delivery governance and control frameworks, alongside the cloud, backend, and frontend technologies I coordinate across cross-functional teams.
+        </p>
 
-          return (
-            <motion.button
-              key={category.id}
-              type="button"
-              role="tab"
-              whileTap={{ scale: 0.97 }}
-              aria-selected={isSelected}
-              onClick={() => setActiveTab(category.id)}
-              className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-[transform,background-color,border-color,color] duration-150 cursor-pointer ${
-                isSelected
-                  ? 'bg-primary text-primary-foreground shadow-sm'
-                  : 'bg-card border border-border text-foreground hover:bg-secondary'
-              }`}
-            >
-              <Icon className="w-3.5 h-3.5" />
-              <span>{category.name.split('&')[0].trim()}</span>
-              <span
-                className={`text-[11px] px-1.5 py-0.5 rounded-md font-mono font-medium ${
-                  isSelected
-                    ? 'bg-primary-foreground/20 text-inherit'
-                    : 'bg-secondary text-foreground'
-                }`}
+        {/* Interactive Zone Filter Tabs */}
+        <div
+          className="flex flex-wrap items-center gap-2"
+          role="tablist"
+          aria-label="Filter technologies by category"
+        >
+          <button
+            type="button"
+            role="tab"
+            aria-selected={activeTab === 'all'}
+            onClick={() => setActiveTab('all')}
+            className="tab"
+          >
+            <FiGrid className="w-4 h-4" aria-hidden="true" />
+            <span>All Capabilities</span>
+            <span className="tab-count">{totalSkillsCount}</span>
+          </button>
+
+          {techStack.map((category) => {
+            const isSelected = activeTab === category.id;
+            const meta = categoryMeta[category.id] || {};
+            const Icon = meta.icon || FiSliders;
+
+            return (
+              <button
+                key={category.id}
+                type="button"
+                role="tab"
+                aria-selected={isSelected}
+                onClick={() => setActiveTab(category.id)}
+                className="tab"
               >
-                {category.technologies.length}
-              </span>
-            </motion.button>
-          );
-        })}
-      </ScrollReveal>
+                <span
+                  aria-hidden="true"
+                  className={`w-2.5 h-2.5 rounded-full ${meta.dot || 'bg-line-green'}`}
+                />
+                <Icon className="w-3.5 h-3.5" aria-hidden="true" />
+                <span>{category.name.split('&')[0].trim()}</span>
+                <span className="tab-count">{category.technologies.length}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
 
-      {/* Asymmetric Bento Grid of Category Cards */}
-      <div className={`grid gap-6 ${activeTab === 'all' ? 'grid-cols-1 lg:grid-cols-12' : 'grid-cols-1 max-w-4xl mx-auto'}`}>
+      {/* Asymmetric Bento Grid of System Zones */}
+      <div
+        className={`grid gap-6 ${
+          activeTab === 'all' ? 'grid-cols-1 lg:grid-cols-12' : 'grid-cols-1 max-w-4xl'
+        }`}
+      >
         <AnimatePresence mode="popLayout">
-          {visibleCategories.map((category, index) => {
+          {visibleCategories.map((category) => {
             const meta = categoryMeta[category.id] || {};
             const CategoryIcon = meta.icon || FiSliders;
             const isDelivery = category.id === 'delivery';
             const isPlatforms = category.id === 'platforms';
-            const isSoftware = category.id === 'software';
 
-            // Asymmetric Bento sizing: Delivery takes 7 cols, Platforms takes 5 cols, Software spans 12 cols
-            const colSpanClass = activeTab === 'all'
-              ? isDelivery
-                ? 'lg:col-span-7'
-                : isPlatforms
-                ? 'lg:col-span-5'
-                : 'lg:col-span-12'
-              : 'w-full';
+            const colSpanClass =
+              activeTab === 'all'
+                ? isDelivery
+                  ? 'lg:col-span-7'
+                  : isPlatforms
+                  ? 'lg:col-span-5'
+                  : 'lg:col-span-12'
+                : 'w-full';
 
             return (
               <motion.article
@@ -133,51 +144,50 @@ const TechStack = () => {
                 initial={{ opacity: 0, y: 20, scale: 0.98 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.97 }}
-                transition={{ duration: 0.35, delay: index * 0.06, ease: [0.23, 1, 0.32, 1] }}
-                whileHover={{ y: -4 }}
-                className={`group relative rounded-2xl border border-border bg-card p-6 sm:p-7 shadow-xs hover:shadow-md hover:border-primary/40 transition-[transform,border-color,box-shadow] duration-200 flex flex-col justify-between ${colSpanClass}`}
+                transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
+                className={`card card-lift overflow-hidden flex flex-col justify-between ${colSpanClass}`}
               >
-                {/* Header */}
-                <div className="mb-6">
-                  <div className="flex items-center justify-between gap-3 mb-3">
-                    <span
-                      className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider border ${
-                        meta.badgeColor || 'bg-secondary text-foreground'
-                      }`}
-                    >
-                      <CategoryIcon className="w-3.5 h-3.5" />
-                      {category.label}
-                    </span>
-                    <span className="text-xs font-medium text-muted-foreground font-mono">
-                      {category.technologies.length} competencies
-                    </span>
-                  </div>
-
-                  <h3 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight mb-2">
-                    {category.name}
-                  </h3>
-
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-2xl">
-                    {meta.description}
-                  </p>
-                </div>
-
-                {/* Skills Badges Grid */}
                 <div>
-                  <div className="pt-4 border-t border-border flex flex-wrap gap-2">
-                    {category.technologies.map(({ name, icon: Icon, color }) => (
+                  <div className={`h-2 w-full ${meta.bar || 'bg-line-green'}`} aria-hidden="true" />
+                  <div className="p-6 sm:p-7">
+                    <div className="flex items-center justify-between gap-3 mb-4">
                       <span
-                        key={name}
-                        className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-secondary/80 hover:bg-secondary border border-border/80 hover:border-primary/30 text-xs sm:text-sm font-semibold text-foreground transition-[transform,background-color,border-color] duration-150 hover:-translate-y-0.5 shadow-2xs"
+                        className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-extrabold font-wide ${
+                          meta.pill || 'bg-line-green text-on-green'
+                        }`}
                       >
-                        <Icon
-                          aria-hidden="true"
-                          className="w-4 h-4 shrink-0 transition-transform duration-150 group-hover:scale-105"
-                          style={{ color }}
-                        />
-                        <span>{name}</span>
+                        <CategoryIcon className="w-3.5 h-3.5" aria-hidden="true" />
+                        <span>{meta.zone || category.label}</span>
                       </span>
-                    ))}
+                      <span className="text-xs font-extrabold text-ink-2 font-wide tabular">
+                        {category.technologies.length} STOPS
+                      </span>
+                    </div>
+
+                    <h3 className="font-display text-2xl sm:text-3xl text-ink mb-2">
+                      {category.name}
+                    </h3>
+
+                    <p className="text-xs sm:text-sm text-ink-2 leading-relaxed max-w-2xl mb-6">
+                      {meta.description}
+                    </p>
+
+                    {/* Station Skills Grid */}
+                    <div className="pt-5 border-t border-rule/12 flex flex-wrap gap-2.5">
+                      {category.technologies.map(({ name, icon: Icon, color }) => (
+                        <span
+                          key={name}
+                          className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-surface-2 text-ink shadow-[inset_0_0_0_1.5px_rgb(var(--rule-rgb)/0.16)] text-xs sm:text-sm font-bold"
+                        >
+                          <Icon
+                            aria-hidden="true"
+                            className="w-4 h-4 shrink-0"
+                            style={{ color }}
+                          />
+                          <span>{name}</span>
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </motion.article>
@@ -185,7 +195,7 @@ const TechStack = () => {
           })}
         </AnimatePresence>
       </div>
-    </Section>
+    </RouteSection>
   );
 };
 

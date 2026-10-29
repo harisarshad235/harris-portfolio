@@ -1,153 +1,165 @@
-import React, { useState, useRef, useEffect } from 'react';
-
-import {
-  AboutActions,
-  AboutLink,
-  CarouselButton,
-  CarouselButtonDot,
-  CarouselButtons,
-  CarouselContainer,
-  CarouselItem,
-  CarouselItemCompany,
-  CarouselItemImg,
-  CarouselItemRole,
-  CarouselItemText,
-  CarouselItemTitle,
-  CarouselMobileScrollNode,
-} from './TimeLineStyles';
-import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
+import React, { useState, useRef } from 'react';
+import { ArrowRight } from 'lucide-react';
 import { TimeLineData } from '../../constants/constants';
-import { ScrollReveal } from '../ui/MotionReveal';
-
-const TOTAL_CAROUSEL_COUNT = TimeLineData.length;
+import { RouteSection } from '../ui/RouteSection';
 
 const Timeline = () => {
-  const [activeItem, setActiveItem] = useState(0);
-  const carouselRef = useRef();
+  const [activeItem, setActiveItem] = useState(TimeLineData.length - 1);
+  const cardsRef = useRef([]);
 
-  const scroll = (node, left) => {
-    return node.scrollTo({ left, behavior: 'smooth' });
-  }
-
-  const handleClick = (e, i) => {
-    e.preventDefault();
-
-    if (carouselRef.current) {
-      const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 0.7 * (i / TimeLineData.length));
-      
-      scroll(carouselRef.current, scrollLeft);
+  const handleSelectStation = (index) => {
+    setActiveItem(index);
+    const cardEl = cardsRef.current[index];
+    if (cardEl && window.innerWidth < 1024) {
+      cardEl.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     }
-  }
-
-  const handleScroll = () => {
-    if (carouselRef.current) {
-      const index = Math.round((carouselRef.current.scrollLeft / (carouselRef.current.scrollWidth * 0.7)) * TimeLineData.length);
-
-      setActiveItem(index);
-    }
-  }
-
-  // snap back to beginning of scroll when window is resized
-  // avoids a bug where content is covered up if coming from smaller screen
-  useEffect(() => {
-    const handleResize = () => {
-      scroll(carouselRef.current, 0);
-    }
-
-    window.addEventListener('resize', handleResize);
-      return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  };
 
   return (
-    <Section id="about">
-      <ScrollReveal>
-        <SectionTitle>About Haris Arshad</SectionTitle>
-        <SectionText>
-          PMP®-certified Technical Project Manager and Registered Professional Engineer (PE) with 6+ years of technical delivery experience, including 3+ years directing cross-functional software engineering, cloud platform, and SaaS initiatives across Fixed Price (FP) and Time &amp; Materials (T&amp;M) models. Holding a Master of Science in Project Management (Bahria University) and a B.S. in Electrical Engineering (COMSATS), I specialize in bridging technical PMO governance with modern SDLC execution.
-        </SectionText>
-        <SectionText style={{ marginTop: '-1.4rem' }}>
-          My track record combines large-scale infrastructure governance and agile product leadership: managing a PKR 700M+ multi-site portfolio (150+ operational sites) at AJCL, delivering PKR 103M+ in EVM cost savings (22.5% below baseline budget) on a nationwide Track &amp; Trace program, steering Agile delivery for Tier-1 clients including Telenor and FAB at SOFTOO, and currently directing concurrent SaaS engineering sprints at Sigma Digital Solutions with 0% scope creep and 100% on-time client acceptance.
-        </SectionText>
-      </ScrollReveal>
-      <ScrollReveal delay={0.1}>
-        <AboutActions>
-          <AboutLink href="#client-projects" $primary>Explore project case studies</AboutLink>
-          <AboutLink href="#contact">Hiring or need delivery support? Let&apos;s talk <span aria-hidden="true">→</span></AboutLink>
-        </AboutActions>
-      </ScrollReveal>
-      <ScrollReveal delay={0.15}>
-        <CarouselContainer ref={carouselRef} onScroll={handleScroll} aria-label="Career timeline">
-          <>
-            {TimeLineData.map((item, index) => (
-              <CarouselMobileScrollNode key={index} final={index === TOTAL_CAROUSEL_COUNT - 1}>
-                <CarouselItem
-                  index={index}
-                  id={`carousel__item-${index}`}
-                  active={activeItem}
-                  onClick={(e) => handleClick(e, index)}
-                >
-                <CarouselItemTitle>
-                  {item.year}
-                  <CarouselItemImg
-                      width="208"
-                      height="6"
-                      viewBox="0 0 208 6"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M2.5 5.5C3.88071 5.5 5 4.38071 5 3V3.5L208 3.50002V2.50002L5 2.5V3C5 1.61929 3.88071 0.5 2.5 0.5C1.11929 0.5 0 1.61929 0 3C0 4.38071 1.11929 5.5 2.5 5.5Z"
-                        fill="url(#paint0_linear)"
-                        fillOpacity="0.33"
-                      />
-                      <defs>
-                        <linearGradient
-                          id="paint0_linear"
-                          x1="-4.30412e-10"
-                          y1="0.5"
-                          x2="208"
-                          y2="0.500295"
-                          gradientUnits="userSpaceOnUse">
-                          <stop stopColor="currentColor" stopOpacity="0.8" />
-                          <stop
-                            offset="0.79478"
-                            stopColor="currentColor"
-                            stopOpacity="0"
-                          />
-                        </linearGradient>
-                      </defs>
-                    </CarouselItemImg>
-                </CarouselItemTitle>
-                {item.role && (
-                  <CarouselItemRole>
-                    {item.role}
-                    {item.company && <CarouselItemCompany>{item.company}</CarouselItemCompany>}
-                  </CarouselItemRole>
-                )}
-                <CarouselItemText>{item.text}</CarouselItemText>
-                </CarouselItem>
-              </CarouselMobileScrollNode>
-            ))}
-          </>
-        </CarouselContainer>
-        <CarouselButtons>
-          {TimeLineData.map((item, index) => (
-            <CarouselButton
-              key={index}
-              index={index}
-              active={activeItem}
-              onClick={(e) => handleClick(e, index)}
-              aria-label={`Show ${item.year} career entry`}
-              aria-pressed={activeItem === index}
-              type="button"
+    <RouteSection id="about" line="cobalt" code="L1" surface="default" className="border-b-[1.5px] border-rule/15">
+      <div data-reveal>
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-5">
+          <h2 className="font-display text-3xl sm:text-5xl text-ink">
+            About Haris Arshad
+          </h2>
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-line-cobalt text-on-cobalt text-xs font-extrabold font-wide">
+            <span className="w-2 h-2 rounded-full bg-current" />
+            COBALT LINE · CAREER ROUTE (2019–PRESENT)
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 mb-8">
+          <p className="lg:col-span-6 text-base sm:text-lg text-ink-2 leading-relaxed">
+            PMP®-certified Technical Project Manager and Registered Professional Engineer (PE) with 6+ years of technical delivery experience, including 3+ years directing cross-functional software engineering, cloud platform, and SaaS initiatives across Fixed Price (FP) and Time &amp; Materials (T&amp;M) models. Holding a Master of Science in Project Management (Bahria University) and a B.S. in Electrical Engineering (COMSATS), I specialize in bridging technical PMO governance with modern SDLC execution.
+          </p>
+          <p className="lg:col-span-6 text-base sm:text-lg text-ink-2 leading-relaxed">
+            My track record combines large-scale infrastructure governance and agile product leadership: managing a PKR 700M+ multi-site portfolio (150+ operational sites) at AJCL, delivering PKR 103M+ in EVM cost savings (22.5% below baseline budget) on a nationwide Track &amp; Trace program, steering Agile delivery for Tier-1 clients including Telenor and FAB at SOFTOO, and currently directing concurrent SaaS engineering sprints at Sigma Digital Solutions with 0% scope creep and 100% on-time client acceptance.
+          </p>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-3 mb-12">
+          <a href="#client-projects" className="btn btn-ink">
+            <span>Explore project case studies</span>
+            <ArrowRight className="w-4 h-4" aria-hidden="true" />
+          </a>
+          <a href="#contact" className="btn btn-outline">
+            <span>Hiring or need delivery support? Let&apos;s talk</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
+      {/* Interactive Cobalt Metro Line Strip */}
+      <div data-reveal style={{ '--d': '80ms' }} className="mb-8">
+        <div
+          role="tablist"
+          aria-label="Career timeline stations"
+          className="relative flex items-center justify-between gap-2 p-3 sm:p-4 rounded-2xl bg-surface-2 border-[1.5px] border-rule/15 overflow-x-auto"
+        >
+          {/* Continuous Cobalt horizontal rail behind station buttons */}
+          <div
+            aria-hidden="true"
+            className="hidden sm:block absolute left-8 right-8 top-1/2 -translate-y-1/2 h-2 rounded-full bg-line-cobalt/35 pointer-events-none"
+          />
+          {TimeLineData.map((item, index) => {
+            const isActive = activeItem === index;
+            return (
+              <button
+                key={item.year}
+                type="button"
+                role="tab"
+                aria-selected={isActive}
+                aria-label={`Show ${item.year} career entry`}
+                onClick={() => handleSelectStation(index)}
+                className={`relative z-10 inline-flex items-center gap-2 px-3.5 py-2 rounded-full text-xs sm:text-sm font-extrabold font-wide transition-[transform,background-color,color,box-shadow] duration-150 active:scale-[0.97] cursor-pointer shrink-0 ${
+                  isActive
+                    ? 'bg-line-cobalt text-on-cobalt shadow-[0_0_0_3px_rgb(var(--ink-rgb))]'
+                    : 'bg-surface text-ink shadow-[inset_0_0_0_1.5px_rgb(var(--rule-rgb)/0.22)] hover:shadow-[inset_0_0_0_1.5px_rgb(var(--ink-rgb))]'
+                }`}
+              >
+                <span
+                  aria-hidden="true"
+                  className={`w-2.5 h-2.5 rounded-full ${
+                    isActive ? 'bg-surface' : 'bg-line-cobalt'
+                  }`}
+                />
+                <span className="tabular">{item.year}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* 5 Career Station Cards */}
+      <div
+        data-reveal
+        style={{ '--d': '140ms' }}
+        aria-label="Career timeline"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 items-stretch"
+      >
+        {TimeLineData.map((item, index) => {
+          const isActive = activeItem === index;
+          return (
+            <article
+              key={item.year}
+              ref={(el) => { cardsRef.current[index] = el; }}
+              onClick={() => setActiveItem(index)}
+              className={`card card-lift p-5 flex flex-col justify-between cursor-pointer transition-colors ${
+                isActive
+                  ? 'ring-2 ring-line-cobalt bg-surface'
+                  : 'bg-surface'
+              }`}
             >
-              <CarouselButtonDot active={activeItem} />
-            </CarouselButton>
-          ))}
-        </CarouselButtons>
-      </ScrollReveal>
-    </Section>
+              <div>
+                {/* Top station bar */}
+                <div className="flex items-center justify-between gap-2 pb-3 mb-3 border-b border-rule/12">
+                  <span className="inline-flex items-center gap-2 font-display text-lg text-ink tabular">
+                    <span
+                      aria-hidden="true"
+                      className={`station !w-3 !h-3 ${
+                        isActive ? '!bg-line-cobalt' : ''
+                      }`}
+                    />
+                    {item.year}
+                  </span>
+                  <span className="px-2 py-0.5 rounded-full bg-surface-2 text-ink-2 text-[11px] font-extrabold font-wide tabular">
+                    STOP 0{index + 1}
+                  </span>
+                </div>
+
+                {item.role && (
+                  <div className="mb-2.5">
+                    <h3 className="text-base font-extrabold text-ink leading-snug">
+                      {item.role}
+                    </h3>
+                    {item.company && (
+                      <div className="text-xs font-bold text-line-cobalt mt-0.5 font-wide">
+                        {item.company}
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                <p className="text-xs sm:text-sm text-ink-2 leading-relaxed">
+                  {item.text}
+                </p>
+              </div>
+
+              <div className="mt-4 pt-3 border-t border-rule/10 flex items-center justify-between text-[11px] font-bold text-ink-2">
+                <span>COBALT LINE</span>
+                {index === TimeLineData.length - 1 ? (
+                  <span className="px-2 py-0.5 rounded-full bg-line-green text-on-green font-extrabold">
+                    CURRENT
+                  </span>
+                ) : (
+                  <span aria-hidden="true">→</span>
+                )}
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </RouteSection>
   );
 };
 

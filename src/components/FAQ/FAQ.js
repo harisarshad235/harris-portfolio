@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, HelpCircle } from 'lucide-react';
-import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import { ScrollReveal } from '../ui/MotionReveal';
+import { ChevronDown } from 'lucide-react';
+import { RouteSection } from '../ui/RouteSection';
 
 export const FAQ_DATA = [
   {
@@ -37,6 +36,15 @@ export const FAQ_DATA = [
   },
 ];
 
+const LINE_COLORS = [
+  'bg-line-cobalt text-on-cobalt',
+  'bg-line-vermilion text-on-vermilion',
+  'bg-line-sunflower text-on-sunflower',
+  'bg-line-green text-on-green',
+  'bg-line-violet text-on-violet',
+  'bg-line-magenta text-on-magenta',
+];
+
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
@@ -45,27 +53,40 @@ export default function FAQ() {
   };
 
   return (
-    <Section id="faq">
-      <ScrollReveal>
-        <div className="flex items-center gap-2 mb-3">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-primary/10 text-primary border border-primary/20">
-            <HelpCircle className="w-3.5 h-3.5" />
-            Common Questions
+    <RouteSection
+      id="faq"
+      line="cobalt"
+      code="INFO"
+      surface="default"
+      className="border-b-[1.5px] border-rule/15"
+    >
+      <div data-reveal className="mb-10">
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+          <h2 className="font-display text-3xl sm:text-5xl text-ink">
+            Frequently Asked Questions
+          </h2>
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-2 text-ink text-xs font-extrabold font-wide shadow-[inset_0_0_0_1.5px_rgb(var(--rule-rgb)/0.18)]">
+            <span className="station !w-2.5 !h-2.5" />
+            INFORMATION DESK · 6 QUERIES
           </span>
         </div>
-        <SectionTitle>Frequently Asked Questions</SectionTitle>
-        <SectionText>
-          Key questions about my project management approach, portfolio delivery track record, and technical leadership.
-        </SectionText>
-      </ScrollReveal>
 
-      <ScrollReveal delay={0.1} className="w-full max-w-4xl mx-auto space-y-3.5">
+        <p className="text-ink-2 text-base sm:text-lg leading-relaxed max-w-[66ch]">
+          Key questions about my project management approach, portfolio delivery track record, and technical leadership.
+        </p>
+      </div>
+
+      <div data-reveal style={{ '--d': '80ms' }} className="w-full max-w-4xl space-y-3.5">
         {FAQ_DATA.map((item, index) => {
           const isOpen = openIndex === index;
+          const badgeColor = LINE_COLORS[index % LINE_COLORS.length];
+
           return (
             <div
               key={index}
-              className="rounded-2xl border border-border bg-card overflow-hidden transition-[border-color,box-shadow] duration-200 shadow-xs hover:border-primary/30"
+              className={`card overflow-hidden transition-colors ${
+                isOpen ? 'ring-2 ring-line-cobalt' : ''
+              }`}
             >
               <button
                 type="button"
@@ -73,17 +94,26 @@ export default function FAQ() {
                 aria-expanded={isOpen}
                 aria-controls={`faq-answer-${index}`}
                 id={`faq-question-${index}`}
-                className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 text-left cursor-pointer hover:bg-secondary/50 active:scale-[0.99] transition-[transform,background-color] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)]"
+                className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 text-left cursor-pointer hover:bg-surface-2/60 active:scale-[0.99] transition-[transform,background-color] duration-150"
               >
-                <span className="text-base sm:text-lg font-bold text-foreground">
-                  {item.question}
-                </span>
+                <div className="flex items-center gap-3.5 min-w-0">
+                  <span
+                    className={`w-8 h-8 rounded-full flex items-center justify-center font-display text-xs shrink-0 ${badgeColor}`}
+                  >
+                    Q{index + 1}
+                  </span>
+                  <span className="text-base sm:text-lg font-extrabold text-ink">
+                    {item.question}
+                  </span>
+                </div>
                 <span
-                  className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-secondary text-foreground transition-transform duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] ${
-                    isOpen ? 'rotate-180 bg-primary text-primary-foreground' : ''
+                  className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-[transform,background-color,color] duration-200 ease-out ${
+                    isOpen
+                      ? 'rotate-180 bg-ink text-paper'
+                      : 'bg-surface-2 text-ink'
                   }`}
                 >
-                  <ChevronDown className="h-4 w-4" />
+                  <ChevronDown className="h-4 w-4" aria-hidden="true" />
                 </span>
               </button>
 
@@ -96,10 +126,10 @@ export default function FAQ() {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
                     className="overflow-hidden"
                   >
-                    <div className="px-5 pb-6 pt-1 sm:px-6 sm:pb-7 text-sm sm:text-base text-muted-foreground leading-relaxed border-t border-border/50">
+                    <div className="px-5 pb-6 pt-3 sm:px-6 sm:pb-7 sm:pl-[4.25rem] text-sm sm:text-base text-ink-2 leading-relaxed border-t border-rule/12">
                       {item.answer}
                     </div>
                   </motion.div>
@@ -108,7 +138,7 @@ export default function FAQ() {
             </div>
           );
         })}
-      </ScrollReveal>
-    </Section>
+      </div>
+    </RouteSection>
   );
 }

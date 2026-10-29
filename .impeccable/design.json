@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-29T23:16:00+05:00",
+  "title": "Design System: Haris Arshad Portfolio — Critical Path Network",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "Poster Paper", "canonical": "#F7F7F4", "tonalRamp": ["#1E1E1B", "#383833", "#57574F", "#7A7A70", "#A3A398", "#C9C9BF", "#E6E6DF", "#F7F7F4"] },
+      "ink": { "role": "primary", "displayName": "Poster Ink", "canonical": "#0E1116", "tonalRamp": ["#0E1116", "#1D222B", "#313846", "#4A5264", "#6B7487", "#949CAE", "#C3C8D4", "#ECEEF2"] },
+      "line-cobalt": { "role": "primary", "displayName": "Cobalt Line", "canonical": "#1F4FE0", "tonalRamp": ["#0D2266", "#143499", "#1B44C4", "#1F4FE0", "#4770EA", "#7594F0", "#ADC0F7", "#E3EAFC"] },
+      "line-vermilion": { "role": "primary", "displayName": "Vermilion Express", "canonical": "#D93A1F", "tonalRamp": ["#5E180C", "#8C2412", "#B52F18", "#D93A1F", "#E56049", "#ED8A78", "#F5B8AD", "#FCE6E2"] },
+      "line-sunflower": { "role": "secondary", "displayName": "Sunflower Line", "canonical": "#FFC21A", "tonalRamp": ["#5C4400", "#8F6A00", "#C29100", "#E6AC00", "#FFC21A", "#FFD152", "#FFE18C", "#FFF4D6"] },
+      "line-green": { "role": "secondary", "displayName": "Green Line", "canonical": "#0E9F5B", "tonalRamp": ["#064226", "#09663B", "#0C854D", "#0E9F5B", "#2FC27D", "#63D49F", "#9EE5C3", "#E0F7EC"] },
+      "line-violet": { "role": "tertiary", "displayName": "Violet Line", "canonical": "#7A3FF2", "tonalRamp": ["#2F1466", "#492099", "#622CC7", "#7A3FF2", "#9666F5", "#B391F8", "#D1BDFB", "#EFE8FE"] },
+      "line-magenta": { "role": "tertiary", "displayName": "Magenta Line", "canonical": "#D6136F", "tonalRamp": ["#5C0830", "#8A0C47", "#B3105C", "#D6136F", "#E6408E", "#EE72AC", "#F5A8CC", "#FCE3EF"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display Expanded", "purpose": "Hero nameplate, section station titles, and primary metric callouts." },
+      "headline": { "displayName": "Station Headline", "purpose": "Project, product, and zone titles." },
+      "body": { "displayName": "Body Copy", "purpose": "Executive bio, project descriptions, and case-study narratives." },
+      "label": { "displayName": "Route Label", "purpose": "Station codes, route pills, and departure-board cells." }
+    },
+    "shadows": [
+      { "name": "station-ring", "value": "0 0 0 3px #0E1116", "purpose": "Crisp ink ring around white station dots." },
+      { "name": "card-lift", "value": "0 2px 4px rgba(14,17,22,0.06), 0 14px 32px -8px rgba(14,17,22,0.18)", "purpose": "Hover elevation for interactive cards on pointer devices." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.23, 1, 0.32, 1)", "purpose": "Snappy UI transitions, hover lifts, and line-draw entrances." },
+      { "name": "ease-in-out", "value": "cubic-bezier(0.77, 0, 0.175, 1)", "purpose": "On-screen route rail progression." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Ink Button",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "Primary pill action button with Cobalt hover shift and spring press.",
+      "html": "<button class=\"ds-btn-ink\">View CV</button>",
+      "css": ".ds-btn-ink { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border-radius: 999px; border: none; background: #0E1116; color: #F7F7F4; font-family: 'Archivo', sans-serif; font-weight: 700; font-stretch: 108%; font-size: 15px; cursor: pointer; transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 160ms ease; } .ds-btn-ink:hover { background: #1F4FE0; color: #FFFFFF; } .ds-btn-ink:active { transform: scale(0.97); }"
+    },
+    {
+      "name": "Sunflower Action Button",
+      "kind": "button",
+      "refersTo": "button-sun",
+      "description": "High-contrast sunflower pill CTA used on dark Terminus and hero surfaces.",
+      "html": "<button class=\"ds-btn-sun\">Discuss a Project →</button>",
+      "css": ".ds-btn-sun { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border-radius: 999px; border: none; background: #FFC21A; color: #0E1116; font-family: 'Archivo', sans-serif; font-weight: 700; font-stretch: 108%; font-size: 15px; cursor: pointer; transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 160ms ease; } .ds-btn-sun:hover { background: #FFFFFF; color: #0E1116; } .ds-btn-sun:active { transform: scale(0.97); }"
+    },
+    {
+      "name": "Platform Filter Tab",
+      "kind": "chip",
+      "refersTo": "button-outline",
+      "description": "Interactive sector filter tab with line-colour station dot and tabular count.",
+      "html": "<button class=\"ds-tab\" aria-pressed=\"true\"><span class=\"ds-dot\"></span><span>Telecom</span><span class=\"ds-count\">2</span></button>",
+      "css": ".ds-tab { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 16px; border-radius: 999px; border: none; background: #0E1116; color: #F7F7F4; font-family: 'Archivo', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; } .ds-dot { width: 10px; height: 10px; border-radius: 999px; background: #1F4FE0; box-shadow: 0 0 0 2px #F7F7F4; } .ds-count { font-variant-numeric: tabular-nums; font-size: 12px; padding: 2px 7px; border-radius: 999px; background: rgba(247,247,244,0.18); }"
+    },
+    {
+      "name": "Departure Board KPI Badge",
+      "kind": "custom",
+      "refersTo": "button-ink",
+      "description": "Split-flap inspired dark board strip with sunflower tabular uppercase numerals.",
+      "html": "<div class=\"ds-board\"><span class=\"ds-code\">L2</span><span>PKR 103M+ EVM SAVINGS · 22.5% UNDER BUDGET</span></div>",
+      "css": ".ds-board { display: inline-flex; align-items: center; gap: 10px; padding: 8px 14px; border-radius: 8px; background: #0E1116; color: #FFCB3D; font-family: 'Archivo', sans-serif; font-stretch: 112%; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; font-variant-numeric: tabular-nums; } .ds-code { padding: 2px 8px; border-radius: 999px; background: #D93A1F; color: #FFFFFF; font-weight: 800; font-size: 11px; }"
+    },
+    {
+      "name": "Station Card",
+      "kind": "card",
+      "refersTo": "button-outline",
+      "description": "Architectural surface card with top line-colour bar, station dot, and hover lift.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-bar\"></div><div class=\"ds-body\"><div class=\"ds-meta\"><span class=\"ds-station\"></span><span>ST-01 · TELECOM</span></div><h3 class=\"ds-title\">Telenor Thunder IoT</h3><p class=\"ds-copy\">60% lower operating costs across national tower telemetry.</p></div></article>",
+      "css": ".ds-card { max-width: 340px; border-radius: 16px; border: 1.5px solid rgba(14,17,22,0.14); background: #FFFFFF; overflow: hidden; font-family: 'Archivo', sans-serif; transition: transform 220ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 220ms ease; } .ds-card:hover { transform: translateY(-4px); box-shadow: 0 2px 4px rgba(14,17,22,0.06), 0 14px 32px -8px rgba(14,17,22,0.18); } .ds-bar { height: 8px; background: #1F4FE0; } .ds-body { padding: 20px; } .ds-meta { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 800; color: #0E1116; margin-bottom: 10px; } .ds-station { width: 12px; height: 12px; border-radius: 999px; background: #FFFFFF; box-shadow: 0 0 0 3px #0E1116; } .ds-title { margin: 0 0 6px; font-size: 22px; font-weight: 850; font-stretch: 125%; color: #0E1116; } .ds-copy { margin: 0; font-size: 14px; color: #4A4F59; line-height: 1.5; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Critical Path Transit Poster",
+    "overview": "The portfolio treats a project manager's career as a high-capacity transit network. Every section is a station on one of six colour-coded lines (L1 Cobalt through L6 Magenta), connected by a continuous vertical route rail along the left margin that fills with colour as the visitor travels down the page. It rejects the SaaS template of gradient text, glassmorphism, and uniform dark cards in favour of flat poster ink, warm off-white stock, octilinear 45-degree schematic diagrams, station roundels, and split-flap departure boards.",
+    "keyCharacteristics": [
+      "Continuous scroll-linked vertical route rail with circular station roundels (L1–L6, INFO, END).",
+      "Six flat, saturated transit line colours; zero decorative gradients or glass blur.",
+      "Variable-width Archivo typography pairing expanded black (125% stretch, 850 weight) headlines with normal-width body copy.",
+      "Departure-board strips (#0E1116 background, #FFCB3D tabular uppercase text) for verified portfolio metrics."
+    ],
+    "rules": [
+      { "name": "The Flat Pigment Rule", "body": "Line colours are always flat, opaque pigments. Never blend two line colours in a gradient or apply glowing neon drop shadows.", "section": "colors" },
+      { "name": "The Drench Commitment Rule", "body": "When a section or outcome card is drenched (Vermilion Express, Central Terminus, Case Outcome), the colour owns the entire region edge-to-edge.", "section": "colors" },
+      { "name": "The No-Kicker Rule", "body": "Headings never carry an eyebrow or kicker label above them. The station roundel sits on the left rail and the route badge sits inline beside the heading.", "section": "typography" },
+      { "name": "The Rule-At-Rest Rule", "body": "Cards use a 1.5px rule border at rest and never combine a resting drop shadow with a border.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do assign every section, project sector, and skill zone to one of the six canonical line colours.",
+      "Do use font-variant-numeric: tabular-nums (.tabular) on all metrics, years, counts, and station codes.",
+      "Do gate hover transforms behind @media (hover: hover) and (pointer: fine) and honour prefers-reduced-motion: reduce."
+    ],
+    "donts": [
+      "Don't place an eyebrow or kicker label above <h1> or <h2> headings.",
+      "Don't use CSS gradients on text, backgrounds, or buttons, or backdrop-filter: blur() glass effects.",
+      "Don't use thick coloured border-left callout stripes on cards or notes; use a circular .station dot marker instead."
+    ]
+  }
+}
+

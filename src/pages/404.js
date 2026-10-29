@@ -1,10 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-
+import { ArrowRight } from 'lucide-react';
 import { Layout } from '../layout/Layout';
-import { Section, SectionText, SectionTitle } from '../styles/GlobalComponents';
-import { ContactSuccess, SuccessLink } from '../styles/ContactSuccessStyles';
 
 export default function Custom404() {
   return (
@@ -14,29 +12,38 @@ export default function Custom404() {
         <meta name="robots" content="noindex, follow" />
         <meta name="description" content="The requested page could not be found." />
       </Head>
-      <Section>
-        <ContactSuccess>
-          <SectionTitle main>404: Page not found</SectionTitle>
-          <SectionText>
-            The link you followed may be broken, moved, or no longer available. You can return to the portfolio home or jump directly to one of the key sections below.
-          </SectionText>
-          <div style={{ display: 'flex', gap: '1.2rem', flexWrap: 'wrap', marginTop: '2.4rem' }}>
-            <Link href="/" passHref>
-              <SuccessLink>Return to home</SuccessLink>
-            </Link>
-            <Link href="/#client-projects" passHref>
-              <SuccessLink style={{ background: 'transparent', border: '1px solid currentColor', color: 'inherit' }}>
-                View projects
-              </SuccessLink>
-            </Link>
-            <Link href="/#contact" passHref>
-              <SuccessLink style={{ background: 'transparent', border: '1px solid currentColor', color: 'inherit' }}>
-                Contact Haris
-              </SuccessLink>
-            </Link>
+      <section className="w-full py-24 sm:py-32 bg-paper text-ink">
+        <div className="frame-flush max-w-3xl">
+          <div className="card p-8 sm:p-12 overflow-hidden relative">
+            <div className="h-2.5 w-full bg-line-vermilion rounded-full mb-8" aria-hidden="true" />
+            <div className="flex items-center justify-between gap-4 mb-4">
+              <h1 className="font-display text-4xl sm:text-6xl text-ink">
+                404 · Unscheduled Stop
+              </h1>
+              <span className="px-3 py-1 rounded-full bg-line-vermilion text-on-vermilion text-xs font-extrabold font-wide shrink-0">
+                OFF ROUTE
+              </span>
+            </div>
+            <p className="text-base sm:text-lg text-ink-2 leading-relaxed max-w-[60ch] mb-8">
+              The link you followed may be broken, moved, or no longer available. You can return to the Central Hub or transfer directly to one of the active lines below.
+            </p>
+            <div className="flex flex-wrap items-center gap-3">
+              <Link href="/" passHref>
+                <a className="btn btn-ink">
+                  <span>Return to home</span>
+                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </a>
+              </Link>
+              <Link href="/#client-projects" passHref>
+                <a className="btn btn-outline">View projects</a>
+              </Link>
+              <Link href="/#contact" passHref>
+                <a className="btn btn-sun">Contact Haris</a>
+              </Link>
+            </div>
           </div>
-        </ContactSuccess>
-      </Section>
+        </div>
+      </section>
     </Layout>
   );
 }

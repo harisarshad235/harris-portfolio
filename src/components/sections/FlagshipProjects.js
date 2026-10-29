@@ -1,115 +1,137 @@
 import React from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { ArrowUpRight, ExternalLink, CheckCircle2, Layers } from 'lucide-react';
+import { ArrowUpRight, ExternalLink } from 'lucide-react';
 import { flagshipProjects } from '../../data/projects';
-import { ScrollReveal, StaggerContainer } from '../ui/MotionReveal';
+import { RouteSection } from '../ui/RouteSection';
 
 export const FlagshipProjects = () => {
   return (
-    <section id="products" className="relative py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flagship-showcase-section">
-      {/* Section Header */}
-      <ScrollReveal className="mb-16 text-center max-w-3xl mx-auto flagship-header">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold border border-border bg-card text-foreground mb-4 shadow-sm backdrop-blur-md flagship-badge">
-          <Layers className="w-4 h-4 text-primary flagship-badge-icon" />
-          <span>Proprietary SaaS &amp; Custom Technology Solutions</span>
+    <RouteSection
+      id="products"
+      line="vermilion"
+      code="L2"
+      surface="drench"
+      className="border-b-2 border-ink"
+    >
+      {/* Section Header — no kicker above h2 per craft floor */}
+      <div data-reveal className="mb-12">
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+          <h2 className="font-display text-3xl sm:text-5xl text-white">
+            Original Products &amp; Engineering Systems
+          </h2>
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0E1116] text-[#FFCB3D] text-xs font-extrabold font-wide tabular">
+            <span className="w-2 h-2 rounded-full bg-[#FFCB3D]" />
+            VERMILION EXPRESS · PROPRIETARY SAAS
+          </span>
         </div>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground mb-4 flagship-title">
-          Original Products &amp; Engineering Systems
-        </h2>
-        <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-2xl mx-auto flagship-subtitle">
+
+        <p className="text-white/90 text-base sm:text-lg leading-relaxed max-w-[68ch]">
           Conceived from real-world delivery bottlenecks, architected from scratch, and engineered into production-grade cloud software. These are my original ideas, custom blueprints, and high-velocity systems built to eliminate workflow friction.
         </p>
-      </ScrollReveal>
+      </div>
 
-      {/* Synchronized 2-Column Responsive Grid */}
-      <StaggerContainer
-        staggerDelay={0.15}
-        className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch flagship-grid"
-      >
-        {flagshipProjects.map((project) => (
-          <motion.article
-            key={project.id}
-            variants={{
-              hidden: { opacity: 0, y: 32, scale: 0.97 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                transition: { type: "spring", stiffness: 260, damping: 25 },
-              },
-            }}
-            whileHover={{ y: -6, transition: { type: "spring", stiffness: 350, damping: 22 } }}
-            className={`group relative rounded-3xl border border-border bg-card dark:bg-[#0D1410] overflow-hidden flex flex-col justify-between shadow-xs hover:shadow-xl ${project.borderHoverClass || 'hover:border-primary/40'} ${project.glowClass || ''} flagship-card card-${project.id}`}
-          >
-            {/* Seamless Mockup Container */}
-            <div className="relative w-full aspect-[16/9] bg-[#070B09] overflow-hidden select-none flagship-media-container border-b border-border">
-              <Image
-                alt={`${project.title} Interface Preview`}
-                className="object-cover object-center transform transition-transform duration-500 ease-out group-hover:scale-[1.02] flagship-image"
-                layout="fill"
-                objectFit="cover"
-                objectPosition="center"
-                priority
-                unoptimized={true}
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                src={project.image}
-              />
+      {/* 2-Column Maximalist Poster Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
+        {flagshipProjects.map((project, index) => {
+          const isHubito = project.id === 'hubito';
+          const stationCode = isHubito ? 'EXP-01' : 'EXP-02';
+          const lineBadgeClass = isHubito
+            ? 'bg-line-green text-on-green'
+            : 'bg-line-cobalt text-on-cobalt';
 
-              {/* Subtle bottom vignette that preserves dark mockup contrast in both light & dark themes */}
-              <div
-                className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/45 to-transparent pointer-events-none"
-                aria-hidden="true"
-              />
-            </div>
-
-            {/* Card Body */}
-            <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between flagship-body">
+          return (
+            <article
+              key={project.id}
+              data-reveal
+              style={{ '--d': `${index * 100}ms` }}
+              className="group rounded-2xl bg-surface text-ink border-2 border-ink overflow-hidden flex flex-col justify-between card-lift"
+            >
               <div>
-                {/* Category Pill Badge */}
-                <div className="mb-3">
-                  <span className={`inline-flex items-center px-3 py-1 rounded-md text-xs sm:text-sm font-semibold border ${project.badgeStyle} flagship-category-badge`}>
-                    {project.category}
+                {/* Departure-Board Top Strip */}
+                <div className="board px-5 py-3 flex items-center justify-between gap-3 border-b-2 border-ink text-xs">
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <span className={`px-2 py-0.5 rounded-full font-extrabold ${lineBadgeClass}`}>
+                      {stationCode}
+                    </span>
+                    <span className="truncate">{project.category}</span>
+                  </div>
+                  <span className="inline-flex items-center gap-1.5 shrink-0 text-[#2FD283]">
+                    <span className="w-2 h-2 rounded-full bg-[#2FD283]" />
+                    LIVE
                   </span>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight mb-1.5 flagship-item-title">
-                  {project.title}
-                </h3>
-                <p className="text-sm sm:text-base font-semibold text-primary mb-2.5 flagship-tagline">
-                  {project.tagline}
-                </p>
-                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6 flagship-description font-normal">
-                  {project.description}
-                </p>
+                {/* Mockup Frame */}
+                <div className="relative w-full aspect-[16/9] bg-[#0B0D12] overflow-hidden select-none border-b-[1.5px] border-rule/20">
+                  <Image
+                    alt={`${project.title} Interface Preview`}
+                    className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                    layout="fill"
+                    objectFit="cover"
+                    objectPosition="center"
+                    priority
+                    unoptimized={true}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    src={project.image}
+                  />
+                </div>
 
-                {/* Key Achievements & Capabilities */}
-                <ul className="space-y-2.5 mb-6 flagship-features" aria-label="Key Features">
-                  {project.keyFeatures.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground font-medium flagship-feature-item">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5 flagship-check-icon" />
-                      <span className="leading-snug">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+                {/* Card Body */}
+                <div className="p-6 sm:p-8">
+                  <div className="flex items-baseline justify-between gap-3 mb-2">
+                    <h3 className="font-display text-2xl sm:text-4xl text-ink">
+                      {project.title}
+                    </h3>
+                    <span className="text-xs font-extrabold font-wide text-ink-2 tabular">
+                      CLOUDFLARE EDGE
+                    </span>
+                  </div>
+
+                  <p className="text-sm sm:text-base font-extrabold text-line-vermilion mb-3 font-wide">
+                    {project.tagline}
+                  </p>
+
+                  <p className="text-sm sm:text-base text-ink-2 leading-relaxed mb-6">
+                    {project.description}
+                  </p>
+
+                  {/* Key Features as a Mini Transit Line */}
+                  <ul
+                    className="relative space-y-3 mb-6 pl-6 before:content-[''] before:absolute before:left-[7px] before:top-2 before:bottom-2 before:w-1 before:rounded-full before:bg-line-vermilion"
+                    aria-label="Key Features"
+                  >
+                    {project.keyFeatures.map((feature, idx) => (
+                      <li
+                        key={idx}
+                        className="relative text-xs sm:text-sm text-ink font-semibold leading-snug"
+                      >
+                        <span
+                          aria-hidden="true"
+                          className="station !w-3 !h-3 absolute -left-[22px] top-1"
+                        />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
 
-              <div>
+              <div className="px-6 pb-6 sm:px-8 sm:pb-8 pt-0">
                 {/* Tech Stack Pills */}
-                <div className="flex flex-wrap gap-2 pt-4 mb-6 border-t border-border flagship-tech-stack">
+                <div className="flex flex-wrap gap-2 pt-4 mb-6 border-t border-rule/15">
                   {project.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2.5 py-1 text-xs font-mono font-semibold rounded-lg bg-secondary text-foreground border border-border flagship-tech-pill"
+                      className="px-3 py-1 text-xs font-bold font-wide rounded-full bg-surface-2 text-ink shadow-[inset_0_0_0_1px_rgb(var(--rule-rgb)/0.18)]"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                {/* Action Buttons with Balanced Grid & Spring Micro-Interactions */}
+                {/* Action Buttons */}
                 <div
-                  className={`grid gap-3 flagship-actions ${
+                  className={`grid gap-3 ${
                     project.dashboardUrl ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'
                   }`}
                 >
@@ -117,10 +139,10 @@ export const FlagshipProjects = () => {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary text-primary-foreground font-bold text-sm sm:text-base hover:bg-primary/90 active:scale-[0.97] transition-[transform,background-color] duration-150 shadow-sm whitespace-nowrap flagship-btn-primary"
+                    className="btn btn-ink w-full"
                   >
                     <span>Visit Live Solution</span>
-                    <ArrowUpRight className="w-4 h-4 shrink-0" />
+                    <ArrowUpRight className="w-4 h-4 shrink-0" aria-hidden="true" />
                   </a>
 
                   {project.dashboardUrl && (
@@ -128,19 +150,19 @@ export const FlagshipProjects = () => {
                       href={project.dashboardUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-secondary text-foreground border border-border hover:bg-secondary/80 hover:border-primary/40 active:scale-[0.97] font-bold text-sm sm:text-base transition-[transform,background-color,border-color,color] duration-150 whitespace-nowrap flagship-btn-secondary"
+                      className="btn btn-sun w-full"
                     >
                       <span>Open Workspace</span>
-                      <ExternalLink className="w-4 h-4 shrink-0" />
+                      <ExternalLink className="w-4 h-4 shrink-0" aria-hidden="true" />
                     </a>
                   )}
                 </div>
               </div>
-            </div>
-          </motion.article>
-        ))}
-      </StaggerContainer>
-    </section>
+            </article>
+          );
+        })}
+      </div>
+    </RouteSection>
   );
 };
 
