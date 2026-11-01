@@ -17,8 +17,7 @@ const Credentials = () => {
   return (
     <RouteSection
       id="credentials"
-      line="violet"
-      code="L5"
+      line="cobalt"
       surface="default"
       className="border-b-[1.5px] border-rule/15"
     >
@@ -27,9 +26,9 @@ const Credentials = () => {
           <h2 className="font-display text-3xl sm:text-5xl text-ink">
             Credentials &amp; Certifications
           </h2>
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-line-violet text-on-violet text-xs font-extrabold font-wide">
-            <span className="w-2 h-2 rounded-full bg-current" />
-            VIOLET LINE · VERIFIED GOVERNANCE
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-2 text-ink-2 text-xs font-extrabold font-wide">
+            <span className="w-2 h-2 rounded-full bg-line-cobalt" />
+            VERIFIED GOVERNANCE
           </span>
         </div>
 
@@ -60,7 +59,7 @@ const Credentials = () => {
               >
                 <span
                   aria-hidden="true"
-                  className={`w-2.5 h-2.5 rounded-full bg-line-violet ${
+                  className={`w-2.5 h-2.5 rounded-full bg-line-cobalt ${
                     isSelected ? 'ring-2 ring-paper' : 'ring-1 ring-ink/40'
                   }`}
                 />
@@ -106,7 +105,7 @@ const Credentials = () => {
                 className="card card-lift overflow-hidden flex flex-col justify-between group"
               >
                 <div>
-                  <div className="h-2 w-full bg-line-violet" aria-hidden="true" />
+                  <div className="h-2 w-full bg-line-cobalt" aria-hidden="true" />
 
                   {/* Certificate Preview */}
                   {certificateImage || certificatePreview ? (
@@ -130,7 +129,7 @@ const Credentials = () => {
                   ) : (
                     <div
                       aria-hidden="true"
-                      className="w-full aspect-[4/2.8] bg-surface-2 flex items-center justify-center border-b border-rule/12 text-line-violet"
+                      className="w-full aspect-[4/2.8] bg-surface-2 flex items-center justify-center border-b border-rule/12 text-line-cobalt"
                     >
                       <FiAward className="w-12 h-12" />
                     </div>
@@ -139,7 +138,7 @@ const Credentials = () => {
                   {/* Content */}
                   <div className="p-5 sm:p-6">
                     <div className="flex items-center justify-between gap-2 mb-3">
-                      <span className="px-2.5 py-0.5 rounded-full bg-line-violet text-on-violet text-[11px] font-extrabold font-wide">
+                      <span className="px-2.5 py-0.5 rounded-full bg-line-cobalt text-on-violet text-[11px] font-extrabold font-wide">
                         {category}
                       </span>
                       <span className="text-xs font-extrabold text-ink-2 tabular">
@@ -151,7 +150,7 @@ const Credentials = () => {
                       {title}
                     </h3>
 
-                    <p className="text-xs sm:text-sm font-bold text-line-violet mb-3 font-wide">
+                    <p className="text-xs sm:text-sm font-bold text-line-cobalt mb-3 font-wide">
                       {issuer}
                     </p>
 

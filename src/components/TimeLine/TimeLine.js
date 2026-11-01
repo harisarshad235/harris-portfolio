@@ -16,15 +16,15 @@ const Timeline = () => {
   };
 
   return (
-    <RouteSection id="about" line="cobalt" code="L1" surface="default" className="border-b-[1.5px] border-rule/15">
+    <RouteSection id="about" line="cobalt" surface="default" className="border-b-[1.5px] border-rule/15">
       <div data-reveal>
         <div className="flex flex-wrap items-center justify-between gap-4 mb-5">
           <h2 className="font-display text-3xl sm:text-5xl text-ink">
             About Haris Arshad
           </h2>
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-line-cobalt text-on-cobalt text-xs font-extrabold font-wide">
-            <span className="w-2 h-2 rounded-full bg-current" />
-            COBALT LINE · CAREER ROUTE (2019–PRESENT)
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-2 text-ink-2 text-xs font-extrabold font-wide">
+            <span className="w-2 h-2 rounded-full bg-line-cobalt" />
+            CAREER ROUTE · 2019–PRESENT
           </span>
         </div>
 
@@ -122,9 +122,6 @@ const Timeline = () => {
                     />
                     {item.year}
                   </span>
-                  <span className="px-2 py-0.5 rounded-full bg-surface-2 text-ink-2 text-[11px] font-extrabold font-wide tabular">
-                    STOP 0{index + 1}
-                  </span>
                 </div>
 
                 {item.role && (
@@ -145,14 +142,24 @@ const Timeline = () => {
                 </p>
               </div>
 
+              {/* The line name lives on the section header, not on every card.
+                  This footer carries the one thing that differs per stop: where
+                  the route goes next. */}
               <div className="mt-4 pt-3 border-t border-rule/10 flex items-center justify-between text-[11px] font-bold text-ink-2">
-                <span>COBALT LINE</span>
                 {index === TimeLineData.length - 1 ? (
-                  <span className="px-2 py-0.5 rounded-full bg-line-green text-on-green font-extrabold">
-                    CURRENT
-                  </span>
+                  <>
+                    <span className="font-wide">NOW SERVING</span>
+                    <span className="px-2 py-0.5 rounded-full bg-line-green text-on-green font-extrabold">
+                      CURRENT
+                    </span>
+                  </>
                 ) : (
-                  <span aria-hidden="true">→</span>
+                  <>
+                    <span className="font-wide tabular">
+                      NEXT · {TimeLineData[index + 1].year}
+                    </span>
+                    <span aria-hidden="true">→</span>
+                  </>
                 )}
               </div>
             </article>

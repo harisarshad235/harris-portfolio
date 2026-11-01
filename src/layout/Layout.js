@@ -60,7 +60,11 @@ export const Layout = ({children}) => {
         root.querySelectorAll('[data-reveal]').forEach((element) => observer.observe(element))
       }
 
+      // Adding motion-ready sets opacity:0 on every [data-reveal]. The observer
+      // only fires on a later frame, so anything already on screen would blink
+      // out and fade back in. Reveal what is in view in this same frame first.
       document.documentElement.classList.add('motion-ready')
+      revealVisibleElements()
       observeReveals(document)
       const mainEl = document.querySelector('main')
       if (mainEl) {

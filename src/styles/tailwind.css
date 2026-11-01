@@ -41,7 +41,7 @@
   --on-magenta-rgb: 255 255 255;
 
   /* Drenched fields */
-  --drench-rgb: 217 58 31;          /* Products field */
+  --drench-rgb: 31 79 224;          /* Products field — cobalt, not a sixth hue */
   --on-drench-rgb: 255 255 255;
   --terminus-rgb: 14 17 22;         /* Contact + footer field */
   --on-terminus-rgb: 247 247 244;
@@ -107,7 +107,7 @@
   --on-violet-rgb: 11 13 18;
   --on-magenta-rgb: 11 13 18;
 
-  --drench-rgb: 184 50 26;
+  --drench-rgb: 22 52 150;          /* deeper cobalt so white body text stays AA */
   --on-drench-rgb: 255 255 255;
   --terminus-rgb: 4 5 8;
   --on-terminus-rgb: 242 242 238;

@@ -104,7 +104,6 @@ export const Contact = () => {
     <RouteSection
       id="contact"
       line="sunflower"
-      code="END"
       surface="terminus"
       isLast
       className="border-b border-white/15"
@@ -125,14 +124,10 @@ export const Contact = () => {
           Have a technology delivery challenge, PMO governance need, or full-stack software initiative? Reach out directly or send a message below.
         </p>
 
-        {/* 6 Coloured Metro Lines Merging Bar */}
+        {/* Lines merging at the terminus — now the two the site actually uses */}
         <div aria-hidden="true" className="grid grid-cols-6 gap-1.5 h-2.5 w-full max-w-xl rounded-full overflow-hidden">
-          <span className="bg-line-cobalt rounded-full" />
-          <span className="bg-line-vermilion rounded-full" />
+          <span className="col-span-5 bg-line-cobalt rounded-full" />
           <span className="bg-line-sunflower rounded-full" />
-          <span className="bg-line-green rounded-full" />
-          <span className="bg-line-violet rounded-full" />
-          <span className="bg-line-magenta rounded-full" />
         </div>
       </div>
 

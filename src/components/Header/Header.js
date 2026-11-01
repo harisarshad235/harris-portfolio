@@ -5,13 +5,15 @@ import { FiMoon, FiSun, FiFileText, FiArrowUpRight } from 'react-icons/fi';
 
 import { useThemeMode } from '../../styles/theme';
 
+// One line, one colour. The dots stay as station markers, but a different hue
+// per item encoded nothing a visitor could read — it just looked like a rainbow.
 const NAV_ITEMS = [
   { href: '#about', label: 'About', dot: 'bg-line-cobalt' },
-  { href: '#products', label: 'Products', dot: 'bg-line-vermilion' },
-  { href: '#client-projects', label: 'Client Work', dot: 'bg-line-sunflower' },
-  { href: '#skills', label: 'Skills', dot: 'bg-line-green' },
-  { href: '#credentials', label: 'Credentials', dot: 'bg-line-violet' },
-  { href: '#recommendations', label: 'Endorsements', dot: 'bg-line-magenta' },
+  { href: '#products', label: 'Products', dot: 'bg-line-cobalt' },
+  { href: '#client-projects', label: 'Client Work', dot: 'bg-line-cobalt' },
+  { href: '#skills', label: 'Skills', dot: 'bg-line-cobalt' },
+  { href: '#credentials', label: 'Credentials', dot: 'bg-line-cobalt' },
+  { href: '#recommendations', label: 'Endorsements', dot: 'bg-line-cobalt' },
   { href: '#contact', label: 'Contact', dot: 'bg-line-cobalt' },
 ];
 
@@ -89,14 +91,11 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-paper border-b-[1.5px] border-rule/15">
-      {/* Multi-line signature strip at top of header */}
-      <div aria-hidden="true" className="grid grid-cols-6 h-1.5 w-full">
-        <span className="bg-line-cobalt" />
-        <span className="bg-line-vermilion" />
-        <span className="bg-line-sunflower" />
-        <span className="bg-line-green" />
-        <span className="bg-line-violet" />
-        <span className="bg-line-magenta" />
+      {/* Signature strip: the route, with one interchange. Six equal bands read
+          as a rainbow; two read as a line. */}
+      <div aria-hidden="true" className="flex h-1.5 w-full">
+        <span className="flex-[7] bg-line-cobalt" />
+        <span className="flex-[1] bg-line-sunflower" />
       </div>
 
       <div className="frame-flush py-3 flex items-center justify-between gap-3">

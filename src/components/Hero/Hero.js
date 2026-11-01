@@ -1,13 +1,16 @@
 import React from 'react';
 import { Award, ArrowRight, Download, Eye, MapPin } from 'lucide-react';
 
+// The departure board carries the numbers, so sunflower is the only accent it
+// needs. The L1-L6 pills that used to lead each item indexed nothing a reader
+// could look up.
 const TICKER_ITEMS = [
-  { code: 'L1', color: 'bg-line-cobalt text-on-cobalt', text: 'PKR 700M+ PORTFOLIO · 150+ OPERATIONAL SITES' },
-  { code: 'L2', color: 'bg-line-vermilion text-on-vermilion', text: 'PKR 103M+ EVM COST SAVINGS · 22.5% UNDER BUDGET' },
-  { code: 'L3', color: 'bg-line-sunflower text-on-sunflower', text: '80% SCHEDULE SLIPPAGE CUT VIA CPM GOVERNANCE' },
-  { code: 'L4', color: 'bg-line-green text-on-green', text: '60% LOWER OPEX · 6M L FUEL SAVED (TELENOR THUNDER)' },
-  { code: 'L5', color: 'bg-line-violet text-on-violet', text: '600K DAILY USERS · 60% LOWER INFRA COST (PLT AWS)' },
-  { code: 'L6', color: 'bg-line-magenta text-on-magenta', text: '0% SCOPE CREEP · 100% ON-TIME ACCEPTANCE (SIGMA)' },
+  'PKR 700M+ PORTFOLIO · 150+ OPERATIONAL SITES',
+  'PKR 103M+ EVM COST SAVINGS · 22.5% UNDER BUDGET',
+  '80% SCHEDULE SLIPPAGE CUT VIA CPM GOVERNANCE',
+  '60% LOWER OPEX · 6M L FUEL SAVED (TELENOR THUNDER)',
+  '600K DAILY USERS · 60% LOWER INFRA COST (PLT AWS)',
+  '0% SCOPE CREEP · 100% ON-TIME ACCEPTANCE (SIGMA)',
 ];
 
 export default function Hero() {
@@ -40,7 +43,7 @@ export default function Hero() {
                   PMP®
                 </span>
               </span>
-              <span className="block mt-2.5 font-sans font-wide font-extrabold text-xl sm:text-2xl lg:text-3xl text-line-vermilion leading-snug tracking-tight">
+              <span className="block mt-2.5 font-sans font-wide font-extrabold text-xl sm:text-2xl lg:text-3xl text-line-cobalt leading-snug tracking-tight">
                 Technical Project Manager &amp; Delivery Lead
               </span>
             </h1>
@@ -62,7 +65,7 @@ export default function Hero() {
                 <span>Islamabad, Pakistan</span>
               </span>
               <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface text-ink shadow-[inset_0_0_0_1.5px_rgb(var(--rule-rgb)/0.2)]">
-                <Award className="h-3.5 w-3.5 text-line-vermilion shrink-0" aria-hidden="true" />
+                <Award className="h-3.5 w-3.5 text-line-cobalt shrink-0" aria-hidden="true" />
                 <span>PMP® Certified · PE (PEC) · MS PM</span>
               </span>
               <span className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-surface text-ink shadow-[inset_0_0_0_1.5px_rgb(var(--rule-rgb)/0.2)]">
@@ -160,8 +163,11 @@ export default function Hero() {
                     CRITICAL PATH NETWORK · ISLAMABAD
                   </span>
                 </div>
-                <span className="px-2 py-0.5 rounded-full bg-line-green text-on-green text-[11px] font-extrabold font-wide tabular">
-                  6 LINES ACTIVE
+                {/* Was "6 LINES ACTIVE" — a count of a thing the interface no
+                    longer names, and now untrue. Green here is the availability
+                    beacon, so it should say what is actually available. */}
+                <span className="px-2 py-0.5 rounded-full bg-line-green text-on-green text-[11px] font-extrabold font-wide">
+                  OPEN TO WORK
                 </span>
               </div>
 
@@ -264,13 +270,13 @@ export default function Hero() {
                     className="map-label inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-line-cobalt text-on-cobalt text-[11px] font-extrabold font-wide shadow-sm"
                     style={{ '--d': '600ms' }}
                   >
-                    <span>L1 · AJCL PMO</span>
+                    <span>AJCL PMO</span>
                   </span>
                   <span
-                    className="map-label inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-line-vermilion text-on-vermilion text-[11px] font-extrabold font-wide shadow-sm"
+                    className="map-label inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-line-cobalt text-on-cobalt text-[11px] font-extrabold font-wide shadow-sm"
                     style={{ '--d': '680ms' }}
                   >
-                    <span>L2 · HUBITO &amp; PACIO</span>
+                    <span>HUBITO &amp; PACIO</span>
                   </span>
                 </div>
 
@@ -310,16 +316,16 @@ export default function Hero() {
                 {/* Bottom Station Callout Pills */}
                 <div className="relative z-10 flex items-center justify-between gap-2 px-3 pt-3 pb-3">
                   <span
-                    className="map-label inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-line-violet text-on-violet text-[11px] font-extrabold font-wide shadow-sm"
+                    className="map-label inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-line-cobalt text-on-cobalt text-[11px] font-extrabold font-wide shadow-sm"
                     style={{ '--d': '820ms' }}
                   >
-                    <span>L5 · SOFTOO AGILE</span>
+                    <span>SOFTOO AGILE</span>
                   </span>
                   <span
-                    className="map-label inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-line-magenta text-on-magenta text-[11px] font-extrabold font-wide shadow-sm"
+                    className="map-label inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-line-cobalt text-on-cobalt text-[11px] font-extrabold font-wide shadow-sm"
                     style={{ '--d': '880ms' }}
                   >
-                    <span>L6 · SIGMA DIGITAL</span>
+                    <span>SIGMA DIGITAL</span>
                   </span>
                 </div>
               </div>
@@ -341,19 +347,15 @@ export default function Hero() {
         <div className="ticker-track flex items-center gap-8 w-max px-4">
           {TICKER_ITEMS.map((item, idx) => (
             <div key={`a-${idx}`} className="inline-flex items-center gap-2.5 shrink-0 text-xs sm:text-sm">
-              <span className={`px-2 py-0.5 rounded-full text-[11px] font-extrabold ${item.color}`}>
-                {item.code}
-              </span>
-              <span>{item.text}</span>
+              <span aria-hidden="true" className="w-2 h-2 rounded-full bg-line-sunflower shrink-0" />
+              <span>{item}</span>
               <span aria-hidden="true" className="opacity-40 ml-4">●</span>
             </div>
           ))}
           {TICKER_ITEMS.map((item, idx) => (
             <div key={`b-${idx}`} aria-hidden="true" className="ticker-dup inline-flex items-center gap-2.5 shrink-0 text-xs sm:text-sm">
-              <span className={`px-2 py-0.5 rounded-full text-[11px] font-extrabold ${item.color}`}>
-                {item.code}
-              </span>
-              <span>{item.text}</span>
+              <span className="w-2 h-2 rounded-full bg-line-sunflower shrink-0" />
+              <span>{item}</span>
               <span className="opacity-40 ml-4">●</span>
             </div>
           ))}

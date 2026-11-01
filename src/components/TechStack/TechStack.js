@@ -8,9 +8,9 @@ const categoryMeta = {
   delivery: {
     icon: FiCheckSquare,
     zone: 'ZONE A · PMO',
-    pill: 'bg-line-green text-on-green',
-    bar: 'bg-line-green',
-    dot: 'bg-line-green',
+    pill: 'bg-line-cobalt text-on-cobalt',
+    bar: 'bg-line-cobalt',
+    dot: 'bg-line-cobalt',
     description:
       'Schedule baselines, Earned Value Management (EVM), PMO controls, and Agile sprint governance to steer initiatives from planning through release.',
   },
@@ -26,9 +26,9 @@ const categoryMeta = {
   software: {
     icon: FiCode,
     zone: 'ZONE C · SDLC',
-    pill: 'bg-line-vermilion text-on-vermilion',
-    bar: 'bg-line-vermilion',
-    dot: 'bg-line-vermilion',
+    pill: 'bg-line-cobalt text-on-cobalt',
+    bar: 'bg-line-cobalt',
+    dot: 'bg-line-cobalt',
     description:
       'Modern reactive frontend applications, enterprise backend services, and cross-platform mobile ecosystems coordinated with engineering squads.',
   },
@@ -50,8 +50,7 @@ const TechStack = () => {
   return (
     <RouteSection
       id="skills"
-      line="green"
-      code="L4"
+      line="cobalt"
       surface="tinted"
       className="border-b-[1.5px] border-rule/15"
     >
@@ -60,9 +59,9 @@ const TechStack = () => {
           <h2 className="font-display text-3xl sm:text-5xl text-ink">
             Technology &amp; Delivery Stack
           </h2>
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-line-green text-on-green text-xs font-extrabold font-wide">
-            <span className="w-2 h-2 rounded-full bg-ink" />
-            GREEN LINE · {totalSkillsCount} COMPETENCIES
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface text-ink-2 text-xs font-extrabold font-wide">
+            <span className="w-2 h-2 rounded-full bg-line-cobalt" />
+            {totalSkillsCount} COMPETENCIES
           </span>
         </div>
 
@@ -104,7 +103,7 @@ const TechStack = () => {
               >
                 <span
                   aria-hidden="true"
-                  className={`w-2.5 h-2.5 rounded-full ${meta.dot || 'bg-line-green'}`}
+                  className={`w-2.5 h-2.5 rounded-full ${meta.dot || 'bg-line-cobalt'}`}
                 />
                 <Icon className="w-3.5 h-3.5" aria-hidden="true" />
                 <span>{category.name.split('&')[0].trim()}</span>
@@ -148,12 +147,12 @@ const TechStack = () => {
                 className={`card card-lift overflow-hidden flex flex-col justify-between ${colSpanClass}`}
               >
                 <div>
-                  <div className={`h-2 w-full ${meta.bar || 'bg-line-green'}`} aria-hidden="true" />
+                  <div className={`h-2 w-full ${meta.bar || 'bg-line-cobalt'}`} aria-hidden="true" />
                   <div className="p-6 sm:p-7">
                     <div className="flex items-center justify-between gap-3 mb-4">
                       <span
                         className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-extrabold font-wide ${
-                          meta.pill || 'bg-line-green text-on-green'
+                          meta.pill || 'bg-line-cobalt text-on-cobalt'
                         }`}
                       >
                         <CategoryIcon className="w-3.5 h-3.5" aria-hidden="true" />

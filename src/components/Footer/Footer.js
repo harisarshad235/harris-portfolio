@@ -24,8 +24,8 @@ const Footer = () => {
           </div>
 
           <div>
-            <div className="inline-flex items-center gap-2 font-wide font-extrabold text-xs text-line-vermilion mb-4">
-              <span className="w-2.5 h-2.5 rounded-full bg-line-vermilion" />
+            <div className="inline-flex items-center gap-2 font-wide font-extrabold text-xs text-line-cobalt mb-4">
+              <span className="w-2.5 h-2.5 rounded-full bg-line-cobalt" />
               <span>ORIGINAL SAAS PRODUCTS</span>
             </div>
             <ul className="space-y-2.5 text-sm font-medium text-white/80">
@@ -72,8 +72,8 @@ const Footer = () => {
           </div>
 
           <div>
-            <div className="inline-flex items-center gap-2 font-wide font-extrabold text-xs text-line-green mb-4">
-              <span className="w-2.5 h-2.5 rounded-full bg-line-green" />
+            <div className="inline-flex items-center gap-2 font-wide font-extrabold text-xs text-line-cobalt mb-4">
+              <span className="w-2.5 h-2.5 rounded-full bg-line-cobalt" />
               <span>RESOURCES &amp; AI INDEX</span>
             </div>
             <ul className="space-y-2.5 text-sm font-medium text-white/80">
@@ -130,14 +130,10 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Closing 6-Line Transit Bar */}
-      <div aria-hidden="true" className="grid grid-cols-6 h-2 w-full mt-8">
-        <span className="bg-line-cobalt" />
-        <span className="bg-line-vermilion" />
-        <span className="bg-line-sunflower" />
-        <span className="bg-line-green" />
-        <span className="bg-line-violet" />
-        <span className="bg-line-magenta" />
+      {/* Closing transit bar — mirrors the header's signature strip */}
+      <div aria-hidden="true" className="flex h-2 w-full mt-8">
+        <span className="flex-[7] bg-line-cobalt" />
+        <span className="flex-[1] bg-line-sunflower" />
       </div>
     </footer>
   );

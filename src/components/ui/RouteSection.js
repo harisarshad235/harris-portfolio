@@ -41,7 +41,6 @@ const LINE_MAP = {
 export function RouteSection({
   id,
   line = 'cobalt',
-  code = 'M1',
   surface = 'default', // 'default' | 'drench' | 'terminus' | 'tinted'
   isLast = false,
   className = '',
@@ -134,12 +133,12 @@ export function RouteSection({
             />
           </div>
 
-          {/* Station Roundel Badge at top of section */}
+          {/* Station marker. It used to print a code (L1-L6, INFO, END); those
+              were a private index — nothing on the page told a visitor what
+              they meant, so the rail now just marks the stop. */}
           <div
-            className={`absolute top-2 w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-display text-xs sm:text-sm tracking-tight ${nodeRing}`}
-          >
-            {code}
-          </div>
+            className={`absolute top-3 w-4 h-4 sm:w-5 sm:h-5 rounded-full ${nodeRing}`}
+          />
         </div>
 
         {children}

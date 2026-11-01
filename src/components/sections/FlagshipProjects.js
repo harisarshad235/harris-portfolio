@@ -8,8 +8,7 @@ export const FlagshipProjects = () => {
   return (
     <RouteSection
       id="products"
-      line="vermilion"
-      code="L2"
+      line="cobalt"
       surface="drench"
       className="border-b-2 border-ink"
     >
@@ -21,7 +20,7 @@ export const FlagshipProjects = () => {
           </h2>
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0E1116] text-[#FFCB3D] text-xs font-extrabold font-wide tabular">
             <span className="w-2 h-2 rounded-full bg-[#FFCB3D]" />
-            VERMILION EXPRESS · PROPRIETARY SAAS
+            PROPRIETARY SAAS · BUILT &amp; SHIPPED
           </span>
         </div>
 
@@ -33,12 +32,6 @@ export const FlagshipProjects = () => {
       {/* 2-Column Maximalist Poster Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
         {flagshipProjects.map((project, index) => {
-          const isHubito = project.id === 'hubito';
-          const stationCode = isHubito ? 'EXP-01' : 'EXP-02';
-          const lineBadgeClass = isHubito
-            ? 'bg-line-green text-on-green'
-            : 'bg-line-cobalt text-on-cobalt';
-
           return (
             <article
               key={project.id}
@@ -49,10 +42,10 @@ export const FlagshipProjects = () => {
               <div>
                 {/* Departure-Board Top Strip */}
                 <div className="board px-5 py-3 flex items-center justify-between gap-3 border-b-2 border-ink text-xs">
+                  {/* The EXP-01 / EXP-02 pills that sat here were station codes
+                      for a line that is no longer named; the category reads fine
+                      on its own. */}
                   <div className="flex items-center gap-2.5 min-w-0">
-                    <span className={`px-2 py-0.5 rounded-full font-extrabold ${lineBadgeClass}`}>
-                      {stationCode}
-                    </span>
                     <span className="truncate">{project.category}</span>
                   </div>
                   <span className="inline-flex items-center gap-1.5 shrink-0 text-[#2FD283]">

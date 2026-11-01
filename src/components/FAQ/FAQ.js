@@ -36,14 +36,9 @@ export const FAQ_DATA = [
   },
 ];
 
-const LINE_COLORS = [
-  'bg-line-cobalt text-on-cobalt',
-  'bg-line-vermilion text-on-vermilion',
-  'bg-line-sunflower text-on-sunflower',
-  'bg-line-green text-on-green',
-  'bg-line-violet text-on-violet',
-  'bg-line-magenta text-on-magenta',
-];
+// Cycling six hues across the answers made the FAQ the most colourful block on
+// the page while saying nothing. One colour, applied evenly.
+const LINE_COLORS = ['bg-line-cobalt text-on-cobalt'];
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
@@ -56,7 +51,6 @@ export default function FAQ() {
     <RouteSection
       id="faq"
       line="cobalt"
-      code="INFO"
       surface="default"
       className="border-b-[1.5px] border-rule/15"
     >

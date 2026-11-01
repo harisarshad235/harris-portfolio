@@ -99,8 +99,7 @@ const Recommendations = () => {
   return (
     <RouteSection
       id="recommendations"
-      line="magenta"
-      code="L6"
+      line="cobalt"
       surface="tinted"
       className="border-b-[1.5px] border-rule/15"
     >
@@ -110,9 +109,9 @@ const Recommendations = () => {
             <h2 className="font-display text-3xl sm:text-5xl text-ink">
               Recommendations
             </h2>
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-line-magenta text-on-magenta text-xs font-extrabold font-wide">
-              <span className="w-2 h-2 rounded-full bg-current" />
-              MAGENTA LINE · STAKEHOLDER ENDORSEMENTS
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface text-ink-2 text-xs font-extrabold font-wide">
+              <span className="w-2 h-2 rounded-full bg-line-cobalt" />
+              STAKEHOLDER ENDORSEMENTS
             </span>
           </div>
           <p className="text-ink-2 text-base sm:text-lg leading-relaxed max-w-[66ch]">
@@ -142,10 +141,10 @@ const Recommendations = () => {
               className="card card-lift overflow-hidden flex flex-col justify-between"
             >
               <div>
-                <div className="h-2 w-full bg-line-magenta" aria-hidden="true" />
+                <div className="h-2 w-full bg-line-cobalt" aria-hidden="true" />
                 <div className="p-6 sm:p-7">
                   <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-line-magenta text-on-magenta">
+                    <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-line-cobalt text-on-magenta">
                       <FiMessageSquare className="w-4 h-4" aria-hidden="true" />
                     </span>
                     <span className="px-2.5 py-0.5 rounded-full bg-surface-2 text-ink text-xs font-extrabold font-wide tabular">

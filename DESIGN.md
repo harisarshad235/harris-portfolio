@@ -93,16 +93,16 @@ Flat transit-poster pigments paired with warm paper stock and deep ink.
 
 ### Primary
 - **Poster Ink** (`#0E1116` day / `#F2F2EE` night): Primary typography, station rings, primary CTA buttons, and departure-board housings.
-- **Cobalt Line** (`#1F4FE0` day / `#5B85FF` night): Line 1 (Career Route), telecom projects, focus rings, and case-study outcome drench.
-- **Vermilion Express** (`#D93A1F` day / `#FF6242` night): Line 2 (Original SaaS Products drench field), primary role subheadline, and error states.
+- **Cobalt Line** (`#1F4FE0` day / `#5B85FF` night): the route. Every homepage section's rail and station, the role subheadline, focus rings, sector and zone pills, the Products drench field (`#163496` at night so white body text stays AA), and case-study outcome drench.
 
 ### Secondary
-- **Sunflower Line** (`#FFC21A` day / `#FFCB3D` night): Line 3 (Client Projects interchange), departure-board numerals, text selection highlight, and high-visibility secondary CTAs.
-- **Green Line** (`#0E9F5B` day / `#2FD283` night): Line 4 (Technology & PMO Stack), live availability beacons, and public-sector case studies.
+- **Sunflower Line** (`#FFC21A` day / `#FFCB3D` night): the numbers. Departure-board numerals and ticker markers, the rail fill over a drenched section, text selection highlight, high-visibility secondary CTAs, and the interchange slice on the header and footer signature strips.
 
-### Tertiary
-- **Violet Line** (`#7A3FF2` day / `#A47BFF` night): Line 5 (Credentials & Certifications) and digital-platform case studies.
-- **Magenta Line** (`#D6136F` day / `#FF4FA3` night): Line 6 (Stakeholder Endorsements) and e-commerce case studies.
+### Semantic only — never decorative
+These four are no longer route colours. They carry state, and appear only where that state is the message.
+- **Green** (`#0E9F5B` day / `#2FD283` night): success, "live", "current", availability beacons, copy-confirmed.
+- **Vermilion** (`#D93A1F` day / `#FF6242` night): errors, alerts, the 404 page.
+- **Violet** (`#7A3FF2`) and **Magenta** (`#D6136F`): retired from the homepage. Still available inside `public/case-studies/` where a per-case accent genuinely distinguishes one study from another.
 
 ### Neutral
 - **Poster Paper** (`#F7F7F4` day / `#0B0D12` night): Primary page ground.
@@ -112,7 +112,11 @@ Flat transit-poster pigments paired with warm paper stock and deep ink.
 
 ### Named Rules
 **The Flat Pigment Rule.** Line colours are always flat, opaque pigments. Never blend two line colours in a gradient or apply glowing neon drop shadows.
-**The Drench Commitment Rule.** When a section or outcome card is drenched (`Vermilion Express`, `Central Terminus`, `Case Outcome`), the colour owns the entire region edge-to-edge.
+**The Drench Commitment Rule.** When a section or outcome card is drenched (`Products`, `Central Terminus`, `Case Outcome`), the colour owns the entire region edge-to-edge.
+
+**The Silent Metaphor Rule.** The transit system is a structure, not a caption. Never print the line's name, a line code (`L1`–`L6`, `INFO`, `END`) or a stop number in the interface — they index nothing a visitor can look up, and repeating them on every card turns the metaphor into noise. The rail, the station dot and the route order carry it. Where a chip sits beside a heading it states the content (`CAREER ROUTE · 2019–PRESENT`, `21 COMPETENCIES`), never the colour.
+
+**The Two-Accent Rule.** Cobalt is structure, sunflower is numbers, ink and paper do the rest. A hue per section, per sector or per skill zone encodes nothing a reader can decode, because the label beside it already says what it is.
 
 ## Typography
 
@@ -172,17 +176,20 @@ Cards and dialogs use a `16px` border radius (`rounded-2xl`). Buttons, filter ta
 - **Mobile:** Scrollable horizontal station hopper below the main bar.
 
 ### Signature Component: RouteSection & Departure Board
-- **RouteSection:** Wraps each section with a continuous vertical track along `.rail-x` that fills in the section's line colour (`scaleY`) in proportion to scroll position, topped by a circular station roundel (`L1`–`L6`, `INFO`, `END`).
+- **RouteSection:** Wraps each section with a continuous vertical track along `.rail-x` that fills in the section's line colour (`scaleY`) in proportion to scroll position, topped by a plain circular station dot. The dot carries no text.
 - **Departure Board (`.board`):** `#0E1116` background with `#FFCB3D` expanded tabular uppercase numerals, used for the hero metric ticker and project KPI strips.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** assign every section, project sector, and skill zone to one of the six canonical line colours.
+- **Do** keep every section, project sector, and skill zone on Cobalt, and let its label do the distinguishing.
+- **Do** reach for Sunflower when the content is a number, and for Green or Vermilion only when the content is a state (live, success, error).
 - **Do** use `font-variant-numeric: tabular-nums` (`.tabular`) on all metrics, years, counts, and station codes.
 - **Do** gate hover transforms behind `@media (hover: hover) and (pointer: fine)` and honour `prefers-reduced-motion: reduce`.
 
 ### Don't:
+- **Don't** introduce a third accent, or give a section its own hue because it feels like it deserves one.
+- **Don't** print a line name, line code or stop number anywhere in the interface.
 - **Don't** place an eyebrow or kicker label above `<h1>` or `<h2>` headings.
 - **Don't** use CSS gradients on text, backgrounds, or buttons, or `backdrop-filter: blur()` glass effects.
 - **Don't** use thick coloured `border-left` callout stripes on cards or notes; use a circular `.station` dot marker instead.

@@ -6,12 +6,16 @@ import { RouteSection } from '../ui/RouteSection';
 
 const filters = ['All', 'Telecom', 'E-commerce', 'Public sector', 'Digital platforms'];
 
+// Each sector is already named in the chip beside its dot, so a hue per sector
+// was decoration, not a key. One line colour; the label does the telling.
+const COBALT = { dot: 'bg-line-cobalt', pill: 'bg-line-cobalt text-on-cobalt', bar: 'bg-line-cobalt' };
+
 const SECTOR_LINE = {
-  All: { dot: 'bg-line-sunflower', pill: 'bg-line-sunflower text-on-sunflower', bar: 'bg-line-sunflower' },
-  Telecom: { dot: 'bg-line-cobalt', pill: 'bg-line-cobalt text-on-cobalt', bar: 'bg-line-cobalt' },
-  'E-commerce': { dot: 'bg-line-magenta', pill: 'bg-line-magenta text-on-magenta', bar: 'bg-line-magenta' },
-  'Public sector': { dot: 'bg-line-green', pill: 'bg-line-green text-on-green', bar: 'bg-line-green' },
-  'Digital platforms': { dot: 'bg-line-violet', pill: 'bg-line-violet text-on-violet', bar: 'bg-line-violet' },
+  All: COBALT,
+  Telecom: COBALT,
+  'E-commerce': COBALT,
+  'Public sector': COBALT,
+  'Digital platforms': COBALT,
 };
 
 const filterProjects = (filter) =>
@@ -24,8 +28,7 @@ const Projects = () => {
   return (
     <RouteSection
       id="client-projects"
-      line="sunflower"
-      code="L3"
+      line="cobalt"
       surface="default"
       className="border-b-[1.5px] border-rule/15"
     >
@@ -34,9 +37,9 @@ const Projects = () => {
           <h2 className="font-display text-3xl sm:text-5xl text-ink">
             Client Projects &amp; Case Studies
           </h2>
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-line-sunflower text-on-sunflower text-xs font-extrabold font-wide">
-            <span className="w-2 h-2 rounded-full bg-ink" />
-            SUNFLOWER INTERCHANGE · 8 ENTERPRISE DELIVERIES
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-2 text-ink-2 text-xs font-extrabold font-wide">
+            <span className="w-2 h-2 rounded-full bg-line-cobalt" />
+            8 ENTERPRISE DELIVERIES
           </span>
         </div>
 
