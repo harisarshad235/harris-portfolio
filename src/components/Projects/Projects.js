@@ -149,7 +149,7 @@ const Projects = () => {
                           loading="lazy"
                           width={560}
                           height={315}
-                          className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                          className="w-full h-full object-contain object-center p-3 sm:p-4 transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                         />
                       ) : (
                         <div
