@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
-import { FiMoon, FiSun, FiFileText, FiArrowUpRight } from 'react-icons/fi';
+import { FiMoon, FiSun, FiFileText, FiArrowUpRight, FiMail } from 'react-icons/fi';
 
 import { useThemeMode } from '../../styles/theme';
 
@@ -185,9 +185,13 @@ const Header = () => {
             <span>Resume</span>
           </a>
 
-          <a href="#contact" className="btn btn-ink btn-sm">
-            <span>Work with me</span>
-            <FiArrowUpRight className="w-4 h-4" aria-hidden="true" />
+          {/* On phones the label gives way to an envelope so the logo, name,
+              theme toggle and this button all fit in 375px. The label stays in
+              the accessible name, so screen readers still announce it. */}
+          <a href="#contact" aria-label="Work with me" className="btn btn-ink btn-sm">
+            <span className="hidden sm:inline">Work with me</span>
+            <FiMail className="w-4 h-4 sm:hidden" aria-hidden="true" />
+            <FiArrowUpRight className="hidden sm:inline w-4 h-4" aria-hidden="true" />
           </a>
         </div>
       </div>
