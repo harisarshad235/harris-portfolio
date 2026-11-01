@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#F7F7F4" />
   <meta name="description"
     content="Haris Arshad managed client coordination, development requirements, and module documentation for the Aviation Professionals Club admin portal." />
   <title>APC Admin Portal | Haris Arshad</title>
@@ -28,10 +29,15 @@
   <link rel="stylesheet" href="/case-studies/case-study.css" />
   <script>
     (function () {
+      // Theme contract: the key 'portfolio-theme' is shared with the Next.js app
+      // (src/styles/theme.js and src/pages/_document.js). Values are 'dark' or
+      // 'light'. Keep this block in step with _document.js.
       try {
         var savedTheme = localStorage.getItem('portfolio-theme');
         if (savedTheme === 'dark' || savedTheme === 'light') {
           document.documentElement.setAttribute('data-theme', savedTheme);
+          var tc = document.querySelector('meta[name="theme-color"]');
+          if (tc) tc.setAttribute('content', savedTheme === 'dark' ? '#0B0D12' : '#F7F7F4');
         }
       } catch (e) {}
     })();
@@ -196,15 +202,22 @@
 
     <footer class="case-footer case-footer--feature">
       <a href="/case-studies/taggy-marketplace">Previous: Taggy Marketplace <span aria-hidden="true">←</span></a>
+      <a href="/#client-projects" class="case-footer-index">All case studies <span aria-hidden="true">↗</span></a>
       <a href="/case-studies/thunder-energy">Next: Thunder <span aria-hidden="true">→</span></a>
     </footer>
   </main>
   <script>
-    document.getElementById('case-theme-toggle')?.addEventListener('click', function () {
+    document.getElementById('case-theme-toggle')?.addEventListener('click', function() {
       var current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
       var next = current === 'light' ? 'dark' : 'light';
       document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('portfolio-theme', next);
+      var tc = document.querySelector('meta[name="theme-color"]');
+      if (tc) tc.setAttribute('content', next === 'dark' ? '#0B0D12' : '#F7F7F4');
+      // Storage can be unavailable (private mode, blocked cookies). The theme
+      // still flips for this page view; only persistence is lost.
+      try {
+        localStorage.setItem('portfolio-theme', next);
+      } catch (e) {}
     });
   </script>
 </body>

@@ -709,6 +709,14 @@ a {
   transform: scale(0.97);
 }
 
+/* The way out of the prev/next ring. Deliberately quieter than its neighbours so
+   the sequence still leads, but the reader is never stuck looping between pages. */
+.case-footer-index {
+  background: transparent;
+  border-color: var(--cs-rule);
+  color: var(--cs-ink-2);
+}
+
 @media (max-width: 860px) {
   .case-hero {
     grid-template-columns: 1fr;

@@ -156,7 +156,7 @@ export const TimeLineData = [
   },
   {
     year: '2026–Present',
-    role: 'Technical Project Manager',
+    role: 'Project Manager',
     company: 'Sigma Digital Solutions',
     text: 'Directing concurrent SaaS & web engineering sprints (Taggy, APC, Premier Online) with 0% scope creep, explicit WIP limits, and 100% on-time client acceptance.',
   },
