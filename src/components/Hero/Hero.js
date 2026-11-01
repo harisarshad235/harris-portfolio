@@ -166,7 +166,7 @@ export default function Hero() {
                 {/* Was "6 LINES ACTIVE" — a count of a thing the interface no
                     longer names, and now untrue. Green here is the availability
                     beacon, so it should say what is actually available. */}
-                <span className="px-2 py-0.5 rounded-full bg-line-green text-on-green text-[11px] font-extrabold font-wide">
+                <span className="px-2 py-0.5 rounded-full bg-line-green text-on-green text-[11px] font-extrabold font-wide whitespace-nowrap shrink-0">
                   OPEN TO WORK
                 </span>
               </div>
