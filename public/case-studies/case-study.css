@@ -747,3 +747,173 @@ a {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ==========================================================================
+   EDITORIAL PASS — aligns case studies with the home page grammar:
+   hairline rules, 8/6/4px radii, one teal accent, no pills, no route motifs.
+   Later rules intentionally override the earlier ones above.
+   ========================================================================== */
+
+:root { --cs-accent-soft: #DEEAE5; }
+[data-theme="dark"] { --cs-accent-soft: #16342F; }
+
+body.case-study-page::before { height: 2px; }
+
+.case-study--feature { width: min(100%, 1160px); padding-top: 2rem; }
+
+/* Top bar and breadcrumb: plain text, slash-separated */
+.case-top-bar { border-bottom: 1px solid var(--cs-rule); padding-bottom: 1.4rem; margin-bottom: 3.2rem; }
+.case-breadcrumb ol { padding: 0; background: none; border: 0; border-radius: 0; gap: 0.2rem; }
+.case-breadcrumb { font-size: 1.4rem; font-weight: 500; }
+.case-breadcrumb a, .case-breadcrumb [aria-current="page"] { font-weight: 500; }
+.case-breadcrumb li + li::before {
+  content: "/";
+  width: auto; height: auto; margin: 0 0.8rem 0 0.6rem;
+  background: none; box-shadow: none; border-radius: 0;
+  color: var(--cs-ink-2); opacity: 0.6;
+}
+.case-theme-toggle { width: 4rem; height: 4rem; border-radius: 6px; border: 1px solid var(--cs-rule-strong); }
+
+/* Hero: copy left, full uncropped image right */
+.case-hero {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(2.4rem, 4vw, 5.6rem);
+  align-items: center;
+  margin-top: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  overflow: visible;
+}
+.case-hero-content { order: 1; padding: 0; }
+.case-hero-media, .case-hero-art {
+  order: 2;
+  min-height: 0;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--cs-rule);
+  border-radius: 8px;
+  background: var(--cs-surface-2);
+}
+.case-hero-media img { object-fit: contain; object-position: center; }
+.case-hero-content h1 { font-size: clamp(3.2rem, 4.4vw, 5.2rem); line-height: 1.04; letter-spacing: -0.018em; }
+.case-client { color: var(--cs-cobalt); font-weight: 600; }
+.case-hero-art--telecom span { border-radius: 4px; }
+
+/* Labels and tags: sentence-case text, no dots, no pills */
+.case-eyebrow, .case-label {
+  padding: 0; margin-bottom: 1.2rem;
+  border: 0; border-radius: 0; background: none;
+  color: var(--cs-cobalt);
+  font-size: 1.35rem; font-weight: 600;
+}
+.case-eyebrow::before, .case-label::before,
+.case-chapter .case-label::before, .case-chapter--tinted .case-label::before { display: none; }
+.case-tags span {
+  padding: 0.4rem 1rem;
+  border: 0; border-radius: 4px;
+  background: var(--cs-surface-2);
+  font-size: 1.3rem; font-weight: 500;
+}
+
+/* Metrics: a ruled ledger instead of a dark board */
+.case-metrics {
+  margin-top: 4.4rem;
+  background: transparent; color: var(--cs-ink);
+  border: 0; border-top: 1px solid var(--cs-rule-strong); border-bottom: 1px solid var(--cs-rule);
+  border-radius: 0;
+}
+.case-metrics > div { padding: 2.4rem 2.4rem 2.4rem 0; border-right: 0; }
+.case-metrics > div + div { padding-left: 2.4rem; border-left: 1px solid var(--cs-rule); }
+.case-metrics strong { color: var(--cs-ink); font-size: clamp(2.8rem, 3.4vw, 3.8rem); }
+.case-metrics span {
+  margin-top: 0.8rem;
+  color: var(--cs-cobalt);
+  font-size: 1.4rem; font-weight: 600;
+  letter-spacing: 0; text-transform: none;
+}
+
+/* Overview */
+.case-overview { padding: 5.6rem 0; }
+.case-personal-note {
+  padding: 1.8rem 2.2rem;
+  border: 0; border-radius: 8px;
+  background: var(--cs-accent-soft);
+  font-size: 1.5rem; font-weight: 400;
+}
+.case-personal-note::before { display: none; }
+.case-focus { padding: 2.4rem; border: 1px solid var(--cs-rule); border-radius: 8px; }
+.case-focus ul { padding-left: 0; gap: 0; }
+.case-focus ul::before, .case-focus li::before { display: none; }
+.case-focus li {
+  padding: 1rem 0;
+  border: 0; border-top: 1px solid var(--cs-rule); border-radius: 0;
+  background: none;
+  font-size: 1.45rem; font-weight: 500;
+}
+.case-focus li:first-child { border-top: 0; padding-top: 0; }
+
+/* Chapters and cards */
+.case-chapter { border-top: 1px solid var(--cs-rule); padding: 5.2rem 0; }
+.case-chapter.case-chapter--tinted, .case-chapter--tinted {
+  padding: 4.8rem 3.2rem;
+  border: 0; border-radius: 8px;
+  margin: 2.4rem 0;
+}
+.case-card-grid { gap: 2.4rem; }
+.case-card-grid article {
+  padding: 2.4rem;
+  border: 1px solid var(--cs-rule); border-radius: 8px;
+}
+.case-card-grid h3 { font-family: "Source Serif 4", Georgia, serif; font-weight: 500; font-size: 2rem; }
+@media (hover: hover) and (pointer: fine) {
+  .case-card-grid article:hover { transform: translateY(-3px); }
+}
+.case-index {
+  width: auto; height: auto; margin-bottom: 1rem;
+  border-radius: 0; background: none; box-shadow: none;
+  color: var(--cs-cobalt);
+  font-size: 1.6rem;
+}
+
+/* Outcome: the forest field, as at the end of the home page */
+.case-outcome { border: 0; border-radius: 8px; margin-top: 3.2rem; }
+.case-outcome .case-label { background: none; border: 0; color: #8FD6C7; padding: 0; }
+.case-outcome .case-label::before { display: none; }
+.case-outcome > a { border-radius: 6px; font-weight: 600; }
+
+/* Footer navigation */
+.case-footer--feature { border-top: 1px solid var(--cs-rule-strong); }
+.case-footer--feature a { border-radius: 6px; border-width: 1px; font-weight: 600; }
+
+@media (max-width: 860px) {
+  .case-hero { grid-template-columns: 1fr; gap: 2.8rem; }
+  .case-hero-media, .case-hero-art { order: 1; min-height: 0; border: 1px solid var(--cs-rule); }
+  .case-hero-content { order: 2; padding: 0; }
+  .case-metrics > div, .case-metrics > div + div { padding: 1.8rem 0; border-left: 0; border-bottom: 1px solid var(--cs-rule); }
+  .case-metrics > div:last-child { border-bottom: 0; }
+  .case-chapter.case-chapter--tinted, .case-chapter--tinted { padding: 3.2rem 2rem; }
+}
+
+/* Hero image: show each screenshot at its own proportions, never cropped */
+.case-hero-media {
+  aspect-ratio: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 0;
+  border-radius: 0;
+}
+.case-hero-media img {
+  width: 100%;
+  height: auto;
+  max-height: 52rem;
+  object-fit: contain;
+  border: 1px solid var(--cs-rule);
+  border-radius: 8px;
+  background: var(--cs-surface-2);
+}
+@media (max-width: 860px) {
+  .case-hero-media { border: 0; }
+}
+.case-hero-art { aspect-ratio: 4 / 3; }

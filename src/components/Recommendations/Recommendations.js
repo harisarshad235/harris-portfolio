@@ -2,28 +2,11 @@ import React, { useEffect, useRef, useState } from 'react';
 import { FiArrowUpRight, FiX } from 'react-icons/fi';
 import { Section } from '../ui/Section';
 
-const SEED_RECOMMENDATIONS = [
-  {
-    id: 'seed-pmo',
-    quote: 'Haris provided exceptional PMO leadership across our nationwide portfolio. His precision in budget forecasting, milestone control, and executive reporting kept complex multi-site deliverables strictly aligned with business goals.',
-    name: 'Senior Director of Operations',
-    designation: 'PMO & Governance',
-    organization: 'Enterprise Infrastructure & Telecom',
-  },
-  {
-    id: 'seed-software',
-    quote: 'Working with Haris on enterprise platform delivery ensured total predictability. He excels at keeping development teams unblocked, managing RAID items proactively, and leading stakeholder communication through successful launch.',
-    name: 'Technical Program Architect',
-    designation: 'Software Engineering',
-    organization: 'Digital Platforms & Cloud Services',
-  },
-];
-
 const Recommendations = () => {
   const dialogRef = useRef(null);
   const [formState, setFormState] = useState('idle');
   const [errorMessage, setErrorMessage] = useState('');
-  const [approvedRecommendations, setApprovedRecommendations] = useState(SEED_RECOMMENDATIONS);
+  const [approvedRecommendations, setApprovedRecommendations] = useState([]);
   const [recommendationsLoading, setRecommendationsLoading] = useState(false);
   const [recommendationsError, setRecommendationsError] = useState('');
 
@@ -37,11 +20,11 @@ const Recommendations = () => {
         if (response.ok && Array.isArray(result.recommendations) && result.recommendations.length > 0) {
           if (active) setApprovedRecommendations(result.recommendations);
         } else {
-          if (active) setApprovedRecommendations(SEED_RECOMMENDATIONS);
+          if (active) setApprovedRecommendations([]);
         }
       } catch (error) {
         console.error('Approved recommendations could not be loaded.', error);
-        if (active) setApprovedRecommendations(SEED_RECOMMENDATIONS);
+        if (active) setApprovedRecommendations([]);
       } finally {
         if (active) setRecommendationsLoading(false);
       }
@@ -102,7 +85,7 @@ const Recommendations = () => {
     <Section
       id="recommendations"
       title="Recommendations"
-      intro={hasContent ? 'Feedback from colleagues, clients, and managers who have worked with me.' : undefined}
+      intro={hasContent ? 'Feedback from colleagues, clients, and managers who have worked with me.' : 'Recommendations are published here once the person who wrote them approves. You can also read verified references on LinkedIn.'}
       surface="tinted"
       split={false}
     >

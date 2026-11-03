@@ -12,6 +12,12 @@ const categoryDescription = {
     'Modern reactive frontend applications, enterprise backend services, and cross-platform mobile ecosystems coordinated with engineering squads.',
 };
 
+const tabLabel = {
+  delivery: 'Delivery & PMO',
+  platforms: 'Cloud & systems',
+  software: 'Software',
+};
+
 const TechStack = () => {
   const [activeTab, setActiveTab] = useState('all');
 
@@ -54,7 +60,7 @@ const TechStack = () => {
               onClick={() => setActiveTab(category.id)}
               className="tab"
             >
-              <span>{category.name.split('&')[0].trim()}</span>
+              <span>{tabLabel[category.id] || category.name}</span>
               <span className="tab-count">{category.technologies.length}</span>
             </button>
           ))}
