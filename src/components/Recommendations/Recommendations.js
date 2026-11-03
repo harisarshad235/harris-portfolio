@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { FiArrowUpRight, FiMessageSquare, FiX } from 'react-icons/fi';
-import { RouteSection } from '../ui/RouteSection';
+import { FiArrowUpRight, FiX } from 'react-icons/fi';
+import { Section } from '../ui/Section';
 
 const SEED_RECOMMENDATIONS = [
   {
@@ -96,82 +96,50 @@ const Recommendations = () => {
     }
   };
 
-  return (
-    <RouteSection
-      id="recommendations"
-      line="cobalt"
-      surface="tinted"
-      className="border-b-[1.5px] border-rule/15"
-    >
-      {(recommendationsLoading || recommendationsError || approvedRecommendations.length > 0) && (
-        <div data-reveal className="mb-10">
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
-            <h2 className="font-display text-3xl sm:text-5xl text-ink">
-              Recommendations
-            </h2>
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface text-ink-2 text-xs font-extrabold font-wide">
-              <span className="w-2 h-2 rounded-full bg-line-cobalt" />
-              STAKEHOLDER ENDORSEMENTS
-            </span>
-          </div>
-          <p className="text-ink-2 text-base sm:text-lg leading-relaxed max-w-[66ch]">
-            Feedback from colleagues, clients, and managers who have worked with me.
-          </p>
-        </div>
-      )}
+  const hasContent = recommendationsLoading || recommendationsError || approvedRecommendations.length > 0;
 
+  return (
+    <Section
+      id="recommendations"
+      title="Recommendations"
+      intro={hasContent ? 'Feedback from colleagues, clients, and managers who have worked with me.' : undefined}
+      surface="tinted"
+      split={false}
+    >
       {recommendationsLoading ? (
-        <div role="status" className="card p-6 text-sm font-bold text-ink-2 mb-6">
+        <div role="status" className="py-6 text-sm font-medium text-ink-2 mb-6">
           Loading approved recommendations…
         </div>
       ) : recommendationsError ? (
-        <div role="status" className="card p-6 text-sm font-bold text-line-vermilion mb-6">
+        <div role="status" className="py-6 text-sm font-semibold text-danger mb-6">
           {recommendationsError}
         </div>
       ) : approvedRecommendations.length ? (
         <div
           aria-label="Approved recommendations"
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 mb-14"
         >
           {approvedRecommendations.map(({ id, quote, name, designation, organization }, index) => (
-            <article
+            <figure
               key={id}
               data-reveal
               style={{ '--d': `${index * 80}ms` }}
-              className="card card-lift overflow-hidden flex flex-col justify-between"
+              className="flex flex-col justify-between border-t border-rule/20 pt-6"
             >
-              <div>
-                <div className="h-2 w-full bg-line-cobalt" aria-hidden="true" />
-                <div className="p-6 sm:p-7">
-                  <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-line-cobalt text-on-magenta">
-                      <FiMessageSquare className="w-4 h-4" aria-hidden="true" />
-                    </span>
-                    <span className="px-2.5 py-0.5 rounded-full bg-surface-2 text-ink text-xs font-extrabold font-wide tabular">
-                      REF-0{index + 1}
-                    </span>
-                  </div>
-
-                  <blockquote className="text-sm sm:text-base text-ink leading-relaxed font-medium mb-6">
-                    &ldquo;{quote}&rdquo;
-                  </blockquote>
-                </div>
-              </div>
-
+              <blockquote className="font-display text-[1.25rem] sm:text-[1.375rem] leading-[1.45] text-ink mb-6">
+                &ldquo;{quote}&rdquo;
+              </blockquote>
               {(name || designation || organization) && (
-                <div className="px-6 py-4 bg-surface-2/60 border-t border-rule/12 flex items-center gap-3">
-                  <span className="station !w-3 !h-3 shrink-0" aria-hidden="true" />
-                  <div className="text-xs sm:text-sm">
-                    {name && <strong className="block font-extrabold text-ink">{name}</strong>}
-                    {(designation || organization) && (
-                      <span className="text-ink-2 font-semibold">
-                        {[designation, organization].filter(Boolean).join(' · ')}
-                      </span>
-                    )}
-                  </div>
-                </div>
+                <figcaption className="text-sm">
+                  {name && <strong className="block font-semibold text-ink">{name}</strong>}
+                  {(designation || organization) && (
+                    <span className="text-ink-2">
+                      {[designation, organization].filter(Boolean).join(' · ')}
+                    </span>
+                  )}
+                </figcaption>
               )}
-            </article>
+            </figure>
           ))}
         </div>
       ) : null}
@@ -179,15 +147,9 @@ const Recommendations = () => {
       {/* Callout Card to View LinkedIn or Add Feedback */}
       <div
         data-reveal
-        className="card p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
+        className="py-8 border-y border-rule/20 flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
       >
         <div className="flex items-start gap-4">
-          <span
-            aria-hidden="true"
-            className="w-11 h-11 rounded-full bg-ink text-paper flex items-center justify-center shrink-0 mt-0.5"
-          >
-            <FiMessageSquare className="w-5 h-5" />
-          </span>
           <div>
             <h3 className="font-display text-xl sm:text-2xl text-ink mb-1.5">
               Feedback from people I&rsquo;ve worked with
@@ -208,7 +170,7 @@ const Recommendations = () => {
             <span>View LinkedIn</span>
             <FiArrowUpRight aria-hidden="true" />
           </a>
-          <button type="button" onClick={openDialog} className="btn btn-ink">
+          <button type="button" onClick={openDialog} className="btn btn-accent">
             <span>Add feedback</span>
           </button>
         </div>
@@ -224,7 +186,7 @@ const Recommendations = () => {
         onClose={() => {
           if (formState !== 'sent') setFormState('idle');
         }}
-        className="w-full max-w-xl rounded-2xl bg-surface text-ink border-2 border-ink p-0 shadow-2xl backdrop:bg-black/60 m-auto"
+        className="w-full max-w-xl rounded-lg bg-surface text-ink border border-rule/25 p-0 shadow-2xl backdrop:bg-black/55 m-auto"
       >
         <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-4">
           <div className="flex items-center justify-between gap-4 pb-4 border-b border-rule/15">
@@ -235,7 +197,7 @@ const Recommendations = () => {
               type="button"
               onClick={closeDialog}
               aria-label="Close feedback dialog"
-              className="w-9 h-9 rounded-full bg-surface-2 text-ink inline-flex items-center justify-center hover:bg-ink hover:text-paper transition-colors cursor-pointer"
+              className="w-9 h-9 rounded-md text-ink-2 inline-flex items-center justify-center hover:bg-ink/5 hover:text-ink transition-colors cursor-pointer"
             >
               <FiX aria-hidden="true" />
             </button>
@@ -243,10 +205,10 @@ const Recommendations = () => {
 
           {formState === 'sent' ? (
             <div className="space-y-4 py-4">
-              <p role="status" className="p-4 rounded-xl bg-surface-2 text-ink text-sm font-semibold">
+              <p role="status" className="p-4 rounded-md bg-accent-soft text-ink text-sm font-medium">
                 Thank you for sharing your feedback. It has been sent to Haris for review and will not appear publicly unless approved.
               </p>
-              <button type="button" onClick={closeDialog} className="btn btn-ink">
+              <button type="button" onClick={closeDialog} className="btn btn-accent">
                 Done
               </button>
             </div>
@@ -325,7 +287,7 @@ const Recommendations = () => {
               </label>
 
               {formState === 'error' && (
-                <p role="alert" className="p-3 rounded-xl bg-line-vermilion text-on-vermilion text-xs font-bold">
+                <p role="alert" className="p-3 rounded-md border border-danger/50 text-danger text-sm font-medium">
                   {errorMessage}
                 </p>
               )}
@@ -334,7 +296,7 @@ const Recommendations = () => {
                 <button type="button" onClick={closeDialog} className="btn btn-outline btn-sm">
                   Cancel
                 </button>
-                <button type="submit" disabled={formState === 'sending'} className="btn btn-ink btn-sm">
+                <button type="submit" disabled={formState === 'sending'} className="btn btn-accent btn-sm">
                   {formState === 'sending' ? 'Sending…' : 'Send feedback'}
                 </button>
               </div>
@@ -342,7 +304,7 @@ const Recommendations = () => {
           )}
         </form>
       </dialog>
-    </RouteSection>
+    </Section>
   );
 };
 

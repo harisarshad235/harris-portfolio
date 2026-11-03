@@ -13,9 +13,8 @@ const ContactSuccessPage = () => (
     <section className="w-full py-24 sm:py-32 bg-paper text-ink">
       <div className="frame-flush max-w-2xl">
         <div className="card p-8 sm:p-12">
-          <div className="h-2.5 w-full bg-line-green rounded-full mb-8" aria-hidden="true" />
           <div className="flex items-center gap-3 mb-4">
-            <span className="w-11 h-11 rounded-full bg-line-green text-on-green inline-flex items-center justify-center shrink-0">
+            <span className="w-11 h-11 rounded-full bg-accent-soft text-accent inline-flex items-center justify-center shrink-0">
               <CheckCircle2 className="w-6 h-6" aria-hidden="true" />
             </span>
             <h1 className="font-display text-3xl sm:text-5xl text-ink">
@@ -26,7 +25,7 @@ const ContactSuccessPage = () => (
             Thank you for reaching out. Your message has been received and I will get back to you soon.
           </p>
           <Link href="/" passHref>
-            <a className="btn btn-ink">
+            <a className="btn btn-accent">
               <span>Return to portfolio</span>
               <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </a>

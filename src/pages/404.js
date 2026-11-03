@@ -14,22 +14,17 @@ export default function Custom404() {
       </Head>
       <section className="w-full py-24 sm:py-32 bg-paper text-ink">
         <div className="frame-flush max-w-3xl">
-          <div className="card p-8 sm:p-12 overflow-hidden relative">
-            <div className="h-2.5 w-full bg-line-vermilion rounded-full mb-8" aria-hidden="true" />
-            <div className="flex items-center justify-between gap-4 mb-4">
-              <h1 className="font-display text-4xl sm:text-6xl text-ink">
-                404 · Unscheduled Stop
-              </h1>
-              <span className="px-3 py-1 rounded-full bg-line-vermilion text-on-vermilion text-xs font-extrabold font-wide shrink-0">
-                OFF ROUTE
-              </span>
-            </div>
+          <div className="border-t border-rule/20 pt-10">
+            <p className="font-figure text-6xl sm:text-7xl text-accent mb-4">404</p>
+            <h1 className="font-display text-3xl sm:text-5xl text-ink mb-5">
+              This page could not be found
+            </h1>
             <p className="text-base sm:text-lg text-ink-2 leading-relaxed max-w-[60ch] mb-8">
-              The link you followed may be broken, moved, or no longer available. You can return to the Central Hub or transfer directly to one of the active lines below.
+              The link you followed may be broken, moved, or no longer available. You can return to the home page or go straight to one of the sections below.
             </p>
             <div className="flex flex-wrap items-center gap-3">
               <Link href="/" passHref>
-                <a className="btn btn-ink">
+                <a className="btn btn-accent">
                   <span>Return to home</span>
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </a>
@@ -38,7 +33,7 @@ export default function Custom404() {
                 <a className="btn btn-outline">View projects</a>
               </Link>
               <Link href="/#contact" passHref>
-                <a className="btn btn-sun">Contact Haris</a>
+                <a className="btn btn-outline">Contact Haris</a>
               </Link>
             </div>
           </div>

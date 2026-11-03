@@ -1,196 +1,175 @@
 ---
-name: Haris Arshad Portfolio — Critical Path Network
-description: Transit-poster visual system mapping a PMP® delivery career across six colour-coded metro lines.
+name: Haris Arshad Portfolio — Calm Editorial
+description: A quiet, serif-led briefing document for a PMP-certified delivery leader, in warm paper and deep teal.
 colors:
-  paper: "#F7F7F4"
-  surface: "#FFFFFF"
-  surface-2: "#ECECE6"
-  ink: "#0E1116"
-  ink-2: "#4A4F59"
-  line-cobalt: "#1F4FE0"
-  line-vermilion: "#D93A1F"
-  line-sunflower: "#FFC21A"
-  line-green: "#0E9F5B"
-  line-violet: "#7A3FF2"
-  line-magenta: "#D6136F"
-  paper-dark: "#0B0D12"
-  surface-dark: "#151922"
-  surface-2-dark: "#1E2330"
-  ink-dark: "#F2F2EE"
-  ink-2-dark: "#A9AEB8"
+  paper: "#F6F4EE"
+  surface: "#FCFBF8"
+  surface-2: "#EEEBE2"
+  ink: "#14201E"
+  ink-2: "#4A5753"
+  accent: "#0F5E57"
+  accent-soft: "#DEEAE5"
+  close: "#0B3B37"
+  ok: "#1B7D4C"
+  danger: "#AE3428"
+  paper-dark: "#0D1514"
+  surface-dark: "#131E1C"
+  surface-2-dark: "#192725"
+  ink-dark: "#ECEFEA"
+  ink-2-dark: "#A7B3AE"
+  accent-dark: "#5FC4B3"
+  close-dark: "#061614"
 typography:
   display:
-    fontFamily: "Archivo, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(2.25rem, 5vw, 4.25rem)"
-    fontWeight: 850
-    lineHeight: 0.92
-    letterSpacing: "-0.025em"
-  headline:
-    fontFamily: "Archivo, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(1.75rem, 3.5vw, 3rem)"
-    fontWeight: 850
+    fontFamily: "Source Serif 4, ui-serif, Georgia, serif"
+    fontSize: "clamp(2.75rem, 6vw, 4.5rem)"
+    fontWeight: 500
     lineHeight: 1.02
-    letterSpacing: "-0.025em"
+    letterSpacing: "-0.018em"
+  headline:
+    fontFamily: "Source Serif 4, ui-serif, Georgia, serif"
+    fontSize: "clamp(1.875rem, 3vw, 2.5rem)"
+    fontWeight: 500
+    lineHeight: 1.08
+    letterSpacing: "-0.018em"
   body:
-    fontFamily: "Archivo, ui-sans-serif, system-ui, sans-serif"
+    fontFamily: "Hanken Grotesk, ui-sans-serif, system-ui, sans-serif"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.65
   label:
-    fontFamily: "Archivo, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "0.75rem"
-    fontWeight: 800
-    lineHeight: 1.2
+    fontFamily: "Hanken Grotesk, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "0.8125rem"
+    fontWeight: 500
+    lineHeight: 1.4
 rounded:
-  md: "12px"
-  lg: "16px"
-  full: "999px"
+  sm: "4px"
+  md: "6px"
+  lg: "8px"
 spacing:
   sm: "8px"
   md: "16px"
   lg: "24px"
-  xl: "48px"
+  xl: "64px"
 components:
-  button-ink:
-    backgroundColor: "{colors.ink}"
+  button-accent:
+    backgroundColor: "{colors.accent}"
     textColor: "{colors.paper}"
-    rounded: "{rounded.full}"
-    padding: "0 22px"
-    height: "48px"
+    rounded: "{rounded.md}"
+    padding: "0 21px"
+    height: "46px"
   button-outline:
-    backgroundColor: "{colors.surface}"
+    backgroundColor: "transparent"
     textColor: "{colors.ink}"
-    rounded: "{rounded.full}"
-    padding: "0 22px"
-    height: "48px"
-  button-sun:
-    backgroundColor: "{colors.line-sunflower}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.full}"
-    padding: "0 22px"
-    height: "48px"
+    rounded: "{rounded.md}"
+    padding: "0 21px"
+    height: "46px"
+  button-light:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.close}"
+    rounded: "{rounded.md}"
+    padding: "0 21px"
+    height: "46px"
 ---
 
-# Design System: Haris Arshad Portfolio — Critical Path Network
+# Design System: Haris Arshad Portfolio — Calm Editorial
 
 ## Overview
 
-**Creative North Star: "The Critical Path Transit Poster"**
+**Creative North Star: "The Delivery Briefing"**
 
-The portfolio treats a project manager's career as a high-capacity transit network. Every section is a station on one of six colour-coded lines (`L1 Cobalt` through `L6 Magenta`), connected by a continuous vertical route rail along the left margin that fills with colour as the visitor travels down the page. It rejects the SaaS template of gradient text, glassmorphism, and uniform dark cards in favour of flat poster ink, warm off-white stock, octilinear 45-degree schematic diagrams, station roundels, and split-flap departure boards.
+The site reads like a well-edited briefing from a senior delivery leader: serif headings, generous whitespace, hairline rules, and numbers that do the persuading. It replaces the earlier loud transit-poster world (route rail, line-colour chips, departure boards, six-colour palette) with restraint. One deep teal carries every interactive and structural cue; ink and warm paper do the rest.
 
-Both Day Service (light) and Night Service (dark) modes are first-class citizens: Day Service is printed poster stock (`#F7F7F4`) with deep architectural ink (`#0E1116`), while Night Service shifts to an illuminated night-map board (`#0B0D12`) with high-luminance line colours. Maximalist colour drenching appears at key moments — the proprietary SaaS showcase is drenched in flat Vermilion (`#D93A1F`), case study outcomes are drenched in Cobalt (`#1F4FE0`), and the Contact & Footer section serves as the Central Terminus where all six lines converge on dark ink.
+Day mode is warm paper (`#F6F4EE`) with teal-tinted ink (`#14201E`). Night mode is a forest-black ground (`#0D1514`) with the same accent lifted to `#5FC4B3`. Both are first-class and persisted in `localStorage['portfolio-theme']`. A single deep forest field (`#0B3B37` day, `#061614` night) closes the page at Contact and Footer, the only region where colour owns the ground.
 
 **Key Characteristics:**
-- Continuous scroll-linked vertical route rail with circular station roundels (`L1`–`L6`, `INFO`, `END`).
-- Six flat, saturated transit line colours; zero decorative gradients or glass blur.
-- Variable-width `Archivo` typography pairing expanded black (`125%` stretch, `850` weight) headlines with normal-width body copy.
-- Departure-board strips (`#0E1116` background, `#FFCB3D` tabular uppercase text) for verified portfolio metrics.
+- Two-column section grammar on desktop: heading and intro left (sticky), content right; stacked on mobile.
+- Serif display (Source Serif 4) for headings and figures; Hanken Grotesk for text and UI.
+- Hairline rules at rest (`1px`, ink at 12–20% opacity); no resting shadows.
+- A ledger of verified figures (PKR 700M+, PKR 103M+, 80%, 0% scope creep) instead of stat cards.
+- One authored motion moment: the hero rises in once; sections fade up 16px as they enter.
 
 ## Colors
 
-Flat transit-poster pigments paired with warm paper stock and deep ink.
-
 ### Primary
-- **Poster Ink** (`#0E1116` day / `#F2F2EE` night): Primary typography, station rings, primary CTA buttons, and departure-board housings.
-- **Cobalt Line** (`#1F4FE0` day / `#5B85FF` night): the route. Every homepage section's rail and station, the role subheadline, focus rings, sector and zone pills, the Products drench field (`#163496` at night so white body text stays AA), and case-study outcome drench.
-
-### Secondary
-- **Sunflower Line** (`#FFC21A` day / `#FFCB3D` night): the numbers. Departure-board numerals and ticker markers, the rail fill over a drenched section, text selection highlight, high-visibility secondary CTAs, and the interchange slice on the header and footer signature strips.
-
-### Semantic only — never decorative
-These four are no longer route colours. They carry state, and appear only where that state is the message.
-- **Green** (`#0E9F5B` day / `#2FD283` night): success, "live", "current", availability beacons, copy-confirmed.
-- **Vermilion** (`#D93A1F` day / `#FF6242` night): errors, alerts, the 404 page.
-- **Violet** (`#7A3FF2`) and **Magenta** (`#D6136F`): retired from the homepage. Still available inside `public/case-studies/` where a per-case accent genuinely distinguishes one study from another.
+- **Ink** (`#14201E` day / `#ECEFEA` night): text, rules, and the hover state of primary buttons.
+- **Deep Teal** (`#0F5E57` day / `#5FC4B3` night): the only accent. Links, role line, active nav and tab underline, primary buttons, focus ring, text selection tint, caret.
 
 ### Neutral
-- **Poster Paper** (`#F7F7F4` day / `#0B0D12` night): Primary page ground.
-- **Station Surface** (`#FFFFFF` day / `#151922` night): Card and control backgrounds.
-- **Tinted Platform** (`#ECECE6` day / `#1E2330` night): Alternating section ground and pill backgrounds.
-- **Secondary Ink** (`#4A4F59` day / `#A9AEB8` night): Body descriptions and supporting metadata.
+- **Paper** (`#F6F4EE` / `#0D1514`): page ground.
+- **Surface** (`#FCFBF8` / `#131E1C`): cards, fields, dialogs.
+- **Surface 2** (`#EEEBE2` / `#192725`): tinted section ground (Products, Skills, FAQ, Recommendations) and tags.
+- **Secondary Ink** (`#4A5753` / `#A7B3AE`): body descriptions and metadata.
+
+### Closing field
+- **Forest** (`#0B3B37` / `#061614`) with **Pale Teal** (`#8FD6C7`) accents and `#EEF2EE` text: Contact and Footer only.
+
+### Semantic only
+- **Green** (`#1B7D4C` / `#52C88C`): availability and "current" markers.
+- **Clay Red** (`#AE3428` / `#FF7E6C`): errors.
 
 ### Named Rules
-**The Flat Pigment Rule.** Line colours are always flat, opaque pigments. Never blend two line colours in a gradient or apply glowing neon drop shadows.
-**The Drench Commitment Rule.** When a section or outcome card is drenched (`Products`, `Central Terminus`, `Case Outcome`), the colour owns the entire region edge-to-edge.
-
-**The Silent Metaphor Rule.** The transit system is a structure, not a caption. Never print the line's name, a line code (`L1`–`L6`, `INFO`, `END`) or a stop number in the interface — they index nothing a visitor can look up, and repeating them on every card turns the metaphor into noise. The rail, the station dot and the route order carry it. Where a chip sits beside a heading it states the content (`CAREER ROUTE · 2019–PRESENT`, `21 COMPETENCIES`), never the colour.
-
-**The Two-Accent Rule.** Cobalt is structure, sunflower is numbers, ink and paper do the rest. A hue per section, per sector or per skill zone encodes nothing a reader can decode, because the label beside it already says what it is.
+**The One-Accent Rule.** Teal is the only accent. Never add a second hue to distinguish sections, sectors, or skill groups; the label already says what it is.
+**The Quiet Surface Rule.** No gradients, glass, glows, or hard offset shadows. Elevation appears only as a soft lift on pointer hover.
 
 ## Typography
 
-**Display Font:** Archivo Expanded (`font-stretch: 125%`, weight `850`)
-**Body Font:** Archivo (`font-stretch: 100%`, weights `400`–`700`)
-**Label/Mono Font:** Archivo Wide (`font-stretch: 112%`, weight `700`–`800`, `tabular-nums`)
-
-**Character:** Industrial European transit signage — authoritative, wide-shouldered, and unmistakable at poster scale while remaining effortless to read in dense case-study prose.
+**Display Font:** Source Serif 4 (weight 500, optical sizing auto)
+**Body / UI Font:** Hanken Grotesk (400–700)
 
 ### Hierarchy
-- **Display** (`850`, `clamp(2.25rem, 5vw, 4.25rem)`, `0.92` line-height, `125%` stretch): Hero nameplate, section station titles, and primary metric callouts.
-- **Headline** (`850`, `clamp(1.5rem, 3vw, 2.25rem)`, `1.02` line-height, `125%` stretch): Project, product, and zone titles.
-- **Body** (`400`–`500`, `1rem`–`1.125rem`, `1.65` line-height, max `66ch`): Executive bio, project descriptions, and case-study narratives.
-- **Label** (`700`–`800`, `0.75rem`–`0.875rem`, `112%` stretch): Station codes, route pills, and departure-board cells.
+- **Display** (500, `clamp(2.75rem, 6vw, 4.5rem)`, 1.02): hero name only.
+- **Headline** (500, `clamp(1.875rem, 3vw, 2.5rem)`, 1.08): section titles.
+- **Figure** (serif 500, tabular lining numerals): ledger figures, years.
+- **Body** (400, `1rem`–`1.0625rem`, 1.65–1.75, max `62–66ch`).
+- **Meta** (500, `0.8125rem`): category, client, date lines, always sentence case.
 
 ### Named Rules
-**The No-Kicker Rule.** Headings never carry an eyebrow or kicker label above them. The station roundel sits on the left rail and the route badge sits inline beside the heading.
+**The No-Kicker Rule.** No eyebrow or label above a heading. The heading carries its own weight.
+**The Plain Label Rule.** Metadata is sentence-case text, never an uppercase pill or code.
 
 ## Layout
 
-Every homepage section uses `.frame` (`max-width: 1280px`, left-padded `3.25rem` mobile / `4.5rem` tablet / `7.5rem` desktop) to reserve a dedicated corridor on the left (`rail-x`) for the continuous vertical route line and station roundels. Full-bleed sections (`Hero` ticker, `FlagshipProjects` Vermilion drench, `Contact` + `Footer` Terminus) span 100% viewport width while aligning their inner content to the same grid.
+`.frame` is `max-width: 1160px`, centered, with `1.25rem / 2rem / 3rem` side padding. Sections are separated by a hairline top rule and `4rem / 6rem` vertical padding. `Section` (`src/components/ui/Section.js`) provides the grammar: `split` (4/8 columns, sticky heading) or stacked for card grids and forms. Product features alternate image left/right at a 7/5 split.
 
 ## Elevation & Depth
 
-Surfaces are architectural and flat at rest, defined by `1.5px` ink rules (`rgba(14, 17, 22, 0.14)` day / `rgba(242, 242, 238, 0.14)` night). Soft ambient elevation (`--lift`) appears only on pointer hover (`translateY(-4px)` over `220ms cubic-bezier(0.23, 1, 0.32, 1)`).
-
-### Shadow Vocabulary
-- **Station Ring** (`0 0 0 3px rgb(var(--ink-rgb))`): Crisp ink ring around white station dots (`16px` discs).
-- **Card Hover Lift** (`0 2px 4px rgba(14,17,22,0.06), 0 14px 32px -8px rgba(14,17,22,0.18)`): Applied on `:hover` for interactive cards on pointer devices.
-
-### Named Rules
-**The Rule-At-Rest Rule.** Cards use a `1.5px` rule border at rest and never combine a resting drop shadow with a border.
+Flat at rest. Cards use a `1px` hairline border. Hover on pointer devices lifts `translateY(-3px)` with `--lift` over 240ms `cubic-bezier(0.23, 1, 0.32, 1)`.
 
 ## Shapes
 
-Cards and dialogs use a `16px` border radius (`rounded-2xl`). Buttons, filter tabs, route badges, and station markers use full pills (`999px`). Schematic metro lines use `10px` stroke widths with round caps and 45-degree octilinear bends.
+Radius is small and consistent: `8px` cards, images and dialogs; `6px` buttons and fields; `4px` tags. No pills.
 
 ## Components
 
 ### Buttons
-- **Shape:** Full pill (`999px`), minimum height `48px` (`40px` for `.btn-sm`).
-- **Primary (`.btn-ink`):** Ink background (`#0E1116`), paper text; shifts to Cobalt (`#1F4FE0`) on hover; scales to `0.97` on `:active`.
-- **Outline (`.btn-outline`):** Transparent with `2px` inset ink ring; fills with ink on hover.
-- **Sunflower (`.btn-sun`):** Sunflower (`#FFC21A`) background with `#0E1116` text; turns white on hover.
+- **Accent (`.btn-accent`, alias `.btn-ink`):** teal fill, paper text; turns ink on hover; `scale(0.97)` on press. Height `46px` (`38px` for `.btn-sm`).
+- **Outline (`.btn-outline`):** `1px` inset ink ring at 35%, fills 5% on hover.
+- **Light (`.btn-light`):** paper on the forest field only.
+- **Text link:** teal, underlined at 35% opacity, full opacity on hover, arrow nudges 2px.
 
-### Chips / Filter Tabs (`.tab`)
-- **Style:** Pill with `1.5px` inset rule, a `10px` line-colour station dot, label, and tabular count badge (`.tab-count`).
-- **State:** Selected state (`aria-pressed="true"` / `aria-selected="true"`) inverts to solid ink background with paper text.
-
-### Cards (`.card`)
-- **Corner Style:** `16px` radius.
-- **Border:** `1.5px` solid rule (`2px` solid ink on drenched surfaces).
-- **Header Bar:** Top `8px` line-colour bar or dark `.board` strip.
+### Tabs / filters (`.tab`)
+Underlined text with a tabular count. Selected state: teal text and a `1.5px` teal underline. Never pills.
 
 ### Navigation
-- **Desktop:** Pill-shaped route bar in the sticky header with colour-coded station dots for all 7 stops; active stop inverts to solid ink.
-- **Mobile:** Scrollable horizontal station hopper below the main bar.
+Sticky solid header: wordmark (logo + "Haris Arshad"), text links with a teal underline that draws in for the current section, GitHub / LinkedIn / theme icons, Resume and "Work with me". Below 1024px the links become a horizontally scrolling row.
 
-### Signature Component: RouteSection & Departure Board
-- **RouteSection:** Wraps each section with a continuous vertical track along `.rail-x` that fills in the section's line colour (`scaleY`) in proportion to scroll position, topped by a plain circular station dot. The dot carries no text.
-- **Departure Board (`.board`):** `#0E1116` background with `#FFCB3D` expanded tabular uppercase numerals, used for the hero metric ticker and project KPI strips.
+### Ledger and lists
+Definition list with hairline row rules: figure (serif) · label (teal, semibold) · supporting detail. The career timeline uses the same ruled-row pattern.
+
+### Forms
+`.field` on paper; `.field-close` on the forest field (translucent paper fill, `1px` border, teal-pale focus ring).
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep every section, project sector, and skill zone on Cobalt, and let its label do the distinguishing.
-- **Do** reach for Sunflower when the content is a number, and for Green or Vermilion only when the content is a state (live, success, error).
-- **Do** use `font-variant-numeric: tabular-nums` (`.tabular`) on all metrics, years, counts, and station codes.
-- **Do** gate hover transforms behind `@media (hover: hover) and (pointer: fine)` and honour `prefers-reduced-motion: reduce`.
+- **Do** keep teal as the only accent and let ink and paper carry everything else.
+- **Do** put numbers in the serif figure style with `tabular-nums`.
+- **Do** gate hover transforms behind `@media (hover: hover) and (pointer: fine)` and honour `prefers-reduced-motion`.
+- **Do** keep WCAG AA contrast in both modes and visible `2px` teal focus rings.
 
 ### Don't:
-- **Don't** introduce a third accent, or give a section its own hue because it feels like it deserves one.
-- **Don't** print a line name, line code or stop number anywhere in the interface.
-- **Don't** place an eyebrow or kicker label above `<h1>` or `<h2>` headings.
-- **Don't** use CSS gradients on text, backgrounds, or buttons, or `backdrop-filter: blur()` glass effects.
-- **Don't** use thick coloured `border-left` callout stripes on cards or notes; use a circular `.station` dot marker instead.
-
+- **Don't** reintroduce the transit metaphor: no route rail, station dots, line codes, departure boards, or tickers.
+- **Don't** use gradients, glass blur, glows, or hard offset shadows.
+- **Don't** use uppercase pills, kicker labels, or coloured `border-left` stripes.
+- **Don't** introduce a second accent colour.

@@ -2,21 +2,9 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { projects } from '../../constants/constants';
-import { RouteSection } from '../ui/RouteSection';
+import { Section } from '../ui/Section';
 
 const filters = ['All', 'Telecom', 'E-commerce', 'Public sector', 'Digital platforms'];
-
-// Each sector is already named in the chip beside its dot, so a hue per sector
-// was decoration, not a key. One line colour; the label does the telling.
-const COBALT = { dot: 'bg-line-cobalt', pill: 'bg-line-cobalt text-on-cobalt', bar: 'bg-line-cobalt' };
-
-const SECTOR_LINE = {
-  All: COBALT,
-  Telecom: COBALT,
-  'E-commerce': COBALT,
-  'Public sector': COBALT,
-  'Digital platforms': COBALT,
-};
 
 const filterProjects = (filter) =>
   filter === 'All' ? projects : projects.filter(({ sector }) => sector === filter);
@@ -26,197 +14,136 @@ const Projects = () => {
   const visibleProjects = filterProjects(activeFilter);
 
   return (
-    <RouteSection
+    <Section
       id="client-projects"
-      line="cobalt"
-      surface="default"
-      className="border-b-[1.5px] border-rule/15"
+      title="Client Projects & Case Studies"
+      intro="Selected telecom, public-sector, e-commerce, and digital platform initiatives delivered across national infrastructure and global retail portfolios."
+      split={false}
     >
-      <div data-reveal className="mb-8">
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
-          <h2 className="font-display text-3xl sm:text-5xl text-ink">
-            Client Projects &amp; Case Studies
-          </h2>
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-2 text-ink-2 text-xs font-extrabold font-wide">
-            <span className="w-2 h-2 rounded-full bg-line-cobalt" />
-            8 ENTERPRISE DELIVERIES
-          </span>
-        </div>
-
-        <p className="text-ink-2 text-base sm:text-lg leading-relaxed max-w-[66ch] mb-7">
-          Selected telecom, public-sector, e-commerce, and digital platform initiatives delivered across national infrastructure and global retail portfolios.
-        </p>
-
-        {/* Platform Filter Bar */}
+      <div data-reveal className="mb-10">
         <div
           role="group"
           aria-label="Filter projects by industry"
-          className="flex flex-wrap items-center gap-2"
+          className="flex flex-wrap items-center border-b border-rule/15"
         >
           {filters.map((filter) => {
             const count = filterProjects(filter).length;
-            const tokens = SECTOR_LINE[filter] || SECTOR_LINE.All;
-            const isSelected = activeFilter === filter;
-
             return (
               <button
                 key={filter}
                 type="button"
-                aria-pressed={isSelected}
+                aria-pressed={activeFilter === filter}
                 onClick={() => setActiveFilter(filter)}
                 className="tab"
               >
-                <span
-                  aria-hidden="true"
-                  className={`w-2.5 h-2.5 rounded-full ${tokens.dot} ${
-                    isSelected ? 'ring-2 ring-paper' : 'ring-1 ring-ink/40'
-                  }`}
-                />
                 <span>{filter}</span>
                 <span className="tab-count">{count}</span>
               </button>
             );
           })}
         </div>
-
-        <p aria-live="polite" className="text-xs font-bold text-ink-2 mt-3 tabular">
-          Showing {visibleProjects.length} of {projects.length} stations
-          {activeFilter !== 'All' ? ` on ${activeFilter} line` : ''}
+        <p aria-live="polite" className="meta mt-3">
+          Showing {visibleProjects.length} of {projects.length} projects
+          {activeFilter !== 'All' ? ` in ${activeFilter}` : ''}
         </p>
       </div>
 
-      {/* Case Studies Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 items-stretch">
         <AnimatePresence mode="popLayout">
           {visibleProjects.map(
-            (
-              {
-                id,
-                image,
-                title,
-                client,
-                sector,
-                category,
-                description,
-                impact,
-                metricsHighlight,
-                methodology,
-                website,
-                caseStudy,
-                projectTypes,
-              },
-              index
-            ) => {
-              const lineStyle = SECTOR_LINE[sector] || SECTOR_LINE.All;
-              const stationNum = String(index + 1).padStart(2, '0');
-
-              return (
-                <motion.article
-                  key={id}
-                  layout
-                  initial={{ opacity: 0, y: 20, scale: 0.98 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.96 }}
-                  transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
-                  data-project-types={projectTypes.join(',')}
-                  className="card card-lift overflow-hidden flex flex-col justify-between group"
-                >
-                  <div>
-                    {/* Top Line Colour Bar */}
-                    <div className={`h-2 w-full ${lineStyle.bar}`} aria-hidden="true" />
-
-                    {/* Station Header Strip */}
-                    <div className="px-5 py-3 flex items-center justify-between gap-2 border-b border-rule/12 bg-surface-2/60">
-                      <div className="flex items-center gap-2 min-w-0">
-                        <span className="station !w-3 !h-3" aria-hidden="true" />
-                        <span className="font-wide font-extrabold text-xs text-ink truncate">
-                          {client || category}
-                        </span>
-                      </div>
-                      <span
-                        className={`px-2.5 py-0.5 rounded-full text-[11px] font-extrabold font-wide shrink-0 ${lineStyle.pill}`}
-                      >
-                        ST-{stationNum} · {sector || category}
-                      </span>
-                    </div>
-
-                    {/* Media Frame */}
-                    <div className="relative w-full aspect-[16/9] bg-surface-2 overflow-hidden border-b border-rule/12">
-                      {image ? (
-                        <img
-                          src={image}
-                          alt={`${client || title} project delivery`}
-                          loading="lazy"
-                          width={560}
-                          height={315}
-                          className="w-full h-full object-contain object-center p-3 sm:p-4 transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+            ({
+              id,
+              image,
+              title,
+              client,
+              sector,
+              category,
+              description,
+              impact,
+              metricsHighlight,
+              methodology,
+              website,
+              caseStudy,
+              projectTypes,
+            }) => (
+              <motion.article
+                key={id}
+                layout
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.28, ease: [0.23, 1, 0.32, 1] }}
+                data-project-types={projectTypes.join(',')}
+                className="group flex flex-col"
+              >
+                {/* Media */}
+                <div className="relative w-full aspect-[16/10] bg-surface-2 overflow-hidden rounded-lg border border-rule/12">
+                  {image ? (
+                    <img
+                      src={image}
+                      alt={`${client || title} project delivery`}
+                      loading="lazy"
+                      width={560}
+                      height={350}
+                      className="w-full h-full object-contain object-center p-3 sm:p-4 transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                    />
+                  ) : (
+                    <div aria-hidden="true" className="w-full h-full flex items-center justify-center p-6 text-ink">
+                      <svg viewBox="0 0 480 240" className="w-full h-full" focusable="false">
+                        <path
+                          d="M238 216 278 42l42 174M252 154h56M260 119h40M268 82h25M248 176l61-41M307 176l-53-41M242 216h84"
+                          fill="none"
+                          stroke="rgb(var(--accent-rgb))"
+                          strokeWidth="4"
                         />
-                      ) : (
-                        <div
-                          aria-hidden="true"
-                          className="w-full h-full flex flex-col items-center justify-center p-6 text-ink"
-                        >
-                          <svg viewBox="0 0 480 240" className="w-full h-full" focusable="false">
-                            <path
-                              d="M238 216 278 42l42 174M252 154h56M260 119h40M268 82h25M248 176l61-41M307 176l-53-41M242 216h84"
-                              fill="none"
-                              stroke="rgb(var(--cobalt-rgb))"
-                              strokeWidth="4"
-                            />
-                            <path
-                              d="M278 55c-25-21-25-44 0-64M292 55c25-21 25-44 0-64M267 42c-38-31-38-65 0-96M303 42c38-31 38-65 0-96"
-                              fill="none"
-                              stroke="rgb(var(--vermilion-rgb))"
-                              strokeWidth="3"
-                            />
-                            <path d="M50 214h380" stroke="currentColor" strokeWidth="2" opacity=".25" />
-                          </svg>
-                        </div>
-                      )}
+                        <path
+                          d="M278 55c-25-21-25-44 0-64M292 55c25-21 25-44 0-64M267 42c-38-31-38-65 0-96M303 42c38-31 38-65 0-96"
+                          fill="none"
+                          stroke="rgb(var(--accent-rgb))"
+                          strokeWidth="3"
+                          opacity=".55"
+                        />
+                        <path d="M50 214h380" stroke="currentColor" strokeWidth="2" opacity=".25" />
+                      </svg>
                     </div>
+                  )}
+                </div>
 
-                    {/* Card Content */}
-                    <div className="p-5 sm:p-6">
-                      <h3 className="font-display text-xl sm:text-2xl text-ink mb-3">
-                        {title}
-                      </h3>
+                {/* Body */}
+                <div className="pt-5 flex flex-col flex-1">
+                  <p className="meta mb-2">
+                    {client || category}
+                    {(sector || category) && <span> · {sector || category}</span>}
+                  </p>
+                  <h3 className="font-display text-2xl sm:text-[1.75rem] leading-tight mb-3">{title}</h3>
 
-                      {(methodology || metricsHighlight) && (
-                        <div className="flex flex-wrap items-center gap-2 mb-4">
-                          {metricsHighlight && (
-                            <span className="board px-2.5 py-1 rounded-md text-xs">
-                              {metricsHighlight}
-                            </span>
-                          )}
-                          {methodology && (
-                            <span className="px-2.5 py-1 rounded-md bg-surface-2 text-ink text-xs font-bold font-wide shadow-[inset_0_0_0_1px_rgb(var(--rule-rgb)/0.16)]">
-                              {methodology}
-                            </span>
-                          )}
-                        </div>
-                      )}
+                  {(methodology || metricsHighlight) && (
+                    <p className="text-sm font-semibold text-accent mb-3 tabular">
+                      {[metricsHighlight, methodology].filter(Boolean).join(' · ')}
+                    </p>
+                  )}
 
-                      <p className="text-sm text-ink-2 leading-relaxed mb-4">
-                        {description}
-                      </p>
+                  <p className="text-[0.9375rem] text-ink-2 leading-relaxed mb-4 flex-1">{description}</p>
 
-                      <div className="p-3 rounded-xl bg-surface-2 text-xs sm:text-sm text-ink">
-                        <strong className="font-extrabold font-wide">Outcome: </strong>
-                        <span className="text-ink-2 font-medium">{impact}</span>
-                      </div>
-                    </div>
-                  </div>
+                  <p className="text-sm text-ink leading-relaxed pt-4 border-t border-rule/12 mb-5">
+                    <span className="font-semibold">Outcome: </span>
+                    <span className="text-ink-2">{impact}</span>
+                  </p>
 
-                  {/* Card Actions */}
-                  <div className="px-5 pb-5 sm:px-6 sm:pb-6 pt-3 border-t border-rule/12 flex flex-wrap items-center gap-2.5">
+                  <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-2">
                     {caseStudy && (
                       <a
                         href={caseStudy}
                         aria-label={`Read the ${title} case study`}
-                        className="btn btn-ink btn-sm"
+                        className="group/link inline-flex items-center gap-1.5 text-sm font-semibold text-accent"
                       >
-                        <span>View case study</span>
-                        <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                        <span className="underline decoration-accent/35 underline-offset-4 group-hover/link:decoration-accent transition-colors">
+                          View case study
+                        </span>
+                        <ArrowRight
+                          className="w-4 h-4 transition-transform duration-200 ease-out group-hover/link:translate-x-0.5"
+                          aria-hidden="true"
+                        />
                       </a>
                     )}
                     {website && (
@@ -225,20 +152,20 @@ const Projects = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`Visit the ${client || title} website`}
-                        className="btn btn-outline btn-sm"
+                        className="inline-flex items-center gap-1 text-sm font-medium text-ink-2 hover:text-ink transition-colors"
                       >
                         <span>Project site</span>
                         <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
                       </a>
                     )}
                   </div>
-                </motion.article>
-              );
-            }
+                </div>
+              </motion.article>
+            )
           )}
         </AnimatePresence>
       </div>
-    </RouteSection>
+    </Section>
   );
 };
 

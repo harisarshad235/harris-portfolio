@@ -36,7 +36,7 @@ Visitors arrive from LinkedIn, CV links, and search. Desktop during work hours i
 
 - Name and credentials as written: "Haris Arshad, PMP®", "Engr. Haris Arshad", PE (PEC).
 - Existing HA monogram logo (`/logo-light.svg`, `/logo-dark.svg`, favicon).
-- Visual world chosen by the user (Oct 2026): Metro Map / Critical Path transit-poster world, maximalist in places, both modes fully designed.
+- Visual world chosen by the user (Nov 2026): Calm Editorial — warm paper, teal-tinted ink, one deep teal accent, serif-led, restrained. Replaces the earlier maximalist Metro Map / transit-poster world. Both modes fully designed.
 
 ## Evidence on Hand
 

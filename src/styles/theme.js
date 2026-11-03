@@ -30,7 +30,7 @@ const Theme = ({ children }) => {
     if (!isReady) return;
     document.documentElement.dataset.theme = mode;
     const themeColor = document.querySelector('meta[name="theme-color"]');
-    if (themeColor) themeColor.setAttribute('content', mode === 'dark' ? '#0B0D12' : '#F7F7F4');
+    if (themeColor) themeColor.setAttribute('content', mode === 'dark' ? '#0D1514' : '#F6F4EE');
     // Persist last: a blocked write must not stop the theme being applied.
     try {
       window.localStorage.setItem('portfolio-theme', mode);

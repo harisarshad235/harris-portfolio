@@ -12,8 +12,8 @@ export const ScrollProgress = styled.div`
   left: 0;
   z-index: 10000;
   width: 100%;
-  height: 4px;
-  background: rgb(var(--cobalt-rgb));
+  height: 2px;
+  background: rgb(var(--accent-rgb));
   transform: scaleX(0);
   transform-origin: left center;
   pointer-events: none;

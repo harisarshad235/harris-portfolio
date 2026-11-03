@@ -33,7 +33,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang='en-GB'>
         <Head>
-          <meta name="theme-color" content="#F7F7F4" />
+          <meta name="theme-color" content="#F6F4EE" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon.ico" sizes="any" />
           <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -42,11 +42,11 @@ export default class MyDocument extends Document {
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-          <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
           <link rel="preload" as="image" href="/images/haris-arshad-profile.webp" type="image/webp" />
           <script
             dangerouslySetInnerHTML={{
-              __html: `(function(){try{var m=localStorage.getItem('portfolio-theme');if(m==='dark'||m==='light'){document.documentElement.dataset.theme=m;var tc=document.querySelector('meta[name="theme-color"]');if(tc)tc.setAttribute('content',m==='dark'?'#0B0D12':'#F7F7F4');}}catch(e){}})();`,
+              __html: `(function(){try{var m=localStorage.getItem('portfolio-theme');if(m==='dark'||m==='light'){document.documentElement.dataset.theme=m;var tc=document.querySelector('meta[name="theme-color"]');if(tc)tc.setAttribute('content',m==='dark'?'#0D1514':'#F6F4EE');}}catch(e){}})();`,
             }}
           />
           {analyticsId && (

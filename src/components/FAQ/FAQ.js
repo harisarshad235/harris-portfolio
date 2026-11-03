@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
-import { RouteSection } from '../ui/RouteSection';
+import { Section } from '../ui/Section';
 
 export const FAQ_DATA = [
   {
@@ -36,10 +36,6 @@ export const FAQ_DATA = [
   },
 ];
 
-// Cycling six hues across the answers made the FAQ the most colourful block on
-// the page while saying nothing. One colour, applied evenly.
-const LINE_COLORS = ['bg-line-cobalt text-on-cobalt'];
-
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
 
@@ -48,67 +44,39 @@ export default function FAQ() {
   };
 
   return (
-    <RouteSection
+    <Section
       id="faq"
-      line="cobalt"
-      surface="default"
-      className="border-b-[1.5px] border-rule/15"
+      title="Frequently Asked Questions"
+      intro="Key questions about my project management approach, portfolio delivery track record, and technical leadership."
+      surface="tinted"
     >
-      <div data-reveal className="mb-10">
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
-          <h2 className="font-display text-3xl sm:text-5xl text-ink">
-            Frequently Asked Questions
-          </h2>
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-2 text-ink text-xs font-extrabold font-wide shadow-[inset_0_0_0_1.5px_rgb(var(--rule-rgb)/0.18)]">
-            <span className="station !w-2.5 !h-2.5" />
-            INFORMATION DESK · 6 QUERIES
-          </span>
-        </div>
-
-        <p className="text-ink-2 text-base sm:text-lg leading-relaxed max-w-[66ch]">
-          Key questions about my project management approach, portfolio delivery track record, and technical leadership.
-        </p>
-      </div>
-
-      <div data-reveal style={{ '--d': '80ms' }} className="w-full max-w-4xl space-y-3.5">
+      <div data-reveal className="w-full border-t border-rule/20">
         {FAQ_DATA.map((item, index) => {
           const isOpen = openIndex === index;
-          const badgeColor = LINE_COLORS[index % LINE_COLORS.length];
 
           return (
-            <div
-              key={index}
-              className={`card overflow-hidden transition-colors ${
-                isOpen ? 'ring-2 ring-line-cobalt' : ''
-              }`}
-            >
+            <div key={index} className="border-b border-rule/15">
               <button
                 type="button"
                 onClick={() => toggle(index)}
                 aria-expanded={isOpen}
                 aria-controls={`faq-answer-${index}`}
                 id={`faq-question-${index}`}
-                className="w-full flex items-center justify-between gap-4 p-5 sm:p-6 text-left cursor-pointer hover:bg-surface-2/60 active:scale-[0.99] transition-[transform,background-color] duration-150"
+                className="w-full flex items-center justify-between gap-6 py-5 text-left cursor-pointer group"
               >
-                <div className="flex items-center gap-3.5 min-w-0">
-                  <span
-                    className={`w-8 h-8 rounded-full flex items-center justify-center font-display text-xs shrink-0 ${badgeColor}`}
-                  >
-                    Q{index + 1}
-                  </span>
-                  <span className="text-base sm:text-lg font-extrabold text-ink">
-                    {item.question}
-                  </span>
-                </div>
                 <span
-                  className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-[transform,background-color,color] duration-200 ease-out ${
-                    isOpen
-                      ? 'rotate-180 bg-ink text-paper'
-                      : 'bg-surface-2 text-ink'
+                  className={`font-display text-lg sm:text-xl leading-snug transition-colors duration-150 ${
+                    isOpen ? 'text-accent' : 'text-ink group-hover:text-accent'
                   }`}
                 >
-                  <ChevronDown className="h-4 w-4" aria-hidden="true" />
+                  {item.question}
                 </span>
+                <ChevronDown
+                  className={`h-5 w-5 shrink-0 text-ink-2 transition-transform duration-300 ease-out ${
+                    isOpen ? 'rotate-180 text-accent' : ''
+                  }`}
+                  aria-hidden="true"
+                />
               </button>
 
               <AnimatePresence initial={false}>
@@ -120,12 +88,12 @@ export default function FAQ() {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
+                    transition={{ duration: 0.28, ease: [0.23, 1, 0.32, 1] }}
                     className="overflow-hidden"
                   >
-                    <div className="px-5 pb-6 pt-3 sm:px-6 sm:pb-7 sm:pl-[4.25rem] text-sm sm:text-base text-ink-2 leading-relaxed border-t border-rule/12">
+                    <p className="pb-6 pr-8 text-[0.9375rem] sm:text-base text-ink-2 leading-[1.75] max-w-[66ch]">
                       {item.answer}
-                    </div>
+                    </p>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -133,6 +101,6 @@ export default function FAQ() {
           );
         })}
       </div>
-    </RouteSection>
+    </Section>
   );
 }

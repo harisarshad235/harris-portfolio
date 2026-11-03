@@ -1,63 +1,63 @@
 /* ==========================================================================
-   METRO MAP / CRITICAL PATH — Case Study Stylesheet
+   CALM EDITORIAL — Case Study Stylesheet
    ========================================================================== */
 
 :root {
   color-scheme: light;
-  --cs-paper: #F7F7F4;
-  --cs-surface: #FFFFFF;
-  --cs-surface-2: #ECECE6;
-  --cs-tinted: #E5F3EC;
-  --cs-ink: #0E1116;
-  --cs-ink-2: #4A4F59;
-  --cs-rule: rgba(14, 17, 22, 0.14);
-  --cs-rule-strong: rgba(14, 17, 22, 0.26);
+  --cs-paper: #F6F4EE;
+  --cs-surface: #FCFBF8;
+  --cs-surface-2: #EEEBE2;
+  --cs-tinted: #DEEAE5;
+  --cs-ink: #14201E;
+  --cs-ink-2: #4A5753;
+  --cs-rule: rgba(20, 32, 30, 0.14);
+  --cs-rule-strong: rgba(20, 32, 30, 0.26);
 
-  --cs-cobalt: #1F4FE0;
-  --cs-on-cobalt: #FFFFFF;
-  --cs-vermilion: #D93A1F;
+  --cs-cobalt: #0F5E57;
+  --cs-on-cobalt: #F6F4EE;
+  --cs-vermilion: #AE3428;
   --cs-on-vermilion: #FFFFFF;
-  --cs-sunflower: #FFC21A;
-  --cs-on-sunflower: #0E1116;
-  --cs-green: #0E9F5B;
-  --cs-on-green: #0E1116;
-  --cs-violet: #7A3FF2;
+  --cs-sunflower: #B8892B;
+  --cs-on-sunflower: #14201E;
+  --cs-green: #1B7D4C;
+  --cs-on-green: #F6F4EE;
+  --cs-violet: #0F5E57;
   --cs-on-violet: #FFFFFF;
-  --cs-magenta: #D6136F;
+  --cs-magenta: #0F5E57;
   --cs-on-magenta: #FFFFFF;
 
-  --cs-drench: #1F4FE0;
+  --cs-drench: #0B3B37;
   --cs-on-drench: #FFFFFF;
 
   --cs-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
-  --cs-lift: 0 2px 4px rgba(14, 17, 22, 0.06), 0 14px 32px -8px rgba(14, 17, 22, 0.18);
+  --cs-lift: 0 2px 4px rgba(20, 32, 30, 0.06), 0 14px 32px -8px rgba(20, 32, 30, 0.18);
 }
 
 [data-theme="dark"] {
   color-scheme: dark;
-  --cs-paper: #0B0D12;
-  --cs-surface: #151922;
-  --cs-surface-2: #1E2330;
-  --cs-tinted: #12241C;
-  --cs-ink: #F2F2EE;
-  --cs-ink-2: #A9AEB8;
-  --cs-rule: rgba(242, 242, 238, 0.14);
-  --cs-rule-strong: rgba(242, 242, 238, 0.28);
+  --cs-paper: #0D1514;
+  --cs-surface: #131E1C;
+  --cs-surface-2: #192725;
+  --cs-tinted: #16342F;
+  --cs-ink: #ECEFEA;
+  --cs-ink-2: #A7B3AE;
+  --cs-rule: rgba(236, 239, 234, 0.14);
+  --cs-rule-strong: rgba(236, 239, 234, 0.28);
 
-  --cs-cobalt: #5B85FF;
-  --cs-on-cobalt: #0B0D12;
-  --cs-vermilion: #FF6242;
-  --cs-on-vermilion: #0B0D12;
-  --cs-sunflower: #FFCB3D;
-  --cs-on-sunflower: #0B0D12;
-  --cs-green: #2FD283;
-  --cs-on-green: #0B0D12;
-  --cs-violet: #A47BFF;
-  --cs-on-violet: #0B0D12;
-  --cs-magenta: #FF4FA3;
-  --cs-on-magenta: #0B0D12;
+  --cs-cobalt: #5FC4B3;
+  --cs-on-cobalt: #06201D;
+  --cs-vermilion: #FF7E6C;
+  --cs-on-vermilion: #0D1514;
+  --cs-sunflower: #D9B35A;
+  --cs-on-sunflower: #0D1514;
+  --cs-green: #52C88C;
+  --cs-on-green: #0D1514;
+  --cs-violet: #5FC4B3;
+  --cs-on-violet: #0D1514;
+  --cs-magenta: #5FC4B3;
+  --cs-on-magenta: #0D1514;
 
-  --cs-drench: #1E3FAE;
+  --cs-drench: #06201D;
   --cs-on-drench: #FFFFFF;
 
   --cs-lift: 0 2px 4px rgba(0, 0, 0, 0.4), 0 18px 40px -10px rgba(0, 0, 0, 0.65);
@@ -76,7 +76,7 @@ html {
 
 ::selection {
   background: var(--cs-sunflower);
-  color: #0E1116;
+  color: #14201E;
 }
 
 :focus-visible {
@@ -89,7 +89,7 @@ body.case-study-page {
   margin: 0;
   background: var(--cs-paper);
   color: var(--cs-ink);
-  font-family: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 1.6rem;
   line-height: 1.65;
   min-width: 320px;
@@ -133,7 +133,6 @@ a {
   align-items: center;
   font-size: 1.35rem;
   font-weight: 700;
-  font-stretch: 108%;
   color: var(--cs-ink-2);
 }
 
@@ -179,7 +178,7 @@ a {
 
 .case-breadcrumb [aria-current="page"] {
   color: var(--cs-ink);
-  font-weight: 800;
+  font-weight: 650;
 }
 
 .case-theme-toggle {
@@ -296,8 +295,7 @@ a {
   background: var(--cs-ink);
   color: var(--cs-paper);
   font-size: 1.1rem;
-  font-weight: 800;
-  font-stretch: 112%;
+  font-weight: 650;
 }
 
 /* Badges & Labels */
@@ -314,8 +312,7 @@ a {
   color: var(--cs-ink);
   border: 1.5px solid var(--cs-rule);
   font-size: 1.2rem;
-  font-weight: 800;
-  font-stretch: 112%;
+  font-weight: 650;
 }
 
 .case-eyebrow::before,
@@ -341,15 +338,14 @@ a {
   margin: 0 0 0.8rem;
   color: var(--cs-vermilion);
   font-size: 1.45rem;
-  font-weight: 800;
-  font-stretch: 112%;
+  font-weight: 650;
 }
 
 .case-hero-content h1 {
   color: var(--cs-ink);
   font-size: clamp(3.4rem, 5vw, 5.8rem);
-  font-weight: 850;
-  font-stretch: 125%;
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-weight: 500;
   letter-spacing: -0.025em;
   line-height: 0.95;
   margin: 0 0 1.6rem;
@@ -378,7 +374,6 @@ a {
   color: var(--cs-ink);
   font-size: 1.25rem;
   font-weight: 700;
-  font-stretch: 108%;
 }
 
 /* Departure-Board Metrics Strip */
@@ -386,8 +381,8 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   margin-top: 2.4rem;
-  background: #0E1116;
-  color: #FFCB3D;
+  background: #14201E;
+  color: #8FD6C7;
   border: 2px solid var(--cs-ink);
   border-radius: 1.6rem;
   overflow: hidden;
@@ -408,10 +403,10 @@ a {
 }
 
 .case-metrics strong {
-  color: #FFCB3D;
+  color: #8FD6C7;
   font-size: clamp(2.6rem, 3.6vw, 3.8rem);
-  font-weight: 850;
-  font-stretch: 125%;
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1;
 }
@@ -423,7 +418,6 @@ a {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   font-weight: 700;
-  font-stretch: 112%;
 }
 
 /* Overview & Mini Route Focus */
@@ -441,8 +435,8 @@ a {
   margin: 0 0 1.8rem;
   color: var(--cs-ink);
   font-size: clamp(2.6rem, 3.8vw, 4.2rem);
-  font-weight: 850;
-  font-stretch: 125%;
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-weight: 500;
   letter-spacing: -0.025em;
   line-height: 1.02;
   text-wrap: balance;
@@ -491,8 +485,8 @@ a {
   margin: 0 0 1.6rem;
   color: var(--cs-ink);
   font-size: 1.7rem;
-  font-weight: 850;
-  font-stretch: 118%;
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-weight: 500;
 }
 
 .case-focus ul {
@@ -588,8 +582,7 @@ a {
   margin: 0 0 0.8rem;
   color: var(--cs-ink);
   font-size: 1.8rem;
-  font-weight: 800;
-  font-stretch: 112%;
+  font-weight: 650;
 }
 
 .case-card-grid p {
@@ -611,8 +604,8 @@ a {
   color: var(--cs-on-green);
   box-shadow: 0 0 0 2.5px var(--cs-ink);
   font-size: 1.2rem;
-  font-weight: 850;
-  font-stretch: 125%;
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-weight: 500;
 }
 
 /* Maximalist Drenched Outcome Card */
@@ -626,13 +619,13 @@ a {
 }
 
 .case-outcome .case-label {
-  background: #0E1116;
-  color: #FFCB3D;
-  border-color: #0E1116;
+  background: #14201E;
+  color: #8FD6C7;
+  border-color: #14201E;
 }
 
 .case-outcome .case-label::before {
-  background: #FFCB3D;
+  background: #8FD6C7;
   box-shadow: none;
 }
 
@@ -654,17 +647,16 @@ a {
   padding: 1rem 1.8rem;
   border-radius: 999px;
   background: #FFFFFF;
-  color: #0E1116;
+  color: #14201E;
   font-size: 1.4rem;
-  font-weight: 800;
-  font-stretch: 108%;
+  font-weight: 650;
   text-decoration: none;
   transition: transform 160ms var(--cs-ease-out), background-color 160ms ease;
 }
 
 .case-outcome > a:hover {
-  background: #FFCB3D;
-  color: #0E1116;
+  background: #8FD6C7;
+  color: #14201E;
 }
 
 .case-outcome > a:active {
@@ -694,8 +686,7 @@ a {
   color: var(--cs-ink);
   border: 1.5px solid var(--cs-rule-strong);
   font-size: 1.4rem;
-  font-weight: 800;
-  font-stretch: 108%;
+  font-weight: 650;
   text-decoration: none;
   transition: transform 160ms var(--cs-ease-out), background-color 160ms ease, color 160ms ease;
 }

@@ -5,17 +5,18 @@ import { FiMoon, FiSun, FiFileText, FiArrowUpRight, FiMail } from 'react-icons/f
 
 import { useThemeMode } from '../../styles/theme';
 
-// One line, one colour. The dots stay as station markers, but a different hue
-// per item encoded nothing a visitor could read — it just looked like a rainbow.
 const NAV_ITEMS = [
-  { href: '#about', label: 'About', dot: 'bg-line-cobalt' },
-  { href: '#products', label: 'Products', dot: 'bg-line-cobalt' },
-  { href: '#client-projects', label: 'Client Work', dot: 'bg-line-cobalt' },
-  { href: '#skills', label: 'Skills', dot: 'bg-line-cobalt' },
-  { href: '#credentials', label: 'Credentials', dot: 'bg-line-cobalt' },
-  { href: '#recommendations', label: 'Endorsements', dot: 'bg-line-cobalt' },
-  { href: '#contact', label: 'Contact', dot: 'bg-line-cobalt' },
+  { href: '#about', label: 'About' },
+  { href: '#products', label: 'Products' },
+  { href: '#client-projects', label: 'Client work' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#credentials', label: 'Credentials' },
+  { href: '#recommendations', label: 'Endorsements' },
+  { href: '#contact', label: 'Contact' },
 ];
+
+const iconButton =
+  'inline-flex items-center justify-center w-10 h-10 rounded-md text-ink-2 hover:text-ink hover:bg-ink/5 active:scale-[0.96] transition-[transform,background-color,color] duration-150';
 
 const ThemeToggle = () => {
   const { mode, toggleTheme } = useThemeMode();
@@ -27,19 +28,13 @@ const ThemeToggle = () => {
       onClick={toggleTheme}
       aria-label={`Switch to ${nextMode} mode`}
       aria-pressed={mode === 'dark'}
-      title={`Switch to ${nextMode === 'dark' ? 'Night Service' : 'Day Service'}`}
-      className="inline-flex items-center gap-1.5 h-10 px-3 rounded-full bg-surface text-ink shadow-[inset_0_0_0_1.5px_rgb(var(--rule-rgb)/0.22)] hover:shadow-[inset_0_0_0_1.5px_rgb(var(--ink-rgb))] active:scale-[0.97] transition-[transform,box-shadow,background-color] duration-150 cursor-pointer text-xs font-bold font-wide"
+      title={`Switch to ${nextMode} mode`}
+      className={`${iconButton} cursor-pointer`}
     >
       {mode === 'dark' ? (
-        <>
-          <FiSun className="w-4 h-4 text-line-sunflower shrink-0" aria-hidden="true" />
-          <span className="hidden xl:inline">Night</span>
-        </>
+        <FiSun className="w-[18px] h-[18px]" aria-hidden="true" />
       ) : (
-        <>
-          <FiMoon className="w-4 h-4 text-line-cobalt shrink-0" aria-hidden="true" />
-          <span className="hidden xl:inline">Day</span>
-        </>
+        <FiMoon className="w-[18px] h-[18px]" aria-hidden="true" />
       )}
     </button>
   );
@@ -56,7 +51,7 @@ const Header = () => {
       cancelAnimationFrame(animationFrame);
       animationFrame = requestAnimationFrame(() => {
         const nav = document.querySelector('[aria-label="Primary navigation"]');
-        const headerHeight = nav?.closest('header')?.getBoundingClientRect().height || 88;
+        const headerHeight = nav?.closest('header')?.getBoundingClientRect().height || 72;
         const offset = headerHeight + 24;
         const sections = NAV_ITEMS
           .map(({ href }) => ({ href, element: document.getElementById(href.slice(1)) }))
@@ -90,105 +85,81 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-paper border-b-[1.5px] border-rule/15">
-      {/* Signature strip: the route, with one interchange. Six equal bands read
-          as a rainbow; two read as a line. */}
-      <div aria-hidden="true" className="flex h-1.5 w-full">
-        <span className="flex-[7] bg-line-cobalt" />
-        <span className="flex-[1] bg-line-sunflower" />
-      </div>
-
-      <div className="frame-flush py-3 flex items-center justify-between gap-3">
-        {/* Brand Station Nameplate */}
+    <header className="sticky top-0 z-50 w-full bg-paper border-b border-rule/12">
+      <div className="frame py-3 flex items-center justify-between gap-3">
+        {/* Wordmark */}
         <Link href="/">
-          <a className="inline-flex items-center gap-2.5 shrink-0 group">
+          <a className="inline-flex items-center gap-2.5 shrink-0">
             <img
               src={mode === 'dark' ? '/logo-dark.svg' : '/logo-light.svg'}
               alt="Haris Arshad logo"
-              width="36"
-              height="36"
-              className="w-9 h-9 rounded-lg shrink-0"
+              width="32"
+              height="32"
+              className="w-8 h-8 rounded-md shrink-0"
             />
-            <span className="font-display text-lg sm:text-xl tracking-tight text-ink">
-              HARIS ARSHAD
-            </span>
-            <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full bg-line-sunflower text-on-sunflower text-xs font-extrabold font-wide">
-              PMP®
+            <span className="font-display text-lg sm:text-xl text-ink whitespace-nowrap">
+              Haris Arshad
             </span>
           </a>
         </Link>
 
-        {/* Desktop Transit Route Navigation */}
-        <nav
-          aria-label="Primary navigation"
-          className="hidden lg:flex items-center gap-1 px-2 py-1 rounded-full bg-surface-2 shadow-[inset_0_0_0_1.5px_rgb(var(--rule-rgb)/0.14)]"
-        >
-          {NAV_ITEMS.map(({ href, label, dot }) => {
+        {/* Desktop navigation: text only, the current section is underlined */}
+        <nav aria-label="Primary navigation" className="hidden lg:flex items-center gap-6">
+          {NAV_ITEMS.map(({ href, label }) => {
             const isActive = activeHref === href;
             return (
               <Link href={href} passHref key={href}>
                 <a
                   aria-current={isActive ? 'location' : undefined}
-                  className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold font-wide transition-[background-color,color,transform] duration-150 active:scale-[0.97] whitespace-nowrap ${
+                  className={`relative py-1 text-sm font-medium whitespace-nowrap transition-colors duration-150 after:absolute after:left-0 after:right-0 after:-bottom-0.5 after:h-px after:bg-accent after:origin-left after:transition-transform after:duration-300 after:ease-out ${
                     isActive
-                      ? 'bg-ink text-paper'
-                      : 'text-ink hover:bg-surface'
+                      ? 'text-ink after:scale-x-100'
+                      : 'text-ink-2 hover:text-ink after:scale-x-0 hover:after:scale-x-100'
                   }`}
                 >
-                  <span
-                    aria-hidden="true"
-                    className={`w-2.5 h-2.5 rounded-full ${dot} ${
-                      isActive
-                        ? 'ring-2 ring-paper'
-                        : 'ring-1 ring-ink/40'
-                    }`}
-                  />
-                  <span>{label}</span>
+                  {label}
                 </a>
               </Link>
             );
           })}
         </nav>
 
-        {/* Controls & Primary Actions */}
-        <div className="flex items-center gap-2 shrink-0">
-          <ThemeToggle />
-
+        {/* Controls */}
+        <div className="flex items-center gap-1 shrink-0">
           <a
             href="https://github.com/harisarshad235"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Visit Haris Arshad on GitHub"
-            className="hidden sm:inline-flex items-center justify-center w-10 h-10 rounded-full bg-surface text-ink shadow-[inset_0_0_0_1.5px_rgb(var(--rule-rgb)/0.22)] hover:bg-ink hover:text-paper transition-colors duration-150"
+            className={`${iconButton} hidden sm:inline-flex`}
           >
             <AiFillGithub className="w-5 h-5" aria-hidden="true" />
           </a>
-
           <a
             href="https://pk.linkedin.com/in/haris-arshad"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Visit Haris Arshad on LinkedIn"
-            className="hidden sm:inline-flex items-center justify-center w-10 h-10 rounded-full bg-surface text-ink shadow-[inset_0_0_0_1.5px_rgb(var(--rule-rgb)/0.22)] hover:bg-line-cobalt hover:text-on-cobalt transition-colors duration-150"
+            className={`${iconButton} hidden sm:inline-flex`}
           >
             <AiFillLinkedin className="w-5 h-5" aria-hidden="true" />
           </a>
+          <ThemeToggle />
 
           <a
             href="/resume/haris-arshad-cv.pdf"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="View or download Haris Arshad's resume"
-            className="btn btn-outline btn-sm hidden md:inline-flex"
+            className="btn btn-outline btn-sm hidden md:inline-flex ml-2"
           >
             <FiFileText className="w-4 h-4" aria-hidden="true" />
             <span>Resume</span>
           </a>
 
-          {/* On phones the label gives way to an envelope so the logo, name,
-              theme toggle and this button all fit in 375px. The label stays in
-              the accessible name, so screen readers still announce it. */}
-          <a href="#contact" aria-label="Work with me" className="btn btn-ink btn-sm">
+          {/* On phones the label gives way to an envelope so everything fits in
+              375px. The label stays in the accessible name. */}
+          <a href="#contact" aria-label="Work with me" className="btn btn-accent btn-sm ml-1 md:ml-1.5">
             <span className="hidden sm:inline">Work with me</span>
             <FiMail className="w-4 h-4 sm:hidden" aria-hidden="true" />
             <FiArrowUpRight className="hidden sm:inline w-4 h-4" aria-hidden="true" />
@@ -196,24 +167,23 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile / Tablet horizontal station hopper */}
-      <div className="lg:hidden border-t border-rule/12 bg-surface-2/70 overflow-x-auto">
-        <div className="frame-flush py-2 flex items-center gap-1.5 min-w-max">
-          {NAV_ITEMS.map(({ href, label, dot }) => {
+      {/* Mobile / tablet section links */}
+      <div className="lg:hidden border-t border-rule/10 overflow-x-auto">
+        <div className="frame py-2 flex items-center gap-5 min-w-max">
+          {NAV_ITEMS.map(({ href, label }) => {
             const isActive = activeHref === href;
             return (
               <a
                 key={href}
                 href={href}
                 aria-current={isActive ? 'location' : undefined}
-                className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold font-wide whitespace-nowrap transition-colors ${
+                className={`py-1 text-sm font-medium whitespace-nowrap border-b transition-colors ${
                   isActive
-                    ? 'bg-ink text-paper'
-                    : 'bg-surface text-ink shadow-[inset_0_0_0_1px_rgb(var(--rule-rgb)/0.18)]'
+                    ? 'text-ink border-accent'
+                    : 'text-ink-2 border-transparent'
                 }`}
               >
-                <span aria-hidden="true" className={`w-2 h-2 rounded-full ${dot}`} />
-                <span>{label}</span>
+                {label}
               </a>
             );
           })}

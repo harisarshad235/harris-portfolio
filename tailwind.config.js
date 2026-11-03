@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const line = (name) => `rgb(var(--${name}-rgb) / <alpha-value>)`;
+const token = (name) => `rgb(var(--${name}-rgb) / <alpha-value>)`;
 
 module.exports = {
   darkMode: ['class', '[data-theme="dark"]'],
@@ -11,45 +11,40 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        paper: line('paper'),
-        surface: { DEFAULT: line('surface'), 2: line('surface-2') },
-        ink: { DEFAULT: line('ink'), 2: line('ink-2') },
-        rule: line('rule'),
-        line: {
-          cobalt: line('cobalt'),
-          vermilion: line('vermilion'),
-          sunflower: line('sunflower'),
-          green: line('green'),
-          violet: line('violet'),
-          magenta: line('magenta'),
+        paper: token('paper'),
+        surface: { DEFAULT: token('surface'), 2: token('surface-2') },
+        ink: { DEFAULT: token('ink'), 2: token('ink-2') },
+        rule: token('rule'),
+        accent: {
+          DEFAULT: token('accent'),
+          ink: token('accent-ink'),
+          soft: token('accent-soft'),
+          foreground: token('accent-ink'),
         },
-        on: {
-          cobalt: line('on-cobalt'),
-          vermilion: line('on-vermilion'),
-          sunflower: line('on-sunflower'),
-          green: line('on-green'),
-          violet: line('on-violet'),
-          magenta: line('on-magenta'),
+        close: {
+          DEFAULT: token('close'),
+          ink: token('on-close'),
+          accent: token('close-accent'),
         },
-        drench: { DEFAULT: line('drench'), ink: line('on-drench') },
-        terminus: { DEFAULT: line('terminus'), ink: line('on-terminus') },
+        ok: token('ok'),
+        danger: token('danger'),
 
-        /* Legacy semantic aliases */
-        background: line('background'),
-        foreground: line('foreground'),
-        card: { DEFAULT: line('card'), foreground: line('card-foreground') },
-        popover: { DEFAULT: line('popover'), foreground: line('popover-foreground') },
-        primary: { DEFAULT: line('primary'), foreground: line('primary-foreground') },
-        secondary: { DEFAULT: line('secondary'), foreground: line('secondary-foreground') },
-        muted: { DEFAULT: line('muted'), foreground: line('muted-foreground') },
-        accent: { DEFAULT: line('accent'), foreground: line('accent-foreground') },
-        destructive: { DEFAULT: line('destructive'), foreground: line('destructive-foreground') },
+        /* Legacy semantic aliases (shared UI primitives) */
+        background: token('background'),
+        foreground: token('foreground'),
+        card: { DEFAULT: token('card'), foreground: token('card-foreground') },
+        popover: { DEFAULT: token('popover'), foreground: token('popover-foreground') },
+        primary: { DEFAULT: token('primary'), foreground: token('primary-foreground') },
+        secondary: { DEFAULT: token('secondary'), foreground: token('secondary-foreground') },
+        muted: { DEFAULT: token('muted'), foreground: token('muted-foreground') },
+        destructive: { DEFAULT: token('destructive'), foreground: token('destructive-foreground') },
         border: 'rgb(var(--border-rgb) / 0.14)',
         input: 'rgb(var(--input-rgb) / 0.22)',
-        ring: line('ring'),
+        ring: token('ring'),
       },
       fontFamily: {
-        sans: ['Archivo', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['Hanken Grotesk', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['Source Serif 4', 'ui-serif', 'Georgia', 'serif'],
       },
       transitionTimingFunction: {
         out: 'cubic-bezier(0.23, 1, 0.32, 1)',

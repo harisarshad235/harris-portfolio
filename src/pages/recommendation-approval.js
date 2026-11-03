@@ -91,18 +91,18 @@ const RecommendationApprovalPage = () => {
 
           <div aria-live="polite" className="card p-6 sm:p-8 space-y-5">
             {status === 'loading' && (
-              <p role="status" className="text-sm font-bold text-ink-2">
+              <p role="status" className="text-sm font-medium text-ink-2">
                 Loading the private submission…
               </p>
             )}
             {status === 'error' && (
-              <p role="alert" className="p-4 rounded-xl bg-line-vermilion text-on-vermilion text-sm font-bold">
+              <p role="alert" className="p-4 rounded-md border border-danger/50 text-danger text-sm font-medium">
                 {message}
               </p>
             )}
             {status === 'ready' && recommendation && (
               <>
-                <blockquote className="text-base sm:text-lg text-ink leading-relaxed font-medium p-5 rounded-xl bg-surface-2">
+                <blockquote className="text-base sm:text-lg text-ink leading-relaxed font-medium p-5 rounded-md bg-surface-2">
                   &ldquo;{recommendation.feedback}&rdquo;
                 </blockquote>
                 {(recommendation.name || recommendation.designation || recommendation.organization) && (
@@ -113,7 +113,7 @@ const RecommendationApprovalPage = () => {
                   </p>
                 )}
                 <div className="flex flex-wrap items-center gap-3 pt-2">
-                  <button type="button" onClick={() => handleDecision('approve')} className="btn btn-ink">
+                  <button type="button" onClick={() => handleDecision('approve')} className="btn btn-accent">
                     Approve and publish
                   </button>
                   <button type="button" onClick={() => handleDecision('discard')} className="btn btn-outline">
@@ -121,29 +121,29 @@ const RecommendationApprovalPage = () => {
                   </button>
                 </div>
                 {message && (
-                  <p role="alert" className="p-3 rounded-xl bg-line-vermilion text-on-vermilion text-xs font-bold">
+                  <p role="alert" className="p-3 rounded-md border border-danger/50 text-danger text-sm font-medium">
                     {message}
                   </p>
                 )}
               </>
             )}
             {isProcessing && (
-              <p role="status" className="text-sm font-bold text-ink-2">
+              <p role="status" className="text-sm font-medium text-ink-2">
                 Saving your decision…
               </p>
             )}
             {status === 'approved' && (
-              <p role="status" className="p-4 rounded-xl bg-line-green text-on-green text-sm font-bold">
+              <p role="status" className="p-4 rounded-md bg-accent-soft text-ink text-sm font-medium">
                 Approved and published. It is now available in the Recommendations section of your portfolio.
               </p>
             )}
             {status === 'discarded' && (
-              <p role="status" className="p-4 rounded-xl bg-surface-2 text-ink text-sm font-bold">
+              <p role="status" className="p-4 rounded-md bg-surface-2 text-ink text-sm font-medium">
                 The submission was discarded and removed from the review queue.
               </p>
             )}
             {(status === 'approved' || status === 'discarded') && (
-              <a href="/#recommendations" className="btn btn-ink">
+              <a href="/#recommendations" className="btn btn-accent">
                 <FiArrowLeft aria-hidden="true" />
                 <span>Return to the portfolio</span>
               </a>
