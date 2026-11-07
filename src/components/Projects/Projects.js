@@ -4,7 +4,7 @@ import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { projects } from '../../constants/constants';
 import { Section } from '../ui/Section';
 
-const filters = ['All', 'Telecom', 'E-commerce', 'Public sector', 'Digital platforms'];
+const filters = ['All', 'Telecom', 'E-commerce', 'Public sector', 'Digital platforms', 'Sports & events'];
 
 const filterProjects = (filter) =>
   filter === 'All' ? projects : projects.filter(({ sector }) => sector === filter);
@@ -17,7 +17,7 @@ const Projects = () => {
     <Section
       id="client-projects"
       title="Client Projects & Case Studies"
-      intro="Selected telecom, public-sector, e-commerce, and digital platform initiatives delivered across national infrastructure and global retail portfolios."
+      intro="Selected telecom, public-sector, e-commerce, sports-event, and digital platform initiatives delivered across national infrastructure and global retail portfolios."
       split={false}
     >
       <div data-reveal className="mb-10">
