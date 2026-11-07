@@ -1,0 +1,6 @@
+.claude/
+.agents/
+.impeccable/
+.next/
+out/
+node_modules/
