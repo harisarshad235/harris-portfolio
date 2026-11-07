@@ -1,5 +1,21 @@
 export const projects = [
   {
+    title: 'Premier Online event registration',
+    client: 'Premier Online',
+    sector: 'Sports & events',
+    description: 'An online registration platform for sports events across the UAE, Oman, Egypt, Nepal and Saudi Arabia, covering running, triathlon, cycling, obstacle races and more.',
+    impact: 'Ongoing delivery as Project Manager',
+    metricsHighlight: '5 countries · English & Arabic',
+    methodology: 'Agile Delivery & Release Coordination',
+    category: 'Digital platforms',
+    projectTypes: ['Digital & Software', 'Consulting'],
+    caseStudy: '/case-studies/premier-online',
+    image: '/images/14.webp',
+    tags: ['Event registration', 'Multi-country', 'Release coordination'],
+    website: 'https://www.premieronline.com/',
+    id: 8,
+  },
+  {
     title: 'Thunder',
     client: 'Telenor Pakistan',
     sector: 'Telecom',

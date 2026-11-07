@@ -45,6 +45,7 @@
 - [CDA Smart Parking Digitization Case Study](https://harisarshad.site/case-studies/cda-smart-parking): ANPR-based smart parking digitization, RAID governance, and UAT rollout in Islamabad.
 - [Taggy Marketplace Platform Case Study](https://harisarshad.site/case-studies/taggy-marketplace): AI-assisted fashion resale marketplace with image search and auto-tagging in the UAE.
 - [Aviation Professionals Club (APC) Admin Portal Case Study](https://harisarshad.site/case-studies/apc-admin-portal): Member benefits platform and administrative workflow handover in the UAE.
+- [Premier Online Event Registration Case Study](https://harisarshad.site/case-studies/premier-online): Project management for a sports event registration platform serving the UAE, Oman, Egypt, Nepal and Saudi Arabia.
 
 ## Core Competencies
 - **Delivery & PMO Governance:** Project Planning & Control, Earned Value Management (EVM), Schedule Baselines (Primavera P6, MS Project), RAID Management, Executive Power BI Dashboards, Stakeholder & Vendor Management, UAT & Release Governance.
